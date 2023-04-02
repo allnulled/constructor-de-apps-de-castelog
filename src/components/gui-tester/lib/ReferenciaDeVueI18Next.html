@@ -1,0 +1,336 @@
+<h1 id="installation"><a href="#installation" aria-hidden="true" class="header-anchor">#</a> Installation</h1>
+<h2 id="compatibility-note"><a href="#compatibility-note" aria-hidden="true" class="header-anchor">#</a> Compatibility
+    Note</h2>
+<ul>
+    <li>Vue.js <code>2.0.0</code>+</li>
+</ul>
+<h2 id="direct-download-cdn"><a href="#direct-download-cdn" aria-hidden="true" class="header-anchor">#</a> Direct
+    Download / CDN</h2>
+<p><a href="https://unpkg.com/@panter/vue-i18next/dist/vue-i18next.js" target="_blank"
+        rel="noopener noreferrer">https://unpkg.com/@panter/vue-i18next/dist/vue-i18next.js<svg
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15"
+            height="15" class="icon outbound">
+            <path fill="currentColor"
+                d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+            </path>
+            <polygon fill="currentColor"
+                points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+            </polygon>
+        </svg></a></p>
+<p><a href="https://unpkg.com" target="_blank" rel="noopener noreferrer">unpkg.com<svg
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15"
+            height="15" class="icon outbound">
+            <path fill="currentColor"
+                d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+            </path>
+            <polygon fill="currentColor"
+                points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+            </polygon>
+        </svg></a> provides NPM-based CDN links. The above link will always point to the latest release on NPM. You can
+    also use a specific version/tag via URLs like <a
+        href="https://unpkg.com/@panter/vue-i18next@0.12.0/dist/vue-i18next.js" target="_blank"
+        rel="noopener noreferrer">https://unpkg.com/@panter/vue-i18next@0.12.0/dist/vue-i18next.js<svg
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15"
+            height="15" class="icon outbound">
+            <path fill="currentColor"
+                d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+            </path>
+            <polygon fill="currentColor"
+                points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+            </polygon>
+        </svg></a></p>
+<p>Include vue-i18next after Vue and it will install itself automatically:</p>
+<div class="language-html extra-class">
+    <pre
+        class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unpkg.com/vue/dist/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unpkg.com/i18next@8.0.0/i18next.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unpkg.com/@panter/vue-i18next/dist/vue-i18next.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<h2 id="npm"><a href="#npm" aria-hidden="true" class="header-anchor">#</a> NPM</h2>
+<div class="language-sh extra-class">
+    <pre
+        class="language-sh"><code><span class="token function">npm</span> <span class="token function">install</span> @panter/vue-i18next </code></pre>
+</div>
+<h2 id="yarn"><a href="#yarn" aria-hidden="true" class="header-anchor">#</a> Yarn</h2>
+<div class="language-sh extra-class">
+    <pre
+        class="language-sh"><code><span class="token function">yarn</span> <span class="token function">add</span> @panter/vue-i18next </code></pre>
+</div>
+<p>When using with a module system, you must explicitly install the <code>vue-i18next</code> via <code>Vue.use()</code>:
+</p>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span> <span class="token keyword">import</span> i18next <span class="token keyword">from</span> <span class="token string">'i18next'</span><span class="token punctuation">;</span> <span class="token keyword">import</span> VueI18Next <span class="token keyword">from</span> <span class="token string">'@panter/vue-i18next'</span><span class="token punctuation">;</span> Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueI18Next<span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+<p>You don't need to do this when using global script tags.</p>
+<h2 id="dev-build"><a href="#dev-build" aria-hidden="true" class="header-anchor">#</a> Dev Build</h2>
+<p>You will have to clone directly from GitHub and build <code>@panter/vue-i18next</code> yourself if you want to use
+    the latest dev build.</p>
+<div class="language-sh extra-class">
+    <pre
+        class="language-sh"><code><span class="token function">git</span> clone https://github.com/@panter/vue-i18next.git node_modules/@panter/vue-i18next <span class="token function">cd</span> node_modules/@panter/vue-i18next <span class="token function">yarn</span> <span class="token function">yarn</span> build </code></pre>
+</div>
+
+<h1 id="introduction"><a href="#introduction" aria-hidden="true" class="header-anchor">#</a> Introduction</h1>
+<p>18next goes beyond just providing the standard i18n features such as (plurals, context, interpolation, format). It
+    provides you with a complete solution to localize your product from web to mobile and desktop.</p>
+<p>vue-i18next is the vue support for i18next and provides:</p>
+<ul>
+    <li>Component based localization</li>
+    <li>Component interpolation</li>
+    <li>Lazy load namespaces</li>
+    <li>Namespaced translation for compoents</li>
+</ul>
+<p>Let' play <a href="/vue-i18next/guide/started.html" class="">Get Started</a>!</p>
+<div class="warning custom-block">
+    <p class="custom-block-title">Notice</p>
+    <p>⚠️ This documentation is for <code>vue-i18next</code> v0.12.0 or later.</p>
+</div>
+
+<h1 id="getting-started"><a href="#getting-started" aria-hidden="true" class="header-anchor">#</a> Getting started</h1>
+<p>Source can be loaded via</p>
+<div class="language- extra-class">
+    <pre class="language-text"><code># npm package $ npm install @panter/vue-i18next </code></pre>
+</div>
+<h2 id="requirements"><a href="#requirements" aria-hidden="true" class="header-anchor">#</a> Requirements</h2>
+<ul>
+    <li>vue &gt;= <strong>2.0.0</strong></li>
+    <li>i18next &gt;= <strong>6.0.1</strong></li>
+</ul>
+<h2 id="init"><a href="#init" aria-hidden="true" class="header-anchor">#</a> Init</h2>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span> <span class="token keyword">import</span> i18next <span class="token keyword">from</span> <span class="token string">'i18next'</span><span class="token punctuation">;</span> <span class="token keyword">import</span> VueI18Next <span class="token keyword">from</span> <span class="token string">'@panter/vue-i18next'</span><span class="token punctuation">;</span> Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueI18Next<span class="token punctuation">)</span><span class="token punctuation">;</span> i18next<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span> lng<span class="token punctuation">:</span> <span class="token string">'de'</span><span class="token punctuation">,</span> resources<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18Next</span><span class="token punctuation">(</span>i18next<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> i18n<span class="token punctuation">:</span> i18n<span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+<h2 id="init-options"><a href="#init-options" aria-hidden="true" class="header-anchor">#</a> Init options</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>loadComponentNamespace</strong></td>
+            <td>When using the <a href="/vue-i18next/guide/i18n-options.html#namespaces" class="">namespace options</a>
+                the namespaces will be loaded with <a href="https://www.i18next.com/overview/api#loadnamespaces"
+                    target="_blank" rel="noopener noreferrer">loadNamespaces<svg xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                        class="icon outbound">
+                        <path fill="currentColor"
+                            d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                        </path>
+                        <polygon fill="currentColor"
+                            points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                        </polygon>
+                    </svg></a>,<br>so one can lazy load namespaces for components.</td>
+        </tr>
+        <tr>
+            <td><strong>bindI18n</strong></td>
+            <td>Listen for <code>i18next</code> events and refreshes the component.<br>Check the <a
+                    href="https://www.i18next.com/overview/api#events" target="_blank" rel="noopener noreferrer">i18next
+                    documentation for more infos<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px"
+                        y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                        <path fill="currentColor"
+                            d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                        </path>
+                        <polygon fill="currentColor"
+                            points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                        </polygon>
+                    </svg></a></td>
+        </tr>
+        <tr>
+            <td><strong>bindStore</strong></td>
+            <td>Listen for <code>i18next</code> store events and refreshes the component.<br>Check the <a
+                    href="https://www.i18next.com/overview/api#store-events" target="_blank"
+                    rel="noopener noreferrer">i18next store documentation for more infos<svg
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100"
+                        width="15" height="15" class="icon outbound">
+                        <path fill="currentColor"
+                            d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                        </path>
+                        <polygon fill="currentColor"
+                            points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                        </polygon>
+                    </svg></a></td>
+        </tr>
+    </tbody>
+</table>
+
+<h1 id="component-based-localization"><a href="#component-based-localization" aria-hidden="true"
+        class="header-anchor">#</a> Component based localization</h1>
+<p>In general, locale info (e.g. <code>locale</code>,<code>messages</code>, etc) is set in the <code>i18next</code>
+    instance and passed to the <code>i18n</code> option as root Vue instance.</p>
+<p>Therefore you can globally translate with using <code>$t</code> in the root Vue instance and any composed component.
+    You can also manage locale info for each component separately, which might be more convenient due to Vue components
+    oriented design.</p>
+<p>Component based localization example:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> locales <span class="token operator">=</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> hello<span class="token punctuation">:</span> <span class="token string">'Hello!'</span><span class="token punctuation">,</span> loadbundle<span class="token punctuation">:</span> <span class="token string">'Load bundle language: {{lang}}'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> i18next<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span> lng<span class="token punctuation">:</span> <span class="token string">'en'</span><span class="token punctuation">,</span> resources<span class="token punctuation">:</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> translation<span class="token punctuation">:</span> locales<span class="token punctuation">.</span>en <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18next</span><span class="token punctuation">(</span>i18next<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">const</span> Component1 <span class="token operator">=</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">` &lt;div class="container"&gt; &lt;strong&gt;{{$t("loadbundle", {lang: this.lang}) }}&lt;/strong&gt; &lt;/div&gt;`</span></span><span class="token punctuation">,</span> <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">{</span> lang<span class="token punctuation">:</span> <span class="token string">'DE'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span> i18n<span class="token punctuation">,</span> components<span class="token punctuation">:</span> <span class="token punctuation">{</span> Component1 <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>Template:</p>
+<div class="language-html extra-class">
+    <pre
+        class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{ $t("message.hello") }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>component1</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>component1</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<p>Outputs the following:</p>
+<div class="language-html extra-class">
+    <pre
+        class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Hello<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>Load bundle language: DE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<p>As in the example above, if the component doesn't have the locale message, it falls back to globally defined
+    localization info. The component uses the language set in the root instance (in the above example:
+    <code>lng: 'en'</code>).</p>
+
+<h1 id="component-interpolation"><a href="#component-interpolation" aria-hidden="true" class="header-anchor">#</a>
+    Component interpolation</h1>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code><span class="token keyword">const</span> locales <span class="token operator">=</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> tos<span class="token punctuation">:</span> <span class="token string">"Term of Service"</span><span class="token punctuation">,</span> term<span class="token punctuation">:</span> <span class="token string">"I accept {{0}}. {{1}}."</span><span class="token punctuation">,</span> promise<span class="token punctuation">:</span> <span class="token string">"I promise"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> i18next<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span> lng<span class="token punctuation">:</span> <span class="token string">"en"</span><span class="token punctuation">,</span> resources<span class="token punctuation">:</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> translation<span class="token punctuation">:</span> locales<span class="token punctuation">.</span>en <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18next</span><span class="token punctuation">(</span>i18next<span class="token punctuation">)</span><span class="token punctuation">;</span> Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">` &lt;div&gt; &lt;i18next path="term" tag="label"&gt; &lt;a href="#" target="_blank"&gt;{{ $t("tos") }}&lt;/a&gt; &lt;strong&gt;{{ $t("promise") }}&lt;/strong&gt; &lt;/i18next&gt; &lt;/div&gt;`</span></span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">` &lt;div&gt; &lt;i18next path="term" tag="label"&gt; &lt;a href="#" target="_blank"&gt;{{ $t("tos") }}&lt;/a&gt; &lt;strong&gt;{{ $t("promise") }}&lt;/strong&gt; &lt;/i18next&gt; &lt;/div&gt;`</span></span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code><span class="token comment">// i18next component support to specify the place</span> <span class="token keyword">const</span> locales <span class="token operator">=</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> tos<span class="token punctuation">:</span> <span class="token string">"Term of Service"</span><span class="token punctuation">,</span> term<span class="token punctuation">:</span> <span class="token string">"I accept {{tos}}. {{promise}}."</span><span class="token punctuation">,</span> promise<span class="token punctuation">:</span> <span class="token string">"I promise"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token operator">...</span> Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">` &lt;div&gt; &lt;i18next path="term" tag="label"&gt; &lt;a href="#" target="_blank" place="tos"&gt;{{ $t("tos") }}&lt;/a&gt; &lt;strong place="promise"&gt;{{ $t("promise") }}&lt;/strong&gt; &lt;/i18next&gt; &lt;/div&gt;`</span></span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code><span class="token comment">// i18next component support the ($t)[https://www.i18next.com/overview/api#t] options param</span> <span class="token keyword">const</span> locales <span class="token operator">=</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> counter<span class="token punctuation">:</span> <span class="token string">"{{0}} dude"</span><span class="token punctuation">,</span> counter_plural<span class="token punctuation">:</span> <span class="token string">"{{0}} dudes"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token operator">...</span> Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">` &lt;div&gt; &lt;i18next path="term" tag="label" options="{ count: 2 }"&gt; &lt;strong&gt;Hello&lt;/strong&gt; &lt;/i18next&gt; &lt;/div&gt;`</span></span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+
+<h1 id="directives"><a href="#directives" aria-hidden="true" class="header-anchor">#</a> Directives</h1>
+<h2 id="v-t"><a href="#v-t" aria-hidden="true" class="header-anchor">#</a> v-t</h2>
+<p>Full Featured properties:</p>
+<ul>
+    <li><code>path</code>: string</li>
+    <li><code>language</code>: language, optional</li>
+    <li><code>args</code>: object</li>
+</ul>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code><span class="token keyword">const</span> locales <span class="token operator">=</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> hello<span class="token punctuation">:</span> <span class="token string">"Hello"</span><span class="token punctuation">,</span> helloWithName<span class="token punctuation">:</span> <span class="token string">"Hello {{name}}"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> i18next<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span> lng<span class="token punctuation">:</span> <span class="token string">"en"</span><span class="token punctuation">,</span> resources<span class="token punctuation">:</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> translation<span class="token punctuation">:</span> locales<span class="token punctuation">.</span>en <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18next</span><span class="token punctuation">(</span>i18next<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// simple usage</span> Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;p v-t="hello"&gt;&lt;/p&gt;`</span></span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// full featured</span> Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;p ref="text" v-t="{ path: 'helloWithName', language: 'en', args: { name: 'Hans' } }"&gt;&lt;/p&gt;`</span></span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+<h2 id="v-waitfort"><a href="#v-waitfort" aria-hidden="true" class="header-anchor">#</a> v-waitForT</h2>
+<p>Wait for the i18next fot be initialized. If not initialized it sets the element to <code>hidden = true</code> and
+    wait for i18next to be initialized.</p>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code><span class="token keyword">const</span> locales <span class="token operator">=</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> hello<span class="token punctuation">:</span> <span class="token string">"Hello"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> i18next<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span> lng<span class="token punctuation">:</span> <span class="token string">"en"</span><span class="token punctuation">,</span> resources<span class="token punctuation">:</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> translation<span class="token punctuation">:</span> locales<span class="token punctuation">.</span>en <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18next</span><span class="token punctuation">(</span>i18next<span class="token punctuation">)</span><span class="token punctuation">;</span> Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;p v-waitForT&gt;$t("hello")&lt;/p&gt;`</span></span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+
+<h1 id="i18noptions"><a href="#i18noptions" aria-hidden="true" class="header-anchor">#</a> i18nOptions</h1>
+<h2 id="namespaces"><a href="#namespaces" aria-hidden="true" class="header-anchor">#</a> namespaces</h2>
+<p>The namepace will not be loaded automatically, see <a href="/vue-i18next/guide/started.html#init"
+        class="">loadComponentNamespace</a></p>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code><span class="token keyword">const</span> locales <span class="token operator">=</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> tos<span class="token punctuation">:</span> <span class="token string">"Term of Service"</span><span class="token punctuation">,</span> term<span class="token punctuation">:</span> <span class="token string">"I accept {{0}}. {{1}}."</span><span class="token punctuation">,</span> promise<span class="token punctuation">:</span> <span class="token string">"I promise"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> i18next<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span> lng<span class="token punctuation">:</span> <span class="token string">"en"</span><span class="token punctuation">,</span> fallbackLng<span class="token punctuation">:</span> <span class="token string">"en"</span><span class="token punctuation">,</span> resources<span class="token punctuation">:</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> common<span class="token punctuation">:</span> locales<span class="token punctuation">.</span>en <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18next</span><span class="token punctuation">(</span>i18next<span class="token punctuation">)</span><span class="token punctuation">;</span> Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> i18nOptions<span class="token punctuation">:</span> <span class="token punctuation">{</span> namespaces<span class="token punctuation">:</span> <span class="token string">"common"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">` &lt;div&gt; &lt;i18next path="term" tag="label"&gt; &lt;a href="#" target="_blank"&gt;{{ $t("tos") }}&lt;/a&gt; &lt;strong&gt;{{ $t("promise") }}&lt;/strong&gt; &lt;/i18next&gt; &lt;/div&gt;`</span></span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+<p>Namespaces can also be an array, sorted by priority.</p>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code><span class="token keyword">const</span> common <span class="token operator">=</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> promise<span class="token punctuation">:</span> <span class="token string">"I promise"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> promise<span class="token punctuation">:</span> <span class="token string">"The app promise"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> i18next<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span> lng<span class="token punctuation">:</span> <span class="token string">"en"</span><span class="token punctuation">,</span> fallbackLng<span class="token punctuation">:</span> <span class="token string">"en"</span><span class="token punctuation">,</span> resources<span class="token punctuation">:</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> common<span class="token punctuation">:</span> common<span class="token punctuation">.</span>en<span class="token punctuation">,</span> app<span class="token punctuation">:</span> app<span class="token punctuation">.</span>en <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18next</span><span class="token punctuation">(</span>i18next<span class="token punctuation">)</span><span class="token punctuation">;</span> Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> i18nOptions<span class="token punctuation">:</span> <span class="token punctuation">{</span> namespaces<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"app"</span><span class="token punctuation">,</span> <span class="token string">"common"</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;strong&gt;{{ $t("promise") }}&lt;/strong&gt;`</span></span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+<h2 id="keyprefix"><a href="#keyprefix" aria-hidden="true" class="header-anchor">#</a> keyPrefix</h2>
+<p>There is also the possibility to prefix what key the component is using.</p>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code><span class="token keyword">const</span> locales <span class="token operator">=</span> <span class="token punctuation">{</span> en<span class="token punctuation">:</span> <span class="token punctuation">{</span> message<span class="token punctuation">:</span> <span class="token punctuation">{</span> hello<span class="token punctuation">:</span> <span class="token string">"Hello"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> i18next<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18next</span><span class="token punctuation">(</span>i18next<span class="token punctuation">)</span><span class="token punctuation">;</span> Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'app'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> i18nOptions<span class="token punctuation">:</span> <span class="token punctuation">{</span> keyPrefix<span class="token punctuation">:</span> <span class="token string">'message'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">` &lt;div&gt; &lt;strong&gt;{{ $t("hello") }}&lt;/strong&gt; &lt;/div&gt;`</span></span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+<h2 id="messages"><a href="#messages" aria-hidden="true" class="header-anchor">#</a> messages</h2>
+<p>Translations can not only be defined in translation files but also in the <code>i18nOptions</code>.</p>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code>i18next<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18next</span><span class="token punctuation">(</span>i18next<span class="token punctuation">)</span><span class="token punctuation">;</span> Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'app'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> i18nOptions<span class="token punctuation">:</span> <span class="token punctuation">{</span> messages<span class="token punctuation">:</span> <span class="token punctuation">{</span> de<span class="token punctuation">:</span> <span class="token punctuation">{</span> hello<span class="token punctuation">:</span> <span class="token string">'Hello!'</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">` &lt;div&gt; &lt;strong&gt;{{ $t("hello") }}&lt;/strong&gt; &lt;/div&gt;`</span></span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+<h2 id="lng"><a href="#lng" aria-hidden="true" class="header-anchor">#</a> lng</h2>
+<p>Fix language in the component</p>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code>i18next<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18next</span><span class="token punctuation">(</span>i18next<span class="token punctuation">)</span><span class="token punctuation">;</span> Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'app'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> i18nOptions<span class="token punctuation">:</span> <span class="token punctuation">{</span> lng<span class="token punctuation">:</span> <span class="token string">"de"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">` &lt;div&gt; &lt;strong&gt;{{ $t("hello") }}&lt;/strong&gt; &lt;/div&gt;`</span></span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+
+<h1 id="i18n-where-are-you"><a href="#i18n-where-are-you" aria-hidden="true" class="header-anchor">#</a> i18n where are
+    you?</h1>
+<p>Where are you</p>
+<h2 id="change-language-in-component"><a href="#change-language-in-component" aria-hidden="true"
+        class="header-anchor">#</a> Change Language in component</h2>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code>Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">"language-changer"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token string">"&lt;div&gt;&lt;a v-on:click=\"changeLanguage('de')\"&gt;DE&lt;/a&gt;&lt;/div&gt;"</span><span class="token punctuation">,</span> methods<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token function">changeLanguage</span><span class="token punctuation">(</span><span class="token parameter">lang</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$i18n<span class="token punctuation">.</span>i18next<span class="token punctuation">.</span><span class="token function">changeLanguage</span><span class="token punctuation">(</span>lang<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+<h2 id="change-language-globally"><a href="#change-language-globally" aria-hidden="true" class="header-anchor">#</a>
+    Change Language globally</h2>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code><span class="token keyword">import</span> i18next <span class="token keyword">from</span> <span class="token string">'i18next'</span><span class="token punctuation">;</span> <span class="token operator">...</span> i18next<span class="token punctuation">.</span><span class="token function">changeLanguage</span><span class="token punctuation">(</span><span class="token string">'it'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+
+<h1 id="single-file-components"><a href="#single-file-components" aria-hidden="true" class="header-anchor">#</a> Single
+    file components</h1>
+<p>by <a href="https://github.com/kazupon" target="_blank" rel="noopener noreferrer">@kazupon<svg
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15"
+            height="15" class="icon outbound">
+            <path fill="currentColor"
+                d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+            </path>
+            <polygon fill="currentColor"
+                points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+            </polygon>
+        </svg></a></p>
+<div class="language-html extra-class">
+    <pre
+        class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i18n</span><span class="token punctuation">&gt;</span></span> { "en": { "hello": "hello world!" } } <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i18n</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>message: {{ $t('hello') }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript"> <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"app"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<h2 id="i18n-tag"><a href="#i18n-tag" aria-hidden="true" class="header-anchor">#</a> i18n tag</h2>
+<p>To be able to use the <code>&lt;i18&gt;</code> you need to use the vue-loader:</p>
+<div class="language- extra-class">
+    <pre class="language-text"><code>npm install @kazupon/vue-i18n-loader --save-dev </code></pre>
+</div>
+<p>For a detailed documentation check the original <a href="https://github.com/kazupon/vue-i18n-loader" target="_blank"
+        rel="noopener noreferrer">docs here<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+            viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+            <path fill="currentColor"
+                d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+            </path>
+            <polygon fill="currentColor"
+                points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+            </polygon>
+        </svg></a>.</p>
+<div class="language- extra-class">
+    <pre
+        class="language-text"><code>// vue-loader (~v14.x): module.exports = { // ... module: { rules: [ { test: /\.vue$/, loader: 'vue-loader', options: { loaders: { // you need to specify `i18n` loaders key with `vue-i18n-loader` (https://github.com/kazupon/vue-i18n-loader) i18n: '@kazupon/vue-i18n-loader' } } }, // ... ] }, // ... } </code></pre>
+</div>
+<h2 id="use-it-with-yaml"><a href="#use-it-with-yaml" aria-hidden="true" class="header-anchor">#</a> Use it with YAML:
+</h2>
+<div class="language- extra-class">
+    <pre class="language-text"><code>npm install yaml-loader --save-dev </code></pre>
+</div>
+<div class="language-html extra-class">
+    <pre
+        class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i18n</span><span class="token punctuation">&gt;</span></span> en: hello: "hello world!" <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i18n</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<div class="language-javascript extra-class">
+    <pre
+        class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token comment">// ...</span> module<span class="token punctuation">:</span> <span class="token punctuation">{</span> rules<span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> test<span class="token punctuation">:</span> <span class="token regex">/\.vue$/</span><span class="token punctuation">,</span> loader<span class="token punctuation">:</span> <span class="token string">"vue-loader"</span><span class="token punctuation">,</span> options<span class="token punctuation">:</span> <span class="token punctuation">{</span> preLoaders<span class="token punctuation">:</span> <span class="token punctuation">{</span> i18n<span class="token punctuation">:</span> <span class="token string">"yaml-loader"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> loaders<span class="token punctuation">:</span> <span class="token punctuation">{</span> i18n<span class="token punctuation">:</span> <span class="token string">"@kazupon/vue-i18n-loader"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token comment">// ...</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span> <span class="token comment">// ...</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> </code></pre>
+</div>
+
+<h1 id="use-vue-filter-to-deal-with-empty-keys"><a href="#use-vue-filter-to-deal-with-empty-keys" aria-hidden="true"
+        class="header-anchor">#</a> Use Vue.Filter to deal with empty keys</h1>
+<p>by: <a href="https://github.com/Fohlen" target="_blank" rel="noopener noreferrer">@Fohlen<svg
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15"
+            height="15" class="icon outbound">
+            <path fill="currentColor"
+                d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+            </path>
+            <polygon fill="currentColor"
+                points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+            </polygon>
+        </svg></a></p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code>Vue<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token string">"t"</span><span class="token punctuation">,</span> <span class="token parameter">value</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>value<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">;</span> <span class="token keyword">return</span> i18n<span class="token punctuation">.</span><span class="token function">t</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</div>
+<p>Usage:</p>
+<div class="language- extra-class">
+    <pre class="language-text"><code>{{ $t('some_text') }} {{ 'some text' | t }} </code></pre>
+</div>

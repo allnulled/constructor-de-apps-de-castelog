@@ -1,0 +1,201 @@
+asigno window.SelectorDeComponenteDeGuiBuilder como un componente vue2 con nombre "SelectorDeComponenteDeGuiBuilder" con plantilla {
+  <div class="SelectorDeComponenteDeGuiBuilder">
+    <div class="panel_de_busqueda_de_componente" :class="{posicion_absoluta:posicion==='absolute'}">
+      <div class="horizontal_layout">
+        <div class="w_100">
+          <input class="w_100" type="text" v-model="texto_de_busqueda_seleccionado" :placeholder="mensajeDeRelleno" ref="caja_buscar_componente" />
+        </div>
+        <div style="padding-left:2px;" v-if="false">
+          <button v-on:click="buscar_entre_componentes" v-if="!esta_mostrando_componentes">🔎</button>
+          <button v-on:click="esconder_componentes" v-else>✔</button>
+        </div>
+      </div>
+      <template>
+        <div v-if="componentes_filtrados && componentes_filtrados.length">
+          <div class="horizontal_layout" style="position:relative;padding-top:2px;">
+            <div style="padding-right:2px;">
+              <button
+                style="height:100%;"
+                v-on:click="ir_a_pagina_anterior"
+                :disabled="pagina_seleccionada === 0">◀
+              </button>
+            </div>
+            <div class="w_100">
+              <div class="vertical_layout">
+                <template v-for="componente_paginado, componente_paginado_index in componentes_paginados">
+                  <div class="horizontal_layout fila_de_boton" :data-selector="this" :data-elemento="componente_paginado">
+                    <button
+                      class="w_100"
+                      :style="componente_paginado_index !== 0 ? 'position:relative;margin-top:1px;' : ''"
+                      v-bind:key="'componente-paginado-' + componente_paginado_index"
+                      v-on:click="() => seleccionar_componente(componente_paginado)">
+                      {{ componente_paginado.nombre || componente_paginado.tag }}
+                    </button>
+                  </div>
+                </template>
+              </div>
+            </div>
+            <div style="padding-left:2px;">
+              <button
+                style="height:100%;"
+                v-on:click="ir_a_pagina_posterior"
+                :disabled="pagina_seleccionada >= paginas_totales">▶
+              </button>
+            </div>
+          </div>
+          <div style="text-align: center;padding-top:3px;">Página {{ pagina_seleccionada }} de {{ paginas_totales }}</div>
+        </div>
+      </template>
+    </div>
+  </div>
+} con lógica {
+  retorno {
+    propiedad props como {
+      opciones: {
+        propiedad type como [Array,Object].
+        propiedad required como true.
+      },
+      posicion: {
+        propiedad type como String.
+        propiedad default como "absolute".
+      },
+      seleccionados: {
+        propiedad type como Array.
+        propiedad default como [].
+      },
+      mensajeDeRelleno: {
+        propiedad type como String.
+        propiedad default como 'Buscar componente...'.
+      },
+      accesoDeComponentesSeleccionados: {
+        propiedad type como Object.
+        propiedad default como una función donde retorno {}.
+      },
+      accesorDeComponentesSeleccionados: {
+        propiedad type como String.
+        propiedad default como una función donde retorno "valor".
+      },
+      accesoDeTextoABuscar: {
+        propiedad type como Object.
+        propiedad default como una función donde retorno {}.
+      },
+      accesorDeTextoABuscar: {
+        propiedad type como String.
+        propiedad default como una función donde retorno "valor".
+      },
+      modo: {
+        propiedad type como String.
+        propiedad default como "item". ### También permite "lista"
+      },
+      desplegado: {
+        propiedad type como Boolean.
+        propiedad default como false.
+      },
+      alSeleccionar: {
+        propiedad type como Function.
+        propiedad default como una función.
+      }
+    }.
+    método data donde {
+      debugo "SelectorDeComponenteDeGuiBuilder.data".
+      retorno {
+        esta_mostrando_componentes: true,
+        texto_de_busqueda_seleccionado: "",
+        pagina_seleccionada: 0,
+        paginas_totales: 0,
+        items_por_pagina_seleccionados: 6,
+        componentes_sin_filtrar: [],
+        componentes_filtrados: [],
+        componentes_paginados: [],
+        componentes_seleccionados: cuando this.seleccionados y this.seleccionados.length entonces this.seleccionados si no undefined
+      }.
+    }.
+    método mounted donde {
+      debugo "SelectorDeComponenteDeGuiBuilder.mounted".
+      asigno this.componentes_sin_filtrar como ordenar_y_adaptar_elementos_soportados(this.opciones).
+    }.
+    propiedad methods como {
+      método cargar_componentes donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.methods.cargar_componentes".
+        asigno this.componentes_sin_filtrar como ordenar_y_adaptar_elementos_soportados(this.opciones).
+      }.
+      método esconder_componentes donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.methods.esconder_componentes".
+        asigno this.esta_mostrando_componentes como false.
+      }.
+      método buscar_entre_componentes donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.methods.buscar_entre_componentes".
+        asigno this.esta_mostrando_componentes como true.
+        hago this.cargar_componentes().
+      }.
+      método seleccionar_componente con (componente_seleccionado) donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.methods.seleccionar_componente".
+        si this.modo es igual que "item" {
+          creo id como componente_seleccionado.nombre o componente_seleccionado.tag.
+          asigno this.componentes_seleccionados como id.
+        } y si no lanzo un nuevo Error("Listas no soportadas").
+        asigno this.esta_mostrando_componentes como false.
+        hago this.$forceUpdate(true).
+      }.
+      método ir_a_pagina_anterior donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.methods.ir_a_pagina_anterior".
+        si this.pagina_seleccionada es menor o igual que 0 retorno.
+        asigno this.pagina_seleccionada como this.pagina_seleccionada - 1.
+        hago this.$forceUpdate(true).
+      }.
+      método ir_a_pagina_posterior donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.methods.ir_a_pagina_posterior".
+        si this.pagina_seleccionada es mayor que this.paginas_totales retorno.
+        asigno this.pagina_seleccionada como this.pagina_seleccionada + 1.
+        hago this.$forceUpdate(true).
+      }.
+    }.
+    propiedad watch como {
+      método esta_mostrando_componentes con (nuevo_valor) donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.watch.esta_mostrando_componentes".
+      }.
+      método texto_de_busqueda_seleccionado con (nuevo_valor) donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.watch.texto_de_busqueda_seleccionado".
+        asigno this.accesoDeTextoABuscar[this.accesorDeTextoABuscar] como nuevo_valor.
+        asigno this.pagina_seleccionada como 0.
+        hago this.buscar_entre_componentes().
+      }.
+      método pagina_seleccionada con (nuevo_valor) donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.watch.pagina_seleccionada".
+        hago this.buscar_entre_componentes().
+      }.
+      método items_por_pagina_seleccionados con (nuevo_valor) donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.watch.items_por_pagina_seleccionados".
+        hago this.buscar_entre_componentes().
+      }.
+      método componentes_sin_filtrar con (nuevo_valor) donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.watch.componentes_sin_filtrar".
+        creo texto_en_minusculas como this.texto_de_busqueda_seleccionado.toLowerCase().trim().
+        asigno this.componentes_filtrados como nuevo_valor.filter(una lambda con (item, index) donde {
+          si this.texto_de_busqueda_seleccionado.length es igual que 0 retorno true.
+          creo texto_base como (item textualizado).toLowerCase().
+          creo posicion como texto_base.indexOf(texto_en_minusculas).
+          si posicion es igual que 0-1 retorno false.
+          retorno true.
+        }).
+      }.
+      método componentes_filtrados con (nuevo_valor) donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.watch.componentes_filtrados".
+        asigno this.paginas_totales como Math.floor(this.componentes_filtrados.length / this.items_por_pagina_seleccionados).
+        creo index_inicio como this.pagina_seleccionada * this.items_por_pagina_seleccionados.
+        creo index_final como index_inicio + this.items_por_pagina_seleccionados.
+        asigno this.componentes_paginados como nuevo_valor.filter(una lambda con (item, index) donde {
+          si (index es mayor o igual que index_inicio) y (index es menor que index_final) retorno true.
+        }).
+        si this.$refs.caja_buscar_componente {
+          hago this.$nextTick(una lambda con () donde retorno this.$refs.caja_buscar_componente.focus()).
+        }.
+      }.
+      método componentes_seleccionados con (nuevo_valor) donde {
+        debugo "SelectorDeComponenteDeGuiBuilder.watch.componentes_seleccionados".
+        asigno this.accesoDeComponentesSeleccionados[this.accesorDeComponentesSeleccionados] como nuevo_valor.
+        hago this.alSeleccionar(nuevo_valor, this).
+      }.
+    }.
+  }.
+}.

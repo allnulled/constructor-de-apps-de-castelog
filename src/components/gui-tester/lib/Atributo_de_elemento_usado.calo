@@ -1,0 +1,9 @@
+asigno window.Atributo_de_elemento_usado como una clase con {
+  método constructor donde {
+    debugo "Atributo_de_elemento_usado.constructor".
+    asigno this.uuid como un texto aleatorio de 10 caracteres.
+    asigno this.clave como "".
+    asigno this.valor como "".
+    asigno this.esta_editando como false.
+  }.
+}.

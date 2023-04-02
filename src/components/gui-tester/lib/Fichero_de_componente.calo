@@ -1,0 +1,10 @@
+asigno window.Fichero_de_componente como una clase con {
+  método constructor con (componente) donde {
+    debugo "Fichero_de_componente.constructor".
+    asigno this.uuid como un texto aleatorio de 10 caracteres.
+    asigno this.nombre como componente.
+    asigno this.plantilla como [].
+    asigno this.logica como {}.
+    asigno this.estilos como "".
+  }.
+}.

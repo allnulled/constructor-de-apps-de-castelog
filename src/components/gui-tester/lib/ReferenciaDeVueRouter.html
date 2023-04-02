@@ -1,0 +1,1219 @@
+<h1 id="getting-started"><a href="#getting-started" class="header-anchor">#</a> Getting Started</h1>
+<div class="custom-block tip">
+    <p class="custom-block-title">Note</p>
+    <p>You are reading the documentation of Vue Router 3 <strong>for Vue 2</strong>. If you are working with Vue 3, use
+        the <a href="https://next.router.vuejs.org" target="_blank" rel="noopener noreferrer">Vue Router 4
+            documentation<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px"
+                    y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                    <path fill="currentColor"
+                        d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                    </path>
+                    <polygon fill="currentColor"
+                        points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                    </polygon>
+                </svg> <span class="sr-only">(opens new window)</span></span></a> instead.</p>
+    <p>We will be using <a href="https://github.com/lukehoban/es6features" target="_blank"
+            rel="noopener noreferrer">ES2015<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                    class="icon outbound">
+                    <path fill="currentColor"
+                        d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                    </path>
+                    <polygon fill="currentColor"
+                        points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                    </polygon>
+                </svg> <span class="sr-only">(opens new window)</span></span></a> in the code samples in the guide.</p>
+    <p>Also, all examples will be using the full version of Vue to make on-the-fly template compilation possible. See
+        more details <a href="https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only"
+            target="_blank" rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                    class="icon outbound">
+                    <path fill="currentColor"
+                        d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                    </path>
+                    <polygon fill="currentColor"
+                        points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                    </polygon>
+                </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+</div>
+<div class="vueschool"><a href="https://vueschool.io/courses/vue-router-for-everyone?friend=vuerouter" target="_blank"
+        rel="sponsored noopener"
+        title="Learn how to build powerful Single Page Applications with the Vue Router on Vue School">Watch a free
+        video course about Vue Router on Vue School</a></div>
+<p>Creating a Single-page Application with Vue + Vue Router feels natural: with Vue.js, we are already composing our
+    application with components. When adding Vue Router to the mix, all we need to do is map our components to the
+    routes and let Vue Router know where to render them. Here's a basic example:</p>
+<h2 id="html"><a href="#html" class="header-anchor">#</a> HTML</h2>
+<div class="language-html extra-class">
+    <pre
+        class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/vue@2/dist/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/vue-router@3/dist/vue-router.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Hello App!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- use router-link component for navigation. --&gt;</span> <span class="token comment">&lt;!-- specify the link by passing the `to` prop. --&gt;</span> <span class="token comment">&lt;!-- `&lt;router-link&gt;` will be rendered as an `&lt;a&gt;` tag by default --&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-link</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/foo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Go to Foo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-link</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-link</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/bar<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Go to Bar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-link</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- route outlet --&gt;</span> <span class="token comment">&lt;!-- component matched by the route will render here --&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-view</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<h2 id="javascript"><a href="#javascript" class="header-anchor">#</a> JavaScript</h2>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token comment">// 0. If using a module system (e.g. via vue-cli), import Vue and VueRouter</span> <span class="token comment">// and then call `Vue.use(VueRouter)`.</span> <span class="token comment">// 1. Define route components.</span> <span class="token comment">// These can be imported from other files</span> <span class="token keyword">const</span> Foo <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'&lt;div&gt;foo&lt;/div&gt;'</span> <span class="token punctuation">}</span> <span class="token keyword">const</span> Bar <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'&lt;div&gt;bar&lt;/div&gt;'</span> <span class="token punctuation">}</span> <span class="token comment">// 2. Define some routes</span> <span class="token comment">// Each route should map to a component. The "component" can</span> <span class="token comment">// either be an actual component constructor created via</span> <span class="token comment">// `Vue.extend()`, or just a component options object.</span> <span class="token comment">// We'll talk about nested routes later.</span> <span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> Foo <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/bar'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> Bar <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token comment">// 3. Create the router instance and pass the `routes` option</span> <span class="token comment">// You can pass in additional options here, but let's</span> <span class="token comment">// keep it simple for now.</span> <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> routes <span class="token comment">// short for `routes: routes`</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// 4. Create and mount the root instance.</span> <span class="token comment">// Make sure to inject the router with the router option to make the</span> <span class="token comment">// whole app router-aware.</span> <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span> router <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span> <span class="token comment">// Now the app has started!</span> </code></pre>
+</div>
+<p>By injecting the router, we get access to it as <code>this.$router</code> as well as the current route as
+    <code>this.$route</code> inside of any component:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token comment">// Home.vue</span> <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span> <span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token function">username</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// We will see what `params` is shortly</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>params<span class="token punctuation">.</span>username <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token function">goBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> window<span class="token punctuation">.</span>history<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>Throughout the docs, we will often use the <code>router</code> instance. Keep in mind that <code>this.$router</code>
+    is exactly the same as using <code>router</code>. The reason we use <code>this.$router</code> is because we don't
+    want to import the router in every single component that needs to manipulate routing.</p>
+<p>You can also check out this example <a href="https://jsfiddle.net/yyx990803/xgrjzsup/" target="_blank"
+        rel="noopener noreferrer">live<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+<p>Notice that a <code>&lt;router-link&gt;</code> automatically gets the <code>.router-link-active</code> class when its
+    target route is matched. You can learn more about it in its <a href="/api/#router-link" class="">API reference</a>.
+</p>
+
+<h1 id="dynamic-route-matching"><a href="#dynamic-route-matching" class="header-anchor">#</a> Dynamic Route Matching
+</h1>
+<div class="vueschool"><a href="https://vueschool.io/lessons/vue-router-dynamic-routes?friend=vuerouter" target="_blank"
+        rel="sponsored noopener" title="Learn how to match dynamic routes with Vue School">Learn how to match dynamic
+        routes with a free lesson on Vue School</a></div>
+<p>Very often we will need to map routes with the given pattern to the same component. For example we may have a
+    <code>User</code> component which should be rendered for all users but with different user IDs. In
+    <code>vue-router</code> we can use a dynamic segment in the path to achieve that:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> User <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'&lt;div&gt;User&lt;/div&gt;'</span> <span class="token punctuation">}</span> <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token comment">// dynamic segments start with a colon</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/user/:id'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> User <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>Now URLs like <code>/user/foo</code> and <code>/user/bar</code> will both map to the same route.</p>
+<p>A dynamic segment is denoted by a colon <code>:</code>. When a route is matched, the value of the dynamic segments
+    will be exposed as <code>this.$route.params</code> in every component. Therefore, we can render the current user ID
+    by updating <code>User</code>'s template to this:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> User <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'&lt;div&gt;User {{ $route.params.id }}&lt;/div&gt;'</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>You can check out a live example <a href="https://jsfiddle.net/yyx990803/4xfa2f19/" target="_blank"
+        rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+<p>You can have multiple dynamic segments in the same route, and they will map to corresponding fields on
+    <code>$route.params</code>. Examples:</p>
+<table>
+    <thead>
+        <tr>
+            <th>pattern</th>
+            <th>matched path</th>
+            <th>$route.params</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>/user/:username</td>
+            <td>/user/evan</td>
+            <td><code>{ username: 'evan' }</code></td>
+        </tr>
+        <tr>
+            <td>/user/:username/post/:post_id</td>
+            <td>/user/evan/post/123</td>
+            <td><code>{ username: 'evan', post_id: '123' }</code></td>
+        </tr>
+    </tbody>
+</table>
+<p>In addition to <code>$route.params</code>, the <code>$route</code> object also exposes other useful information such
+    as <code>$route.query</code> (if there is a query in the URL), <code>$route.hash</code>, etc. You can check out the
+    full details in the <a href="/api/#the-route-object" class="">API Reference</a>.</p>
+<h2 id="reacting-to-params-changes"><a href="#reacting-to-params-changes" class="header-anchor">#</a> Reacting to Params
+    Changes</h2>
+<p>One thing to note when using routes with params is that when the user navigates from <code>/user/foo</code> to
+    <code>/user/bar</code>, <strong>the same component instance will be reused</strong>. Since both routes render the
+    same component, this is more efficient than destroying the old instance and then creating a new one.
+    <strong>However, this also means that the lifecycle hooks of the component will not be called</strong>.</p>
+<p>To react to params changes in the same component, you can simply watch the <code>$route</code> object:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> User <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'...'</span><span class="token punctuation">,</span> <span class="token literal-property property">watch</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token function">$route</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// react to route changes...</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>Or, use the <code>beforeRouteUpdate</code> <a href="/guide/advanced/navigation-guards.html" class="">navigation
+        guard</a> introduced in 2.2:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> User <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'...'</span><span class="token punctuation">,</span> <span class="token function">beforeRouteUpdate</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// react to route changes...</span> <span class="token comment">// don't forget to call next()</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<h2 id="catch-all-404-not-found-route"><a href="#catch-all-404-not-found-route" class="header-anchor">#</a> Catch all /
+    404 Not found Route</h2>
+<p>Regular params will only match characters in between url fragments, separated by <code>/</code>. If we want to match
+    <strong>anything</strong>, we can use the asterisk (<code>*</code>):</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token punctuation">{</span> <span class="token comment">// will match everything</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'*'</span> <span class="token punctuation">}</span> <span class="token punctuation">{</span> <span class="token comment">// will match anything starting with `/user-`</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/user-*'</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>When using <em>asterisk</em> routes, make sure to correctly order your routes so that <em>asterisk</em> ones are at
+    the end. The route <code>{ path: '*' }</code> is usually used to 404 client side. If you are using <em>History
+        mode</em>, make sure to <a href="/guide/essentials/history-mode.html" class="">correctly configure your
+        server</a> as well.</p>
+<p>When using an <em>asterisk</em>, a param named <code>pathMatch</code> is automatically added to
+    <code>$route.params</code>. It contains the rest of the url matched by the <em>asterisk</em>:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token comment">// Given a route { path: '/user-*' }</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/user-admin'</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>params<span class="token punctuation">.</span>pathMatch <span class="token comment">// 'admin'</span> <span class="token comment">// Given a route { path: '*' }</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/non-existing'</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>params<span class="token punctuation">.</span>pathMatch <span class="token comment">// '/non-existing'</span> </code></pre>
+</div>
+<h2 id="advanced-matching-patterns"><a href="#advanced-matching-patterns" class="header-anchor">#</a> Advanced Matching
+    Patterns</h2>
+<p><code>vue-router</code> uses <a href="https://github.com/pillarjs/path-to-regexp/tree/v1.7.0" target="_blank"
+        rel="noopener noreferrer">path-to-regexp<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a> as its path matching engine, so it
+    supports many advanced matching patterns such as optional dynamic segments, zero or more / one or more requirements,
+    and even custom regex patterns. Check out its <a
+        href="https://github.com/pillarjs/path-to-regexp/tree/v1.7.0#parameters" target="_blank"
+        rel="noopener noreferrer">documentation<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a> for these advanced patterns, and <a
+        href="https://github.com/vuejs/vue-router/blob/dev/examples/route-matching/app.js" target="_blank"
+        rel="noopener noreferrer">this example<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a> of using them in <code>vue-router</code>.
+</p>
+<h2 id="matching-priority"><a href="#matching-priority" class="header-anchor">#</a> Matching Priority</h2>
+<p>Sometimes the same URL may be matched by multiple routes. In such a case the matching priority is determined by the
+    order of route definition: the earlier a route is defined, the higher priority it gets.</p>
+
+    <h1 id="nested-routes"><a href="#nested-routes" class="header-anchor">#</a> Nested Routes</h1>
+    <div class="vueschool"><a href="https://vueschool.io/lessons/vue-router-nested-routes?friend=vuerouter" target="_blank"
+            rel="sponsored noopener" title="Learn how to work with nested routes with Vue School">Learn how to work with
+            nested routes with a free lesson on Vue School</a></div>
+    <p>Real app UIs are usually composed of components that are nested multiple levels deep. It is also very common that the
+        segments of a URL corresponds to a certain structure of nested components, for example:</p>
+    <div class="language- extra-class">
+        <pre
+            class="language-text"><code>/user/foo/profile /user/foo/posts +------------------+ +-----------------+ | User | | User | | +--------------+ | | +-------------+ | | | Profile | | +------------&gt; | | Posts | | | | | | | | | | | +--------------+ | | +-------------+ | +------------------+ +-----------------+ </code></pre>
+    </div>
+    <p>With <code>vue-router</code>, it is very simple to express this relationship using nested route configurations.</p>
+    <p>Given the app we created in the last chapter:</p>
+    <div class="language-html extra-class">
+        <pre
+            class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-view</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> </code></pre>
+    </div>
+    <div class="language-js extra-class">
+        <pre
+            class="language-js"><code><span class="token keyword">const</span> User <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'&lt;div&gt;User {{ $route.params.id }}&lt;/div&gt;'</span> <span class="token punctuation">}</span> <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/user/:id'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> User <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+    </div>
+    <p>The <code>&lt;router-view&gt;</code> here is a top-level outlet. It renders the component matched by a top level
+        route. Similarly, a rendered component can also contain its own, nested <code>&lt;router-view&gt;</code>. For
+        example, if we add one inside the <code>User</code> component's template:</p>
+    <div class="language-js extra-class">
+        <pre
+            class="language-js"><code><span class="token keyword">const</span> User <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> &lt;div class="user"&gt; &lt;h2&gt;User {{ $route.params.id }}&lt;/h2&gt; &lt;router-view&gt;&lt;/router-view&gt; &lt;/div&gt; </span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span> </code></pre>
+    </div>
+    <p>To render components into this nested outlet, we need to use the <code>children</code> option in
+        <code>VueRouter</code> constructor config:</p>
+    <div class="language-js extra-class">
+        <pre
+            class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/user/:id'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> User<span class="token punctuation">,</span> <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token comment">// UserProfile will be rendered inside User's &lt;router-view&gt;</span> <span class="token comment">// when /user/:id/profile is matched</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'profile'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> UserProfile <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment">// UserPosts will be rendered inside User's &lt;router-view&gt;</span> <span class="token comment">// when /user/:id/posts is matched</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'posts'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> UserPosts <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+    </div>
+    <p><strong>Note that nested paths that start with <code>/</code> will be treated as a root path. This allows you to
+            leverage the component nesting without having to use a nested URL.</strong></p>
+    <p>As you can see the <code>children</code> option is just another Array of route configuration objects like
+        <code>routes</code> itself. Therefore, you can keep nesting views as much as you need.</p>
+    <p>At this point, with the above configuration, when you visit <code>/user/foo</code>, nothing will be rendered inside
+        <code>User</code>'s outlet, because no sub route is matched. Maybe you do want to render something there. In such
+        case you can provide an empty subroute path:</p>
+    <div class="language-js extra-class">
+        <pre
+            class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/user/:id'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> User<span class="token punctuation">,</span> <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token comment">// UserHome will be rendered inside User's &lt;router-view&gt;</span> <span class="token comment">// when /user/:id is matched</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> UserHome <span class="token punctuation">}</span> <span class="token comment">// ...other sub routes</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+    </div>
+    <p>A working demo of this example can be found <a href="https://jsfiddle.net/yyx990803/L7hscd8h/" target="_blank"
+            rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                    x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                    <path fill="currentColor"
+                        d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                    </path>
+                    <polygon fill="currentColor"
+                        points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                    </polygon>
+                </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+
+<h1 id="programmatic-navigation"><a href="#programmatic-navigation" class="header-anchor">#</a> Programmatic Navigation
+</h1>
+<p>Aside from using <code>&lt;router-link&gt;</code> to create anchor tags for declarative navigation, we can do this
+    programmatically using the router's instance methods.</p>
+<h2 id="router-push-location-oncomplete-onabort"><a href="#router-push-location-oncomplete-onabort"
+        class="header-anchor">#</a> <code>router.push(location, onComplete?, onAbort?)</code></h2>
+<p><strong>Note: Inside of a Vue instance, you have access to the router instance as <code>$router</code>. You can
+        therefore call <code>this.$router.push</code>.</strong></p>
+<p>To navigate to a different URL, use <code>router.push</code>. This method pushes a new entry into the history stack,
+    so when the user clicks the browser back button they will be taken to the previous URL.</p>
+<p>This is the method called internally when you click a <code>&lt;router-link&gt;</code>, so clicking
+    <code>&lt;router-link :to="..."&gt;</code> is the equivalent of calling <code>router.push(...)</code>.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Declarative</th>
+            <th>Programmatic</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>&lt;router-link :to="..."&gt;</code></td>
+            <td><code>router.push(...)</code></td>
+        </tr>
+    </tbody>
+</table>
+<p>The argument can be a string path, or a location descriptor object. Examples:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token comment">// literal string path</span> router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">)</span> <span class="token comment">// object</span> router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'home'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// named route</span> router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span> <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">userId</span><span class="token operator">:</span> <span class="token string">'123'</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// with query, resulting in /register?plan=private</span> router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'register'</span><span class="token punctuation">,</span> <span class="token literal-property property">query</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">plan</span><span class="token operator">:</span> <span class="token string">'private'</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p><strong>Note</strong>: <code>params</code> are ignored if a <code>path</code> is provided, which is not the case for
+    <code>query</code>, as shown in the example above. Instead, you need to provide the <code>name</code> of the route
+    or manually specify the whole <code>path</code> with any parameter:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> userId <span class="token operator">=</span> <span class="token string">'123'</span> router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span> <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">{</span> userId <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; /user/123</span> router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/user/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>userId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; /user/123</span> <span class="token comment">// This will NOT work</span> router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/user'</span><span class="token punctuation">,</span> <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">{</span> userId <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; /user</span> </code></pre>
+</div>
+<p>The same rules apply for the <code>to</code> property of the <code>router-link</code> component.</p>
+<p>In 2.2.0+, optionally provide <code>onComplete</code> and <code>onAbort</code> callbacks to <code>router.push</code>
+    or <code>router.replace</code> as the 2nd and 3rd arguments. These callbacks will be called when the navigation
+    either successfully completed (after all async hooks are resolved), or aborted (navigated to the same route, or to a
+    different route before current navigation has finished), respectively. In 3.1.0+, you can omit the 2nd and 3rd
+    parameter and <code>router.push</code>/<code>router.replace</code> will return a promise instead if Promises are
+    supported.</p>
+<p><strong>Note:</strong> If the destination is the same as the current route and only params are changing (e.g. going
+    from one profile to another <code>/users/1</code> -&gt; <code>/users/2</code>), you will have to use <a
+        href="/guide/essentials/dynamic-matching.html#reacting-to-params-changes"
+        class=""><code>beforeRouteUpdate</code></a> to react to changes (e.g. fetching the user information).</p>
+<h2 id="router-replace-location-oncomplete-onabort"><a href="#router-replace-location-oncomplete-onabort"
+        class="header-anchor">#</a> <code>router.replace(location, onComplete?, onAbort?)</code></h2>
+<p>It acts like <code>router.push</code>, the only difference is that it navigates without pushing a new history entry,
+    as its name suggests - it replaces the current entry.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Declarative</th>
+            <th>Programmatic</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>&lt;router-link :to="..." replace&gt;</code></td>
+            <td><code>router.replace(...)</code></td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="router-go-n"><a href="#router-go-n" class="header-anchor">#</a> <code>router.go(n)</code></h2>
+<p>This method takes a single integer as parameter that indicates by how many steps to go forwards or go backwards in
+    the history stack, similar to <code>window.history.go(n)</code>.</p>
+<p>Examples</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token comment">// go forward by one record, the same as history.forward()</span> router<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// go back by one record, the same as history.back()</span> router<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// go forward by 3 records</span> router<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment">// fails silently if there aren't that many records.</span> router<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">)</span> router<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<h2 id="history-manipulation"><a href="#history-manipulation" class="header-anchor">#</a> History Manipulation</h2>
+<p>You may have noticed that <code>router.push</code>, <code>router.replace</code> and <code>router.go</code> are
+    counterparts of <a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank"
+        rel="noopener noreferrer"><code>window.history.pushState</code>, <code>window.history.replaceState</code> and
+        <code>window.history.go</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>, and they do imitate the
+    <code>window.history</code> APIs.</p>
+<p>Therefore, if you are already familiar with <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API"
+        target="_blank" rel="noopener noreferrer">Browser History APIs<span><svg xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>, manipulating history will be super easy
+    with Vue Router.</p>
+<p>It is worth mentioning that Vue Router navigation methods (<code>push</code>, <code>replace</code>, <code>go</code>)
+    work consistently in all router modes (<code>history</code>, <code>hash</code> and <code>abstract</code>).</p>
+
+<h1 id="named-routes"><a href="#named-routes" class="header-anchor">#</a> Named Routes</h1>
+<div class="vueschool"><a href="https://vueschool.io/lessons/vue-router-named-routes-and-params?friend=vuerouter"
+        target="_blank" rel="sponsored noopener"
+        title="Learn how to work with named routes and params with Vue School">Learn how to use named routes and params
+        with a free lesson on Vue School</a></div>
+<p>Sometimes it is more convenient to identify a route with a name, especially when linking to a route or performing
+    navigations. You can give a route a name in the <code>routes</code> options while creating the Router instance:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/user/:userId'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> User <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>To link to a named route, you can pass an object to the <code>router-link</code> component's <code>to</code> prop:
+</p>
+<div class="language-html extra-class">
+    <pre
+        class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-link</span> <span class="token attr-name">:to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ name: <span class="token punctuation">'</span>user<span class="token punctuation">'</span>, params: { userId: 123 }}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>User<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-link</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<p>This is the exact same object used programmatically with <code>router.push()</code>:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code>router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span> <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">userId</span><span class="token operator">:</span> <span class="token number">123</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>In both cases, the router will navigate to the path <code>/user/123</code>.</p>
+<p>Full example <a href="https://github.com/vuejs/vue-router/blob/dev/examples/named-routes/app.js" target="_blank"
+        rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+
+<h1 id="named-views"><a href="#named-views" class="header-anchor">#</a> Named Views</h1>
+<p>Sometimes you need to display multiple views at the same time instead of nesting them, e.g. creating a layout with a
+    <code>sidebar</code> view and a <code>main</code> view. This is where named views come in handy. Instead of having
+    one single outlet in your view, you can have multiple and give each of them a name. A <code>router-view</code>
+    without a name will be given <code>default</code> as its name.</p>
+<div class="language-html extra-class">
+    <pre
+        class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>view one<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-view</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>view two<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>a<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-view</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>view three<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-view</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<p>A view is rendered by using a component, therefore multiple views require multiple components for the same route.
+    Make sure to use the <code>components</code> (with an s) option:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token keyword">default</span><span class="token operator">:</span> Foo<span class="token punctuation">,</span> <span class="token literal-property property">a</span><span class="token operator">:</span> Bar<span class="token punctuation">,</span> <span class="token literal-property property">b</span><span class="token operator">:</span> Baz <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>A working demo of this example can be found <a href="https://jsfiddle.net/posva/6du90epg/" target="_blank"
+        rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+<h2 id="nested-named-views"><a href="#nested-named-views" class="header-anchor">#</a> Nested Named Views</h2>
+<p>It is possible to create complex layouts using named views with nested views. When doing so, you will also need to
+    name nested <code>router-view</code> components used. Let's take a Settings panel example:</p>
+<div class="language- extra-class">
+    <pre
+        class="language-text"><code>/settings/emails /settings/profile +-----------------------------------+ +------------------------------+ | UserSettings | | UserSettings | | +-----+-------------------------+ | | +-----+--------------------+ | | | Nav | UserEmailsSubscriptions | | +------------&gt; | | Nav | UserProfile | | | | +-------------------------+ | | | +--------------------+ | | | | | | | | | UserProfilePreview | | | +-----+-------------------------+ | | +-----+--------------------+ | +-----------------------------------+ +------------------------------+ </code></pre>
+</div>
+<ul>
+    <li><code>Nav</code> is just a regular component</li>
+    <li><code>UserSettings</code> is the view component</li>
+    <li><code>UserEmailsSubscriptions</code>, <code>UserProfile</code>, <code>UserProfilePreview</code> are nested view
+        components</li>
+</ul>
+<p><strong>Note</strong>: <em>Let's forget about how the HTML/CSS should look like to represent such layout and focus on
+        the components used.</em></p>
+<p>The <code>&lt;template&gt;</code> section for <code>UserSettings</code> component in the above layout would look
+    something like this:</p>
+<div class="language-html extra-class">
+    <pre
+        class="language-html"><code><span class="token comment">&lt;!-- UserSettings.vue --&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>User Settings<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>NavBar</span><span class="token punctuation">/&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span><span class="token punctuation">/&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>helper<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<p><em>The nested view components are omitted here but you can find the complete source code for the example above <a
+            href="https://jsfiddle.net/posva/22wgksa3/" target="_blank" rel="noopener noreferrer">here<span><svg
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px"
+                    viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                    <path fill="currentColor"
+                        d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                    </path>
+                    <polygon fill="currentColor"
+                        points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                    </polygon>
+                </svg> <span class="sr-only">(opens new window)</span></span></a>.</em></p>
+<p>Then you can achieve the layout above with this route configuration:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/settings'</span><span class="token punctuation">,</span> <span class="token comment">// You could also have named views at the top</span> <span class="token literal-property property">component</span><span class="token operator">:</span> UserSettings<span class="token punctuation">,</span> <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'emails'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> UserEmailsSubscriptions <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'profile'</span><span class="token punctuation">,</span> <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token keyword">default</span><span class="token operator">:</span> UserProfile<span class="token punctuation">,</span> <span class="token literal-property property">helper</span><span class="token operator">:</span> UserProfilePreview <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>A working demo of this example can be found <a href="https://jsfiddle.net/posva/22wgksa3/" target="_blank"
+        rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+
+<h1 id="redirect-and-alias"><a href="#redirect-and-alias" class="header-anchor">#</a> Redirect and Alias</h1>
+<h2 id="redirect"><a href="#redirect" class="header-anchor">#</a> Redirect</h2>
+<p>Redirecting is also done in the <code>routes</code> configuration. To redirect from <code>/a</code> to
+    <code>/b</code>:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/a'</span><span class="token punctuation">,</span> <span class="token literal-property property">redirect</span><span class="token operator">:</span> <span class="token string">'/b'</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>The redirect can also be targeting a named route:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/a'</span><span class="token punctuation">,</span> <span class="token literal-property property">redirect</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'foo'</span> <span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>Or even use a function for dynamic redirecting:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/a'</span><span class="token punctuation">,</span> <span class="token function-variable function">redirect</span><span class="token operator">:</span> <span class="token parameter">to</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// the function receives the target route as the argument</span> <span class="token comment">// return redirect path/location here.</span> <span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>Note that <a href="/guide/advanced/navigation-guards.html" class="">Navigation Guards</a> are not applied on the
+    route that redirects, only on its target. In the example below, adding a <code>beforeEnter</code> guard to the
+    <code>/a</code> route would not have any effect.</p>
+<p>For other advanced usage, checkout the <a
+        href="https://github.com/vuejs/vue-router/blob/dev/examples/redirect/app.js" target="_blank"
+        rel="noopener noreferrer">example<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+<h2 id="alias"><a href="#alias" class="header-anchor">#</a> Alias</h2>
+<p>A redirect means when the user visits <code>/a</code>, the URL will be replaced by <code>/b</code>, and then matched
+    as <code>/b</code>. But what is an alias?</p>
+<p><strong>An alias of <code>/a</code> as <code>/b</code> means when the user visits <code>/b</code>, the URL remains
+        <code>/b</code>, but it will be matched as if the user is visiting <code>/a</code>.</strong></p>
+<p>The above can be expressed in the route configuration as:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/a'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> <span class="token constant">A</span><span class="token punctuation">,</span> <span class="token literal-property property">alias</span><span class="token operator">:</span> <span class="token string">'/b'</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>An alias gives you the freedom to map a UI structure to an arbitrary URL, instead of being constrained by the
+    configuration's nesting structure.</p>
+<p>For advanced usage, check out the <a href="https://github.com/vuejs/vue-router/blob/dev/examples/route-alias/app.js"
+        target="_blank" rel="noopener noreferrer">example<span><svg xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+
+<h1 id="passing-props-to-route-components"><a href="#passing-props-to-route-components" class="header-anchor">#</a>
+    Passing Props to Route Components</h1>
+<div class="vueschool"><a
+        href="https://vueschool.io/lessons/how-to-pass-vue-router-params-as-props-to-components?friend=vuerouter"
+        target="_blank" rel="sponsored noopener"
+        title="Learn how to pass props to route components with Vue School">Learn how to pass props to route components
+        with a free lesson on Vue School</a></div>
+<p>Using <code>$route</code> in your component creates a tight coupling with the route which limits the flexibility of
+    the component as it can only be used on certain URLs.</p>
+<p>To decouple this component from the router use option <code>props</code>:</p>
+<p><strong>Instead of coupling to <code>$route</code>:</strong></p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> User <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'&lt;div&gt;User {{ $route.params.id }}&lt;/div&gt;'</span> <span class="token punctuation">}</span> <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/user/:id'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> User <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p><strong>Decouple it by using <code>props</code></strong></p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> User <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'&lt;div&gt;User {{ id }}&lt;/div&gt;'</span> <span class="token punctuation">}</span> <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/user/:id'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> User<span class="token punctuation">,</span> <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">// for routes with named views, you have to define the `props` option for each named view:</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/user/:id'</span><span class="token punctuation">,</span> <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token keyword">default</span><span class="token operator">:</span> User<span class="token punctuation">,</span> <span class="token literal-property property">sidebar</span><span class="token operator">:</span> Sidebar <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// function mode, more about it below</span> <span class="token function-variable function">sidebar</span><span class="token operator">:</span> <span class="token parameter">route</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">search</span><span class="token operator">:</span> route<span class="token punctuation">.</span>query<span class="token punctuation">.</span>q <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>This allows you to use the component anywhere, which makes the component easier to reuse and test.</p>
+<h2 id="boolean-mode"><a href="#boolean-mode" class="header-anchor">#</a> Boolean mode</h2>
+<p>When <code>props</code> is set to <code>true</code>, the <code>route.params</code> will be set as the component
+    props.</p>
+<h2 id="object-mode"><a href="#object-mode" class="header-anchor">#</a> Object mode</h2>
+<p>When <code>props</code> is an object, this will be set as the component props as-is. Useful for when the props are
+    static.</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/promotion/from-newsletter'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> Promotion<span class="token punctuation">,</span> <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">newsletterPopup</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<h2 id="function-mode"><a href="#function-mode" class="header-anchor">#</a> Function mode</h2>
+<p>You can create a function that returns props. This allows you to cast parameters into other types, combine static
+    values with route-based values, etc.</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/search'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> SearchUser<span class="token punctuation">,</span> <span class="token function-variable function">props</span><span class="token operator">:</span> <span class="token parameter">route</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">query</span><span class="token operator">:</span> route<span class="token punctuation">.</span>query<span class="token punctuation">.</span>q <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>The URL <code>/search?q=vue</code> would pass <code>{query: 'vue'}</code> as props to the <code>SearchUser</code>
+    component.</p>
+<p>Try to keep the <code>props</code> function stateless, as it's only evaluated on route changes. Use a wrapper
+    component if you need state to define the props, that way vue can react to state changes.</p>
+<p>For advanced usage, check out the <a href="https://github.com/vuejs/vue-router/blob/dev/examples/route-props/app.js"
+        target="_blank" rel="noopener noreferrer">example<span><svg xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+
+<h1 id="html5-history-mode"><a href="#html5-history-mode" class="header-anchor">#</a> HTML5 History Mode</h1>
+<p>The default mode for <code>vue-router</code> is <em>hash mode</em> - it uses the URL hash to simulate a full URL so
+    that the page won't be reloaded when the URL changes.</p>
+<p>To get rid of the hash, we can use the router's <strong>history mode</strong>, which leverages the
+    <code>history.pushState</code> API to achieve URL navigation without a page reload:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'history'</span><span class="token punctuation">,</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>When using history mode, the URL will look "normal," e.g. <code>http://oursite.com/user/id</code>. Beautiful!</p>
+<p>Here comes a problem, though: Since our app is a single page client side app, without a proper server configuration,
+    the users will get a 404 error if they access <code>http://oursite.com/user/id</code> directly in their browser. Now
+    that's ugly.</p>
+<p>Not to worry: To fix the issue, all you need to do is add a simple catch-all fallback route to your server. If the
+    URL doesn't match any static assets, it should serve the same <code>index.html</code> page that your app lives in.
+    Beautiful, again!</p>
+<h2 id="example-server-configurations"><a href="#example-server-configurations" class="header-anchor">#</a> Example
+    Server Configurations</h2>
+<p><strong>Note</strong>: The following examples assume you are serving your app from the root folder. If you deploy to
+    a subfolder, you should use <a href="https://cli.vuejs.org/config/#publicpath" target="_blank"
+        rel="noopener noreferrer">the <code>publicPath</code> option of Vue CLI<span><svg
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px"
+                viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a> and the related <a
+        href="https://router.vuejs.org/api/#base" target="_blank" rel="noopener noreferrer"><code>base</code> property
+        of the router<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px"
+                viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>. You also need to adjust the examples
+    below to use the subfolder instead of the root folder (e.g. replacing <code>RewriteBase /</code> with
+    <code>RewriteBase /name-of-your-subfolder/</code>).</p>
+<h4 id="apache"><a href="#apache" class="header-anchor">#</a> Apache</h4>
+<div class="language-apache extra-class">
+    <pre
+        class="language-text"><code>&lt;IfModule mod_negotiation.c&gt; Options -MultiViews &lt;/IfModule&gt; &lt;IfModule mod_rewrite.c&gt; RewriteEngine On RewriteBase / RewriteRule ^index\.html$ - [L] RewriteCond %{REQUEST_FILENAME} !-f RewriteCond %{REQUEST_FILENAME} !-d RewriteRule . /index.html [L] &lt;/IfModule&gt; </code></pre>
+</div>
+<p>Instead of <code>mod_rewrite</code>, you could also use <a
+        href="https://httpd.apache.org/docs/2.2/mod/mod_dir.html#fallbackresource" target="_blank"
+        rel="noopener noreferrer"><code>FallbackResource</code><span><svg xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+<h4 id="nginx"><a href="#nginx" class="header-anchor">#</a> nginx</h4>
+<div class="language-nginx extra-class">
+    <pre
+        class="language-nginx"><code><span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span> <span class="token directive"><span class="token keyword">try_files</span> <span class="token variable">$uri</span> <span class="token variable">$uri</span>/ /index.html</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<h4 id="native-node-js"><a href="#native-node-js" class="header-anchor">#</a> Native Node.js</h4>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span> <span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span> <span class="token keyword">const</span> httpPort <span class="token operator">=</span> <span class="token number">80</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> content</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'We cannot open "index.html" file.'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string-property property">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'text/html; charset=utf-8'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>httpPort<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Server listening on: http://localhost:%s'</span><span class="token punctuation">,</span> httpPort<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<h4 id="express-with-node-js"><a href="#express-with-node-js" class="header-anchor">#</a> Express with Node.js</h4>
+<p>For Node.js/Express, consider using <a href="https://github.com/bripkens/connect-history-api-fallback"
+        target="_blank" rel="noopener noreferrer">connect-history-api-fallback middleware<span><svg
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px"
+                viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+<h4 id="internet-information-services-iis"><a href="#internet-information-services-iis" class="header-anchor">#</a>
+    Internet Information Services (IIS)</h4>
+<ol>
+    <li>Install <a href="https://www.iis.net/downloads/microsoft/url-rewrite" target="_blank"
+            rel="noopener noreferrer">IIS UrlRewrite<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                    class="icon outbound">
+                    <path fill="currentColor"
+                        d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                    </path>
+                    <polygon fill="currentColor"
+                        points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                    </polygon>
+                </svg> <span class="sr-only">(opens new window)</span></span></a></li>
+    <li>Create a <code>web.config</code> file in the root directory of your site with the following:</li>
+</ol>
+<div class="language-xml extra-class">
+    <pre
+        class="language-xml"><code><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>system.webServer</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rewrite</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rules</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rule</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Handle History Mode and custom 404/500<span class="token punctuation">"</span></span> <span class="token attr-name">stopProcessing</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>match</span> <span class="token attr-name">url</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(.*)<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>conditions</span> <span class="token attr-name">logicalGrouping</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MatchAll<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>add</span> <span class="token attr-name">input</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{REQUEST_FILENAME}<span class="token punctuation">"</span></span> <span class="token attr-name">matchType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IsFile<span class="token punctuation">"</span></span> <span class="token attr-name">negate</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>add</span> <span class="token attr-name">input</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{REQUEST_FILENAME}<span class="token punctuation">"</span></span> <span class="token attr-name">matchType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IsDirectory<span class="token punctuation">"</span></span> <span class="token attr-name">negate</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>conditions</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Rewrite<span class="token punctuation">"</span></span> <span class="token attr-name">url</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rule</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rules</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rewrite</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>system.webServer</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<h4 id="caddy-v2"><a href="#caddy-v2" class="header-anchor">#</a> Caddy v2</h4>
+<div class="language- extra-class">
+    <pre class="language-text"><code>try_files {path} / </code></pre>
+</div>
+<h4 id="caddy-v1"><a href="#caddy-v1" class="header-anchor">#</a> Caddy v1</h4>
+<div class="language- extra-class">
+    <pre class="language-text"><code>rewrite { regexp .* to {path} / } </code></pre>
+</div>
+<h4 id="firebase-hosting"><a href="#firebase-hosting" class="header-anchor">#</a> Firebase hosting</h4>
+<p>Add this to your <code>firebase.json</code>:</p>
+<div class="language- extra-class">
+    <pre
+        class="language-text"><code>{ "hosting": { "public": "dist", "rewrites": [ { "source": "**", "destination": "/index.html" } ] } } </code></pre>
+</div>
+<h2 id="caveat"><a href="#caveat" class="header-anchor">#</a> Caveat</h2>
+<p>There is a caveat to this: Your server will no longer report 404 errors as all not-found paths now serve up your
+    <code>index.html</code> file. To get around the issue, you should implement a catch-all route within your Vue app to
+    show a 404 page:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'history'</span><span class="token punctuation">,</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/:catchAll(.*)'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> NotFoundComponent<span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'NotFound'</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>Alternatively, if you are using a Node.js server, you can implement the fallback by using the router on the server
+    side to match the incoming URL and respond with 404 if no route is matched. Check out the <a
+        href="https://ssr.vuejs.org/en/" target="_blank" rel="noopener noreferrer">Vue server side rendering
+        documentation<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px"
+                viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a> for more information.</p>
+
+<h1 id="navigation-guards"><a href="#navigation-guards" class="header-anchor">#</a> Navigation Guards</h1>
+<p>As the name suggests, the navigation guards provided by <code>vue-router</code> are primarily used to guard
+    navigations either by redirecting it or canceling it. There are a number of ways to hook into the route navigation
+    process: globally, per-route, or in-component.</p>
+<p>Remember that <strong>params or query changes won't trigger enter/leave navigation guards</strong>. You can either <a
+        href="/guide/essentials/dynamic-matching.html#reacting-to-params-changes" class="">watch the <code>$route</code>
+        object</a> to react to those changes, or use the <code>beforeRouteUpdate</code> in-component guard.</p>
+<h2 id="global-before-guards"><a href="#global-before-guards" class="header-anchor">#</a> Global Before Guards</h2>
+<div class="vueschool"><a
+        href="https://vueschool.io/lessons/how-to-configure-an-authentication-middleware-route-guard-with-vue-router?friend=vuerouter"
+        target="_blank" rel="sponsored noopener"
+        title="Learn how to create an authentication middleware with a global route guard on Vue School">Learn how
+        navigation guards works with a free lesson on Vue School</a></div>
+<p>You can register global before guards using <code>router.beforeEach</code>:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// ...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>Global before guards are called in creation order, whenever a navigation is triggered. Guards may be resolved
+    asynchronously, and the navigation is considered <strong>pending</strong> before all hooks have been resolved.</p>
+<p>Every guard function receives three arguments:</p>
+<ul>
+    <li>
+        <p><strong><code>to: Route</code></strong>: the target <a href="/api/#the-route-object" class="">Route
+                Object</a> being navigated to.</p>
+    </li>
+    <li>
+        <p><strong><code>from: Route</code></strong>: the current route being navigated away from.</p>
+    </li>
+    <li>
+        <p><strong><code>next: Function</code></strong>: this function must be called to <strong>resolve</strong> the
+            hook. The action depends on the arguments provided to <code>next</code>:</p>
+        <ul>
+            <li>
+                <p><strong><code>next()</code></strong>: move on to the next hook in the pipeline. If no hooks are left,
+                    the navigation is <strong>confirmed</strong>.</p>
+            </li>
+            <li>
+                <p><strong><code>next(false)</code></strong>: abort the current navigation. If the browser URL was
+                    changed (either manually by the user or via back button), it will be reset to that of the
+                    <code>from</code> route.</p>
+            </li>
+            <li>
+                <p><strong><code>next('/')</code> or <code>next({ path: '/' })</code></strong>: redirect to a different
+                    location. The current navigation will be aborted and a new one will be started. You can pass any
+                    location object to <code>next</code>, which allows you to specify options like
+                    <code>replace: true</code>, <code>name: 'home'</code> and any option used in <a href="/api/#to"
+                        class=""><code>router-link</code>'s <code>to</code> prop</a> or <a href="/api/#router-push"
+                        class=""><code>router.push</code></a></p>
+            </li>
+            <li>
+                <p><strong><code>next(error)</code></strong>: (2.4.0+) if the argument passed to <code>next</code> is an
+                    instance of <code>Error</code>, the navigation will be aborted and the error will be passed to
+                    callbacks registered via <a href="/api/#router-onerror" class=""><code>router.onError()</code></a>.
+                </p>
+            </li>
+        </ul>
+    </li>
+</ul>
+<p><strong>Make sure that the <code>next</code> function is called exactly once in any given pass through the navigation
+        guard. It can appear more than once, but only if the logical paths have no overlap, otherwise the hook will
+        never be resolved or produce errors.</strong> Here is an example of redirecting to user to <code>/login</code>
+    if they are not authenticated:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token comment">// BAD</span> router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>name <span class="token operator">!==</span> <span class="token string">'Login'</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>isAuthenticated<span class="token punctuation">)</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Login'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// if the user is not authenticated, `next` is called twice</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token comment">// GOOD</span> router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>name <span class="token operator">!==</span> <span class="token string">'Login'</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>isAuthenticated<span class="token punctuation">)</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Login'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<h2 id="global-resolve-guards"><a href="#global-resolve-guards" class="header-anchor">#</a> Global Resolve Guards</h2>
+<p>You can register a global guard with <code>router.beforeResolve</code>. This is similar to
+    <code>router.beforeEach</code>, with the difference that resolve guards will be called right before the navigation
+    is confirmed, <strong>after all in-component guards and async route components are resolved</strong>.</p>
+<h2 id="global-after-hooks"><a href="#global-after-hooks" class="header-anchor">#</a> Global After Hooks</h2>
+<p>You can also register global after hooks, however unlike guards, these hooks do not get a <code>next</code> function
+    and cannot affect the navigation:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code>router<span class="token punctuation">.</span><span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// ...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<h2 id="per-route-guard"><a href="#per-route-guard" class="header-anchor">#</a> Per-Route Guard</h2>
+<p>You can define <code>beforeEnter</code> guards directly on a route's configuration object:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> Foo<span class="token punctuation">,</span> <span class="token function-variable function">beforeEnter</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// ...</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>These guards have the exact same signature as global before guards.</p>
+<h2 id="in-component-guards"><a href="#in-component-guards" class="header-anchor">#</a> In-Component Guards</h2>
+<p>Finally, you can directly define route navigation guards inside route components (the ones passed to the router
+    configuration) with the following options:</p>
+<ul>
+    <li><code>beforeRouteEnter</code></li>
+    <li><code>beforeRouteUpdate</code></li>
+    <li><code>beforeRouteLeave</code></li>
+</ul>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> Foo <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">...</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token function">beforeRouteEnter</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// called before the route that renders this component is confirmed.</span> <span class="token comment">// does NOT have access to `this` component instance,</span> <span class="token comment">// because it has not been created yet when this guard is called!</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token function">beforeRouteUpdate</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// called when the route that renders this component has changed.</span> <span class="token comment">// This component being reused (by using an explicit `key`) in the new route or not doesn't change anything.</span> <span class="token comment">// For example, for a route with dynamic params `/foo/:id`, when we</span> <span class="token comment">// navigate between `/foo/1` and `/foo/2`, the same `Foo` component instance</span> <span class="token comment">// will be reused (unless you provided a `key` to `&lt;router-view&gt;`), and this hook will be called when that happens.</span> <span class="token comment">// has access to `this` component instance.</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token function">beforeRouteLeave</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// called when the route that renders this component is about to</span> <span class="token comment">// be navigated away from.</span> <span class="token comment">// has access to `this` component instance.</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>The <code>beforeRouteEnter</code> guard does <strong>NOT</strong> have access to <code>this</code>, because the guard
+    is called before the navigation is confirmed, thus the new entering component has not even been created yet.</p>
+<p>However, you can access the instance by passing a callback to <code>next</code>. The callback will be called when the
+    navigation is confirmed, and the component instance will be passed to the callback as the argument:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token function">beforeRouteEnter</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token parameter">vm</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// access to component instance via `vm`</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>Note that <code>beforeRouteEnter</code> is the only guard that supports passing a callback to <code>next</code>. For
+    <code>beforeRouteUpdate</code> and <code>beforeRouteLeave</code>, <code>this</code> is already available, so passing
+    a callback is unnecessary and therefore <em>not supported</em>:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token function">beforeRouteUpdate</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// just use `this`</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> to<span class="token punctuation">.</span>params<span class="token punctuation">.</span>name <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>The <strong>leave guard</strong> is usually used to prevent the user from accidentally leaving the route with unsaved
+    edits. The navigation can be canceled by calling <code>next(false)</code>.</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token function">beforeRouteLeave</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">const</span> answer <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">confirm</span><span class="token punctuation">(</span><span class="token string">'Do you really want to leave? you have unsaved changes!'</span><span class="token punctuation">)</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>answer<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>If you are using mixins that add in-component navigation guards, make sure to add the mixin <strong>after installing
+        the router plugin</strong>:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code>Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Router<span class="token punctuation">)</span> Vue<span class="token punctuation">.</span><span class="token function">mixin</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token function">beforeRouteUpdate</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// ...</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<h2 id="the-full-navigation-resolution-flow"><a href="#the-full-navigation-resolution-flow" class="header-anchor">#</a>
+    The Full Navigation Resolution Flow</h2>
+<ol>
+    <li>Navigation triggered.</li>
+    <li>Call <code>beforeRouteLeave</code> guards in deactivated components.</li>
+    <li>Call global <code>beforeEach</code> guards.</li>
+    <li>Call <code>beforeRouteUpdate</code> guards in reused components.</li>
+    <li>Call <code>beforeEnter</code> in route configs.</li>
+    <li>Resolve async route components.</li>
+    <li>Call <code>beforeRouteEnter</code> in activated components.</li>
+    <li>Call global <code>beforeResolve</code> guards.</li>
+    <li>Navigation confirmed.</li>
+    <li>Call global <code>afterEach</code> hooks.</li>
+    <li>DOM updates triggered.</li>
+    <li>Call callbacks passed to <code>next</code> in <code>beforeRouteEnter</code> guards with instantiated instances.
+    </li>
+</ol>
+
+<h1 id="route-meta-fields"><a href="#route-meta-fields" class="header-anchor">#</a> Route Meta Fields</h1>
+<p>Sometimes, you might want to attach arbitrary information to routes like transition names, who can access the route,
+    etc. This can be achieved through the <code>meta</code> property which accepts an object of properties and can be
+    accessed on the route location and navigation guards. You can define <code>meta</code> properties like this:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> Foo<span class="token punctuation">,</span> <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> Bar<span class="token punctuation">,</span> <span class="token comment">// a meta field</span> <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">requiresAuth</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>So how do we access this <code>meta</code> field?</p>
+<p>First, each route object in the <code>routes</code> configuration is called a <strong>route record</strong>. Route
+    records may be nested. Therefore when a route is matched, it can potentially match more than one route record.</p>
+<p>For example, with the above route config, the URL <code>/foo/bar</code> will match both the parent route record and
+    the child route record.</p>
+<p>All route records matched by a route are exposed on the <code>$route</code> object (and also route objects in
+    navigation guards) as the <code>$route.matched</code> Array. Therefore, we will need to iterate over
+    <code>$route.matched</code> to check for meta fields in route records.</p>
+<p>An example use case is checking for a meta field in the global navigation guard:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code>router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>matched<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token parameter">record</span> <span class="token operator">=&gt;</span> record<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>requiresAuth<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// this route requires auth, check if logged in</span> <span class="token comment">// if not, redirect to login page.</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>auth<span class="token punctuation">.</span><span class="token function">loggedIn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/login'</span><span class="token punctuation">,</span> <span class="token literal-property property">query</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">redirect</span><span class="token operator">:</span> to<span class="token punctuation">.</span>fullPath <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// make sure to always call next()!</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+
+<h1 id="transitions"><a href="#transitions" class="header-anchor">#</a> Transitions</h1>
+<div class="vueschool"><a
+        href="https://vueschool.io/lessons/how-to-create-route-transitions-with-vue-router?friend=vuerouter"
+        target="_blank" rel="sponsored noopener" title="Learn how to create route transitions on Vue School">Learn how
+        to create route transitions with a free lesson on Vue School</a></div>
+<p>Since the <code>&lt;router-view&gt;</code> is essentially a dynamic component, we can apply transition effects to it
+    the same way using the <code>&lt;transition&gt;</code> component:</p>
+<div class="language-html extra-class">
+    <pre
+        class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transition</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-view</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>transition</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<p><a href="https://vuejs.org/guide/transitions.html" target="_blank" rel="noopener noreferrer">All transition
+        APIs<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px"
+                viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a> work the same here.</p>
+<h2 id="per-route-transition"><a href="#per-route-transition" class="header-anchor">#</a> Per-Route Transition</h2>
+<p>The above usage will apply the same transition for all routes. If you want each route's component to have different
+    transitions, you can instead use <code>&lt;transition&gt;</code> with different names inside each route component:
+</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> Foo <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> &lt;transition name="slide"&gt; &lt;div class="foo"&gt;...&lt;/div&gt; &lt;/transition&gt; </span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span> <span class="token keyword">const</span> Bar <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> &lt;transition name="fade"&gt; &lt;div class="bar"&gt;...&lt;/div&gt; &lt;/transition&gt; </span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<h2 id="route-based-dynamic-transition"><a href="#route-based-dynamic-transition" class="header-anchor">#</a>
+    Route-Based Dynamic Transition</h2>
+<p>It is also possible to determine the transition to use dynamically based on the relationship between the target route
+    and current route:</p>
+<div class="language-html extra-class">
+    <pre
+        class="language-html"><code><span class="token comment">&lt;!-- use a dynamic transition name --&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transition</span> <span class="token attr-name">:name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>transitionName<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-view</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>transition</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token comment">// then, in the parent component,</span> <span class="token comment">// watch the `$route` to determine the transition to use</span> <span class="token literal-property property">watch</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">'$route'</span> <span class="token punctuation">(</span>to<span class="token punctuation">,</span> from<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">const</span> toDepth <span class="token operator">=</span> to<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token keyword">const</span> fromDepth <span class="token operator">=</span> from<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token keyword">this</span><span class="token punctuation">.</span>transitionName <span class="token operator">=</span> toDepth <span class="token operator">&lt;</span> fromDepth <span class="token operator">?</span> <span class="token string">'slide-right'</span> <span class="token operator">:</span> <span class="token string">'slide-left'</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>See full example <a href="https://github.com/vuejs/vue-router/blob/dev/examples/transitions/app.js" target="_blank"
+        rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+
+<h1 id="data-fetching"><a href="#data-fetching" class="header-anchor">#</a> Data Fetching</h1>
+<p>Sometimes you need to fetch data from the server when a route is activated. For example, before rendering a user
+    profile, you need to fetch the user's data from the server. We can achieve this in two different ways:</p>
+<ul>
+    <li>
+        <p><strong>Fetching After Navigation</strong>: perform the navigation first, and fetch data in the incoming
+            component's lifecycle hook. Display a loading state while data is being fetched.</p>
+    </li>
+    <li>
+        <p><strong>Fetching Before Navigation</strong>: Fetch data before navigation in the route enter guard, and
+            perform the navigation after data has been fetched.</p>
+    </li>
+</ul>
+<p>Technically, both are valid choices - it ultimately depends on the user experience you are aiming for.</p>
+<h2 id="fetching-after-navigation"><a href="#fetching-after-navigation" class="header-anchor">#</a> Fetching After
+    Navigation</h2>
+<p>When using this approach, we navigate and render the incoming component immediately, and fetch data in the
+    component's <code>created</code> hook. It gives us the opportunity to display a loading state while the data is
+    being fetched over the network, and we can also handle loading differently for each view.</p>
+<p>Let's assume we have a <code>Post</code> component that needs to fetch the data for a post based on
+    <code>$route.params.id</code>:</p>
+<div class="language-html extra-class">
+    <pre
+        class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>loading<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>loading<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> Loading... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> {{ error }} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>{{ post.title }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{ post.body }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span> </code></pre>
+</div>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span> <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">loading</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token literal-property property">post</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token keyword">null</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token function">created</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// fetch the data when the view is created and the data is</span> <span class="token comment">// already being observed</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">watch</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// call again the method if the route changes</span> <span class="token string-property property">'$route'</span><span class="token operator">:</span> <span class="token string">'fetchData'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token function">fetchData</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>error <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>post <span class="token operator">=</span> <span class="token keyword">null</span> <span class="token keyword">this</span><span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token keyword">const</span> fetchedId <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id <span class="token comment">// replace `getPost` with your data fetching util / API wrapper</span> <span class="token function">getPost</span><span class="token punctuation">(</span>fetchedId<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> post</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// make sure this request is the last one we did, discard otherwise</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id <span class="token operator">!==</span> fetchedId<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token boolean">false</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>error <span class="token operator">=</span> err<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>post <span class="token operator">=</span> post <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<h2 id="fetching-before-navigation"><a href="#fetching-before-navigation" class="header-anchor">#</a> Fetching Before
+    Navigation</h2>
+<p>With this approach we fetch the data before actually navigating to the new route. We can perform the data fetching in
+    the <code>beforeRouteEnter</code> guard in the incoming component, and only call <code>next</code> when the fetch is
+    complete:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span> <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">post</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token keyword">null</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token function">beforeRouteEnter</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">getPost</span><span class="token punctuation">(</span>to<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> post</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token parameter">vm</span> <span class="token operator">=&gt;</span> vm<span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> post<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">// when route changes and this component is already rendered,</span> <span class="token comment">// the logic will be slightly different.</span> <span class="token function">beforeRouteUpdate</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>post <span class="token operator">=</span> <span class="token keyword">null</span> <span class="token function">getPost</span><span class="token punctuation">(</span>to<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> post</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> post<span class="token punctuation">)</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token function">setData</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> post</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>error <span class="token operator">=</span> err<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>post <span class="token operator">=</span> post <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>The user will stay on the previous view while the resource is being fetched for the incoming view. It is therefore
+    recommended to display a progress bar or some kind of indicator while the data is being fetched. If the data fetch
+    fails, it's also necessary to display some kind of global warning message.</p>
+
+<h1 id="scroll-behavior"><a href="#scroll-behavior" class="header-anchor">#</a> Scroll Behavior</h1>
+<div class="vueschool"><a
+        href="https://vueschool.io/lessons/how-to-control-the-scroll-behavior-of-vue-router?friend=vuerouter"
+        target="_blank" rel="sponsored noopener" title="Learn how to control the scroll behavior on Vue School">Learn to
+        control the scroll behavior with a free lesson on Vue School</a></div>
+<p>When using client-side routing, we may want to scroll to top when navigating to a new route, or preserve the
+    scrolling position of history entries just like real page reload does. <code>vue-router</code> allows you to achieve
+    these and even better, allows you to completely customize the scroll behavior on route navigation.</p>
+<p><strong>Note: this feature only works if the browser supports <code>history.pushState</code>.</strong></p>
+<p>When creating the router instance, you can provide the <code>scrollBehavior</code> function:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token function">scrollBehavior</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> savedPosition</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// return desired position</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>The <code>scrollBehavior</code> function receives the <code>to</code> and <code>from</code> route objects. The third
+    argument, <code>savedPosition</code>, is only available if this is a <code>popstate</code> navigation (triggered by
+    the browser's back/forward buttons).</p>
+<p>The function can return a scroll position object. The object could be in the form of:</p>
+<ul>
+    <li><code>{ x: number, y: number }</code></li>
+    <li><code>{ selector: string, offset? : { x: number, y: number }}</code> (offset only supported in 2.6.0+)</li>
+</ul>
+<p>If a falsy value or an empty object is returned, no scrolling will happen.</p>
+<p>For example:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token function">scrollBehavior</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> savedPosition</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">x</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>This will simply make the page scroll to top for all route navigations.</p>
+<p>Returning the <code>savedPosition</code> will result in a native-like behavior when navigating with back/forward
+    buttons:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token function">scrollBehavior</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> savedPosition</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>savedPosition<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> savedPosition <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">x</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>If you want to simulate the "scroll to anchor" behavior:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token function">scrollBehavior</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> savedPosition</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>hash<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">selector</span><span class="token operator">:</span> to<span class="token punctuation">.</span>hash <span class="token comment">// , offset: { x: 0, y: 10 }</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>We can also use <a href="/guide/advanced/meta.html" class="">route meta fields</a> to implement fine-grained scroll
+    behavior control. Check out a full example <a
+        href="https://github.com/vuejs/vue-router/blob/dev/examples/scroll-behavior/app.js" target="_blank"
+        rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>.</p>
+<h2 id="async-scrolling"><a href="#async-scrolling" class="header-anchor">#</a> Async Scrolling</h2>
+<blockquote>
+    <p>New in 2.8.0</p>
+</blockquote>
+<p>You can also return a Promise that resolves to the desired position descriptor:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token function">scrollBehavior</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> savedPosition</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">x</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+<p>It's possible to hook this up with events from a page-level transition component to make the scroll behavior play
+    nicely with your page transitions, but due to the possible variance and complexity in use cases, we simply provide
+    this primitive to enable specific userland implementations.</p>
+<h2 id="smooth-scrolling"><a href="#smooth-scrolling" class="header-anchor">#</a> Smooth Scrolling</h2>
+<p>You can enable native smooth scrolling for <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/ScrollToOptions/behavior" target="_blank"
+        rel="noopener noreferrer">browsers supporting it<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a> by simply adding the <code>behavior</code>
+    option to the object returned inside <code>scrollBehavior</code>:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token function">scrollBehavior</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> savedPosition</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>hash<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">selector</span><span class="token operator">:</span> to<span class="token punctuation">.</span>hash<span class="token punctuation">,</span> <span class="token literal-property property">behavior</span><span class="token operator">:</span> <span class="token string">'smooth'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre>
+</div>
+
+<h1 id="lazy-loading-routes"><a href="#lazy-loading-routes" class="header-anchor">#</a> Lazy Loading Routes</h1>
+<div class="vueschool"><a href="https://vueschool.io/lessons/how-to-lazy-load-routes-with-vue-router?friend=vuerouter"
+        target="_blank" rel="sponsored noopener"
+        title="Learn how to increase performance by lazy loading routes on Vue School">Learn how to lazy load routes
+        with a free lesson on Vue School</a></div>
+<p>When building apps with a bundler, the JavaScript bundle can become quite large, and thus affect the page load time.
+    It would be more efficient if we can split each route's components into a separate chunk, and only load them when
+    the route is visited.</p>
+<p>Combining Vue's <a href="https://vuejs.org/guide/components.html#Async-Components" target="_blank"
+        rel="noopener noreferrer">async component feature<span><svg xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a> and webpack's <a
+        href="https://webpack.js.org/guides/code-splitting-async/" target="_blank" rel="noopener noreferrer">code
+        splitting feature<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px"
+                y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a>, it's trivially easy to lazy-load route
+    components.</p>
+<p>First, an async component can be defined as a factory function that returns a Promise (which should resolve to the
+    component itself):</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">Foo</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token comment">/* component definition */</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>Second, in webpack 2, we can use the <a href="https://github.com/tc39/proposal-dynamic-import" target="_blank"
+        rel="noopener noreferrer">dynamic import<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a> syntax to indicate a code-split point:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./Foo.vue'</span><span class="token punctuation">)</span> <span class="token comment">// returns a Promise</span> </code></pre>
+</div>
+<div class="custom-block tip">
+    <p class="custom-block-title">Note</p>
+    <p>if you are using Babel, you will need to add the <a href="https://babeljs.io/docs/plugins/syntax-dynamic-import/"
+            target="_blank" rel="noopener noreferrer">syntax-dynamic-import<span><svg xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                    class="icon outbound">
+                    <path fill="currentColor"
+                        d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                    </path>
+                    <polygon fill="currentColor"
+                        points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                    </polygon>
+                </svg> <span class="sr-only">(opens new window)</span></span></a> plugin so that Babel can properly
+        parse the syntax.</p>
+</div>
+<p>Combining the two, this is how to define an async component that will be automatically code-split by webpack:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">Foo</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./Foo.vue'</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>Nothing needs to change in the route config, just use <code>Foo</code> as usual:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> Foo <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<h2 id="grouping-components-in-the-same-chunk"><a href="#grouping-components-in-the-same-chunk"
+        class="header-anchor">#</a> Grouping Components in the Same Chunk</h2>
+<p>Sometimes we may want to group all the components nested under the same route into the same async chunk. To achieve
+    that we need to use <a href="https://webpack.js.org/api/module-methods/#magic-comments" target="_blank"
+        rel="noopener noreferrer">named chunks<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <path fill="currentColor"
+                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                </path>
+                <polygon fill="currentColor"
+                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a> by providing a chunk name using a special
+    comment syntax (requires webpack &gt; 2.4):</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">Foo</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/* webpackChunkName: "group-foo" */</span> <span class="token string">'./Foo.vue'</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token function-variable function">Bar</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/* webpackChunkName: "group-foo" */</span> <span class="token string">'./Bar.vue'</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token function-variable function">Baz</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/* webpackChunkName: "group-foo" */</span> <span class="token string">'./Baz.vue'</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>webpack will group any async module with the same chunk name into the same async chunk.</p>
+
+<h1 id="navigation-failures"><a href="#navigation-failures" class="header-anchor">#</a> Navigation Failures</h1>
+<blockquote>
+    <p>New in 3.4.0</p>
+</blockquote>
+<p>When using <code>router-link</code>, Vue Router calls <code>router.push</code> to trigger a navigation. While the
+    expected behavior for most links is to navigate a user to a new page, there are a few situations where users will
+    remain on the same page:</p>
+<ul>
+    <li>Users are already on the page that they are trying to navigate to</li>
+    <li>A <a href="/guide/advanced/navigation-guards.html" class="">navigation guard</a> aborts the navigation by
+        calling <code>next(false)</code></li>
+    <li>A <a href="/guide/advanced/navigation-guards.html" class="">navigation guard</a> throws an error or calls
+        <code>next(new Error())</code></li>
+</ul>
+<p>When using a <code>router-link</code> component, <strong>none of these failures will log an error</strong>. However,
+    if you are using <code>router.push</code> or <code>router.replace</code>, you might come across an <em>"Uncaught (in
+        promise) Error"</em> message followed by a more specific message in your console. Let's understand how to
+    differentiate <em>Navigation Failures</em>.</p>
+<div class="custom-block tip">
+    <p class="custom-block-title">Background story</p>
+    <p>In v3.2.0, <em>Navigation Failures</em> were exposed through the two optional callbacks of
+        <code>router.push</code>: <code>onComplete</code> and <code>onAbort</code>. Since version 3.1.0,
+        <code>router.push</code> and <code>router.replace</code> return a <em>Promise</em> if no
+        <code>onComplete</code>/<code>onAbort</code> callback is provided. This <em>Promise</em> resolves instead of
+        invoking <code>onComplete</code> and rejects instead of invoking <code>onAbort</code>.</p>
+</div>
+<h2 id="detecting-navigation-failures"><a href="#detecting-navigation-failures" class="header-anchor">#</a> Detecting
+    Navigation Failures</h2>
+<p><em>Navigation Failures</em> are <code>Error</code> instances with a few extra properties. To check if an error comes
+    from the Router, use the <code>isNavigationFailure</code> function:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">'vue-router'</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> isNavigationFailure<span class="token punctuation">,</span> NavigationFailureType <span class="token punctuation">}</span> <span class="token operator">=</span> VueRouter <span class="token comment">// trying to access the admin page</span> router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/admin'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">failure</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNavigationFailure</span><span class="token punctuation">(</span>failure<span class="token punctuation">,</span> NavigationFailureType<span class="token punctuation">.</span>redirected<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// show a small notification to the user</span> <span class="token function">showToast</span><span class="token punctuation">(</span><span class="token string">'Login in order to access the admin panel'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<div class="custom-block tip">
+    <p class="custom-block-title">TIP</p>
+    <p>If you omit the second parameter: <code>isNavigationFailure(failure)</code>, it will only check if the error is a
+        <em>Navigation Failure</em>.</p>
+</div>
+<h2 id="navigationfailuretype"><a href="#navigationfailuretype" class="header-anchor">#</a>
+    <code>NavigationFailureType</code></h2>
+<p><code>NavigationFailureType</code> help developers to differentiate between the various types of <em>Navigation
+        Failures</em>. There are four different types:</p>
+<ul>
+    <li><code>redirected</code>: <code>next(newLocation)</code> was called inside of a navigation guard to redirect
+        somewhere else.</li>
+    <li><code>aborted</code>: <code>next(false)</code> was called inside of a navigation guard to the navigation.</li>
+    <li><code>cancelled</code>: A new navigation completely took place before the current navigation could finish. e.g.
+        <code>router.push</code> was called while waiting inside of a navigation guard.</li>
+    <li><code>duplicated</code>: The navigation was prevented because we are already at the target location.</li>
+</ul>
+<h2 id="navigation-failures-s-properties"><a href="#navigation-failures-s-properties" class="header-anchor">#</a>
+    <em>Navigation Failures</em>'s properties</h2>
+<p>All navigation failures expose <code>to</code> and <code>from</code> properties to reflect the target and current
+    location respectively for the navigation that failed:</p>
+<div class="language-js extra-class">
+    <pre
+        class="language-js"><code><span class="token comment">// trying to access the admin page</span> router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/admin'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">failure</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNavigationFailure</span><span class="token punctuation">(</span>failure<span class="token punctuation">,</span> NavigationFailureType<span class="token punctuation">.</span>redirected<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> failure<span class="token punctuation">.</span>to<span class="token punctuation">.</span>path <span class="token comment">// '/admin'</span> failure<span class="token punctuation">.</span>from<span class="token punctuation">.</span>path <span class="token comment">// '/'</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+</div>
+<p>In all cases, <code>to</code> and <code>from</code> are normalized route locations.</p>

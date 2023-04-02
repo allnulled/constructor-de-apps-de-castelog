@@ -1,0 +1,263 @@
+asigno window.EstiloShellverGuiConsoleSpecificationV2 como una inserción de estilos en cascada llamado "shellver-gui-tester-specification-v2" con (un código en css con {
+    .GuiTester .panel_de_elementos {
+      position: relative;
+    }
+    .GuiTester .lista_de_elementos_soportados {
+    }
+    .GuiTester .lista_de_elementos_usados {
+      
+    }
+    .GuiTester .horizontal_layout {
+      display: flex;
+      flex-direction: row;
+    }
+    .GuiTester ul,li {
+    }
+    .GuiTester .w_100 {
+      width: 100%;
+    }
+    .GuiTester .w_auto {
+      min-width: 8px;
+      width: auto;
+    }
+    .GuiTester table {
+      border-collapse: collapse;
+    }
+    .GuiTester td {
+      vertical-align: top;
+    }
+    .GuiTester th {
+      text-align: left;
+      background-color: #333;
+      color: white;
+      padding: 8px;
+      border-left: 3px solid #CCC;
+      min-width: 30px;
+    }
+    .GuiTester textarea {
+      background-color: default;
+      color: default;
+    }
+    .GuiTester .nopad {
+      padding: 1px;
+    }
+    .GuiTester .noshow {
+      display: none;
+    }
+    .GuiTester .nowrap {
+      white-space: nowrap;
+    }
+    .win7 select {
+      padding: 3px !important;
+    }
+    .win7 .draggable {
+      cursor: grab;
+    }
+    .win7.GuiTester td,
+    .win7.GuiTester table {
+      border: 0px none #333 !important;
+    }
+    .win7 [role="tabpanel"] {
+      border: 1px solid #8e8f8f;
+      box-shadow: 0 0 3px black;
+      padding: 2px;
+    }
+    win7 [role="button"].disabled, .win7 button.disabled {
+      background: #f4f4f4;
+      border-color: #aeb2b5;
+      border-color: #aeb2b5;
+    }
+    .win7 menu[role="tablist"] button.disabled {
+      opacity: 0.6;
+    }
+    .EditorDeInstanciaDeComponente table {
+      width: 100%;
+
+    }
+    .EditorDeInstanciaDeComponente button,
+     select {
+      font-size: 10px !important;
+    }
+    .win7.GuiTester button,
+    .win7.GuiTester textarea,
+    .win7.GuiTester input,
+    .win7.GuiTester select {
+      min-width: 20px;
+      min-height: 20px;
+      height: auto;
+      font-size: 9px !important;
+      padding: 2px;
+    }
+    .win7 [role="tabpanel"] {
+      margin-bottom: 0px;
+    }
+    .win7 span.texto_de_icono {
+      font-size: 9px;
+    }
+    .win7.GuiTester textarea.editor_de_codigo {
+      min-height: 160px !important;
+    }
+    .win7.GuiTester a {
+      color: blue !important;
+      text-decoration: underline !important;
+      cursor: pointer !important;
+    }
+    .win7 .dialog_window {
+      position: absolute;
+      top: 4px;
+      z-index: 9999;
+      left: 4px;
+      bottom: auto;
+      right: 4px;
+    }
+    .win7 .dialog_window > .window-body {
+      overflow: scroll;
+    }
+    .mensaje_de_error {
+      color: #900;
+      font-size: 9px !important;
+    }
+    .win7 .separacion_de_subelementos {
+      border-left: 0px solid #333;
+      margin-left: 0px;
+      padding-left: 0px;
+      margin-top: 0px;
+      padding-top:1px;
+    }
+    .win7 .texto_pequenio {
+      font-size: 10px !important;
+    }
+    .win7.GuiTester .boton_de_roadmap {
+      z-index:9999;
+    }
+    .win7 .disabled {
+      user-select : none;
+      -moz-user-select : none;
+      -webkit-user-select : none;
+      color: gray;
+      cursor: pointer;
+    }
+    .win7 .titulo_de_componente {
+      background-color: #333;
+      color: white;
+      padding: 3px;
+      font-size: 9px;
+      margin-bottom: 3px; 
+       background: rgb(2,0,36);
+       background: linear-gradient(145deg, rgba(2,0,36,1) 0%, rgba(57,70,108,1) 5%, rgba(139,175,217,1) 67%); 
+    }
+    .win7 .caja_de_componente {
+      
+    }
+    .win7 .caja_de_componente.selected {
+      
+    }
+    .win7 .window footer, .win7 .window-footer{
+      padding: 4px;
+    }
+    .win7 .title-bar .title-bar-text,
+    .win7 .window-body {
+      font-size: 9px;
+    }
+    .win7 {
+      font-size: 9px;
+    }
+    .win7 ul.tree-view {
+      font-size: 9px;
+    }
+    .win7 .panel_de_busqueda_de_componente {
+      background: #FFFC;
+      padding: 1px;
+      box-shadow: 0 0 4px black;
+      border: 1px solid #DDD;
+      border-radius: 2pt;
+      overflow: hidden;
+    }
+    .win7 .panel_de_busqueda_de_componente.posicion_absoluta {
+      position: absolute;
+      top: auto;
+      z-index: 9999;
+      right: 0;
+      left: 0;
+      background: #FFFC;
+      padding: 1px;
+      box-shadow: 0 0 4px black;
+      border: 1px solid #DDD;
+      border-radius: 2pt;
+      overflow: hidden;
+    }
+    .win7 details > summary {
+      margin-left:15px;
+    }
+    .win7 ul.tree-view {
+      padding: 0px;
+    }
+    .win7 ul.tree-view ul {
+      padding-left: 10px;
+    }
+    .win7 .window.error_window {
+      opacity: 1;
+    }
+    .win7 .window.error_window::before,
+    .win7 .window.error_window .title-bar {
+      background: linear-gradient(90deg, hsla(0, 0%, 100%, .4), rgba(0, 0, 0, .1), hsla(0, 0%, 100%, .2)), linear-gradient(55deg, transparent, rgba(0, 0, 0, .1) 20%, rgba(0, 0, 0, .1) 50%, transparent 53%), #660404;
+    }
+    .win7 .window.error_window .window-body {
+      background-color: #181c41;
+      color: yellow;
+      text-shadow: 0.2px 0.2px 1px black;
+      padding: 2px;
+    }
+    .win7 .window.error_window .window-body .codigo {
+      font-family: monospace;
+      font-size:7px;
+      color: #0F0;
+      padding-top:10px;
+      padding-bottom:10px;
+      padding:2px;
+      background-color:#111;
+      border: 1px solid silver;
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+    .win7 .item_de_error {
+      padding:5px;
+    }
+    .win7 .error_window_box {
+      position: relative;
+    }
+    .win7 .error_window_box .error_window {
+      position: fixed;
+      top: auto;
+      left: 4px;
+      right: 4px;
+      bottom: 4px;
+      z-index:9999;
+      opacity: 0.9;
+    }
+    .win7 .error_window_box .error_window:hover {
+      opacity: 1;
+    }
+    .win7 .guia_de_referencia h1,
+    .win7 .guia_de_referencia h2,
+    .win7 .guia_de_referencia h3,
+    .win7 .guia_de_referencia h4,
+    .win7 .guia_de_referencia h5,
+    .win7 .guia_de_referencia h6 {
+      font-size: 10px;
+    }
+    .win7 .guia_de_referencia pre {
+      background-color: #333;
+      color: white;
+    }
+
+
+
+
+
+
+
+}).

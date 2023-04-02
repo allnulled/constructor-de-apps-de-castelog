@@ -1,0 +1,1856 @@
+Compilable con:
+  ./lib/Atributo_de_elemento_usado.calo
+  ./lib/Elemento_usado.calo
+  ./lib/elementos_soportados.calo
+  ./lib/Fichero_de_componente.calo
+  ./lib/EditorDeInstanciaDeComponente.calo
+  ./lib/SelectorDeComponenteDeGuiBuilder.calo
+  ./lib/VistaDeInstanciaDeComponente.calo
+  ./lib/VistaDeInstanciaDeComponente.calo
+  ./lib/EstiloShellverGuiConsoleSpecificationV1.calo
+  ./lib/EstiloShellverGuiConsoleSpecificationV2.calo
+  ./lib/GuiaDeReferencias.calo
+
+Empaquetable con:
+  ./lib/Atributo_de_elemento_usado.js
+  ./lib/Elemento_usado.js
+  ./lib/elementos_soportados.js
+  ./lib/Fichero_de_componente.js
+  ./lib/EditorDeInstanciaDeComponente.js
+  ./lib/SelectorDeComponenteDeGuiBuilder.js
+  ./lib/VistaDeInstanciaDeComponente.js
+  ./lib/VistaDeInstanciaDeComponente.js
+  ./lib/EstiloShellverGuiConsoleSpecificationV1.js
+  ./lib/EstiloShellverGuiConsoleSpecificationV2.js
+  ./lib/GuiaDeReferencias.js
+
+creo GuiTester como un componente vue2 con nombre "GuiTester" con plantilla {
+  <div class="GuiTester win7">
+    <div class="window glass">
+      <div class="title-bar">
+        <div class="title-bar-text">
+          <span style="color:#0F0;">●</span><span> Constructor de apps de calo</span>
+        </div>
+      </div>
+      <div class="window-body" style="padding: 4px;">
+        <div style="position:relative;">
+          <section class="tabs">
+            <menu role="tablist">
+              <button role="tab" :aria-selected="esta_seleccionada_pestania_de_navegacion_1 === 'inicio'" v-on:click="() => { seleccionar_pestania_de_navegacion_1('inicio') }">
+                🪟
+              </button>
+              <button :class="{disabled: false}" role="tab" :aria-selected="esta_seleccionada_pestania_de_navegacion_1 === 'apps'" v-on:click="() => { seleccionar_pestania_de_navegacion_1('apps'); }">
+                ⚡ <span class="texto_de_icono"></span>
+              </button>
+              <button :class="{disabled: false}" role="tab" :aria-selected="esta_seleccionada_pestania_de_navegacion_1 === 'componentes'" v-on:click="() => { seleccionar_pestania_de_navegacion_1('componentes'); }">
+                🧩 <span class="texto_de_icono"></span>
+              </button>
+              <button :class="{disabled: false}" role="tab" :aria-selected="esta_seleccionada_pestania_de_navegacion_1 === 'datos'" v-on:click="() => { seleccionar_pestania_de_navegacion_1('datos') }">
+                🔴 <span class="texto_de_icono"></span>
+              </button>
+              <button :class="{disabled: false}" role="tab" :aria-selected="esta_seleccionada_pestania_de_navegacion_1 === 'traducciones'" v-on:click="() => { seleccionar_pestania_de_navegacion_1('traducciones'); }">
+                ㊍ <span class="texto_de_icono"></span>
+              </button>
+              <button :class="{disabled: false}" role="tab" :aria-selected="esta_seleccionada_pestania_de_navegacion_1 === 'rutas'" v-on:click="() => { seleccionar_pestania_de_navegacion_1('rutas'); }">
+                🏁 <span class="texto_de_icono"></span>
+              </button>
+              <button :class="{disabled: false}" role="tab" :aria-selected="esta_seleccionada_pestania_de_navegacion_1 === 'ficheros'" v-on:click="() => { seleccionar_pestania_de_navegacion_1('ficheros'); }">
+                🗄 <span class="texto_de_icono"></span>
+              </button>
+              <button :class="{disabled: false}" role="tab" :aria-selected="esta_seleccionada_pestania_de_navegacion_1 === 'descargas'" v-on:click="() => { seleccionar_pestania_de_navegacion_1('descargas'); }">
+                🌟 <span class="texto_de_icono"></span>
+              </button>
+            </menu>
+          </section>
+          <article role="tabpanel" class="nopad" v-if="esta_seleccionada_pestania_de_navegacion_1 === 'inicio'">
+            <GuiaDeReferencias ref="guia_de_referencias" />
+          </article>
+          <article role="tabpanel" class="nopad" v-if="esta_seleccionada_pestania_de_navegacion_1 === 'datos'">
+            <div class="titulo_de_componente">🔴 Datos</div>
+            <div style="padding:2px;padding-top:4px;">
+              <section class="tabs">
+                <menu role="tablist">
+                  <button :class="{disabled: false}" role="tab" :aria-selected="esta_seleccionada_pestania_de_bd === 1" v-on:click="() => { seleccionar_pestania_de_bd(1); }">
+                    🔗 <span class="texto_de_icono"></span>
+                  </button>
+                  <button :class="{disabled: false}" role="tab" :aria-selected="esta_seleccionada_pestania_de_bd === 2" v-on:click="() => { seleccionar_pestania_de_bd(2); }">
+                    ⭕ <span class="texto_de_icono"></span>
+                  </button>
+                  <button :class="{disabled: false}" role="tab" :aria-selected="esta_seleccionada_pestania_de_bd === 3" v-on:click="() => { seleccionar_pestania_de_bd(3); }">
+                    🔴 <span class="texto_de_icono"></span>
+                  </button>
+                </menu>
+              </section>
+              <article role="tabpanel" v-if="esta_seleccionada_pestania_de_bd === 1">
+                <div class="titulo_de_componente">🔗 Conexión a base de datos</div>
+                <p>No hay ninguna base de datos ahora mismo.</p>
+                <button class="w_100" v-on:click="abrir_dialogo_de_crear_conexion_de_base_de_datos"> ➕ Crear conexión</button>
+              </article>
+              <article role="tabpanel" v-if="esta_seleccionada_pestania_de_bd === 2">
+                <div class="titulo_de_componente">⭕ Estructura de los datos</div>
+                <p>No hay ninguna tabla ahora mismo.</p>
+                <button class="w_100" v-on:click="abrir_dialogo_de_crear_tabla_de_base_de_datos"> ➕ Crear tabla</button>
+              </article>
+              <article role="tabpanel" v-if="esta_seleccionada_pestania_de_bd === 3">
+                <div class="titulo_de_componente">🔴 Información</div>
+                <p>No hay ninguna fila ahora mismo.</p>
+                <button class="w_100" v-on:click="abrir_dialogo_de_crear_fila_de_base_de_datos"> ➕ Crear fila</button>
+              </article>
+            </div>
+          </article>
+          <article role="tabpanel" class="nopad" v-if="esta_seleccionada_pestania_de_navegacion_1 === 'apps'">
+            <div class="titulo_de_componente">⚡ Aplicación</div>
+            <div class="" v-if="apps && apps.length">
+              <ul>
+                <li v-for="app, app_index in apps" v-bind:key="'apps-list-item-' + app_index">
+                  <div class="horizontal_layout">
+                    <button>
+                      {{ app }}
+                    </button>
+                    <button>
+                      ❌ <span></span>
+                    </button>
+                    <button>
+                      ❌ <span>Eliminar</span>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <p v-else>No hay ninguna aplicación ahora mismo.</p>
+            <button class="w_100" v-on:click="abrir_dialogo_de_crear_app"> ➕ Crear app</button>
+          </article>
+          <article role="tabpanel" v-if="esta_seleccionada_pestania_de_navegacion_1 === 'traducciones'">
+            <div class="titulo_de_componente">㊍ Traducciones</div>
+            <p>No hay ningún fichero de traducciones ahora mismo.</p>
+            <button class="w_100" v-on:click="abrir_dialogo_de_subir_traducciones"> 📁 Subir traducciones</button>
+          </article>
+          <article role="tabpanel" v-if="esta_seleccionada_pestania_de_navegacion_1 === 'rutas'">
+            <div class="titulo_de_componente">🏁 Rutas</div>
+            <p>No hay ningún fichero de rutas ahora mismo.</p>
+            <button class="w_100" v-on:click="abrir_dialogo_de_anyadir_rutas"> ➕ Añadir ruta</button>
+          </article>
+          <article role="tabpanel" v-if="esta_seleccionada_pestania_de_navegacion_1 === 'ficheros'">
+            <div class="titulo_de_componente">🗄 Ficheros</div>
+            <p>No hay ningún fichero ahora mismo.</p>
+            <button class="w_100" v-on:click="abrir_dialogo_de_anyadir_fichero"> 📁 Añadir fichero</button>
+          </article>
+          <article role="tabpanel" v-if="esta_seleccionada_pestania_de_navegacion_1 === 'descargas'">
+            <div class="titulo_de_componente">🌟 Descargas</div>
+            <p>Comprueba que todo esté en orden:</p>
+            <ul>
+              <li>nombre de aplicación</li>
+              <li>package de aplicación</li>
+              <li>componente de aplicación</li>
+              <li>fichero html base de aplicación</li>
+              <li>base de datos de aplicación</li>
+              <li>traducciones de aplicación</li>
+              <li>rutas de aplicación</li>
+              <li>ficheros de aplicación</li>
+              <li>opciones de descarga de aplicación</li>
+            </ul>
+            <button class="w_100" v-on:click="abrir_dialogo_de_descargar_app"> ✔ Todo ok, descargar</button>
+          </article>
+          <article role="tabpanel" class="nopad" v-if="esta_seleccionada_pestania_de_navegacion_1 === 'componentes'">
+            <div class="titulo_de_componente">🧩 Componentes</div>
+            <div style="padding:2px;padding-top:4px;">
+              <section class="tabs">
+                <menu role="tablist">
+                  <button :class="{disabled: typeof esta_seleccionada_pestania_de_componente === 'string'}" role="tab" :aria-selected="esta_seleccionada_pestania_de_componente === 0" v-on:click="() => { seleccionar_pestania_de_componente(0); }">
+                    ✱ <span class="texto_de_icono"></span>
+                  </button>
+                  <button :class="{disabled: typeof esta_seleccionada_pestania_de_componente === 'string'}" role="tab" :aria-selected="esta_seleccionada_pestania_de_componente === 2" v-on:click="() => { seleccionar_pestania_de_componente(2); }">
+                    📂 <span class="texto_de_icono"></span>
+                  </button>
+                  <button role="tab" :aria-selected="typeof esta_seleccionada_pestania_de_componente === 'string'" v-if="typeof esta_editando_pestania === 'string'" style="max-width:80px;overflow:hidden;" :title="esta_editando_pestania" v-on:click="() => { seleccionar_pestania_de_componente(esta_editando_pestania) }">
+                    <span class="texto_de_icono" style="display:inline-block;overflow:hidden;white-space:nowrap;text-overflow:'...';max-width:70px;text-align:center;width:100%;">{{ esta_editando_pestania }}</span>
+                  </button>
+                </menu>
+              </section>
+              <article role="tabpanel" class="nopad" v-if="esta_seleccionada_pestania_de_componente === 0">
+                <div class="titulo_de_componente"><b>Componentes disponibles</b>: {{ componentes.length }}</div>
+                <div class="horizontal_layout" style="justify-content: space-between;margin-bottom:1px;">
+                  <button class="nowrap" style="flex-grow: 1;" v-on:click="() => abrir_dialogo_de_crear_componente()"><span style="font-size:7px;"></span>📄 Nuevo</button>
+                  <button class="nowrap" style="margin-left: 4px; flex-grow: 1; margin-top:2px;" v-on:click="() => abrir_dialogo_de_crear_componente_por_prototipo()"><span style="font-size:7px;"></span>📄»📄 Prototipo</button>
+                  <button class="nowrap" style="margin-left: 4px; flex-grow: 1; margin-top:2px;" v-on:click="() => abrir_dialogo_de_crear_componente_por_url()"><span style="font-size:7px;"></span>🌐»📄 URL</button>
+                </div>
+                <input class="w_100" type="text" placeholder="Buscar componente disponible" v-model="filtro_de_componentes" />
+                <table class="w_100">
+                  <tbody v-for="componente, componente_index in componentes_filtrados" v-bind:key="'componente_disponible_' + componente_index">
+                    <tr v-if="componente.nombre">
+                      <td class="w_100">
+                        <button class="w_100 nopad" v-on:click="() => seleccionar_pestania_de_componente(componente.nombre)">{{ componente.nombre }}</button>
+                      </td>
+                      <td class="w_auto">
+                        <button class="w_auto nopad nowrap" v-on:click="() => abrir_dialogo_de_eliminar_componente(componente.nombre)">
+                          ❌ <span>Eliminar</span>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+              <article role="tabpanel" class="nopad" v-if="esta_seleccionada_pestania_de_componente === 2">
+                <div class="titulo_de_componente"><b>Componentes abiertos</b>: {{ componentes_abiertos.length }}</div>
+                <input class="w_100" type="text" placeholder="Buscar componente abierto" v-model="filtro_de_componentes_abiertos" />
+                <table class="w_100">
+                  <tbody v-for="componente_nombre, componente_index in componentes_abiertos_filtrados" v-bind:key="'componente_abierto_' + componente_index">
+                    <tr v-if="componente_nombre">
+                      <td class="w_100">
+                        <button class="w_100 nopad" v-on:click="() => seleccionar_pestania_de_componente(componente_nombre)">
+                          {{ componente_nombre }}
+                        </button>
+                      </td>
+                      <td class="w_auto">
+                        <button class="w_auto nopad nowrap" v-on:click="() => cerrar_pestania_de_componente(componente_nombre)">
+                          ❌ <span>Cerrar</span>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+              <article role="tabpanel" class="nopad" v-if="typeof esta_seleccionada_pestania_de_componente === 'string'">
+                <div class="titulo_de_componente"><b>Componente</b>: {{ esta_editando_pestania }}</div>
+                <section class="tabs">
+                  <menu role="tablist">
+                    <button role="tab" :aria-selected="esta_seleccionada_pestania === 'vista'" v-on:click="() => { esta_seleccionada_pestania = 'vista'; $forceUpdate(true); }">🖥 <span class="texto_de_icono">Vista</span></button>
+                    <button role="tab" :aria-selected="esta_seleccionada_pestania === 'plantilla'" v-on:click="() => { esta_seleccionada_pestania = 'plantilla'; $forceUpdate(true); }">⭐ <span class="texto_de_icono">Plantilla</span></button>
+                    <button role="tab" :aria-selected="esta_seleccionada_pestania === 'logica'" v-on:click="() => { esta_seleccionada_pestania = 'logica'; $forceUpdate(true); }">💡 <span class="texto_de_icono">Lógica</span></button>
+                    <button role="tab" :aria-selected="esta_seleccionada_pestania === 'estilos'" v-on:click="() => { esta_seleccionada_pestania = 'estilos'; $forceUpdate(true); }">🎨 <span class="texto_de_icono">Estilos</span></button>
+                  </menu>
+                  <article role="tabpanel" class="nopad" v-if="esta_seleccionada_pestania === 'plantilla'">
+                    <ul class="tree-view ">
+                      <li>
+                        <details open>
+                          <summary>
+                            <span>En vista:</span>
+                          </summary>
+                          <div>
+                            <EditorDeInstanciaDeComponente :tester="this" :elementos-iniciales="elementos" :es-elemento-raiz="true" />
+                          </div>
+                        </details>
+                      </li>
+                      <li>
+                        <details>
+                          <summary>
+                            <span>En formulario:</span>
+                          </summary>
+                          <div>
+                            <EditorDeInstanciaDeComponente :tester="this" :elementos-iniciales="elementos_de_formulario" :es-elemento-raiz="true" />
+                          </div>
+                        </details>
+                      </li>
+                      <li>
+                        <details>
+                          <summary>
+                            <span>En test:</span>
+                          </summary>
+                          <div>
+                            <textarea class="w_100 editor_de_codigo" v-model="test_de_componente" :placeholder="placeholder_de_test_de_componente"></textarea>
+                          </div>
+                        </details>
+                      </li>
+                      <li>
+                        <details>
+                          <summary>
+                            <span>En documentación:</span>
+                          </summary>
+                          <div style="position:relative;" v-if="esta_editando_documentacion">
+                            <textarea class="w_100 editor_de_codigo" v-model="documentacion_de_componente" placeholder="Texto de documentación"></textarea>
+                            <div style="position:absolute;bottom:auto;right:4px;left:auto;top:4px;">
+                              <button v-on:click="alternar_editando_documentacion">Ver</button>
+                            </div>
+                          </div>
+                          <div v-else style="position:relative;min-height:162px;border:3px double #333;">
+                            <div style="padding:4px;" v-html="documentacion_de_componente"></div>
+                            <div style="position:absolute;bottom:auto;right:4px;left:auto;top:4px;">
+                              <button v-on:click="alternar_editando_documentacion">Editar</button>
+                            </div>
+                          </div>
+                        </details>
+                      </li>
+                    </ul>
+                  </article>
+                  <article role="tabpanel" class="nopad" v-if="esta_seleccionada_pestania === 'vista'">
+                    <div style="text-align:right;">
+                      <div class="titulo_de_componente">Panel de control:</div>
+                      <button class="" v-on:click="alternar_vista" :class="{active:esta_mostrando_vista}">Componente</button>
+                      <button class="" v-on:click="alternar_formulario" :class="{active:esta_mostrando_formulario}">Formulario</button>
+                      <button class="" v-on:click="iniciar_test" :disabled="esta_ejecutando_test">Test</button>
+                      <hr/>
+                    </div>
+                    <div v-if="esta_cargando_vista">
+                      <div role="progressbar" class="animate" style="position:relative;">
+                        <div :style="'width:' + esta_cargada_vista_en_porcentaje + '%'"></div>
+                        <span style="font-size:10px;color: white;text-shadow:0 0 1px white;position:absolute;top:0;left:0;right:0;text-align:center;">Cargando componente de «{{ esta_editando_pestania }}»</span>
+                      </div>
+                    </div>
+                    <div v-else-if="esta_mostrando_vista">
+                      <div class="titulo_de_componente">Vista de componente:</div>
+                      <VistaDeInstanciaDeComponente :tester="this" :elementos-iniciales="elementos" />
+                    </div>
+                    <div v-if="esta_mostrando_formulario">
+                      <hr/>
+                      <div class="titulo_de_componente">Formulario de componente:</div>
+                      <div v-if="esta_cargando_formulario">
+                        <div role="progressbar" class="animate" style="position:relative;">
+                          <div :style="'width:' + esta_cargando_formulario_en_porcentaje + '%'"></div>
+                          <span style="font-size:10px;color: white;text-shadow:0 0 1px white;position:absolute;top:0;left:0;right:0;text-align:center;">Cargando formulario de «{{ esta_editando_pestania }}»</span>
+                        </div>
+                      </div>
+                      <VistaDeInstanciaDeComponente :tester="this" :elementos-iniciales="elementos_de_formulario" v-else />
+                    </div>
+                    <div v-if="esta_ejecutando_test">
+                      <hr/>
+                      <div class="titulo_de_componente">Test de componente:</div>
+                      <textarea class="w_100" disabled v-model="salida_de_test_de_componente"></textarea>
+                    </div>
+                  </article>
+                  <article role="tabpanel" class="nopad" v-if="esta_seleccionada_pestania === 'estilos'">
+                    <textarea class="w_100 editor_de_codigo" v-model="script_de_estilo" placeholder=".mi_clase { color: blue; }"></textarea>
+                  </article>
+                  <article role="tabpanel" class="nopad" v-if="esta_seleccionada_pestania === 'logica'">
+                    <ul class="tree-view has-container">
+                      <li>
+                        <details :open="esta_seleccionado_en_pre_cargar">
+                          <summary>En pre-cargar:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_precargar" placeholder="hago asíncronamente this.cargar_datos()."></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_propiedades">
+                          <summary>En propiedades:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_props" :placeholder="placeholder_de_script_de_props"></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_metodos">
+                          <summary>En métodos:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_methods" :placeholder="placeholder_de_script_de_methods"></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_datos">
+                          <summary>En datos:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_data" :placeholder="placeholder_de_script_de_data"></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_datos_observados">
+                          <summary>En datos observados:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_watch" :placeholder="placeholder_de_script_de_watch"></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_datos_computados">
+                          <summary>En datos computados:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_computed" :placeholder="placeholder_de_script_de_computed"></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_pre_crear">
+                          <summary>En pre-crear:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_beforeCreate" :placeholder="placeholder_de_script_de_beforeCreate"></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_post_crear">
+                          <summary>En post-crear:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_created" :placeholder="placeholder_de_script_de_created"></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_pre_montar">
+                          <summary>En pre-montar:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_beforeMount" :placeholder="placeholder_de_script_de_beforeMount"></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_post_montar">
+                          <summary>En post-montar:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_mounted" :placeholder="placeholder_de_script_de_mounted"></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_pre_actualizar">
+                          <summary>En pre-actualizar:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_beforeUpdate" :placeholder="placeholder_de_script_de_beforeUpdate"></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_post_actualizar">
+                          <summary>En post-actualizar:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_updated" :placeholder="placeholder_de_script_de_updated"></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_pre_desmontar">
+                          <summary>En pre-desmontar:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_beforeUnmount" :placeholder="placeholder_de_script_de_beforeUnmount"></textarea>
+                          </div>
+                        </details>
+                        <details :open="esta_seleccionado_en_post_desmontar">
+                          <summary>En post-desmontar:</summary>
+                          <div style="position:relative;">
+                            <textarea class="w_100 editor_de_codigo" v-model="script_de_unmounted" :placeholder="placeholder_de_script_de_unmounted"></textarea>
+                          </div>
+                        </details>
+                      </li>
+                    </ul>
+                  </article>
+                  <article role="tabpanel" class="nopad" v-if="esta_seleccionada_pestania === 'componentes'">
+                    <table class="w_100">
+                      <tbody>
+                        <tr>
+                          <td class="w_100">
+                            <input class="w_100" type="text" placeholder="Buscar componente..."/>
+                          </td>
+                          <td class="w_auto">
+                            <button class="boton_de_icono">🔎</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div v-if="componentes && componentes.length">
+                      <table class="w_100">
+                        <thead>
+                          <tr>
+                            <th>Orden</th>
+                            <th>Nombre</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="w_auto nowrap text_align_center">1</td>
+                            <td class="w_100 nowrap">Raíz</td>
+                          </tr>
+                        </tbody>
+                        <tbody>
+                          <tr>
+                            <td class="w_auto nowrap text_align_center">2</td>
+                            <td class="w_100 nowrap">Subir</td>
+                          </tr>
+                        </tbody>
+                        <tbody v-for="(componente, componente_index) in componentes" v-bind:key="'componente-de-componente-' + componente_index">
+                          <tr>
+                            <td class="w_auto nowrap text_align_center">
+                              {{ componente_index + 1 + 2 }}
+                            </td>
+                            <td class="w_100 nowrap">
+                              {{ componente.nombre }}
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div v-else>
+                      <p style="text-align: center;">No se encontraton componentes actualmente.</p>
+                    </div>
+                    <footer>
+                      
+                    </footer>
+                  </article>
+                </section>
+              </article>
+            </div>
+          </article>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_eliminar_componente">
+            <div class="title-bar">
+              <div class="title-bar-text">Eliminar componente</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_eliminar_componente"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <div>¿Seguro que quieres eliminar componente «<b>{{ componente_a_eliminar }}</b>»?</div>
+            </div>
+            <footer style="text-align: right">
+              <button style="background-color: #900;" v-on:click="() => confirmar_dialogo_de_eliminar_componente()">⚠ Sí, eliminar</button>
+              <button v-on:click="() => cancelar_dialogo_de_eliminar_componente()">❌ Cancelar</button>
+            </footer>
+          </div>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_crear_componente">
+            <div class="title-bar">
+              <div class="title-bar-text">Crear componente</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_nuevo_componente"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <input class="w_100" type="text" placeholder="ComponenteVue" v-model="nombre_de_nuevo_componente" />
+              <div class="mensaje_de_error" v-if="typeof mensaje_de_error_de_nuevo_componente === 'string'">{{ mensaje_de_error_de_nuevo_componente }}</div>
+            </div>
+            <footer style="text-align: right">
+              <button v-on:click="() => resolver_dialogo_de_nuevo_componente(nombre_de_nuevo_componente)">➕ Crear componente</button>
+              <button v-on:click="() => cancelar_dialogo_de_nuevo_componente()">❌ Salir</button>
+            </footer>
+          </div>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_crear_componente_por_prototipo">
+            <div class="title-bar">
+              <div class="title-bar-text">Crear componente por prototipo</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_nuevo_componente_por_prototipo"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <div style="padding-bottom:4px;">
+                <input class="w_100" type="text" v-model="nombre_de_nuevo_componente_por_prototipo" placeholder="ComponenteVue" />
+              </div>
+              <div style="padding-bottom:4px;">
+                <input class="w_100" type="text" v-model="nombre_de_viejo_componente_por_prototipo" placeholder="PrototipoVue" disabled="true" />
+              </div>
+              <div class="mensaje_de_error" v-if="typeof mensaje_de_error_de_nuevo_componente_por_prototipo === 'string'">{{ mensaje_de_error_de_nuevo_componente_por_prototipo }}</div>
+              <SelectorDeComponenteDeGuiBuilder :opciones="componentes" :seleccionados="nombre_de_viejo_componente_por_prototipo ? [nombre_de_viejo_componente_por_prototipo] : []" posicion="relative" :al-seleccionar="v => { nombre_de_viejo_componente_por_prototipo = v; $forceUpdate(true); }" />
+            </div>
+            <footer style="text-align: right">
+              <button v-on:click="() => resolver_dialogo_de_nuevo_componente_por_prototipo([nombre_de_nuevo_componente_por_prototipo, nombre_de_viejo_componente_por_prototipo])">➕ Crear componente</button>
+              <button v-on:click="() => cancelar_dialogo_de_nuevo_componente_por_prototipo()">❌ Salir</button>
+            </footer>
+          </div>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_crear_componente_por_url">
+            <div class="title-bar">
+              <div class="title-bar-text">Crear componente por URL</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_nuevo_componente_por_url"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <input class="w_100" type="text" placeholder="http://github.com/allnulled/componentes-vue/path/to/item.calo" v-model="nombre_de_nuevo_componente_por_url" />
+              <div class="mensaje_de_error" v-if="typeof mensaje_de_error_de_nuevo_componente_por_url === 'string'">{{ mensaje_de_error_de_nuevo_componente_por_url }}</div>
+            </div>
+            <footer style="text-align: right">
+              <button v-on:click="() => resolver_dialogo_de_nuevo_componente_por_url(nombre_de_nuevo_componente_por_url)">➕ Crear componente</button>
+              <button v-on:click="() => cancelar_dialogo_de_nuevo_componente_por_url()">❌ Salir</button>
+            </footer>
+          </div>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_crear_atajo">
+            <div class="title-bar">
+              <div class="title-bar-text">Crear atajo</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_crear_atajo"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <input class="w_100" type="text" placeholder="Nombre del atajo..." v-model="nombre_de_crear_atajo" />
+              <div class="mensaje_de_error" v-if="typeof mensaje_de_error_de_crear_atajo === 'string'">{{ mensaje_de_error_de_crear_atajo }}</div>
+            </div>
+            <footer style="text-align: right">
+              <button style="background-color: #900;" v-on:click="() => confirmar_dialogo_de_crear_atajo(nombre_de_crear_atajo)">➕ Crear atajo</button>
+              <button v-on:click="() => cancelar_dialogo_de_crear_atajo()">❌ Cancelar</button>
+            </footer>
+          </div>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_eliminar_atajo">
+            <div class="title-bar">
+              <div class="title-bar-text">Eliminar atajo</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_eliminar_atajo"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <div>¿Seguro que quieres eliminar atajo «<b>{{ atajo_a_eliminar }}</b>»?</div>
+            </div>
+            <footer style="text-align: right">
+              <button style="background-color: #900;" v-on:click="() => confirmar_dialogo_de_eliminar_atajo()">⚠ Sí, eliminar</button>
+              <button v-on:click="() => cancelar_dialogo_de_eliminar_atajo()">❌ Cancelar</button>
+            </footer>
+          </div>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_crear_app">
+            <div class="title-bar">
+              <div class="title-bar-text">Crear app</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_crear_app"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <input class="w_100" type="text" placeholder="Nombre del app..." v-model="nombre_de_crear_app" />
+              <div class="mensaje_de_error" v-if="typeof mensaje_de_error_de_crear_app === 'string'">{{ mensaje_de_error_de_crear_app }}</div>
+            </div>
+            <footer style="text-align: right">
+              <button style="background-color: #900;" v-on:click="confirmar_dialogo_de_crear_app">⚠ Sí, eliminar</button>
+              <button v-on:click="cancelar_dialogo_de_crear_app">❌ Cancelar</button>
+            </footer>
+          </div>
+                <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_subir_traducciones">
+            <div class="title-bar">
+              <div class="title-bar-text">Subir traducciones</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_subir_traducciones"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <input class="w_100" type="text" placeholder="Parámetro indeterminado..." v-model="parametro_indeterminado" />
+              <div class="mensaje_de_error" v-if="typeof mensaje_de_error_de_crear_app === 'string'">{{ mensaje_de_error_de_crear_app }}</div>
+            </div>
+            <footer style="text-align: right">
+              <button style="background-color: #900;" v-on:click="confirmar_dialogo_de_crear_app">⚠ Proceder</button>
+              <button v-on:click="cancelar_dialogo_de_crear_app">❌ Cancelar</button>
+            </footer>
+          </div>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_anyadir_rutas">
+            <div class="title-bar">
+              <div class="title-bar-text">Anyadir rutas</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_anyadir_rutas"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <input class="w_100" type="text" placeholder="Parámetro indeterminado..." v-model="parametro_indeterminado" />
+              <div class="mensaje_de_error" v-if="typeof mensaje_de_error_de_crear_app === 'string'">{{ mensaje_de_error_de_crear_app }}</div>
+            </div>
+            <footer style="text-align: right">
+              <button style="background-color: #900;" v-on:click="confirmar_dialogo_de_crear_app">⚠ Proceder</button>
+              <button v-on:click="cancelar_dialogo_de_crear_app">❌ Cancelar</button>
+            </footer>
+          </div>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_anyadir_fichero">
+            <div class="title-bar">
+              <div class="title-bar-text">Anyadir fichero</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_anyadir_fichero"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <input class="w_100" type="text" placeholder="Parámetro indeterminado..." v-model="parametro_indeterminado" />
+              <div class="mensaje_de_error" v-if="typeof mensaje_de_error_de_crear_app === 'string'">{{ mensaje_de_error_de_crear_app }}</div>
+            </div>
+            <footer style="text-align: right">
+              <button style="background-color: #900;" v-on:click="confirmar_dialogo_de_crear_app">⚠ Proceder</button>
+              <button v-on:click="cancelar_dialogo_de_crear_app">❌ Cancelar</button>
+            </footer>
+          </div>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_descargar_app">
+            <div class="title-bar">
+              <div class="title-bar-text">Descargar app</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_descargar_app"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <input class="w_100" type="text" placeholder="Parámetro indeterminado..." v-model="parametro_indeterminado" />
+              <div class="mensaje_de_error" v-if="typeof mensaje_de_error_de_crear_app === 'string'">{{ mensaje_de_error_de_crear_app }}</div>
+            </div>
+            <footer style="text-align: right">
+              <button style="background-color: #900;" v-on:click="confirmar_dialogo_de_crear_app">⚠ Proceder</button>
+              <button v-on:click="cancelar_dialogo_de_crear_app">❌ Cancelar</button>
+            </footer>
+          </div>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_crear_conexion_de_base_de_datos">
+            <div class="title-bar">
+              <div class="title-bar-text">Crear conexión de base de datos</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_crear_conexion_de_base_de_datos"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <input class="w_100" type="text" placeholder="Parámetro indeterminado..." v-model="parametro_indeterminado" />
+              <div class="mensaje_de_error" v-if="typeof mensaje_de_error_de_crear_app === 'string'">{{ mensaje_de_error_de_crear_app }}</div>
+            </div>
+            <footer style="text-align: right">
+              <button style="background-color: #900;" v-on:click="confirmar_dialogo_de_crear_app">⚠ Proceder</button>
+              <button v-on:click="cancelar_dialogo_de_crear_app">❌ Cancelar</button>
+            </footer>
+          </div>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_crear_tabla_de_base_de_datos">
+            <div class="title-bar">
+              <div class="title-bar-text">Crear tabla de base de datos</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_crear_tabla_de_base_de_datos"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <input class="w_100" type="text" placeholder="Parámetro indeterminado..." v-model="parametro_indeterminado" />
+              <div class="mensaje_de_error" v-if="typeof mensaje_de_error_de_crear_app === 'string'">{{ mensaje_de_error_de_crear_app }}</div>
+            </div>
+            <footer style="text-align: right">
+              <button style="background-color: #900;" v-on:click="confirmar_dialogo_de_crear_app">⚠ Proceder</button>
+              <button v-on:click="cancelar_dialogo_de_crear_app">❌ Cancelar</button>
+            </footer>
+          </div>
+          <div class="window active is-bright dialog_window" v-if="esta_abierto_dialogo_de_crear_fila_de_base_de_datos">
+            <div class="title-bar">
+              <div class="title-bar-text">Crear fila de base de datos</div>
+              <div class="title-bar-controls">
+                <button class="boton_de_icono" aria-label="Close" v-on:click="cancelar_dialogo_de_crear_fila_de_base_de_datos"></button>
+              </div>
+            </div>
+            <div class="window-body has-space">
+              <input class="w_100" type="text" placeholder="Parámetro indeterminado..." v-model="parametro_indeterminado" />
+              <div class="mensaje_de_error" v-if="typeof mensaje_de_error_de_crear_app === 'string'">{{ mensaje_de_error_de_crear_app }}</div>
+            </div>
+            <footer style="text-align: right">
+              <button style="background-color: #900;" v-on:click="confirmar_dialogo_de_crear_app">⚠ Proceder</button>
+              <button v-on:click="cancelar_dialogo_de_crear_app">❌ Cancelar</button>
+            </footer>
+          </div>
+        </div>
+        <div class="error_window_box" v-if="errores_mostrados && errores_mostrados.length">
+          <div class="window error_window">
+            <div class="title-bar">
+              <div class="title-bar-text">
+                <span>Error emergente</span>
+                <span v-if="errores_mostrados.length !== 1">(+ {{ errores_mostrados.length - 1 }} errores más)</span>
+              </div>
+              <div class="title-bar-controls">
+                  <button class="boton_de_icono" aria-label="Close" v-on:click="mostrar_siguiente_error"></button>
+                </div>
+            </div>
+            <div class="window-body" :style="'height:' + altura_de_caja_de_error + 'px;'" style="height:100px;overflow:scroll;border: 1px solid silver;resize:vertical;">
+              <div v-if="errores_mostrados[0].name !== 'SyntaxError'">
+                <div class="item_de_error">
+                  <span class="etiqueta_de_item">Nombre de error: </span>
+                  <div class="valor_de_item codigo">{{ errores_mostrados[0].name }}</div>
+                </div>
+                <div class="item_de_error" v-if="errores_mostrados[0].details">
+                  <span class="etiqueta_de_item">Detalles de error: </span>
+                  <div class="valor_de_item codigo">{{ JSON.stringify(errores_mostrados[0].details) }}</div>
+                </div>
+                <div class="item_de_error">
+                  <span class="etiqueta_de_item">Mensaje de error: </span>
+                  <div class="valor_de_item codigo">{{ errores_mostrados[0].message }}</div>
+                </div>
+                <div class="item_de_error">
+                  <span class="etiqueta_de_item">Pila de error: </span>
+                  <div class="valor_de_item codigo">{{ JSON.stringify(errores_mostrados[0].stack) }}</div>
+                </div>
+              </div>
+              <div v-else>
+                <div class="item_de_error">
+                  <span class="etiqueta_de_item">Nombre de error: </span>
+                  <div class="valor_de_item codigo">{{ errores_mostrados[0].name }}</div>
+                </div>
+                <div class="item_de_error" v-if="errores_mostrados[0].details">
+                  <span class="etiqueta_de_item">Detalles de error: </span>
+                  <div class="valor_de_item codigo">{{ JSON.stringify(errores_mostrados[0].details) }}</div>
+                </div>
+                <div class="item_de_error">
+                  <span class="etiqueta_de_item">Localización de error: </span>
+                  <div class="valor_de_item codigo">{{ JSON.stringify(errores_mostrados[0].location, null, 2) }}</div>
+                </div>
+                <div class="item_de_error">
+                  <span class="etiqueta_de_item">Encuentro de error: </span>
+                  <div class="valor_de_item codigo">{{ JSON.stringify(errores_mostrados[0].found, null, 2) }}</div>
+                </div>
+                <div class="item_de_error">
+                  <span class="etiqueta_de_item">Mensaje de error: </span>
+                  <div class="valor_de_item codigo">{{ errores_mostrados[0].message }}</div>
+                </div>
+                <div class="item_de_error">
+                  <span class="etiqueta_de_item">Sugerencias de error: </span>
+                  <div class="valor_de_item codigo">{{ JSON.stringify(errores_mostrados[0].expected, null, 2) }}</div>
+                </div>
+                <div class="item_de_error">
+                  <span class="etiqueta_de_item">Pila de error: </span>
+                  <div class="valor_de_item codigo">{{ JSON.stringify(errores_mostrados[0].stack) }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="" style="position:fixed;right:20px;bottom:10px;">
+              <div class="">
+                <span class="" style="font-size:8px;max-width: 300px;max-height:10px;">
+                  <input type="range" min="50" max="500" value="25" v-model="altura_de_caja_de_error" />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+} con lógica donde {
+  retorno {
+    propiedad props como {
+      uuid: {
+        propiedad type como String.
+        propiedad required como true.
+      }
+    }.
+    propiedad watch como {
+      método elementos con (valor) donde {
+        debugo "GuiTester.watch.elementos".
+
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método elementos_de_formulario con (valor) donde {
+        debugo "GuiTester.watch.elementos_de_formulario".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionada_pestania_de_navegacion_1 con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionada_pestania_de_navegacion_1".
+        si valor no es igual que "componentes" {
+          asigno this.esta_cargando_vista como true.
+          asigno this.esta_cargada_vista_en_porcentaje como 0.
+          si this.esta_seleccionada_pestania es igual que "vista" {
+            asigno this.esta_seleccionada_pestania como undefined.
+          }.
+        } y si no {
+          si this.esta_seleccionada_pestania es tipo indefinido {
+            asigno this.esta_seleccionada_pestania como "vista".
+          }.
+        }.
+      }.
+      método esta_seleccionada_pestania_de_componente con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionada_pestania_de_componente".
+        si valor no es tipo texto {
+          asigno this.esta_cargando_vista como true.
+          asigno this.esta_cargada_vista_en_porcentaje como 0.
+          asigno this.esta_seleccionada_pestania como undefined.
+        }.
+      }.
+      método esta_seleccionada_pestania con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionada_pestania".
+        si valor es igual que "vista" {
+          asigno this.esta_mostrando_formulario como false.
+          hago clearTimeout(this.esta_cargando_vista_timeout_id).
+          asigno this.esta_cargando_vista_timeout_id como setTimeout(una lambda donde {
+            asigno this.esta_cargando_vista como false.
+          }, 1000 * 0.28).
+          hago this.guardar_configuraciones_de_componente().
+          asigno this.esta_cargada_vista_en_porcentaje como 0.
+          hago setTimeout(una lambda donde {
+            asigno this.esta_cargada_vista_en_porcentaje como 100.
+          }, 20).
+        } y si no {
+          asigno this.esta_cargando_vista como true.
+          asigno this.esta_cargada_vista_en_porcentaje como 0.
+        }.
+      }.
+      método esta_seleccionado_en_pre_cargar con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_pre_cargar".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_propiedades con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_propiedades".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_metodos con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_metodos".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_datos con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_datos".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_datos_observados con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_datos_observados".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_datos_computados con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_datos_computados".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_pre_crear con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_pre_crear".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_post_crear con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_post_crear".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_pre_montar con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_pre_montar".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_post_montar con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_post_montar".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_pre_actualizar con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_pre_actualizar".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_post_actualizar con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_post_actualizar".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_pre_desmontar con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_pre_desmontar".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método esta_seleccionado_en_post_desmontar con (valor) donde {
+        debugo "GuiTester.watch.esta_seleccionado_en_post_desmontar".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_estilo con (valor) donde {
+        debugo "GuiTester.watch.script_de_estilo".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_precargar con (valor) donde {
+        debugo "GuiTester.watch.script_de_precargar".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_props con (valor) donde {
+        debugo "GuiTester.watch.script_de_props".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_data con (valor) donde {
+        debugo "GuiTester.watch.script_de_data".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_methods con (valor) donde {
+        debugo "GuiTester.watch.script_de_methods".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_data con (valor) donde {
+        debugo "GuiTester.watch.script_de_data".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_watch con (valor) donde {
+        debugo "GuiTester.watch.script_de_watch".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_computed con (valor) donde {
+        debugo "GuiTester.watch.script_de_computed".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_beforeCreate con (valor) donde {
+        debugo "GuiTester.watch.script_de_beforeCreate".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_created con (valor) donde {
+        debugo "GuiTester.watch.script_de_created".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_beforeMount con (valor) donde {
+        debugo "GuiTester.watch.script_de_beforeMount".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_mounted con (valor) donde {
+        debugo "GuiTester.watch.script_de_mounted".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_beforeUpdate con (valor) donde {
+        debugo "GuiTester.watch.script_de_beforeUpdate".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_updated con (valor) donde {
+        debugo "GuiTester.watch.script_de_updated".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_beforeUnmount con (valor) donde {
+        debugo "GuiTester.watch.script_de_beforeUnmount".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método script_de_unmounted con (valor) donde {
+        debugo "GuiTester.watch.script_de_unmounted".
+        hago this.guardar_configuraciones_de_componente().
+      }.
+      método componentes con (valor) donde {
+        debugo "GuiTester.watch.componentes".
+        hago this.filtrar_componentes(valor).
+      }.
+      método componentes_abiertos con (valor) donde {
+        debugo "GuiTester.watch.componentes_abiertos".
+        hago this.filtrar_componentes_abiertos(valor).
+      }.
+      método filtro_de_componentes con (valor) donde {
+        debugo "GuiTester.watch.filtro_de_componentes".
+        hago this.filtrar_componentes(this.componentes).
+      }.
+      método filtro_de_componentes_abiertos con (valor) donde {
+        debugo "GuiTester.watch.filtro_de_componentes_abiertos".
+        hago this.filtrar_componentes_abiertos(this.componentes_abiertos).
+      }.
+    }.
+    método data donde {
+      debugo "GuiTester.data".
+      retorno {
+        apps: [],
+        atajos: [],
+        componentes: [],
+        componentes_abiertos: [],
+        nombre_de_nuevo_componente: "",
+        nombre_de_nuevo_componente_por_prototipo: "",
+        nombre_de_viejo_componente_por_prototipo: "",
+        nombre_de_nuevo_componente_por_url: "",
+        documentacion_de_componente: "",
+        errores_mostrados: [],
+        esta_mostrando_errores: [],
+        esta_editando_documentacion: false,
+        test_de_componente: "",
+        placeholder_de_test_de_componente: un código en texto donde {
+hago un testeo llamado 'x' que en menos de 0.999 segundos pase los tests [
+  'Test de feature 1',
+  'Test de feature 2'
+].
+hago un test llamado 'Test de feature 1' donde {
+  compruebo que 1 es igual que 1.  
+}.
+hago un test llamado 'Test de feature 2' donde {
+  compruebo que 2 es igual que 2.
+}.
+        }.trim(),
+        salida_de_test_de_componente: "",
+        elementos: [],
+        elementos_de_formulario: [],
+        elemento_en_copia: undefined,
+        elemento_en_copia_padre: undefined,
+        elemento_en_copia_modo: undefined,
+        filtro_de_componentes: "",
+        filtro_de_componentes_abiertos: "",
+        componentes_filtrados: [],
+        componentes_abiertos_filtrados: [],
+        esta_ejecutando_test: false,
+        esta_seleccionada_pestania_de_bd: 1,
+        esta_seleccionada_pestania_de_app: 1,
+        esta_en_roadmap_app: 2,
+        esta_cargando_vista: true,
+        esta_cargada_vista_en_porcentaje: 0,
+        esta_cargando_vista_timeout_id: false,
+        esta_seleccionada_pestania_de_componente: 0,
+        esta_seleccionada_pestania_de_navegacion_1: 'componentes',
+        esta_editando_pestania: undefined,
+        esta_seleccionada_pestania: "plantilla",
+        esta_seleccionado_en_pre_cargar: false,
+        esta_seleccionado_en_propiedades: false,
+        esta_seleccionado_en_metodos: false,
+        esta_seleccionado_en_datos: false,
+        esta_seleccionado_en_datos_observados: false,
+        esta_seleccionado_en_datos_computados: false,
+        esta_seleccionado_en_pre_crear: false,
+        esta_seleccionado_en_post_crear: false,
+        esta_seleccionado_en_pre_montar: false,
+        esta_seleccionado_en_post_montar: false,
+        esta_seleccionado_en_pre_actualizar: false,
+        esta_seleccionado_en_post_actualizar: false,
+        esta_seleccionado_en_pre_desmontar: false,
+        esta_seleccionado_en_post_desmontar: false,
+        esta_abierto_dialogo_de_crear_componente: false,
+        esta_abierto_dialogo_de_crear_componente_por_prototipo: false,
+        esta_abierto_dialogo_de_crear_componente_por_url: false,
+        esta_abierto_dialogo_de_crear_app: false,
+        esta_abierto_dialogo_de_subir_traducciones: false,
+        esta_abierto_dialogo_de_anyadir_rutas: false,
+        esta_abierto_dialogo_de_anyadir_fichero: false,
+        esta_abierto_dialogo_de_descargar_app: false,
+        esta_abierto_dialogo_de_crear_conexion_de_base_de_datos: false,
+        esta_abierto_dialogo_de_crear_tabla_de_base_de_datos: false,
+        esta_abierto_dialogo_de_crear_fila_de_base_de_datos: false,
+        script_de_estilo: "",
+        script_de_precargar: "",
+        script_de_props: "",
+        script_de_data: "",
+        script_de_methods: "",
+        script_de_data: "",
+        script_de_watch: "",
+        script_de_computed: "",
+        script_de_beforeCreate: "",
+        script_de_created: "",
+        script_de_beforeMount: "",
+        script_de_mounted: "",
+        script_de_beforeUpdate: "",
+        script_de_updated: "",
+        script_de_beforeUnmount: "",
+        script_de_unmounted: "",
+        tiempo_de_error: 1000 * 6,
+        placeholder_de_script_de_props: this.sanitizar_salida_generativa_calo(
+un código de generativa en texto con {
+  atributoUno: {
+    propiedad type como String.
+    propiedad default como una función donde retorno un texto aleatorio de 10 caracteres.
+  },
+  atributoDos: {
+    propiedad type como [Object, Array].
+    propiedad default como una función donde retorno {}.
+  }
+}
+        ).trim(),
+        placeholder_de_script_de_methods: this.sanitizar_salida_generativa_calo(un código de generativa en texto con {
+  cargar_datos: una función asíncrona donde {
+
+  }
+}).trim(),
+        placeholder_de_script_de_data: un código en texto donde {
+retorno {
+  propiedad_1: 0,
+  propiedad_2: 0,
+  propiedad_3: 0
+}.
+        }.trim(),
+        placeholder_de_script_de_watch: this.sanitizar_salida_generativa_calo(
+un código de generativa en texto con {
+  propiedad_1: una función con (valor) donde {
+    asigno this.propiedad_2 como valor + ".1".
+  },
+  propiedad_2: una función con (valor) donde {
+    asigno this.propiedad_3 como valor + ".2".
+  },
+  propiedad_3: una función con (valor) donde {
+    imprimo valor.
+  }
+}
+        ).trim(),
+        placeholder_de_script_de_computed: this.sanitizar_salida_generativa_calo(
+un código de generativa en texto con {
+  propiedad_4: una función donde retorno this.propiedad_1 + ".4"
+}
+        ).trim(),
+        placeholder_de_script_de_beforeCreate: this.sanitizar_salida_generativa_calo(un código de generativa en texto con una función con () {
+  @POR-HACER
+}).trim(),
+        placeholder_de_script_de_created: this.sanitizar_salida_generativa_calo(un código de generativa en texto con una función con () {
+  @POR-HACER
+}).trim(),
+        placeholder_de_script_de_beforeMount: this.sanitizar_salida_generativa_calo(un código de generativa en texto con una función con () {
+  @POR-HACER
+}).trim(),
+        placeholder_de_script_de_mounted: this.sanitizar_salida_generativa_calo(un código de generativa en texto con una función con () {
+  @POR-HACER
+}).trim(),
+        placeholder_de_script_de_beforeUpdate: this.sanitizar_salida_generativa_calo(un código de generativa en texto con una función con () {
+  @POR-HACER
+}).trim(),
+        placeholder_de_script_de_updated: this.sanitizar_salida_generativa_calo(un código de generativa en texto con una función con () {
+  @POR-HACER
+}).trim(),
+        placeholder_de_script_de_beforeUnmount: this.sanitizar_salida_generativa_calo(un código de generativa en texto con una función con () {
+  @POR-HACER
+}).trim(),
+        placeholder_de_script_de_unmounted: this.sanitizar_salida_generativa_calo(un código de generativa en texto con una función con () {
+  @POR-HACER
+}).trim(),
+        renderizar_dilator_id: undefined,
+        renderizar_dilator_milisegundos: 3 * 1000,
+        cerrar_error_dilator_id: undefined,
+        resolver_dialogo_de_nuevo_componente: una función,
+        resolver_dialogo_de_nuevo_componente_por_prototipo: una función,
+        resolver_dialogo_de_nuevo_componente_por_url: una función,
+        cancelar_dialogo_de_nuevo_componente: una función,
+        cancelar_dialogo_de_nuevo_componente_por_prototipo: una función,
+        cancelar_dialogo_de_nuevo_componente_por_url: una función,
+        cancelar_dialogo_de_crear_atajo: una función,
+        cancelar_dialogo_de_eliminar_componente: una función,
+        cancelar_dialogo_de_eliminar_atajo: una función,
+        mensaje_de_error_de_nuevo_componente: undefined,
+        mensaje_de_error_de_nuevo_componente_por_prototipo: undefined,
+        mensaje_de_error_de_nuevo_componente_por_url: undefined,
+        componente_a_eliminar: "",
+        esta_abierto_dialogo_de_eliminar_componente: false,
+        esta_abierto_dialogo_de_eliminar_atajo: false,
+        esta_abierto_dialogo_de_crear_atajo: false,
+        nombre_de_crear_atajo: "",
+        mensaje_de_error_de_crear_atajo: undefined,
+        confirmar_dialogo_de_crear_atajo: una función,
+        confirmar_dialogo_de_eliminar_componente: una función,
+        confirmar_dialogo_de_eliminar_atajo: una función,
+        nombre_de_crear_app: undefined,
+        mensaje_de_error_de_crear_app: undefined,
+        esta_mostrando_vista: false,
+        esta_cargando_vista: 0,
+        esta_cargando_vista_timeout_id: 0,
+        esta_mostrando_formulario: false,
+        esta_cargando_formulario: 0,
+        esta_cargando_formulario_timeout_id: 0,
+        altura_de_caja_de_error: 100,
+        roadmap_pasos: {
+          Aplicacion: {nombre:"⚡ Aplicación", descripcion: "Configura parámetros generales de la aplicación."},
+          Componentes: {nombre:"🧩 Componentes", descripcion: "Comprueba que están todos los componentes que esperas dentro de la aplicación."},
+          Traducciones: {nombre:"🌐 Traducciones", descripcion: "Establece traducciones vía fichero o texto."},
+          Rutas: {nombre:"🏁 Rutas", descripcion: "Vincula componentes y rutas de aplicación accesibles vía parámetros."},
+          Eventos: {nombre:"📡 Eventos", descripcion: "Agrega funciones en los eventos típicos de la aplicación."},
+          Ficheros: {nombre:"🗄 Ficheros", descripcion: "Empaqueta ficheros externos a la aplicación, como imágenes u otros."},
+          Descargas: {nombre:"🌟 Descargas", descripcion: "Finalmente, descárgate tu aplicación personalizada."}
+        }
+      }.
+    }.
+    método mounted donde {
+      debugo "GuiTester.mounted".
+      asigno this.componentes como this.cargar_componentes().
+      asigno this.atajos como this.cargar_atajos().
+      asigno this.apps como this.cargar_apps().
+      ### asigno this.$window.root como this.
+    }.
+    propiedad methods como {
+      alternar_editando_documentacion: una función donde {
+        debugo "GuiTester.methods.alternar_editando_documentacion".
+        asigno this.esta_editando_documentacion como no this.esta_editando_documentacion.
+        hago this.$forceUpdate(true).
+      },
+      mostrar_siguiente_error: una función donde {
+        debugo "GuiTester.methods.mostrar_siguiente_error".
+        si this.errores_mostrados.length es igual que 0 asigno this.esta_mostrando_errores como false.
+        hago this.errores_mostrados.shift().
+        hago this.$forceUpdate(true).
+      },
+      mostrar_error: una función con (error) donde {
+        debugo "GuiTester.methods.mostrar_error".
+        apendizo error en this.errores_mostrados.
+        si this.esta_mostrando_errores retorno.
+        retorno this.mostrar_siguiente_error().
+      },
+      abrir_dialogo_de_crear_app: una función con () donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_crear_app".
+        alterno this.esta_abierto_dialogo_de_crear_app.
+      },
+      abrir_dialogo_de_subir_traducciones: una función con () donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_subir_traducciones".
+        alterno this.esta_abierto_dialogo_de_subir_traducciones.
+      },
+      abrir_dialogo_de_anyadir_rutas: una función con () donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_anyadir_rutas".
+        alterno this.esta_abierto_dialogo_de_anyadir_rutas.
+      },
+      abrir_dialogo_de_anyadir_fichero: una función con () donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_anyadir_fichero".
+        alterno this.esta_abierto_dialogo_de_anyadir_fichero.
+      },
+      abrir_dialogo_de_descargar_app: una función con () donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_descargar_app".
+        alterno this.esta_abierto_dialogo_de_descargar_app.
+      },
+      abrir_dialogo_de_crear_conexion_de_base_de_datos: una función con () donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_crear_conexion_de_base_de_datos".
+        alterno this.esta_abierto_dialogo_de_crear_conexion_de_base_de_datos.
+      },
+      abrir_dialogo_de_crear_tabla_de_base_de_datos: una función con () donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_crear_tabla_de_base_de_datos".
+        alterno this.esta_abierto_dialogo_de_crear_tabla_de_base_de_datos.
+      },
+      abrir_dialogo_de_crear_fila_de_base_de_datos: una función con () donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_crear_fila_de_base_de_datos".
+        alterno this.esta_abierto_dialogo_de_crear_fila_de_base_de_datos.
+      },
+      confirmar_dialogo_de_crear_app: una función con () donde {
+        debugo "GuiTester.methods.confirmar_dialogo_de_crear_app".
+        alterno this.esta_abierto_dialogo_de_crear_app.
+      },
+      confirmar_dialogo_de_subir_traducciones: una función con () donde {
+        debugo "GuiTester.methods.confirmar_dialogo_de_subir_traducciones".
+        alterno this.esta_abierto_dialogo_de_subir_traducciones.
+      },
+      confirmar_dialogo_de_anyadir_rutas: una función con () donde {
+        debugo "GuiTester.methods.confirmar_dialogo_de_anyadir_rutas".
+        alterno this.esta_abierto_dialogo_de_anyadir_rutas.
+      },
+      confirmar_dialogo_de_anyadir_fichero: una función con () donde {
+        debugo "GuiTester.methods.confirmar_dialogo_de_anyadir_fichero".
+        alterno this.esta_abierto_dialogo_de_anyadir_fichero.
+      },
+      confirmar_dialogo_de_descargar_app: una función con () donde {
+        debugo "GuiTester.methods.confirmar_dialogo_de_descargar_app".
+        alterno this.esta_abierto_dialogo_de_descargar_app.
+      },
+      confirmar_dialogo_de_crear_conexion_de_base_de_datos: una función con () donde {
+        debugo "GuiTester.methods.confirmar_dialogo_de_crear_conexion_de_base_de_datos".
+        alterno this.esta_abierto_dialogo_de_crear_conexion_de_base_de_datos.
+      },
+      confirmar_dialogo_de_crear_tabla_de_base_de_datos: una función con () donde {
+        debugo "GuiTester.methods.confirmar_dialogo_de_crear_tabla_de_base_de_datos".
+        alterno this.esta_abierto_dialogo_de_crear_tabla_de_base_de_datos.
+      },
+      confirmar_dialogo_de_crear_fila_de_base_de_datos: una función con () donde {
+        debugo "GuiTester.methods.confirmar_dialogo_de_crear_fila_de_base_de_datos".
+        alterno this.esta_abierto_dialogo_de_crear_fila_de_base_de_datos.
+      },
+      cancelar_dialogo_de_crear_app: una función con () donde {
+        debugo "GuiTester.methods.cancelar_dialogo_de_crear_app".
+        alterno this.esta_abierto_dialogo_de_crear_app.
+      },
+      cancelar_dialogo_de_subir_traducciones: una función con () donde {
+        debugo "GuiTester.methods.cancelar_dialogo_de_subir_traducciones".
+        alterno this.esta_abierto_dialogo_de_subir_traducciones.
+      },
+      cancelar_dialogo_de_anyadir_rutas: una función con () donde {
+        debugo "GuiTester.methods.cancelar_dialogo_de_anyadir_rutas".
+        alterno this.esta_abierto_dialogo_de_anyadir_rutas.
+      },
+      cancelar_dialogo_de_anyadir_fichero: una función con () donde {
+        debugo "GuiTester.methods.cancelar_dialogo_de_anyadir_fichero".
+        alterno this.esta_abierto_dialogo_de_anyadir_fichero.
+      },
+      cancelar_dialogo_de_descargar_app: una función con () donde {
+        debugo "GuiTester.methods.cancelar_dialogo_de_descargar_app".
+        alterno this.esta_abierto_dialogo_de_descargar_app.
+      },
+      cancelar_dialogo_de_crear_conexion_de_base_de_datos: una función con () donde {
+        debugo "GuiTester.methods.cancelar_dialogo_de_crear_conexion_de_base_de_datos".
+        alterno this.esta_abierto_dialogo_de_crear_conexion_de_base_de_datos.
+      },
+      cancelar_dialogo_de_crear_tabla_de_base_de_datos: una función con () donde {
+        debugo "GuiTester.methods.cancelar_dialogo_de_crear_tabla_de_base_de_datos".
+        alterno this.esta_abierto_dialogo_de_crear_tabla_de_base_de_datos.
+      },
+      cancelar_dialogo_de_crear_fila_de_base_de_datos: una función con () donde {
+        debugo "GuiTester.methods.cancelar_dialogo_de_crear_fila_de_base_de_datos".
+        alterno this.esta_abierto_dialogo_de_crear_fila_de_base_de_datos.
+      },
+      iniciar_test: una función asíncrona donde {
+        debugo "GuiTester.methods.iniciar_test".
+        asigno this.esta_ejecutando_test como no this.esta_ejecutando_test.
+        creo codigo_original como this.test_de_componente.
+        creo codigo_js como this.parseo_bloque_calo(`(async() {\n  try {\n    ${codigo_original}\n  } catch(error) {\n    this.mostrar_error(error, 'Error al «GuiTester.methods.iniciar_test»');\n  })()`, "GuiTester.methods.iniciar_test():this.test_de_componente").
+        creo resultado como asíncronamente eval(codigo_js).
+        hago this.$forceUpdate(true).
+      } en errores {
+        hago this.mostrar_error(error).
+      },
+      filtrar_componentes: una función con (valor) donde {
+        debugo "GuiTester.methods.filtrar_componentes".
+        asigno this.componentes_filtrados como valor filtrado por una lambda con (item) donde {
+          si this.filtro_de_componentes.length es igual que 0 retorno true.
+          retorno (item textualizado).toLowerCase().indexOf(this.filtro_de_componentes.toLowerCase()) no es igual que 0-1.
+        }.
+      },
+      filtrar_componentes_abiertos: una función con (valor) donde {
+        debugo "GuiTester.methods.filtrar_componentes_abiertos".
+        asigno this.componentes_abiertos_filtrados como valor filtrado por una lambda con (item) donde {
+          si this.filtro_de_componentes_abiertos.length es igual que 0 retorno true.
+          retorno (item textualizado).toLowerCase().indexOf(this.filtro_de_componentes_abiertos.toLowerCase()) no es igual que 0-1.
+        }.
+      },
+      alternar_vista: una función donde {
+        debugo "GuiTester.methods.alternar_vista".
+        asigno this.esta_cargando_vista como true.
+        asigno this.esta_mostrando_vista como no this.esta_mostrando_vista.
+        si this.esta_mostrando_vista es igual que true {
+          hago clearTimeout(this.esta_cargando_vista_timeout_id).
+          asigno this.esta_cargando_vista_timeout_id como setTimeout(una lambda donde {
+            asigno this.esta_cargando_vista como false.
+            hago this.$forceUpdate(true).
+          }, 1000 * 0.28).
+          asigno this.esta_cargando_vista_en_porcentaje como 0.
+          hago setTimeout(una lambda donde {
+            asigno this.esta_cargando_vista_en_porcentaje como 100.
+            hago this.$forceUpdate(true).
+          }, 20).
+        } y si no {
+          asigno this.esta_cargando_vista como true.
+          asigno this.esta_cargando_vista_en_porcentaje como 0.
+        }.
+      },
+      alternar_formulario: una función donde {
+        debugo "GuiTester.methods.alternar_formulario".
+        asigno this.esta_cargando_formulario como true.
+        asigno this.esta_mostrando_formulario como no this.esta_mostrando_formulario.
+        si this.esta_mostrando_formulario es igual que true {
+          hago clearTimeout(this.esta_cargando_formulario_timeout_id).
+          asigno this.esta_cargando_formulario_timeout_id como setTimeout(una lambda donde {
+            asigno this.esta_cargando_formulario como false.
+            hago this.$forceUpdate(true).
+          }, 1000 * 0.28).
+          asigno this.esta_cargando_formulario_en_porcentaje como 0.
+          hago setTimeout(una lambda donde {
+            asigno this.esta_cargando_formulario_en_porcentaje como 100.
+            hago this.$forceUpdate(true).
+          }, 20).
+        } y si no {
+          asigno this.esta_cargando_formulario como true.
+          asigno this.esta_cargando_formulario_en_porcentaje como 0.
+        }.
+      },
+      seleccionar_pestania_de_bd: una función con (pestania_seleccionada) donde {
+        debugo "GuiTester.methods.seleccionar_pestania_de_bd".
+        asigno this.esta_seleccionada_pestania_de_bd como pestania_seleccionada.
+      },
+      seleccionar_pestania_de_app: una función con (pestania_seleccionada) donde {
+        debugo "GuiTester.methods.seleccionar_pestania_de_app".
+        asigno this.esta_seleccionada_pestania_de_app como pestania_seleccionada.
+      },
+      sanitizar_atributo: una función con (entrada) donde {
+        debugo "GuiTester.methods.sanitizar_atributo".
+        retorno entrada.replace(una nueva RegExp('\n', "g"), "").replace(una nueva RegExp('"', "g"), "&quot;").
+      },
+      sanitizar_salida_generativa_calo: una función con (entrada) donde {
+        debugo "GuiTester.methods.sanitizar_salida_generativa_calo".
+        retorno entrada.replace(una nueva RegExp('^[\t\n\r ]*return ', "g"), "").replace(una nueva RegExp(';[\t\n\r ]*$', "g"), "").
+      },
+      reducir_dom_abstracto_a_html: una función con (elementos_dom_abstractos) donde {
+        debugo "GuiTester.methods.reducir_dom_abstracto_a_html".
+        creo variable elementos_dom_html como "".
+        desde 0 hasta elementos_dom_abstractos.length {
+          creo elemento_dom_abstracto como elementos_dom_abstractos[index].
+          desacoplo constantes { tag, nombre, atributos, esta_seleccionado_modo, componentes, texto } a partir de elemento_dom_abstracto.
+          creo tag_original como (tag o nombre).
+          creo tag_oficial como cuando tag_original.startsWith("<") entonces tag_original.substr(1, tag_original.length - 2) si no tag_original.
+          creo variable elemento_dom_html como "".
+          incremento elemento_dom_html en "<".
+          incremento elemento_dom_html en tag_oficial.
+          desde 0 hasta atributos.length usando index_atributo {
+            creo atributo como atributos[index_atributo].
+            desacoplo constantes { clave, valor } a partir de atributo.
+            si clave {
+              incremento elemento_dom_html en " ".
+              incremento elemento_dom_html en clave.
+              incremento elemento_dom_html en "=".
+              creo variable valor_final como valor.
+              si atributo.esta_en_calo {
+                intento donde asigno valor_final como this.parseo_generativa_calo(valor).
+              } y si no {
+                asigno valor_final como valor.
+              }.
+              incremento elemento_dom_html en JSON.stringify(this.sanitizar_atributo(valor_final)).
+            }.
+          }.
+          incremento elemento_dom_html en ">\n".
+          si esta_seleccionado_modo es igual que "texto" {
+            incremento elemento_dom_html en texto.
+          } pero si esta_seleccionado_modo es igual que "componentes" {
+            incremento elemento_dom_html en this.reducir_dom_abstracto_a_html(componentes).
+          }.
+          incremento elemento_dom_html en "\n</".
+          incremento elemento_dom_html en tag_oficial.
+          incremento elemento_dom_html en ">\n".
+          incremento elementos_dom_html en elemento_dom_html.
+        }.
+        retorno elementos_dom_html.
+      },
+      parseo_bloque_calo: una lambda con (bloque, id) donde {
+        asigno ultima_evaluacion como id.
+        retorno Castelog_parser.parse(bloque).trim().
+      } en errores {
+        asigno error.details como { id }.
+        lanzo error.
+      },
+      parseo_generativa_calo: una lambda con (bloque, id) donde {
+        creo retorno_token como una nueva RegExp("^[\r\t\n ]*return |;[\r\t\n ]*$", "g").
+        asigno ultima_evaluacion como id.
+        retorno Castelog_parser.parse("retorno " + bloque + ".").trim().replace(retorno_token,"").
+      } en errores {
+        asigno error.details como { id }.
+        lanzo error.
+      },
+      reducir_logica_a_funcion_de_componente: una función donde {
+        debugo "GuiTester.methods.reducir_logica_a_funcion_de_componente".
+        creo variable logica_source como "".
+        creo variable sanitizado_script_de_precargar como this.parseo_bloque_calo(this.script_de_precargar, "GuiTester.methods.reducir_logica_a_funcion_de_componente(this.script_de_precargar)").
+        creo variable sanitizado_script_de_data como this.parseo_bloque_calo(this.script_de_data, "GuiTester.methods.reducir_logica_a_funcion_de_componente(this.script_de_data)").
+        creo variable ultima_evaluacion como undefined.
+        creo variable sanitizado_script_de_props como cuando this.script_de_props.length entonces this.parseo_generativa_calo(this.script_de_props, "GuiTester.methods.reducir_logica_a_funcion_de_componente(props)") si no "".
+        creo variable sanitizado_script_de_methods como cuando this.script_de_methods.length entonces this.parseo_generativa_calo(this.script_de_methods, "GuiTester.methods.reducir_logica_a_funcion_de_componente(methods)") si no "".
+        creo variable sanitizado_script_de_watch como cuando this.script_de_watch.length entonces this.parseo_generativa_calo(this.script_de_watch, "GuiTester.methods.reducir_logica_a_funcion_de_componente(watch)") si no "".
+        creo variable sanitizado_script_de_computed como cuando this.script_de_computed.length entonces this.parseo_generativa_calo(this.script_de_computed, "GuiTester.methods.reducir_logica_a_funcion_de_componente(computed)") si no "".
+        creo variable sanitizado_script_de_beforeCreate como cuando this.script_de_beforeCreate entonces this.parseo_generativa_calo(this.script_de_beforeCreate, "GuiTester.methods.reducir_logica_a_funcion_de_componente(beforeCreate)") si no "() => {}".
+        creo variable sanitizado_script_de_created como cuando this.script_de_created entonces this.parseo_generativa_calo(this.script_de_created, "GuiTester.methods.reducir_logica_a_funcion_de_componente(created)") si no "() => {}".
+        creo variable sanitizado_script_de_beforeMount como cuando this.script_de_beforeMount entonces this.parseo_generativa_calo(this.script_de_beforeMount, "GuiTester.methods.reducir_logica_a_funcion_de_componente(beforeMount)") si no "() => {}".
+        creo variable sanitizado_script_de_mounted como cuando this.script_de_mounted entonces this.parseo_generativa_calo(this.script_de_mounted, "GuiTester.methods.reducir_logica_a_funcion_de_componente(mounted)") si no "() => {}".
+        creo variable sanitizado_script_de_beforeUpdate como cuando this.script_de_beforeUpdate entonces this.parseo_generativa_calo(this.script_de_beforeUpdate, "GuiTester.methods.reducir_logica_a_funcion_de_componente(beforeUpdate)") si no "() => {}".
+        creo variable sanitizado_script_de_updated como cuando this.script_de_updated entonces this.parseo_generativa_calo(this.script_de_updated, "GuiTester.methods.reducir_logica_a_funcion_de_componente(updated)") si no "() => {}".
+        creo variable sanitizado_script_de_beforeUnmount como cuando this.script_de_beforeUnmount entonces this.parseo_generativa_calo(this.script_de_beforeUnmount, "GuiTester.methods.reducir_logica_a_funcion_de_componente(beforeUnmount)") si no "() => {}".
+        creo variable sanitizado_script_de_unmounted como cuando this.script_de_unmounted entonces this.parseo_generativa_calo(this.script_de_unmounted, "GuiTester.methods.reducir_logica_a_funcion_de_componente(unmounted)") si no "() => {}".
+        si no sanitizado_script_de_precargar.length asigno sanitizado_script_de_precargar como "".
+        si no sanitizado_script_de_props.length asigno sanitizado_script_de_props como "{}".
+        si no sanitizado_script_de_data.length asigno sanitizado_script_de_data como "return {}".
+        si no sanitizado_script_de_methods.length asigno sanitizado_script_de_methods como "{}".
+        si no sanitizado_script_de_watch.length asigno sanitizado_script_de_watch como "{}".
+        si no sanitizado_script_de_computed.length asigno sanitizado_script_de_computed como "{}".
+        si no sanitizado_script_de_beforeCreate.length asigno sanitizado_script_de_beforeCreate como "".
+        si no sanitizado_script_de_created.length asigno sanitizado_script_de_created como "".
+        si no sanitizado_script_de_beforeMount.length asigno sanitizado_script_de_beforeMount como "".
+        si no sanitizado_script_de_mounted.length asigno sanitizado_script_de_mounted como "".
+        si no sanitizado_script_de_beforeUpdate.length asigno sanitizado_script_de_beforeUpdate como "".
+        si no sanitizado_script_de_updated.length asigno sanitizado_script_de_updated como "".
+        si no sanitizado_script_de_beforeUnmount.length asigno sanitizado_script_de_beforeUnmount como "".
+        si no sanitizado_script_de_unmounted.length asigno sanitizado_script_de_unmounted como "".
+        incremento logica_source en sanitizado_script_de_precargar.
+        incremento logica_source en "\nreturn {".
+        incremento logica_source en "\n  props: ".
+        incremento logica_source en sanitizado_script_de_props.
+        incremento logica_source en ",\n  data: function() {".
+        incremento logica_source en sanitizado_script_de_data.
+        incremento logica_source en "\n  }".
+        incremento logica_source en ",\n  methods: ".
+        incremento logica_source en sanitizado_script_de_methods.
+        incremento logica_source en ",\n  watch: ".
+        incremento logica_source en sanitizado_script_de_watch.
+        incremento logica_source en ",\n  computed: ".
+        incremento logica_source en sanitizado_script_de_computed.
+        incremento logica_source en ",\n  beforeCreate: ".
+        incremento logica_source en sanitizado_script_de_beforeCreate.
+        incremento logica_source en ",\n  created: ".
+        incremento logica_source en sanitizado_script_de_created.
+        incremento logica_source en ",\n  beforeMount: ".
+        incremento logica_source en sanitizado_script_de_beforeMount.
+        incremento logica_source en ",\n  mounted: ".
+        incremento logica_source en sanitizado_script_de_mounted.
+        incremento logica_source en ",\n  beforeUpdate: ".
+        incremento logica_source en sanitizado_script_de_beforeUpdate.
+        incremento logica_source en ",\n  updated: ".
+        incremento logica_source en sanitizado_script_de_updated.
+        incremento logica_source en ",\n  beforeUnmount: ".
+        incremento logica_source en sanitizado_script_de_beforeUnmount.
+        incremento logica_source en ",\n  unmounted: ".
+        incremento logica_source en sanitizado_script_de_unmounted.
+        incremento logica_source en "\n};".
+        imprimo logica_source.
+        creo logica_funcion como una nueva Function(logica_source).
+        retorno logica_funcion.
+      } en errores {
+        hago this.mostrar_error(error).
+      },
+      reducir_estilos_a_texto: una función donde {
+        debugo "GuiTester.methods.reducir_estilos_a_texto".
+        creo variable estilos como undefined.
+        asigno estilos como this.script_de_estilo.
+        retorno estilos.
+      },
+      seleccionar_pestania_de_navegacion_1: una función con (nuevo_estado) donde {
+        debugo "GuiTester.methods.seleccionar_pestania_de_navegacion_1".
+        asigno this.esta_seleccionada_pestania_de_navegacion_1 como nuevo_estado.
+        hago this.$forceUpdate(true).
+      },
+      seleccionar_pestania_de_componente: una función con (nombre) donde {
+        debugo "GuiTester.methods.seleccionar_pestania_de_componente".
+        si nombre es tipo texto {
+          si this.componentes_abiertos.indexOf(nombre) es igual que 0-1 {
+            apendizo nombre en this.componentes_abiertos.
+          }.
+          asigno this.esta_editando_pestania como nombre.
+        }.
+        asigno this.esta_seleccionada_pestania_de_componente como nombre.
+        asigno this.esta_seleccionada_pestania como "plantilla".
+        hago this.cargar_configuraciones_de_componente().
+        hago this.$forceUpdate(true).
+      },
+      cerrar_pestania_de_componente: una función con (nombre) donde {
+        debugo "GuiTester.methods.cerrar_pestania_de_componente".
+        creo posicion_componente como this.componentes_abiertos.indexOf(nombre).
+        hago this.componentes_abiertos.splice(posicion_componente, 1).
+        hago this.$forceUpdate(true).
+      },
+      renderizar_con_dilacion: una función con () donde {
+        debugo "GuiTester.methods.renderizar_con_dilacion".
+        hago clearTimeout(this.renderizar_dilator_id).
+        asigno this.renderizar_dilator_id como setTimeout(una lambda donde {
+          hago this.compilar_componente_de_test().
+          hago this.$forceUpdate(true).
+        }, this.renderizar_dilator_milisegundos).
+      },
+      abrir_dialogo_de_crear_atajo: una función asíncrona con () donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_crear_atajo".
+        asigno this.esta_abierto_dialogo_de_crear_atajo como true.
+        creo variable nuevo_nombre como undefined.
+        creo variable es_nombre_valido como false.
+        asigno this.mensaje_de_error_de_crear_atajo como undefined.
+        hasta que es_nombre_valido {
+          asigno this.nombre_de_crear_atajo como "".
+          creo promesa_de_nombre como una promesa con (ok, fail) donde {
+            asigno this.confirmar_dialogo_de_crear_atajo como ok.
+            asigno this.cancelar_dialogo_de_crear_atajo como fail.
+          }.
+          hago this.$forceUpdate(true).
+          asigno nuevo_nombre como asíncronamente promesa_de_nombre.
+          creo nombres_usados como this.atajos.map(una función con (item) donde retorno item.nombre).
+          si nombres_usados no contiene valor nuevo_nombre  {
+            asigno es_nombre_valido como true.
+          } y si no {
+            asigno this.mensaje_de_error_de_crear_atajo como "El nombre «" + nuevo_nombre + "» no está disponible como atajo.".
+          }.
+        }.
+        apendizo {nombre:nuevo_nombre,contenido:""} en this.atajos.
+        asigno this.esta_abierto_dialogo_de_crear_atajo como false.
+        hago this.guardar_atajos().
+        asigno this.atajos como this.cargar_atajos().
+        hago this.$forceUpdate(true).
+        retorno nuevo_nombre.
+      } en errores {
+        imprimo error.
+        asigno this.esta_abierto_dialogo_de_crear_atajo como false.
+        hago this.mostrar_error(error).
+        hago this.$forceUpdate(true).
+      },
+      abrir_dialogo_de_eliminar_componente: una función asíncrona con (nombre_de_componente) donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_eliminar_componente".
+        creo variable confirmacion como false.
+        asigno this.componente_a_eliminar como nombre_de_componente.
+        asigno this.esta_abierto_dialogo_de_eliminar_componente como true.
+        creo promesa_de_confirmacion como una promesa con (ok, fail) donde {
+          asigno this.confirmar_dialogo_de_eliminar_componente como ok.
+          asigno this.cancelar_dialogo_de_eliminar_componente como fail.
+        }.
+        asigno confirmacion como asíncronamente promesa_de_confirmacion.
+        asigno this.esta_abierto_dialogo_de_eliminar_componente como false.
+        creo variable posicion_de_componente como 0-1.
+        desde 0 hasta this.componentes.length {
+          creo componente como this.componentes[index].
+          si componente.nombre es igual que this.componente_a_eliminar {
+            asigno posicion_de_componente como index.
+          }.
+        }.
+        hago this.componentes.splice(posicion_de_componente, 1).
+        hago this.guardar_componentes().
+        asigno this.componentes como this.cargar_componentes().
+        hago this.mostrar_error(error).
+        hago this.$forceUpdate(true).
+      } en errores {
+        imprimo error.
+        asigno this.esta_abierto_dialogo_de_eliminar_componente como false.
+        hago this.$forceUpdate(true).
+      },
+      abrir_dialogo_de_eliminar_atajo: una función asíncrona con (nombre_de_atajo) donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_eliminar_atajo".
+        creo variable confirmacion como false.
+        asigno this.atajo_a_eliminar como nombre_de_atajo.
+        asigno this.esta_abierto_dialogo_de_eliminar_atajo como true.
+        creo promesa_de_confirmacion como una promesa con (ok, fail) donde {
+          asigno this.confirmar_dialogo_de_eliminar_atajo como ok.
+          asigno this.cancelar_dialogo_de_eliminar_atajo como fail.
+        }.
+        asigno confirmacion como asíncronamente promesa_de_confirmacion.
+        asigno this.esta_abierto_dialogo_de_eliminar_atajo como false.
+        creo variable posicion_de_atajo como 0-1.
+        desde 0 hasta this.atajos.length {
+          creo atajo como this.atajos[index].
+          si atajo.nombre es igual que this.atajo_a_eliminar {
+            asigno posicion_de_atajo como index.
+          }.
+        }.
+        hago this.atajos.splice(posicion_de_atajo, 1).
+        hago this.guardar_atajos().
+        asigno this.atajos como this.cargar_atajos().
+        hago this.$forceUpdate(true).
+        retorno true.
+      } en errores {
+        imprimo error.
+        asigno this.esta_abierto_dialogo_de_eliminar_atajo como false.
+        hago this.mostrar_error(error).
+        hago this.$forceUpdate(true).
+        retorno false.
+      },
+      abrir_dialogo_de_crear_componente: una función asíncrona donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_crear_componente".
+        asigno this.esta_abierto_dialogo_de_crear_componente como true.
+        creo variable nuevo_nombre como undefined.
+        creo variable es_nombre_valido como false.
+        asigno this.mensaje_de_error_de_nuevo_componente como undefined.
+        en proceso recopilar_datos donde hasta que es_nombre_valido {
+          asigno this.nombre_de_nuevo_componente como "".
+          creo promesa_de_nombre como una promesa con (ok, fail) donde {
+            asigno this.resolver_dialogo_de_nuevo_componente como ok.
+            asigno this.cancelar_dialogo_de_nuevo_componente como fail.
+          }.
+          hago this.$forceUpdate(true).
+          asigno nuevo_nombre como asíncronamente promesa_de_nombre.
+          creo nombres_usados como this.componentes.map(una función con (item) donde retorno item.nombre).
+          si (nuevo_nombre no es tipo texto) o (nuevo_nombre es igual que "") {
+            asigno this.mensaje_de_error_de_nuevo_componente como "El nombre del componente no puede estar vacío.".
+            continúo proceso recopilar_datos.
+          } pero si nombres_usados contiene valor nuevo_nombre  {
+            asigno this.mensaje_de_error_de_nuevo_componente como "El nombre «" + nuevo_nombre + "» no está disponible.".
+            continúo proceso recopilar_datos.
+          } y si no {
+            asigno es_nombre_valido como true.
+          }.
+        }.
+        apendizo un nuevo Fichero_de_componente(nuevo_nombre) en this.componentes.
+        asigno this.esta_abierto_dialogo_de_crear_componente como false.
+        hago this.guardar_componentes().
+        asigno this.componentes como this.cargar_componentes().
+        hago this.$forceUpdate(true).
+      } en errores {
+        imprimo error.
+        asigno this.esta_abierto_dialogo_de_crear_componente como false.
+        si error no es tipo indefinido hago this.mostrar_error(error).
+        hago this.$forceUpdate(true).
+      },
+      abrir_dialogo_de_crear_componente_por_prototipo: una función asíncrona donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_crear_componente_por_prototipo".
+        asigno this.esta_abierto_dialogo_de_crear_componente_por_prototipo como true.
+        creo variable nuevo_nombre como undefined.
+        creo variable viejo_prototipo como undefined.
+        creo variable es_nombre_valido como false.
+        creo variable es_prototipo_valido como false.
+        asigno this.mensaje_de_error_de_nuevo_componente como undefined.
+        asigno this.nombre_de_viejo_componente_por_prototipo como "".
+        en proceso recopilar_datos donde hasta que es_nombre_valido y es_prototipo_valido {
+          asigno this.nombre_de_nuevo_componente_por_prototipo como "".
+          creo promesa_de_nombre_y_prototipo como una promesa con (ok, fail) donde {
+            asigno this.resolver_dialogo_de_nuevo_componente_por_prototipo como ok.
+            asigno this.cancelar_dialogo_de_nuevo_componente_por_prototipo como fail.
+          }.
+          asigno nombre_y_prototipo como asíncronamente promesa_de_nombre_y_prototipo.
+          asigno nuevo_nombre como nombre_y_prototipo[0].
+          asigno viejo_prototipo como nombre_y_prototipo[1].
+          creo nombres_usados como this.componentes.map(una función con (item) donde retorno item.nombre).
+          si (nuevo_nombre no es tipo texto) o (nuevo_nombre es igual que "") {
+            asigno this.mensaje_de_error_de_nuevo_componente_por_prototipo como "El nombre del componente no puede estar vacío.".
+            continúo proceso recopilar_datos.
+          } pero si nombres_usados contiene valor nuevo_nombre {
+            asigno this.mensaje_de_error_de_nuevo_componente_por_prototipo como "El nombre de componente «" + nuevo_nombre + "» no está disponible.".
+            continúo proceso recopilar_datos.
+          } y si no {
+            asigno es_nombre_valido como true.
+          }.
+          si (viejo_prototipo no es tipo texto) o (viejo_prototipo es igual que "") {
+            asigno this.mensaje_de_error_de_nuevo_componente_por_prototipo como "El prototipo no puede estar vacío.".
+            continúo proceso recopilar_datos.
+          } pero si nombres_usados no contiene valor viejo_prototipo {
+            asigno this.mensaje_de_error_de_nuevo_componente_por_prototipo como "El prototipo «" + viejo_prototipo + "» no está identificado.".
+            continúo proceso recopilar_datos.
+          } y si no {
+            asigno es_prototipo_valido como true.
+          }.
+        }.
+        creo componente_por_prototipo como un nuevo Fichero_de_componente(nuevo_nombre).
+        creo componente_original como {} extendido por this.componentes.filter(una lambda con (item) donde retorno item.nombre es igual que viejo_prototipo)[0].
+        creo componente_copia como {} extendido por componente_original o {} textualizado parseado como json.
+        elimino propiedad componente_copia.uuid.
+        hago componente_por_prototipo extendido por componente_copia.
+        asigno componente_por_prototipo.nombre como nuevo_nombre.
+        apendizo componente_por_prototipo en this.componentes.
+        asigno this.esta_abierto_dialogo_de_crear_componente_por_prototipo como false.
+        hago this.guardar_componentes().
+        asigno this.componentes como this.cargar_componentes().
+        hago this.$forceUpdate(true).
+      } en errores {
+        imprimo error.
+        asigno this.esta_abierto_dialogo_de_crear_componente_por_prototipo como false.
+        si error no es tipo indefinido hago this.mostrar_error(error).
+        hago this.$forceUpdate(true).
+      },
+      abrir_dialogo_de_crear_componente_por_url: una función asíncrona donde {
+        debugo "GuiTester.methods.abrir_dialogo_de_crear_componente".
+        asigno this.esta_abierto_dialogo_de_crear_componente_por_url como true.
+        creo variable url_objetivo como undefined.
+        asigno this.mensaje_de_error_de_nuevo_componente_por_url como undefined.
+        asigno this.nombre_de_nuevo_componente_por_url como "".
+        creo promesa_de_nombre como una promesa con (ok, fail) donde {
+          asigno this.resolver_dialogo_de_nuevo_componente_por_url como ok.
+          asigno this.cancelar_dialogo_de_nuevo_componente_por_url como fail.
+        }.
+        hago this.$forceUpdate(true).
+        asigno url_objetivo como asíncronamente promesa_de_nombre.
+        asigno this.esta_abierto_dialogo_de_crear_componente_por_url como false.
+        hago this.guardar_componentes().
+        asigno this.componentes como this.cargar_componentes().
+        hago this.$forceUpdate(true).
+      } en errores {
+        imprimo error.
+        asigno this.esta_abierto_dialogo_de_crear_componente_por_url como false.
+        si error no es tipo indefinido hago this.mostrar_error(error).
+        hago this.$forceUpdate(true).
+      },
+      guardar_componentes: una función donde {
+        debugo "GuiTester.methods.guardar_componentes".
+        creo almacen_uuid como 'gui_tester_componentes_' + this.uuid.
+        creo componentes_json como this.componentes textualizado.
+        asigno localStorage[almacen_uuid] como componentes_json.
+        retorno componentes_json.
+      },
+      cargar_componentes: una función donde {
+        debugo "GuiTester.methods.cargar_componentes".
+        creo almacen_uuid como 'gui_tester_componentes_' + this.uuid.
+        creo componentes como un hecho donde {
+          retorno JSON.parse(localStorage[almacen_uuid]).
+        } en errores {
+          hago this.mostrar_error(error).
+          hago this.guardar_componentes().
+          retorno JSON.parse(localStorage[almacen_uuid]).
+        }.
+        retorno componentes.
+      },
+      guardar_apps: una función donde {
+        debugo "GuiTester.methods.guardar_apps".
+        creo almacen_uuid como 'gui_tester_apps_' + this.uuid.
+        creo apps_json como this.apps textualizado.
+        asigno localStorage[almacen_uuid] como apps_json.
+        retorno apps_json.
+      },
+      cargar_apps: una función donde {
+        debugo "GuiTester.methods.cargar_apps".
+        creo almacen_uuid como 'gui_tester_apps_' + this.uuid.
+        creo apps como un hecho donde {
+          retorno JSON.parse(localStorage[almacen_uuid]).
+        } en errores {
+          hago this.mostrar_error(error).
+          hago this.guardar_apps().
+          retorno JSON.parse(localStorage[almacen_uuid]).
+        }.
+        retorno apps.
+      },
+      guardar_atajos: una función donde {
+        debugo "GuiTester.methods.guardar_atajos".
+        creo almacen_uuid como 'gui_tester_atajos_' + this.uuid.
+        creo atajos_json como this.atajos textualizado.
+        asigno localStorage[almacen_uuid] como atajos_json.
+        retorno atajos_json.
+      },
+      cargar_atajos: una función donde {
+        debugo "GuiTester.methods.cargar_atajos".
+        creo almacen_uuid como 'gui_tester_atajos_' + this.uuid.
+        creo atajos como un hecho donde {
+          retorno JSON.parse(localStorage[almacen_uuid]).
+        } en errores {
+          hago this.mostrar_error(error).
+          hago this.guardar_atajos().
+          retorno JSON.parse(localStorage[almacen_uuid]).
+        }.
+        retorno atajos.
+      },
+      guardar_configuraciones_de_componente: una función con () donde {
+        debugo "GuiTester.methods.guardar_configuraciones_de_componente".
+        creo configuraciones como {
+          elementos: this.elementos,
+          documentacion_de_componente: this.documentacion_de_componente,
+          elementos_de_formulario: this.elementos_de_formulario,
+          esta_seleccionado_en_pre_cargar: this.esta_seleccionado_en_pre_cargar,
+          esta_seleccionado_en_propiedades: this.esta_seleccionado_en_propiedades,
+          esta_seleccionado_en_metodos: this.esta_seleccionado_en_metodos,
+          esta_seleccionado_en_datos: this.esta_seleccionado_en_datos,
+          esta_seleccionado_en_datos_observados: this.esta_seleccionado_en_datos_observados,
+          esta_seleccionado_en_datos_computados: this.esta_seleccionado_en_datos_computados,
+          esta_seleccionado_en_pre_crear: this.esta_seleccionado_en_pre_crear,
+          esta_seleccionado_en_post_crear: this.esta_seleccionado_en_post_crear,
+          esta_seleccionado_en_pre_montar: this.esta_seleccionado_en_pre_montar,
+          esta_seleccionado_en_post_montar: this.esta_seleccionado_en_post_montar,
+          esta_seleccionado_en_pre_actualizar: this.esta_seleccionado_en_pre_actualizar,
+          esta_seleccionado_en_post_actualizar: this.esta_seleccionado_en_post_actualizar,
+          esta_seleccionado_en_pre_desmontar: this.esta_seleccionado_en_pre_desmontar,
+          esta_seleccionado_en_post_desmontar: this.esta_seleccionado_en_post_desmontar,
+          script_de_estilo: this.script_de_estilo,
+          script_de_precargar: this.script_de_precargar,
+          script_de_data: this.script_de_data,
+          script_de_methods: this.script_de_methods,
+          script_de_data: this.script_de_data,
+          script_de_watch: this.script_de_watch,
+          script_de_computed: this.script_de_computed,
+          script_de_beforeCreate: this.script_de_beforeCreate,
+          script_de_created: this.script_de_created,
+          script_de_beforeMount: this.script_de_beforeMount,
+          script_de_mounted: this.script_de_mounted,
+          script_de_beforeUpdate: this.script_de_beforeUpdate,
+          script_de_updated: this.script_de_updated,
+          script_de_beforeUnmount: this.script_de_beforeUnmount,
+          script_de_unmounted: this.script_de_unmounted
+        }.
+        creo almacen_uuid como 'gui_tester_componentes_' + this.uuid.
+        creo componentes como un hecho donde {
+          retorno JSON.parse(localStorage[almacen_uuid]).
+        } en errores {
+          hago this.mostrar_error(error).
+          hago this.guardar_configuraciones_de_componente().
+          retorno JSON.parse(localStorage[almacen_uuid]).
+        }.
+        desde 0 hasta componentes.length {
+          si componentes[index].nombre es igual que this.esta_seleccionada_pestania_de_componente {
+            hago componentes[index] extendido por { configuraciones }.
+            creo compo como componentes[index].
+            hago un componente vue2 con nombre compo.nombre con plantilla como compo.plantilla.
+          }.
+        }.
+        creo componentes_json como componentes textualizado.
+        asigno localStorage[almacen_uuid] como componentes_json.
+      },
+      cargar_configuraciones_de_componente: una función donde {
+        debugo "GuiTester.methods.cargar_configuraciones_de_componente".
+        creo almacen_uuid como 'gui_tester_componentes_' + this.uuid.
+        creo componentes como un hecho donde {
+          retorno JSON.parse(localStorage[almacen_uuid]).
+        } en errores {
+          hago this.mostrar_error(error).
+          hago this.guardar_configuraciones_de_componente().
+          retorno JSON.parse(localStorage[almacen_uuid]).
+        }.
+        creo variable componente como {configuraciones:{}}.
+        desde 0 hasta componentes.length {
+          si componentes[index].nombre es igual que this.esta_seleccionada_pestania_de_componente {
+            asigno componente como componentes[index].
+            hago this extendido por componente.configuraciones.
+            hago this.$forceUpdate(true).
+          }.
+        }.
+        retorno componente.configuraciones.
+      }
+    }.
+  }.
+}.

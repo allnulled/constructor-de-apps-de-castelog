@@ -1,0 +1,466 @@
+<article>
+    <div class="_6d9832ac pr4-ns pl0-ns ph1-m pr3-m pr2  markdown" id="readme">
+        <p align="center"></p>
+        <h1 align="center">Vue.Draggable</h1>
+        <p><a href="https://circleci.com/gh/SortableJS/Vue.Draggable" rel="nofollow"></a>
+            <a href="https://codecov.io/gh/SortableJS/Vue.Draggable" rel="nofollow"></a>
+            <a href="https://codebeat.co/projects/github-com-sortablejs-vue-draggable-master" rel="nofollow"></a>
+            <a href="https://github.com/SortableJS/Vue.Draggable/issues?q=is%3Aopen+is%3Aissue" rel="nofollow"></a>
+            <a href="https://www.npmjs.com/package/vuedraggable" rel="nofollow"></a>
+            <a href="https://www.npmjs.com/package/vuedraggable" rel="nofollow"></a>
+            <a href="https://www.npmjs.com/package/vuedraggable" rel="nofollow"></a>
+            <a href="https://github.com/SortableJS/Vue.Draggable/blob/master/LICENSE" rel="nofollow"></a>
+        </p>
+        <p>Vue component (Vue.js 2.0) or directive (Vue.js 1.0) allowing drag-and-drop and synchronization with view
+            model array.</p>
+        <p>Based on and offering all features of <a href="https://github.com/RubaXa/Sortable"
+                rel="nofollow">Sortable.js</a></p>
+        <h2><a id="user-content-demo" class="deep-link" href="#demo" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>Demo</h2>
+        <p></p>
+        <h2><a id="user-content-live-demos" class="deep-link" href="#live-demos" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>Live Demos</h2>
+        <p><a href="https://sortablejs.github.io/Vue.Draggable/"
+                rel="nofollow">https://sortablejs.github.io/Vue.Draggable/</a></p>
+        <p><a href="https://david-desmaisons.github.io/draggable-example/"
+                rel="nofollow">https://david-desmaisons.github.io/draggable-example/</a></p>
+        <h2><a id="user-content-features" class="deep-link" href="#features" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>Features</h2>
+        <ul>
+            <li>Full support of <a href="https://github.com/RubaXa/Sortable" rel="nofollow">Sortable.js</a> features:
+                <ul>
+                    <li>Supports touch devices</li>
+                    <li>Supports drag handles and selectable text</li>
+                    <li>Smart auto-scrolling</li>
+                    <li>Support drag and drop between different lists</li>
+                    <li>No jQuery dependency</li>
+                </ul>
+            </li>
+            <li>Keeps in sync HTML and view model list</li>
+            <li>Compatible with Vue.js 2.0 transition-group</li>
+            <li>Cancellation support</li>
+            <li>Events reporting any changes when full control is needed</li>
+            <li>Reuse existing UI library components (such as <a href="https://vuetifyjs.com"
+                    rel="nofollow">vuetify</a>, <a href="http://element.eleme.io/" rel="nofollow">element</a>, or <a
+                    href="https://vuematerial.io" rel="nofollow">vue material</a> etc...) and make them draggable using
+                <code>element</code> and <code>componentData</code> props</li>
+        </ul>
+        <h2><a id="user-content-backers" class="deep-link" href="#backers" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>Backers</h2>
+        <a href="https://flatlogic.com/admin-dashboards" rel="nofollow">
+            
+        </a>
+        <p>Admin Dashboard Templates made with Vue, React and Angular.</p>
+        <h2><a id="user-content-donate" class="deep-link" href="#donate" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>Donate</h2>
+        <p>Find this project useful? You can buy me a ☕️ or a 🍺</p>
+        <p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=GYAEKQZJ4FQT2&amp;currency_code=USD&amp;source=url"
+                rel="nofollow"></a>
+        </p>
+        <h2><a id="user-content-installation" class="deep-link" href="#installation" aria-hidden="true"
+                rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1"
+                    viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>Installation</h2>
+        <h3><a id="user-content-with-npm-or-yarn" class="deep-link" href="#with-npm-or-yarn" aria-hidden="true"
+                rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1"
+                    viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>With npm or yarn</h3>
+        <div class="highlight sh">
+            <pre
+                class="editor editor-colors"><div class="line"><span class="source shell"><span>yarn&nbsp;add&nbsp;vuedraggable</span></span></div><div class="line"><span class="source shell"><span>&nbsp;</span></span></div><div class="line"><span class="source shell"><span>npm&nbsp;i&nbsp;-S&nbsp;vuedraggable</span></span></div></pre>
+        </div>
+        <p><strong>Beware it is vuedraggable for Vue 2.0 and not vue-draggable which is for version 1.0</strong></p>
+        <h3><a id="user-content-with-direct-link" class="deep-link" href="#with-direct-link" aria-hidden="true"
+                rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1"
+                    viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>with direct link</h3>
+        <div class="highlight">
+            <pre
+                class="editor editor-colors"><div class="line"><span class="text html"><span>&nbsp;</span></span></div><div class="line"><span class="text html"><span class="meta tag any html"><span class="punctuation definition tag html"><span>&lt;</span></span><span class="entity name tag html"><span>script</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>src</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>//cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag html"><span>&gt;</span><span class="meta scope html"><span>&lt;</span></span><span>/</span></span><span class="entity name tag html"><span>script</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span class="comment block html"><span class="punctuation definition comment html"><span>&lt;!--</span></span><span>&nbsp;CDNJS&nbsp;::&nbsp;Sortable&nbsp;(</span><span class="markup underline link hyperlink"><span>https://cdnjs.com/</span></span><span>)&nbsp;</span><span class="punctuation definition comment html"><span>--&gt;</span></span></span></span></div><div class="line"><span class="text html"><span class="meta tag any html"><span class="punctuation definition tag html"><span>&lt;</span></span><span class="entity name tag html"><span>script</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>src</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>//cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag html"><span>&gt;</span><span class="meta scope html"><span>&lt;</span></span><span>/</span></span><span class="entity name tag html"><span>script</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span class="comment block html"><span class="punctuation definition comment html"><span>&lt;!--</span></span><span>&nbsp;CDNJS&nbsp;::&nbsp;Vue.Draggable&nbsp;(</span><span class="markup underline link hyperlink"><span>https://cdnjs.com/</span></span><span>)&nbsp;</span><span class="punctuation definition comment html"><span>--&gt;</span></span></span></span></div><div class="line"><span class="text html"><span class="meta tag any html"><span class="punctuation definition tag html"><span>&lt;</span></span><span class="entity name tag html"><span>script</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>src</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.19.2/vuedraggable.umd.min.js</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag html"><span>&gt;</span><span class="meta scope html"><span>&lt;</span></span><span>/</span></span><span class="entity name tag html"><span>script</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;</span></span></div></pre>
+        </div>
+        <p><a href="https://github.com/SortableJS/Vue.Draggable/tree/master/examples" rel="nofollow">cf example
+                section</a></p>
+        <h2><a id="user-content-for-vuejs-20" class="deep-link" href="#for-vuejs-20" aria-hidden="true"
+                rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1"
+                    viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>For Vue.js 2.0</h2>
+        <p>Use draggable component:</p>
+        <h3><a id="user-content-typical-use" class="deep-link" href="#typical-use" aria-hidden="true"
+                rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1"
+                    viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>Typical use:</h3>
+        <pre
+            class="editor editor-colors"><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>draggable</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-model</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>group</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>people</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;@</span><span class="entity other attribute-name html"><span>start</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>drag=true</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;@</span><span class="entity other attribute-name html"><span>end</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>drag=false</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-for</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>element&nbsp;in&nbsp;myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;:</span><span class="entity other attribute-name html"><span>key</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>element.id</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>{{element.name}}</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>draggable</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+        <p>.vue file:</p>
+        <pre
+            class="editor editor-colors"><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="meta import js"><span class="keyword control js"><span>import</span></span><span>&nbsp;</span><span class="variable other module js"><span>draggable</span></span><span>&nbsp;</span><span class="keyword control js"><span>from</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>vuedraggable</span><span class="punctuation definition string end js"><span>'</span></span></span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="keyword operator js"><span>...</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="meta js"><span class="keyword control js"><span>export</span></span><span>&nbsp;</span><span class="variable language js"><span>default</span></span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draggable</span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="keyword operator js"><span>...</span></span></span></div></pre>
+        <h3><a id="user-content-with-transition-group-" class="deep-link" href="#with-transition-group-"
+                aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16"
+                    version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>With <code>transition-group</code>:</h3>
+        <pre
+            class="editor editor-colors"><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>draggable</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-model</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>transition-group</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-for</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>element&nbsp;in&nbsp;myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;:</span><span class="entity other attribute-name html"><span>key</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>element.id</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{element.name}}</span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>transition-group</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>draggable</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+        <p>Draggable component should directly wrap the draggable elements, or a <code>transition-component</code>
+            containing the draggable elements.</p>
+        <h3><a id="user-content-with-footer-slot" class="deep-link" href="#with-footer-slot" aria-hidden="true"
+                rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1"
+                    viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>With footer slot:</h3>
+        <pre
+            class="editor editor-colors"><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>draggable</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-model</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>draggable</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>.item</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-for</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>element&nbsp;in&nbsp;myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;:</span><span class="entity other attribute-name html"><span>key</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>element.id</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>item</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{element.name}}</span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>slot</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>footer</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;@</span><span class="entity other attribute-name html"><span>click</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>addPeople</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Add</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>draggable</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+        <h3><a id="user-content-with-header-slot" class="deep-link" href="#with-header-slot" aria-hidden="true"
+                rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1"
+                    viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>With header slot:</h3>
+        <pre
+            class="editor editor-colors"><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>draggable</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-model</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>draggable</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>.item'</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-for</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>element&nbsp;in&nbsp;myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;:</span><span class="entity other attribute-name html"><span>key</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>element.id</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>item</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{element.name}}</span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>slot</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>header</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;@</span><span class="entity other attribute-name html"><span>click</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>addPeople</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Add</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>draggable</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+        <h3><a id="user-content-with-vuex" class="deep-link" href="#with-vuex" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>With Vuex:</h3>
+        <div class="highlight">
+            <pre
+                class="editor editor-colors"><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>draggable</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-model</span></span><span>=</span><span class="string quoted single html"><span class="punctuation definition string begin html"><span>'</span></span><span>myList</span><span class="punctuation definition string end html"><span>'</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+        </div>
+        <div class="highlight javascript">
+            <pre
+                class="editor editor-colors"><div class="line"><span class="source js"><span>computed</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;myList</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta function method definition js"><span class="entity name function js"><span>get</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span>&nbsp;</span><span class="punctuation definition function begin curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword control js"><span>return</span></span><span>&nbsp;</span><span class="variable language js"><span>this</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other object js"><span>$store</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other object js"><span>state</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>myList</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition function end curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta function method definition js"><span class="entity name function js"><span>set</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="variable function js"><span>value</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span>&nbsp;</span><span class="punctuation definition function begin curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="variable language js"><span>this</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other object js"><span>$store</span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>commit</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>updateList</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;value</span><span class="punctuation definition end round js"><span>)</span></span></span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition function end curly js"><span>}</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span></span></div></pre>
+        </div>
+        <h3><a id="user-content-props" class="deep-link" href="#props" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>Props</h3>
+        <h4><a id="user-content-value" class="deep-link" href="#value" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>value</h4>
+        <p>Type: <code>Array</code><br>
+            Required: <code>false</code><br>
+            Default: <code>null</code></p>
+        <p>Input array to draggable component. Typically same array as referenced by inner element v-for directive.<br>
+            This is the preferred way to use Vue.draggable as it is compatible with Vuex.<br>
+            It should not be used directly but only though the <code>v-model</code> directive:</p>
+        <div class="highlight">
+            <pre
+                class="editor editor-colors"><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>draggable</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-model</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+        </div>
+        <h4><a id="user-content-list" class="deep-link" href="#list" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>list</h4>
+        <p>Type: <code>Array</code><br>
+            Required: <code>false</code><br>
+            Default: <code>null</code></p>
+        <p>Alternative to the <code>value</code> prop, list is an array to be synchronized with drag-and-drop.<br>
+            The main difference is that <code>list</code> prop is updated by draggable component using splice method,
+            whereas <code>value</code> is immutable.<br>
+            <strong>Do not use in conjunction with value prop.</strong>
+        </p>
+        <h4><a id="user-content-options-deprecated" class="deep-link" href="#options-deprecated" aria-hidden="true"
+                rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1"
+                    viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>options [deprecated]</h4>
+        <p><strong>Deprecated: use Sortable options as props; see <a href="#All-sortable-options" rel="nofollow">below
+                    section for more</a></strong></p>
+        <p><a href="https://github.com/SortableJS/Vue.Draggable/blob/master/documentation/legacy.options.md"
+                rel="nofollow">Legacy documentation</a></p>
+        <h4><a id="user-content-all-sortable-options" class="deep-link" href="#all-sortable-options" aria-hidden="true"
+                rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1"
+                    viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>All sortable options</h4>
+        <p>New in version 2.19</p>
+        <p>Sortable options can be set directly as vue.draggable props since version 2.19.</p>
+        <p>This means that all <a href="https://github.com/RubaXa/Sortable#options" rel="nofollow">sortable option</a>
+            are valid sortable props with the notable exception of all the method starting by "on" as draggable
+            component expose the same API via events.</p>
+        <p>kebab-case propery are supported: for example <code>ghost-class</code> props will be converted to
+            <code>ghostClass</code> sortable option.</p>
+        <p>Example setting handle, sortable and a group option:</p>
+        <div class="highlight">
+            <pre
+                class="editor editor-colors"><div class="line"><span class="text"><span>&lt;draggable</span></span></div><div class="line"><span class="text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v-model="list"</span></span></div><div class="line"><span class="text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handle=".handle"</span></span></div><div class="line"><span class="text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:group="{&nbsp;name:&nbsp;'people',&nbsp;pull:&nbsp;'clone',&nbsp;put:&nbsp;false&nbsp;}"</span></span></div><div class="line"><span class="text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ghost-class="ghost"</span></span></div><div class="line"><span class="text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:sortable="false"</span></span></div><div class="line"><span class="text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@change="log"</span></span></div><div class="line"><span class="text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</span></span></div><div class="line"><span class="text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;--&gt;</span></span></div><div class="line"><span class="text"><span>&lt;/draggable&gt;</span></span></div></pre>
+        </div>
+        <h4><a id="user-content-element" class="deep-link" href="#element" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>element</h4>
+        <p><strong>Deprecated as it has been renamed <a href="#tag" rel="nofollow">tag</a></strong></p>
+        <h4><a id="user-content-tag" class="deep-link" href="#tag" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>tag</h4>
+        <p>Type: <code>String</code><br>
+            Default: <code>'div'</code></p>
+        <p>HTML node type of the element that draggable component create as outer element for the included slot.<br>
+            It is also possible to pass the name of vue component as element. In this case, draggable attribute will be
+            passed to the create component.<br>
+            See also <a href="#componentdata" rel="nofollow">componentData</a> if you need to set props or event to the
+            created component.</p>
+        <h4><a id="user-content-clone" class="deep-link" href="#clone" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>clone</h4>
+        <p>Type: <code>Function</code><br>
+            Required: <code>false</code><br>
+            Default: <code>(original) =&gt; { return original;}</code><br></p>
+        <p>Function called on the source component to clone element when clone option is true. The unique argument is
+            the viewModel element to be cloned and the returned value is its cloned version.<br>
+            By default vue.draggable reuses the viewModel element, so you have to use this hook if you want to clone or
+            deep clone it.</p>
+        <h4><a id="user-content-move" class="deep-link" href="#move" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>move</h4>
+        <p>Type: <code>Function</code><br>
+            Required: <code>false</code><br>
+            Default: <code>null</code><br></p>
+        <p>If not null this function will be called in a similar way as <a
+                href="https://github.com/RubaXa/Sortable#move-event-object" rel="nofollow">Sortable onMove callback</a>.
+            Returning false will cancel the drag operation.</p>
+        <div class="highlight javascript">
+            <pre
+                class="editor editor-colors"><div class="line"><span class="source js"><span class="meta function js"><span class="storage type function js"><span>function</span></span><span>&nbsp;</span><span class="entity name function js"><span>onMoveCallback</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="variable function js"><span>evt</span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="variable function js"><span>originalEvent</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="punctuation definition function begin curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;</span><span class="keyword operator js"><span>...</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;return&nbsp;false;&nbsp;—&nbsp;for&nbsp;cancel</span></span></span></div><div class="line"><span class="source js"><span class="punctuation definition function end curly js"><span>}</span></span></span></div></pre>
+        </div>
+        <p>evt object has same property as <a href="https://github.com/RubaXa/Sortable#move-event-object"
+                rel="nofollow">Sortable onMove event</a>, and 3 additional properties:</p>
+        <ul>
+            <li><code>draggedContext</code>: context linked to dragged element
+                <ul>
+                    <li><code>index</code>: dragged element index</li>
+                    <li><code>element</code>: dragged element underlying view model element</li>
+                    <li><code>futureIndex</code>: potential index of the dragged element if the drop operation is
+                        accepted</li>
+                </ul>
+            </li>
+            <li><code>relatedContext</code>: context linked to current drag operation
+                <ul>
+                    <li><code>index</code>: target element index</li>
+                    <li><code>element</code>: target element view model element</li>
+                    <li><code>list</code>: target list</li>
+                    <li><code>component</code>: target VueComponent</li>
+                </ul>
+            </li>
+        </ul>
+        <p>HTML:</p>
+        <div class="highlight">
+            <pre
+                class="editor editor-colors"><div class="line"><span class="text"><span>&lt;draggable&nbsp;:list="list"&nbsp;:move="checkMove"&gt;</span></span></div></pre>
+        </div>
+        <p>javascript:</p>
+        <div class="highlight javascript">
+            <pre
+                class="editor editor-colors"><div class="line"><span class="source js"><span class="meta function json js"><span class="entity name function js"><span>checkMove</span></span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="storage type function js"><span>function</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="variable function js"><span>evt</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="punctuation definition function begin curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword control js"><span>return</span></span><span>&nbsp;</span><span class="meta brace round js"><span>(</span></span><span class="variable other object js"><span>evt</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other object js"><span>draggedContext</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other object js"><span>element</span></span><span class="meta delimiter period js"><span>.</span></span><span class="support variable dom js"><span>name</span></span><span class="keyword operator comparison js"><span>!==</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>apple</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="punctuation definition function end curly js"><span>}</span></span></span></div></pre>
+        </div>
+        <p>See complete example: <a href="https://github.com/SortableJS/Vue.Draggable/blob/master/examples/Cancel.html"
+                rel="nofollow">Cancel.html</a>, <a
+                href="https://github.com/SortableJS/Vue.Draggable/blob/master/examples/script/cancel.js"
+                rel="nofollow">cancel.js</a></p>
+        <h4><a id="user-content-componentdata" class="deep-link" href="#componentdata" aria-hidden="true"
+                rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1"
+                    viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>componentData</h4>
+        <p>Type: <code>Object</code><br>
+            Required: <code>false</code><br>
+            Default: <code>null</code><br></p>
+        <p>This props is used to pass additional information to child component declared by <a href="#tag"
+                rel="nofollow">tag props</a>.<br>
+            Value:</p>
+        <ul>
+            <li><code>props</code>: props to be passed to the child component</li>
+            <li><code>attrs</code>: attrs to be passed to the child component</li>
+            <li><code>on</code>: events to be subscribe in the child component</li>
+        </ul>
+        <p>Example (using <a href="http://element.eleme.io/#/en-US" rel="nofollow">element UI library</a>):</p>
+        <div class="highlight">
+            <pre
+                class="editor editor-colors"><div class="line"><span class="text"><span>&lt;draggable&nbsp;tag="el-collapse"&nbsp;:list="list"&nbsp;:component-data="getComponentData()"&gt;</span></span></div><div class="line"><span class="text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;el-collapse-item&nbsp;v-for="e&nbsp;in&nbsp;list"&nbsp;:title="e.title"&nbsp;:name="e.name"&nbsp;:key="e.name"&gt;</span></span></div><div class="line"><span class="text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;{{e.description}}&lt;/div&gt;</span></span></div><div class="line"><span class="text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/el-collapse-item&gt;</span></span></div><div class="line"><span class="text"><span>&lt;/draggable&gt;</span></span></div></pre>
+        </div>
+        <div class="highlight javascript">
+            <pre
+                class="editor editor-colors"><div class="line"><span class="source js"><span>methods</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta function method definition js"><span class="entity name function js"><span>handleChange</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span>&nbsp;</span><span class="punctuation definition function begin curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="entity name type object console js"><span>console</span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="support function console js"><span>log</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>changed</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition function end curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta function method definition js"><span class="entity name function js"><span>inputChanged</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="variable function js"><span>value</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span>&nbsp;</span><span class="punctuation definition function begin curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="variable language js"><span>this</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>activeNames</span></span><span>&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;value</span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition function end curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta function method definition js"><span class="entity name function js"><span>getComponentData</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span>&nbsp;</span><span class="punctuation definition function begin curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword control js"><span>return</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable language js"><span>this</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>handleChange</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable language js"><span>this</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>inputChanged</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attrs</span><span class="keyword operator assignment js"><span>:</span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrap</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="constant language boolean true js"><span>true</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;props</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable language js"><span>this</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>activeNames</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition function end curly js"><span>}</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></div></pre>
+        </div>
+        <h3><a id="user-content-events" class="deep-link" href="#events" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>Events</h3>
+        <ul>
+            <li>
+                <p>Support for Sortable events:</p>
+                <p><code>start</code>, <code>add</code>, <code>remove</code>, <code>update</code>, <code>end</code>,
+                    <code>choose</code>, <code>sort</code>, <code>filter</code>, <code>clone</code><br>
+                    Events are called whenever onStart, onAdd, onRemove, onUpdate, onEnd, onChoose, onSort, onClone are
+                    fired by Sortable.js with the same argument.<br>
+                    <a href="https://github.com/RubaXa/Sortable#event-object-demo" rel="nofollow">See here for
+                        reference</a>
+                </p>
+                <p>Note that SortableJS OnMove callback is mapped with the <a
+                        href="https://github.com/SortableJS/Vue.Draggable/blob/master/README.md#move"
+                        rel="nofollow">move prop</a></p>
+            </li>
+        </ul>
+        <p>HTML:</p>
+        <div class="highlight">
+            <pre
+                class="editor editor-colors"><div class="line"><span class="text"><span>&lt;draggable&nbsp;:list="list"&nbsp;@end="onEnd"&gt;</span></span></div></pre>
+        </div>
+        <ul>
+            <li>
+                <p>change event</p>
+                <p><code>change</code> event is triggered when list prop is not null and the corresponding array is
+                    altered due to drag-and-drop operation.<br>
+                    This event is called with one argument containing one of the following properties:</p>
+                <ul>
+                    <li><code>added</code>: contains information of an element added to the array
+                        <ul>
+                            <li><code>newIndex</code>: the index of the added element</li>
+                            <li><code>element</code>: the added element</li>
+                        </ul>
+                    </li>
+                    <li><code>removed</code>: contains information of an element removed from to the array
+                        <ul>
+                            <li><code>oldIndex</code>: the index of the element before remove</li>
+                            <li><code>element</code>: the removed element</li>
+                        </ul>
+                    </li>
+                    <li><code>moved</code>: contains information of an element moved within the array
+                        <ul>
+                            <li><code>newIndex</code>: the current index of the moved element</li>
+                            <li><code>oldIndex</code>: the old index of the moved element</li>
+                            <li><code>element</code>: the moved element</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h3><a id="user-content-slots" class="deep-link" href="#slots" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>Slots</h3>
+        <p>Limitation: neither header or footer slot works in conjunction with transition-group.</p>
+        <h4><a id="user-content-header" class="deep-link" href="#header" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>Header</h4>
+        <p>Use the <code>header</code> slot to add none-draggable element inside the vuedraggable component.
+            Important: it should be used in conjunction with draggable option to tag draggable element.
+            Note that header slot will always be added before the default slot regardless its position in the template.
+            Ex:</p>
+        <pre
+            class="editor editor-colors"><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>draggable</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-model</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>draggable</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>.item</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-for</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>element&nbsp;in&nbsp;myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;:</span><span class="entity other attribute-name html"><span>key</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>element.id</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>item</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{element.name}}</span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>slot</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>header</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;@</span><span class="entity other attribute-name html"><span>click</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>addPeople</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Add</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>draggable</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+        <h4><a id="user-content-footer" class="deep-link" href="#footer" aria-hidden="true" rel="nofollow"><svg
+                    aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>Footer</h4>
+        <p>Use the <code>footer</code> slot to add none-draggable element inside the vuedraggable component.
+            Important: it should be used in conjunction with draggable option to tag draggable elements.
+            Note that footer slot will always be added after the default slot regardless its position in the template.
+            Ex:</p>
+        <pre
+            class="editor editor-colors"><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>draggable</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-model</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>draggable</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>.item</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>v-for</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>element&nbsp;in&nbsp;myArray</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;:</span><span class="entity other attribute-name html"><span>key</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>element.id</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>item</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{element.name}}</span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>slot</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>footer</span><span class="punctuation definition string end html"><span>"</span></span></span><span>&nbsp;@</span><span class="entity other attribute-name html"><span>click</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>addPeople</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Add</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>draggable</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+        <p>### Gochas</p>
+        <p>Children elements inside v-for should be keyed as any element in Vue.js. Be carefull to provide revelant key
+            values in particular:</p>
+        <ul>
+            <li>typically providing array index as keys won't work as key should be linked to the items content</li>
+            <li>cloned elements should provide updated keys, it is doable using the <a href="#clone"
+                    rel="nofollow">clone props</a> for example</li>
+        </ul>
+        <p>### Example</p>
+        <ul>
+            <li><a href="https://sortablejs.github.io/Vue.Draggable/#/custom-clone" rel="nofollow">Clone</a></li>
+            <li><a href="https://sortablejs.github.io/Vue.Draggable/#/handle" rel="nofollow">Handle</a></li>
+            <li><a href="https://sortablejs.github.io/Vue.Draggable/#/transition-example-2"
+                    rel="nofollow">Transition</a></li>
+            <li><a href="https://sortablejs.github.io/Vue.Draggable/#/nested-example" rel="nofollow">Nested</a></li>
+            <li><a href="https://sortablejs.github.io/Vue.Draggable/#/table-example" rel="nofollow">Table</a></li>
+        </ul>
+        <p>### Full demo example</p>
+        <p><a href="https://github.com/David-Desmaisons/draggable-example" rel="nofollow">draggable-example</a></p>
+        <h2><a id="user-content-for-vuejs-10" class="deep-link" href="#for-vuejs-10" aria-hidden="true"
+                rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1"
+                    viewBox="0 0 16 16" width="16">
+                    <path
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg></a>For Vue.js 1.0</h2>
+        <p><a href="documentation/Vue.draggable.for.ReadME.md" rel="nofollow">See here</a></p>
+        <pre><code></code></pre>
+    </div>
+</article>

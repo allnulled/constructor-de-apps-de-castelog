@@ -1,0 +1,71 @@
+asigno window.ir_a_referencia como una función.
+asigno GuiaDeReferencias como un componente vue2 con nombre "GuiaDeReferencias" con plantilla {
+    <div>
+        <div class="titulo_de_componente"> 🪟 Documentación</div>
+        <template v-if="referencia_abierta && Object.keys(referencias).length">
+            <div v-for="(referencia, referencia_index) in referencias" v-bind:key="'referencia-numero-' + referencia_index">
+                <div v-if="referencia_abierta === referencia_index">
+                    <div class="horizontal_layout" v-if="referencia_index !== 'Basica.html'" style="padding-bottom: 4px; border-bottom:1px solid #333;">
+                        <button v-on:click="() => $window.ir_a_referencia('Basica.html')">Volver</button>
+                    </div>
+                    <div class="guia_de_referencia" style="padding:6px;" v-html="referencia"></div>
+                </div>
+            </div>
+        </template>
+        <template v-else>
+            <div role="progressbar" class="marquee">
+                <div style="width: 70%"></div>
+            </div>
+        </template>
+    </div>
+} con lógica {
+    retorno {
+        método data donde retorno {
+            urls: [
+                "/components/gui-tester/lib/ReferenciaBasica.html",
+                "/components/gui-tester/lib/ReferenciaDeXhr2.html",
+                "/components/gui-tester/lib/ReferenciaDeAxios.html",
+                "/components/gui-tester/lib/ReferenciaDeEjs.html",
+                "/components/gui-tester/lib/ReferenciaDeJQuery.html",
+                "/components/gui-tester/lib/ReferenciaDeSortableJS.html",
+                "/components/gui-tester/lib/ReferenciaDeVueDraggable.html",
+                "/components/gui-tester/lib/ReferenciaDeI18Next.html",
+                "/components/gui-tester/lib/ReferenciaDeWin7Css.html",
+                "/components/gui-tester/lib/ReferenciaDeVue.html",
+                "/components/gui-tester/lib/ReferenciaDeVueRouter.html",
+                "/components/gui-tester/lib/ReferenciaDeVueI18Next.html",
+                "/components/gui-tester/lib/ReferenciaDeSimplestDB.html",
+                "/components/gui-tester/lib/ReferenciaDeRanasDB.html",
+                "/components/gui-tester/lib/ReferenciaDeRest.html",
+                "/components/gui-tester/lib/ReferenciaDeCastelog.html",
+                "/components/gui-tester/lib/ReferenciaDeHtml.html",
+                "/components/gui-tester/lib/ReferenciaDeCss.html",
+                "/components/gui-tester/lib/ReferenciaDeBrowserJs.html",
+                "/components/gui-tester/lib/ReferenciaDeNodeJs.html",
+                "/components/gui-tester/lib/ReferenciaDeSocketIO.html",
+                "/components/gui-tester/lib/ReferenciaDeShellver.html"
+            ],
+            referencia_abierta: "Basica.html",
+            referencias: {}
+        }.
+        método asíncrono mounted donde {
+            desde 0 hasta this.urls.length {
+                creo url como this.urls[index].
+                creo respuesta como asíncronamente una petición http 
+                    con url url
+                    con método "GET"
+                    con cuerpo {}
+                    con cabeceras {}.
+                creo referencia_id como url.replace("/components/gui-tester/lib/Referencia", "").
+                imprimo referencia_id.
+                asigno this.referencias[referencia_id] como respuesta.data.
+            }.
+            asigno window.ir_a_referencia como una lambda con (referencia) donde {
+                asigno this.referencia_abierta como referencia.
+                imprimo this.referencia_abierta.
+                hago this.$forceUpdate(true).
+            }.
+            hago this.$forceUpdate(true).
+        } en errores imprimo error.
+    }.
+}.

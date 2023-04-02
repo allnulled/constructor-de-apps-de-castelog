@@ -1,0 +1,157 @@
+<div class="_6d9832ac pr4-ns pl0-ns ph1-m pr3-m pr2  markdown" id="readme">
+    <h1>
+        <a id="user-content-xmlhttprequest-emulation-for-nodejs" class="anchor"
+            href="#xmlhttprequest-emulation-for-nodejs" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>XMLHttpRequest Emulation for node.js
+    </h1>
+    <p>This is an <a href="https://npmjs.org/" rel="nofollow">npm</a> package that implements the
+        <a href="http://www.w3.org/TR/XMLHttpRequest/" rel="nofollow">W3C XMLHttpRequest</a> specification on top
+        of the <a href="http://nodejs.org/" rel="nofollow">node.js</a> APIs.
+    </p>
+    <h2>
+        <a id="user-content-supported-platforms" class="anchor" href="#supported-platforms" aria-hidden="true"><span
+                aria-hidden="true" class="octicon octicon-link"></span></a>Supported Platforms
+    </h2>
+    <p>This library is tested against the following platforms.</p>
+    <ul>
+        <li>
+            <a href="http://nodejs.org/" rel="nofollow">node.js</a> 10
+        </li>
+        <li>
+            <a href="http://nodejs.org/" rel="nofollow">node.js</a> 12
+        </li>
+    </ul>
+    <p>Keep in mind that the versions above are not hard requirements.</p>
+    <h2>
+        <a id="user-content-installation-and-usage" class="anchor" href="#installation-and-usage"
+            aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation and Usage
+    </h2>
+    <p>The preferred installation method is to add the library to the <code>dependencies</code>
+        section in your <code>package.json</code>.</p>
+    <div class="highlight highlight-source-json">
+        <pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>dependencies<span class="pl-pds">"</span></span>: {
+    <span class="pl-s"><span class="pl-pds">"</span>xhr2<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>*<span class="pl-pds">"</span></span>
+  }
+}</pre>
+    </div>
+    <p>Alternatively, <code>npm</code> can be used to install the library directly.</p>
+    <div class="highlight highlight-source-shell">
+        <pre>npm install xhr2</pre>
+    </div>
+    <p>Once the library is installed, <code>require</code>-ing it returns the <code>XMLHttpRequest</code>
+        constructor.</p>
+    <div class="highlight highlight-source-js">
+        <pre><span class="pl-k">var</span> <span class="pl-v">XMLHttpRequest</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'xhr2'</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+    </div>
+    <p>The other objects that are usually defined in an XHR environment are hanging
+        off of <code>XMLHttpRequest</code>.</p>
+    <div class="highlight highlight-source-js">
+        <pre><span class="pl-k">var</span> <span class="pl-v">XMLHttpRequestUpload</span> <span class="pl-c1">=</span> <span class="pl-v">XMLHttpRequest</span><span class="pl-kos">.</span><span class="pl-c1">XMLHttpRequestUpload</span><span class="pl-kos">;</span></pre>
+    </div>
+    <p>MDN (the Mozilla Developer Network) has a
+        <a href="https://developer.mozilla.org/en-US/docs/DOM/XMLHttpRequest/Using_XMLHttpRequest" rel="nofollow">great
+            intro to XMLHttpRequest</a>.
+    </p>
+    <p>This library's <a href="http://coffeedoc.info/github/pwnall/node-xhr2/" rel="nofollow">CoffeeDocs</a> can
+        be used as quick reference to the XMLHttpRequest specification parts that were
+        implemented.</p>
+    <h2>
+        <a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Features
+    </h2>
+    <p>The following standard features are implemented.</p>
+    <ul>
+        <li>
+            <code>http</code> and <code>https</code> URI protocols
+        </li>
+        <li>Basic authentication according to the XMLHttpRequest specification</li>
+        <li>request and response header management</li>
+        <li>
+            <code>send()</code> accepts the following data types: String, ArrayBufferView,
+            ArrayBuffer (deprecated in the standard)
+        </li>
+        <li>
+            <code>responseType</code> values: <code>text</code>, <code>json</code>, <code>arraybuffer</code>
+        </li>
+        <li>
+            <code>readystatechange</code> and download progress events
+        </li>
+        <li><code>overrideMimeType()</code></li>
+        <li><code>abort()</code></li>
+        <li><code>timeout</code></li>
+        <li>automated redirection following</li>
+    </ul>
+    <p>The following node.js extensions are implemented.</p>
+    <ul>
+        <li>
+            <code>send()</code> accepts a node.js Buffer
+        </li>
+        <li>Setting <code>responseType</code> to <code>buffer</code> produces a node.js Buffer</li>
+        <li>
+            <code>nodejsSet</code> does XHR network configuration that is not exposed in browsers,
+            for security reasons
+        </li>
+    </ul>
+    <p>The following standard features are not implemented.</p>
+    <ul>
+        <li>FormData</li>
+        <li>Blob</li>
+        <li>
+            <code>file://</code> URIs
+        </li>
+        <li>
+            <code>data:</code> URIs
+        </li>
+        <li>upload progress events</li>
+        <li>synchronous operation</li>
+        <li>Same-origin policy checks and CORS</li>
+        <li>cookie processing</li>
+    </ul>
+    <h2>
+        <a id="user-content-versioning" class="anchor" href="#versioning" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Versioning
+    </h2>
+    <p>The library aims to implement the
+        <a href="http://www.w3.org/TR/XMLHttpRequest/" rel="nofollow">W3C XMLHttpRequest</a> specification, so
+        the library's API will always be a (hopefully growing) subset of the API in the
+        specification.
+    </p>
+    <h2>
+        <a id="user-content-development" class="anchor" href="#development" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Development
+    </h2>
+    <p>The following commands will get the source tree in a <code>node-xhr2/</code> directory and
+        build the library.</p>
+    <div class="highlight highlight-source-shell">
+        <pre>git clone git://github.com/pwnall/node-xhr2.git
+<span class="pl-c1">cd</span> node-xhr2
+npm install
+npm pack</pre>
+    </div>
+    <p>Installing CoffeeScript globally will let you type <code>cake</code> instead of
+        <code>node_modules/.bin/cake</code>
+    </p>
+    <div class="highlight highlight-source-shell">
+        <pre>npm install -g coffeescript</pre>
+    </div>
+    <p>The library comes with unit tests that exercise the XMLHttpRequest API.</p>
+    <div class="highlight highlight-source-shell">
+        <pre>cake <span class="pl-c1">test</span></pre>
+    </div>
+    <p>The tests themselves can be tested by running them in a browser environment,
+        where a different XMLHttpRequest implementation is available. Both Google
+        Chrome and Firefox deviate from the specification in small ways, so it's best
+        to run the tests in both browsers and mentally compute an intersection of the
+        failing tests.</p>
+    <div class="highlight highlight-source-shell">
+        <pre>cake webtest
+BROWSER=firefox cake webtest</pre>
+    </div>
+    <h2>
+        <a id="user-content-copyright-and-license" class="anchor" href="#copyright-and-license" aria-hidden="true"><span
+                aria-hidden="true" class="octicon octicon-link"></span></a>Copyright and License
+    </h2>
+    <p>The library is Copyright (c) 2013 Victor Costan, and distributed under the MIT
+        License.</p>
+</div>

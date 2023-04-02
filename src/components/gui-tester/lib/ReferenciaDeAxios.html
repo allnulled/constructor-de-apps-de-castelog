@@ -1,0 +1,1167 @@
+<div class="_6d9832ac pr4-ns pl0-ns ph1-m pr3-m pr2  markdown" id="readme">
+  <h1>
+    <a id="user-content-axios" class="anchor" href="#axios" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>axios
+  </h1>
+  <p><a href="https://www.npmjs.org/package/axios" rel="nofollow"></a>
+    <a href="https://cdnjs.com/libraries/axios" rel="nofollow"></a>
+    <a href="https://github.com/axios/axios/actions/workflows/ci.yml/badge.svg" target="_blank" rel="noopener noreferrer"></a>
+    <a href="https://gitpod.io/#https://github.com/axios/axios" rel="nofollow"></a>
+    <a href="https://coveralls.io/r/mzabriskie/axios" rel="nofollow"></a>
+    <a href="https://packagephobia.now.sh/result?p=axios" rel="nofollow"></a>
+    <a href="http://npm-stat.com/charts.html?package=axios" rel="nofollow"></a>
+    <a href="https://gitter.im/mzabriskie/axios" rel="nofollow"></a>
+    <a href="https://www.codetriage.com/axios/axios" rel="nofollow"></a>
+    <a href="https://snyk.io/test/npm/axios" rel="nofollow"></a>
+  </p>
+  <p>Promise based HTTP client for the browser and node.js</p>
+  <blockquote>
+    <p>New axios docs website: <a href="https://axios-http.com/" rel="nofollow">click here</a></p>
+  </blockquote>
+  <h2>
+    <a id="user-content-table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Table of Contents
+  </h2>
+  <ul>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#browser-support">Browser Support</a></li>
+    <li><a href="#installing">Installing</a></li>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#axios-api">Axios API</a></li>
+    <li><a href="#request-method-aliases">Request method aliases</a></li>
+    <li><a href="#concurrency-deprecated">Concurrency <g-emoji class="g-emoji" alias="-1"
+          fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44e.png">👎</g-emoji></a></li>
+    <li><a href="#creating-an-instance">Creating an instance</a></li>
+    <li><a href="#instance-methods">Instance methods</a></li>
+    <li><a href="#request-config">Request Config</a></li>
+    <li><a href="#response-schema">Response Schema</a></li>
+    <li>
+      <a href="#config-defaults">Config Defaults</a>
+      <ul>
+        <li><a href="#global-axios-defaults">Global axios defaults</a></li>
+        <li><a href="#custom-instance-defaults">Custom instance defaults</a></li>
+        <li><a href="#config-order-of-precedence">Config order of precedence</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#interceptors">Interceptors</a>
+      <ul>
+        <li><a href="#multiple-interceptors">Multiple Interceptors</a></li>
+      </ul>
+    </li>
+    <li><a href="#handling-errors">Handling Errors</a></li>
+    <li>
+      <a href="#cancellation">Cancellation</a>
+      <ul>
+        <li><a href="#abortcontroller">AbortController</a></li>
+        <li><a href="#canceltoken-deprecated">CancelToken <g-emoji class="g-emoji" alias="-1"
+              fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44e.png">👎</g-emoji></a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#using-applicationx-www-form-urlencoded-format">Using application/x-www-form-urlencoded format</a>
+      <ul>
+        <li><a href="#browser">Browser</a></li>
+        <li>
+          <a href="#nodejs">Node.js</a>
+          <ul>
+            <li><a href="#query-string">Query string</a></li>
+            <li>
+              <a href="#form-data">Form data</a>
+              <ul>
+                <li><a href="#-automatic-serialization">Automatic serialization</a></li>
+                <li><a href="#manual-formdata-passing">Manual FormData passing</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#semver">Semver</a></li>
+    <li><a href="#promises">Promises</a></li>
+    <li><a href="#typescript">TypeScript</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#credits">Credits</a></li>
+    <li><a href="#license">License</a></li>
+  </ul>
+  <h2>
+    <a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Features
+  </h2>
+  <ul>
+    <li>Make <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"
+        rel="nofollow">XMLHttpRequests</a> from the browser</li>
+    <li>Make <a href="http://nodejs.org/api/http.html" rel="nofollow">http</a> requests from node.js</li>
+    <li>Supports the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+        rel="nofollow">Promise</a> API</li>
+    <li>Intercept request and response</li>
+    <li>Transform request and response data</li>
+    <li>Cancel requests</li>
+    <li>Automatic transforms for JSON data</li>
+    <li>Client side support for protecting against <a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery"
+        rel="nofollow">XSRF</a>
+    </li>
+  </ul>
+  <h2>
+    <a id="user-content-browser-support" class="anchor" href="#browser-support" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Browser Support
+  </h2>
+  <table>
+    <thead>
+      <tr>
+        <th><a
+            href="https://camo.githubusercontent.com/1d440f4ffad2f6a8df0e532493cd225964bc8624cb0956171be0717dc4fbce64/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f7372632f6368726f6d652f6368726f6d655f34387834382e706e67"
+            target="_blank" rel="nofollow"></a></th>
+        <th><a
+            href="https://camo.githubusercontent.com/b2a1e5b90d591dfbf5dfa425c0d60d80aa3590d22ace3408cfb36d935808bb69/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f7372632f66697265666f782f66697265666f785f34387834382e706e67"
+            target="_blank" rel="nofollow"></a></th>
+        <th><a
+            href="https://camo.githubusercontent.com/8d37441ff74dfc50881abae7596a28677bba4617631eccf2143e9559906a81de/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f7372632f7361666172692f7361666172695f34387834382e706e67"
+            target="_blank" rel="nofollow"></a></th>
+        <th><a
+            href="https://camo.githubusercontent.com/8663fa4d6a0533eac6da67e2bbfaee3cc1ee6644454a88b21bf31f8196bb0d2f/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f7372632f6f706572612f6f706572615f34387834382e706e67"
+            target="_blank" rel="nofollow"></a></th>
+        <th><a
+            href="https://camo.githubusercontent.com/b9d103cc69d7a8dc55248c732a7aeb55c1f79e665c76bf523b431db262f0808d/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f7372632f656467652f656467655f34387834382e706e67"
+            target="_blank" rel="nofollow"></a></th>
+        <th><a
+            href="https://camo.githubusercontent.com/d0739e3928b4c84f6c2cd9902bcc379f18c645ffce6089e2ca2a1ecf7a2965cb/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f7372632f617263686976652f696e7465726e65742d6578706c6f7265725f392d31312f696e7465726e65742d6578706c6f7265725f392d31315f34387834382e706e67"
+            target="_blank" rel="nofollow"></a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Latest <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji>
+        </td>
+        <td>Latest <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji>
+        </td>
+        <td>Latest <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji>
+        </td>
+        <td>Latest <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji>
+        </td>
+        <td>Latest <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji>
+        </td>
+        <td>11 <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔</g-emoji>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p><a href="https://saucelabs.com/u/axios" rel="nofollow"></a></p>
+  <h2>
+    <a id="user-content-installing" class="anchor" href="#installing" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Installing
+  </h2>
+  <p>Using npm:</p>
+  <div class="highlight highlight-source-shell">
+    <pre>$ npm install axios</pre>
+  </div>
+  <p>Using bower:</p>
+  <div class="highlight highlight-source-shell">
+    <pre>$ bower install axios</pre>
+  </div>
+  <p>Using yarn:</p>
+  <div class="highlight highlight-source-shell">
+    <pre>$ yarn add axios</pre>
+  </div>
+  <p>Using jsDelivr CDN:</p>
+  <div class="highlight highlight-text-html-basic">
+    <pre><span class="pl-kos">&lt;</span><span class="pl-ent">script</span> <span class="pl-c1">src</span>="<span class="pl-s">https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js</span>"<span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span></pre>
+  </div>
+  <p>Using unpkg CDN:</p>
+  <div class="highlight highlight-text-html-basic">
+    <pre><span class="pl-kos">&lt;</span><span class="pl-ent">script</span> <span class="pl-c1">src</span>="<span class="pl-s">https://unpkg.com/axios/dist/axios.min.js</span>"<span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span></pre>
+  </div>
+  <h2>
+    <a id="user-content-example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Example
+  </h2>
+  <h3>
+    <a id="user-content-note-commonjs-usage" class="anchor" href="#note-commonjs-usage" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>note: CommonJS usage
+  </h3>
+  <p>In order to gain the TypeScript typings (for intellisense / autocomplete) while using CommonJS imports with
+    <code>require()</code> use the following approach:</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-s1">axios</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'axios'</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-c1">default</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// axios.&lt;method&gt; will now provide autocomplete and parameter typings</span></pre>
+  </div>
+  <p>Performing a <code>GET</code> request</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-s1">axios</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'axios'</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-c1">default</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Make a request for a user with a given ID</span>
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user?ID=12345'</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// handle success</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// handle error</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// always executed</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Optionally the request above could also be done as</span>
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+    <span class="pl-c1">params</span>: <span class="pl-kos">{</span>
+      <span class="pl-c1">ID</span>: <span class="pl-c1">12345</span>
+    <span class="pl-kos">}</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// always executed</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  
+
+<span class="pl-c">// Want to use async/await? Add the `async` keyword to your outer function/method.</span>
+<span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">getUser</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">try</span> <span class="pl-kos">{</span>
+    <span class="pl-k">const</span> <span class="pl-s1">response</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user?ID=12345'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span></pre>
+  </div>
+  <blockquote>
+    <p><strong>NOTE:</strong> <code>async/await</code> is part of ECMAScript 2017 and is not supported in Internet
+      Explorer and older browsers, so use with caution.</p>
+  </blockquote>
+  <p>Performing a <code>POST</code> request</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'/user'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+    <span class="pl-c1">firstName</span>: <span class="pl-s">'Fred'</span><span class="pl-kos">,</span>
+    <span class="pl-c1">lastName</span>: <span class="pl-s">'Flintstone'</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>Performing multiple concurrent requests</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">function</span> <span class="pl-en">getUserAccount</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">return</span> <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user/12345'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
+
+<span class="pl-k">function</span> <span class="pl-en">getUserPermissions</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">return</span> <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user/12345/permissions'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
+
+<span class="pl-v">Promise</span><span class="pl-kos">.</span><span class="pl-en">all</span><span class="pl-kos">(</span><span class="pl-kos">[</span><span class="pl-en">getUserAccount</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">,</span> <span class="pl-en">getUserPermissions</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">]</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">results</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-k">const</span> <span class="pl-s1">acct</span> <span class="pl-c1">=</span> <span class="pl-s1">results</span><span class="pl-kos">[</span><span class="pl-c1">0</span><span class="pl-kos">]</span><span class="pl-kos">;</span>
+    <span class="pl-k">const</span> <span class="pl-s1">perm</span> <span class="pl-c1">=</span> <span class="pl-s1">results</span><span class="pl-kos">[</span><span class="pl-c1">1</span><span class="pl-kos">]</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <h2>
+    <a id="user-content-axios-api" class="anchor" href="#axios-api" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>axios API
+  </h2>
+  <p>Requests can be made by passing the relevant config to <code>axios</code>.</p>
+  <h5>
+    <a id="user-content-axiosconfig" class="anchor" href="#axiosconfig" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>axios(config)
+  </h5>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-c">// Send a POST request</span>
+<span class="pl-en">axios</span><span class="pl-kos">(</span><span class="pl-kos">{</span>
+  <span class="pl-c1">method</span>: <span class="pl-s">'post'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">url</span>: <span class="pl-s">'/user/12345'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">data</span>: <span class="pl-kos">{</span>
+    <span class="pl-c1">firstName</span>: <span class="pl-s">'Fred'</span><span class="pl-kos">,</span>
+    <span class="pl-c1">lastName</span>: <span class="pl-s">'Flintstone'</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-c">// GET request for remote image in node.js</span>
+<span class="pl-en">axios</span><span class="pl-kos">(</span><span class="pl-kos">{</span>
+  <span class="pl-c1">method</span>: <span class="pl-s">'get'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">url</span>: <span class="pl-s">'http://bit.ly/2mTM3nY'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">responseType</span>: <span class="pl-s">'stream'</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-c1">data</span><span class="pl-kos">.</span><span class="pl-en">pipe</span><span class="pl-kos">(</span><span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createWriteStream</span><span class="pl-kos">(</span><span class="pl-s">'ada_lovelace.jpg'</span><span class="pl-kos">)</span><span class="pl-kos">)</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <h5>
+    <a id="user-content-axiosurl-config" class="anchor" href="#axiosurl-config" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios(url[, config])
+  </h5>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-c">// Send a GET request (default method)</span>
+<span class="pl-en">axios</span><span class="pl-kos">(</span><span class="pl-s">'/user/12345'</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <h3>
+    <a id="user-content-request-method-aliases" class="anchor" href="#request-method-aliases" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Request method aliases
+  </h3>
+  <p>For convenience, aliases have been provided for all common request methods.</p>
+  <h5>
+    <a id="user-content-axiosrequestconfig" class="anchor" href="#axiosrequestconfig" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios.request(config)
+  </h5>
+  <h5>
+    <a id="user-content-axiosgeturl-config" class="anchor" href="#axiosgeturl-config" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios.get(url[, config])
+  </h5>
+  <h5>
+    <a id="user-content-axiosdeleteurl-config" class="anchor" href="#axiosdeleteurl-config" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios.delete(url[, config])
+  </h5>
+  <h5>
+    <a id="user-content-axiosheadurl-config" class="anchor" href="#axiosheadurl-config" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios.head(url[, config])
+  </h5>
+  <h5>
+    <a id="user-content-axiosoptionsurl-config" class="anchor" href="#axiosoptionsurl-config" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios.options(url[, config])
+  </h5>
+  <h5>
+    <a id="user-content-axiosposturl-data-config" class="anchor" href="#axiosposturl-data-config"
+      aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>axios.post(url[, data[,
+    config]])
+  </h5>
+  <h5>
+    <a id="user-content-axiosputurl-data-config" class="anchor" href="#axiosputurl-data-config" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios.put(url[, data[, config]])
+  </h5>
+  <h5>
+    <a id="user-content-axiospatchurl-data-config" class="anchor" href="#axiospatchurl-data-config"
+      aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>axios.patch(url[, data[,
+    config]])
+  </h5>
+  <h6>
+    <a id="user-content-note" class="anchor" href="#note" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>NOTE
+  </h6>
+  <p>When using the alias methods <code>url</code>, <code>method</code>, and <code>data</code> properties don't need to
+    be specified in config.</p>
+  <h3>
+    <a id="user-content-concurrency-deprecated" class="anchor" href="#concurrency-deprecated" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Concurrency (Deprecated)
+  </h3>
+  <p>Please use <code>Promise.all</code> to replace the below functions.</p>
+  <p>Helper functions for dealing with concurrent requests.</p>
+  <p>axios.all(iterable)
+    axios.spread(callback)</p>
+  <h3>
+    <a id="user-content-creating-an-instance" class="anchor" href="#creating-an-instance" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Creating an instance
+  </h3>
+  <p>You can create a new instance of axios with a custom config.</p>
+  <h5>
+    <a id="user-content-axioscreateconfig" class="anchor" href="#axioscreateconfig" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios.create([config])
+  </h5>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-s1">instance</span> <span class="pl-c1">=</span> <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-kos">{</span>
+  <span class="pl-c1">baseURL</span>: <span class="pl-s">'https://some-domain.com/api/'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">timeout</span>: <span class="pl-c1">1000</span><span class="pl-kos">,</span>
+  <span class="pl-c1">headers</span>: <span class="pl-kos">{</span><span class="pl-s">'X-Custom-Header'</span>: <span class="pl-s">'foobar'</span><span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <h3>
+    <a id="user-content-instance-methods" class="anchor" href="#instance-methods" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Instance methods
+  </h3>
+  <p>The available instance methods are listed below. The specified config will be merged with the instance config.</p>
+  <h5>
+    <a id="user-content-axiosrequestconfig-1" class="anchor" href="#axiosrequestconfig-1" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios#request(config)
+  </h5>
+  <h5>
+    <a id="user-content-axiosgeturl-config-1" class="anchor" href="#axiosgeturl-config-1" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios#get(url[, config])
+  </h5>
+  <h5>
+    <a id="user-content-axiosdeleteurl-config-1" class="anchor" href="#axiosdeleteurl-config-1" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios#delete(url[, config])
+  </h5>
+  <h5>
+    <a id="user-content-axiosheadurl-config-1" class="anchor" href="#axiosheadurl-config-1" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios#head(url[, config])
+  </h5>
+  <h5>
+    <a id="user-content-axiosoptionsurl-config-1" class="anchor" href="#axiosoptionsurl-config-1"
+      aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>axios#options(url[, config])
+  </h5>
+  <h5>
+    <a id="user-content-axiosposturl-data-config-1" class="anchor" href="#axiosposturl-data-config-1"
+      aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>axios#post(url[, data[,
+    config]])
+  </h5>
+  <h5>
+    <a id="user-content-axiosputurl-data-config-1" class="anchor" href="#axiosputurl-data-config-1"
+      aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>axios#put(url[, data[,
+    config]])
+  </h5>
+  <h5>
+    <a id="user-content-axiospatchurl-data-config-1" class="anchor" href="#axiospatchurl-data-config-1"
+      aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>axios#patch(url[, data[,
+    config]])
+  </h5>
+  <h5>
+    <a id="user-content-axiosgeturiconfig" class="anchor" href="#axiosgeturiconfig" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>axios#getUri([config])
+  </h5>
+  <h2>
+    <a id="user-content-request-config" class="anchor" href="#request-config" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Request Config
+  </h2>
+  <p>These are the available config options for making requests. Only the <code>url</code> is required. Requests will
+    default to <code>GET</code> if <code>method</code> is not specified.</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-kos">{</span>
+  <span class="pl-c">// `url` is the server URL that will be used for the request</span>
+  <span class="pl-c1">url</span>: <span class="pl-s">'/user'</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `method` is the request method to be used when making the request</span>
+  <span class="pl-c1">method</span>: <span class="pl-s">'get'</span><span class="pl-kos">,</span> <span class="pl-c">// default</span>
+
+  <span class="pl-c">// `baseURL` will be prepended to `url` unless `url` is absolute.</span>
+  <span class="pl-c">// It can be convenient to set `baseURL` for an instance of axios to pass relative URLs</span>
+  <span class="pl-c">// to methods of that instance.</span>
+  <span class="pl-c1">baseURL</span>: <span class="pl-s">'https://some-domain.com/api/'</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `transformRequest` allows changes to the request data before it is sent to the server</span>
+  <span class="pl-c">// This is only applicable for request methods 'PUT', 'POST', 'PATCH' and 'DELETE'</span>
+  <span class="pl-c">// The last function in the array must return a string or an instance of Buffer, ArrayBuffer,</span>
+  <span class="pl-c">// FormData or Stream</span>
+  <span class="pl-c">// You may modify the headers object.</span>
+  <span class="pl-c1">transformRequest</span>: <span class="pl-kos">[</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">,</span> <span class="pl-s1">headers</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// Do whatever you want to transform the data</span>
+
+    <span class="pl-k">return</span> <span class="pl-s1">data</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `transformResponse` allows changes to the response data to be made before</span>
+  <span class="pl-c">// it is passed to then/catch</span>
+  <span class="pl-c1">transformResponse</span>: <span class="pl-kos">[</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// Do whatever you want to transform the data</span>
+
+    <span class="pl-k">return</span> <span class="pl-s1">data</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `headers` are custom headers to be sent</span>
+  <span class="pl-c1">headers</span>: <span class="pl-kos">{</span><span class="pl-s">'X-Requested-With'</span>: <span class="pl-s">'XMLHttpRequest'</span><span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `params` are the URL parameters to be sent with the request</span>
+  <span class="pl-c">// Must be a plain object or a URLSearchParams object</span>
+  <span class="pl-c1">params</span>: <span class="pl-kos">{</span>
+    <span class="pl-c1">ID</span>: <span class="pl-c1">12345</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `paramsSerializer` is an optional function in charge of serializing `params`</span>
+  <span class="pl-c">// (e.g. https://www.npmjs.com/package/qs, http://api.jquery.com/jquery.param/)</span>
+  <span class="pl-en">paramsSerializer</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">params</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-k">return</span> <span class="pl-v">Qs</span><span class="pl-kos">.</span><span class="pl-en">stringify</span><span class="pl-kos">(</span><span class="pl-s1">params</span><span class="pl-kos">,</span> <span class="pl-kos">{</span><span class="pl-c1">arrayFormat</span>: <span class="pl-s">'brackets'</span><span class="pl-kos">}</span><span class="pl-kos">)</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `data` is the data to be sent as the request body</span>
+  <span class="pl-c">// Only applicable for request methods 'PUT', 'POST', 'DELETE , and 'PATCH'</span>
+  <span class="pl-c">// When no `transformRequest` is set, must be of one of the following types:</span>
+  <span class="pl-c">// - string, plain object, ArrayBuffer, ArrayBufferView, URLSearchParams</span>
+  <span class="pl-c">// - Browser only: FormData, File, Blob</span>
+  <span class="pl-c">// - Node only: Stream, Buffer</span>
+  <span class="pl-c1">data</span>: <span class="pl-kos">{</span>
+    <span class="pl-c1">firstName</span>: <span class="pl-s">'Fred'</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+  
+  <span class="pl-c">// syntax alternative to send data into the body</span>
+  <span class="pl-c">// method post</span>
+  <span class="pl-c">// only the value is sent, not the key</span>
+  <span class="pl-c1">data</span>: <span class="pl-s">'Country=Brasil&amp;City=Belo Horizonte'</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `timeout` specifies the number of milliseconds before the request times out.</span>
+  <span class="pl-c">// If the request takes longer than `timeout`, the request will be aborted.</span>
+  <span class="pl-c1">timeout</span>: <span class="pl-c1">1000</span><span class="pl-kos">,</span> <span class="pl-c">// default is `0` (no timeout)</span>
+
+  <span class="pl-c">// `withCredentials` indicates whether or not cross-site Access-Control requests</span>
+  <span class="pl-c">// should be made using credentials</span>
+  <span class="pl-c1">withCredentials</span>: <span class="pl-c1">false</span><span class="pl-kos">,</span> <span class="pl-c">// default</span>
+
+  <span class="pl-c">// `adapter` allows custom handling of requests which makes testing easier.</span>
+  <span class="pl-c">// Return a promise and supply a valid response (see lib/adapters/README.md).</span>
+  <span class="pl-en">adapter</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">config</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">/* ... */</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `auth` indicates that HTTP Basic auth should be used, and supplies credentials.</span>
+  <span class="pl-c">// This will set an `Authorization` header, overwriting any existing</span>
+  <span class="pl-c">// `Authorization` custom headers you have set using `headers`.</span>
+  <span class="pl-c">// Please note that only HTTP Basic auth is configurable through this parameter.</span>
+  <span class="pl-c">// For Bearer tokens and such, use `Authorization` custom headers instead.</span>
+  <span class="pl-c1">auth</span>: <span class="pl-kos">{</span>
+    <span class="pl-c1">username</span>: <span class="pl-s">'janedoe'</span><span class="pl-kos">,</span>
+    <span class="pl-c1">password</span>: <span class="pl-s">'s00pers3cret'</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `responseType` indicates the type of data that the server will respond with</span>
+  <span class="pl-c">// options are: 'arraybuffer', 'document', 'json', 'text', 'stream'</span>
+  <span class="pl-c">//   browser only: 'blob'</span>
+  <span class="pl-c1">responseType</span>: <span class="pl-s">'json'</span><span class="pl-kos">,</span> <span class="pl-c">// default</span>
+
+  <span class="pl-c">// `responseEncoding` indicates encoding to use for decoding responses (Node.js only)</span>
+  <span class="pl-c">// Note: Ignored for `responseType` of 'stream' or client-side requests</span>
+  <span class="pl-c1">responseEncoding</span>: <span class="pl-s">'utf8'</span><span class="pl-kos">,</span> <span class="pl-c">// default</span>
+
+  <span class="pl-c">// `xsrfCookieName` is the name of the cookie to use as a value for xsrf token</span>
+  <span class="pl-c1">xsrfCookieName</span>: <span class="pl-s">'XSRF-TOKEN'</span><span class="pl-kos">,</span> <span class="pl-c">// default</span>
+
+  <span class="pl-c">// `xsrfHeaderName` is the name of the http header that carries the xsrf token value</span>
+  <span class="pl-c1">xsrfHeaderName</span>: <span class="pl-s">'X-XSRF-TOKEN'</span><span class="pl-kos">,</span> <span class="pl-c">// default</span>
+
+  <span class="pl-c">// `onUploadProgress` allows handling of progress events for uploads</span>
+  <span class="pl-c">// browser only</span>
+  <span class="pl-en">onUploadProgress</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">progressEvent</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// Do whatever you want with the native progress event</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `onDownloadProgress` allows handling of progress events for downloads</span>
+  <span class="pl-c">// browser only</span>
+  <span class="pl-en">onDownloadProgress</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">progressEvent</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// Do whatever you want with the native progress event</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `maxContentLength` defines the max size of the http response content in bytes allowed in node.js</span>
+  <span class="pl-c1">maxContentLength</span>: <span class="pl-c1">2000</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `maxBodyLength` (Node only option) defines the max size of the http request content in bytes allowed</span>
+  <span class="pl-c1">maxBodyLength</span>: <span class="pl-c1">2000</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `validateStatus` defines whether to resolve or reject the promise for a given</span>
+  <span class="pl-c">// HTTP response status code. If `validateStatus` returns `true` (or is set to `null`</span>
+  <span class="pl-c">// or `undefined`), the promise will be resolved; otherwise, the promise will be</span>
+  <span class="pl-c">// rejected.</span>
+  <span class="pl-en">validateStatus</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">status</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-k">return</span> <span class="pl-s1">status</span> <span class="pl-c1">&gt;=</span> <span class="pl-c1">200</span> <span class="pl-c1">&amp;&amp;</span> <span class="pl-s1">status</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">300</span><span class="pl-kos">;</span> <span class="pl-c">// default</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `maxRedirects` defines the maximum number of redirects to follow in node.js.</span>
+  <span class="pl-c">// If set to 0, no redirects will be followed.</span>
+  <span class="pl-c1">maxRedirects</span>: <span class="pl-c1">21</span><span class="pl-kos">,</span> <span class="pl-c">// default</span>
+
+  <span class="pl-c">// `beforeRedirect` defines a function that will be called before redirect.</span>
+  <span class="pl-c">// Use this to adjust the request options upon redirecting,</span>
+  <span class="pl-c">// to inspect the latest response headers,</span>
+  <span class="pl-c">// or to cancel the request by throwing an error</span>
+  <span class="pl-c">// If maxRedirects is set to 0, `beforeRedirect` is not used.</span>
+  <span class="pl-c1">beforeRedirect</span>: <span class="pl-kos">(</span><span class="pl-s1">options</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> headers <span class="pl-kos">}</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">options</span><span class="pl-kos">.</span><span class="pl-c1">hostname</span> <span class="pl-c1">===</span> <span class="pl-s">"example.com"</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+      <span class="pl-s1">options</span><span class="pl-kos">.</span><span class="pl-c1">auth</span> <span class="pl-c1">=</span> <span class="pl-s">"user:password"</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+  <span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+  <span class="pl-c">// `socketPath` defines a UNIX Socket to be used in node.js.</span>
+  <span class="pl-c">// e.g. '/var/run/docker.sock' to send requests to the docker daemon.</span>
+  <span class="pl-c">// Only either `socketPath` or `proxy` can be specified.</span>
+  <span class="pl-c">// If both are specified, `socketPath` is used.</span>
+  socketPath: <span class="pl-c1">null</span><span class="pl-kos">,</span> <span class="pl-c">// default</span>
+
+  <span class="pl-c">// `httpAgent` and `httpsAgent` define a custom agent to be used when performing http</span>
+  <span class="pl-c">// and https requests, respectively, in node.js. This allows options to be added like</span>
+  <span class="pl-c">// `keepAlive` that are not enabled by default.</span>
+  <span class="pl-s1">httpAgent</span>: <span class="pl-k">new</span> <span class="pl-s1">http</span><span class="pl-kos">.</span><span class="pl-c1">Agent</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">keepAlive</span>: <span class="pl-c1">true</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
+  <span class="pl-s1">httpsAgent</span>: <span class="pl-k">new</span> <span class="pl-s1">https</span><span class="pl-kos">.</span><span class="pl-c1">Agent</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">keepAlive</span>: <span class="pl-c1">true</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `proxy` defines the hostname, port, and protocol of the proxy server.</span>
+  <span class="pl-c">// You can also define your proxy using the conventional `http_proxy` and</span>
+  <span class="pl-c">// `https_proxy` environment variables. If you are using environment variables</span>
+  <span class="pl-c">// for your proxy configuration, you can also define a `no_proxy` environment</span>
+  <span class="pl-c">// variable as a comma-separated list of domains that should not be proxied.</span>
+  <span class="pl-c">// Use `false` to disable proxies, ignoring environment variables.</span>
+  <span class="pl-c">// `auth` indicates that HTTP Basic auth should be used to connect to the proxy, and</span>
+  <span class="pl-c">// supplies credentials.</span>
+  <span class="pl-c">// This will set an `Proxy-Authorization` header, overwriting any existing</span>
+  <span class="pl-c">// `Proxy-Authorization` custom headers you have set using `headers`.</span>
+  <span class="pl-c">// If the proxy server uses HTTPS, then you must set the protocol to `https`. </span>
+  <span class="pl-s1">proxy</span>: <span class="pl-kos">{</span>
+    <span class="pl-c1">protocol</span>: <span class="pl-s">'https'</span><span class="pl-kos">,</span>
+    <span class="pl-c1">host</span>: <span class="pl-s">'127.0.0.1'</span><span class="pl-kos">,</span>
+    <span class="pl-c1">port</span>: <span class="pl-c1">9000</span><span class="pl-kos">,</span>
+    <span class="pl-c1">auth</span>: <span class="pl-kos">{</span>
+      <span class="pl-c1">username</span>: <span class="pl-s">'mikeymike'</span><span class="pl-kos">,</span>
+      <span class="pl-c1">password</span>: <span class="pl-s">'rapunz3l'</span>
+    <span class="pl-kos">}</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `cancelToken` specifies a cancel token that can be used to cancel the request</span>
+  <span class="pl-c">// (see Cancellation section below for details)</span>
+  <span class="pl-s1">cancelToken</span>: <span class="pl-k">new</span> <span class="pl-v">CancelToken</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">cancel</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// an alternative way to cancel Axios requests using AbortController</span>
+  <span class="pl-s1">signal</span>: <span class="pl-k">new</span> <span class="pl-v">AbortController</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-c1">signal</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `decompress` indicates whether or not the response body should be decompressed </span>
+  <span class="pl-c">// automatically. If set to `true` will also remove the 'content-encoding' header </span>
+  <span class="pl-c">// from the responses objects of all decompressed responses</span>
+  <span class="pl-c">// - Node only (XHR cannot turn off decompression)</span>
+  <span class="pl-s1">decompress</span>: <span class="pl-c1">true</span> <span class="pl-c">// default</span>
+
+  <span class="pl-c">// `insecureHTTPParser` boolean.</span>
+  <span class="pl-c">// Indicates where to use an insecure HTTP parser that accepts invalid HTTP headers.</span>
+  <span class="pl-c">// This may allow interoperability with non-conformant HTTP implementations.</span>
+  <span class="pl-c">// Using the insecure parser should be avoided.</span>
+  <span class="pl-c">// see options https://nodejs.org/dist/latest-v12.x/docs/api/http.html#http_http_request_url_options_callback</span>
+  <span class="pl-c">// see also https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/#strict-http-header-parsing-none</span>
+  insecureHTTPParser: <span class="pl-c1">undefined</span> <span class="pl-c">// default</span>
+
+  <span class="pl-c">// transitional options for backward compatibility that may be removed in the newer versions</span>
+  transitional: <span class="pl-kos">{</span>
+    <span class="pl-c">// silent JSON parsing mode</span>
+    <span class="pl-c">// `true`  - ignore JSON parsing errors and set response.data to null if parsing failed (old behaviour)</span>
+    <span class="pl-c">// `false` - throw SyntaxError if JSON parsing failed (Note: responseType must be set to 'json')</span>
+    <span class="pl-c1">silentJSONParsing</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span> <span class="pl-c">// default value for the current Axios version</span>
+
+    <span class="pl-c">// try to parse the response string as JSON even if `responseType` is not 'json'</span>
+    <span class="pl-c1">forcedJSONParsing</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span>
+    
+    <span class="pl-c">// throw ETIMEDOUT error instead of generic ECONNABORTED on request timeouts</span>
+    <span class="pl-c1">clarifyTimeoutError</span>: <span class="pl-c1">false</span><span class="pl-kos">,</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-s1">env</span>: <span class="pl-kos">{</span>
+    <span class="pl-c">// The FormData class to be used to automatically serialize the payload into a FormData object</span>
+    <span class="pl-c1">FormData</span>: <span class="pl-smi">window</span><span class="pl-kos">?.</span><span class="pl-c1">FormData</span> <span class="pl-c1">||</span> <span class="pl-s1">global</span><span class="pl-kos">?.</span><span class="pl-c1">FormData</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span></pre>
+  </div>
+  <h2>
+    <a id="user-content-response-schema" class="anchor" href="#response-schema" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Response Schema
+  </h2>
+  <p>The response for a request contains the following information.</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-kos">{</span>
+  <span class="pl-c">// `data` is the response that was provided by the server</span>
+  <span class="pl-c1">data</span>: <span class="pl-kos">{</span><span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `status` is the HTTP status code from the server response</span>
+  <span class="pl-c1">status</span>: <span class="pl-c1">200</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `statusText` is the HTTP status message from the server response</span>
+  <span class="pl-c1">statusText</span>: <span class="pl-s">'OK'</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `headers` the HTTP headers that the server responded with</span>
+  <span class="pl-c">// All header names are lower cased and can be accessed using the bracket notation.</span>
+  <span class="pl-c">// Example: `response.headers['content-type']`</span>
+  <span class="pl-c1">headers</span>: <span class="pl-kos">{</span><span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `config` is the config that was provided to `axios` for the request</span>
+  <span class="pl-c1">config</span>: <span class="pl-kos">{</span><span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+  <span class="pl-c">// `request` is the request that generated this response</span>
+  <span class="pl-c">// It is the last ClientRequest instance in node.js (in redirects)</span>
+  <span class="pl-c">// and an XMLHttpRequest instance in the browser</span>
+  <span class="pl-c1">request</span>: <span class="pl-kos">{</span><span class="pl-kos">}</span>
+<span class="pl-kos">}</span></pre>
+  </div>
+  <p>When using <code>then</code>, you will receive the response as follows:</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user/12345'</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-c1">data</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-c1">status</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-c1">statusText</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-c1">headers</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-c1">config</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>When using <code>catch</code>, or passing a <a
+      href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then"
+      rel="nofollow">rejection callback</a> as second parameter of <code>then</code>, the response will be available
+    through the <code>error</code> object as explained in the <a href="#handling-errors">Handling Errors</a> section.
+  </p>
+  <h2>
+    <a id="user-content-config-defaults" class="anchor" href="#config-defaults" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Config Defaults
+  </h2>
+  <p>You can specify config defaults that will be applied to every request.</p>
+  <h3>
+    <a id="user-content-global-axios-defaults" class="anchor" href="#global-axios-defaults" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Global axios defaults
+  </h3>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-c1">defaults</span><span class="pl-kos">.</span><span class="pl-c1">baseURL</span> <span class="pl-c1">=</span> <span class="pl-s">'https://api.example.com'</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Important: If axios is used with multiple domains, the AUTH_TOKEN will be sent to all of them.</span>
+<span class="pl-c">// See below for an example using Custom instance defaults instead.</span>
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-c1">defaults</span><span class="pl-kos">.</span><span class="pl-c1">headers</span><span class="pl-kos">.</span><span class="pl-c1">common</span><span class="pl-kos">[</span><span class="pl-s">'Authorization'</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-c1">AUTH_TOKEN</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-c1">defaults</span><span class="pl-kos">.</span><span class="pl-c1">headers</span><span class="pl-kos">.</span><span class="pl-c1">post</span><span class="pl-kos">[</span><span class="pl-s">'Content-Type'</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-s">'application/x-www-form-urlencoded'</span><span class="pl-kos">;</span></pre>
+  </div>
+  <h3>
+    <a id="user-content-custom-instance-defaults" class="anchor" href="#custom-instance-defaults"
+      aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom instance defaults
+  </h3>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-c">// Set config defaults when creating the instance</span>
+<span class="pl-k">const</span> <span class="pl-s1">instance</span> <span class="pl-c1">=</span> <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-kos">{</span>
+  <span class="pl-c1">baseURL</span>: <span class="pl-s">'https://api.example.com'</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Alter defaults after instance has been created</span>
+<span class="pl-s1">instance</span><span class="pl-kos">.</span><span class="pl-c1">defaults</span><span class="pl-kos">.</span><span class="pl-c1">headers</span><span class="pl-kos">.</span><span class="pl-c1">common</span><span class="pl-kos">[</span><span class="pl-s">'Authorization'</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-c1">AUTH_TOKEN</span><span class="pl-kos">;</span></pre>
+  </div>
+  <h3>
+    <a id="user-content-config-order-of-precedence" class="anchor" href="#config-order-of-precedence"
+      aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config order of precedence
+  </h3>
+  <p>Config will be merged with an order of precedence. The order is library defaults found in <a
+      href="https://github.com/axios/axios/blob/master/lib/defaults.js#L28">lib/defaults.js</a>, then
+    <code>defaults</code> property of the instance, and finally <code>config</code> argument for the request. The latter
+    will take precedence over the former. Here's an example.</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-c">// Create an instance using the config defaults provided by the library</span>
+<span class="pl-c">// At this point the timeout config value is `0` as is the default for the library</span>
+<span class="pl-k">const</span> <span class="pl-s1">instance</span> <span class="pl-c1">=</span> <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Override timeout default for the library</span>
+<span class="pl-c">// Now all requests using this instance will wait 2.5 seconds before timing out</span>
+<span class="pl-s1">instance</span><span class="pl-kos">.</span><span class="pl-c1">defaults</span><span class="pl-kos">.</span><span class="pl-c1">timeout</span> <span class="pl-c1">=</span> <span class="pl-c1">2500</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Override timeout for this request as it's known to take a long time</span>
+<span class="pl-s1">instance</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/longRequest'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">timeout</span>: <span class="pl-c1">5000</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <h2>
+    <a id="user-content-interceptors" class="anchor" href="#interceptors" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Interceptors
+  </h2>
+  <p>You can intercept requests or responses before they are handled by <code>then</code> or <code>catch</code>.</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-c">// Add a request interceptor</span>
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-c1">interceptors</span><span class="pl-kos">.</span><span class="pl-c1">request</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">config</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// Do something before request is sent</span>
+    <span class="pl-k">return</span> <span class="pl-s1">config</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// Do something with request error</span>
+    <span class="pl-k">return</span> <span class="pl-v">Promise</span><span class="pl-kos">.</span><span class="pl-en">reject</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Add a response interceptor</span>
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-c1">interceptors</span><span class="pl-kos">.</span><span class="pl-c1">response</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// Any status code that lie within the range of 2xx cause this function to trigger</span>
+    <span class="pl-c">// Do something with response data</span>
+    <span class="pl-k">return</span> <span class="pl-s1">response</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// Any status codes that falls outside the range of 2xx cause this function to trigger</span>
+    <span class="pl-c">// Do something with response error</span>
+    <span class="pl-k">return</span> <span class="pl-v">Promise</span><span class="pl-kos">.</span><span class="pl-en">reject</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>If you need to remove an interceptor later you can.</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-s1">myInterceptor</span> <span class="pl-c1">=</span> <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-c1">interceptors</span><span class="pl-kos">.</span><span class="pl-c1">request</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span><span class="pl-c">/*...*/</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-c1">interceptors</span><span class="pl-kos">.</span><span class="pl-c1">request</span><span class="pl-kos">.</span><span class="pl-en">eject</span><span class="pl-kos">(</span><span class="pl-s1">myInterceptor</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>You can add interceptors to a custom instance of axios.</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-s1">instance</span> <span class="pl-c1">=</span> <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">instance</span><span class="pl-kos">.</span><span class="pl-c1">interceptors</span><span class="pl-kos">.</span><span class="pl-c1">request</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span><span class="pl-c">/*...*/</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>When you add request interceptors, they are presumed to be asynchronous by default. This can cause a delay
+    in the execution of your axios request when the main thread is blocked (a promise is created under the hood for
+    the interceptor and your request gets put on the bottom of the call stack). If your request interceptors are
+    synchronous you can add a flag
+    to the options object that will tell axios to run the code synchronously and avoid any delays in request execution.
+  </p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-c1">interceptors</span><span class="pl-kos">.</span><span class="pl-c1">request</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">config</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">config</span><span class="pl-kos">.</span><span class="pl-c1">headers</span><span class="pl-kos">.</span><span class="pl-c1">test</span> <span class="pl-c1">=</span> <span class="pl-s">'I am only a header!'</span><span class="pl-kos">;</span>
+  <span class="pl-k">return</span> <span class="pl-s1">config</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-c1">null</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c1">synchronous</span>: <span class="pl-c1">true</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>If you want to execute a particular interceptor based on a runtime check,
+    you can add a <code>runWhen</code> function to the options object. The interceptor will not be executed <strong>if
+      and only if</strong> the return
+    of <code>runWhen</code> is <code>false</code>. The function will be called with the config
+    object (don't forget that you can bind your own arguments to it as well.) This can be handy when you have an
+    asynchronous request interceptor that only needs to run at certain times.</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">function</span> <span class="pl-en">onGetCall</span><span class="pl-kos">(</span><span class="pl-s1">config</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">return</span> <span class="pl-s1">config</span><span class="pl-kos">.</span><span class="pl-c1">method</span> <span class="pl-c1">===</span> <span class="pl-s">'get'</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-c1">interceptors</span><span class="pl-kos">.</span><span class="pl-c1">request</span><span class="pl-kos">.</span><span class="pl-en">use</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">config</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">config</span><span class="pl-kos">.</span><span class="pl-c1">headers</span><span class="pl-kos">.</span><span class="pl-c1">test</span> <span class="pl-c1">=</span> <span class="pl-s">'special get headers'</span><span class="pl-kos">;</span>
+  <span class="pl-k">return</span> <span class="pl-s1">config</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-c1">null</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c1">runWhen</span>: <span class="pl-s1">onGetCall</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <h3>
+    <a id="user-content-multiple-interceptors" class="anchor" href="#multiple-interceptors" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Multiple Interceptors
+  </h3>
+  <p>Given you add multiple response interceptors
+    and when the response was fulfilled</p>
+  <ul>
+    <li>then each interceptor is executed</li>
+    <li>then they are executed in the order they were added</li>
+    <li>then only the last interceptor's result is returned</li>
+    <li>then every interceptor receives the result of it's predecessor</li>
+    <li>and when the fulfillment-interceptor throws
+      <ul>
+        <li>then the following fulfillment-interceptor is not called</li>
+        <li>then the following rejection-interceptor is called</li>
+        <li>once caught, another following fulfill-interceptor is called again (just like in a promise chain).</li>
+      </ul>
+    </li>
+  </ul>
+  <p>Read <a href="https://github.com/axios/axios/blob/HEAD/test/specs/interceptors.spec.js">the interceptor tests</a>
+    for seeing all this in code.</p>
+  <h2>
+    <a id="user-content-handling-errors" class="anchor" href="#handling-errors" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Handling Errors
+  </h2>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user/12345'</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">response</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+      <span class="pl-c">// The request was made and the server responded with a status code</span>
+      <span class="pl-c">// that falls out of the range of 2xx</span>
+      <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">response</span><span class="pl-kos">.</span><span class="pl-c1">data</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+      <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">response</span><span class="pl-kos">.</span><span class="pl-c1">status</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+      <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">response</span><span class="pl-kos">.</span><span class="pl-c1">headers</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">request</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+      <span class="pl-c">// The request was made but no response was received</span>
+      <span class="pl-c">// `error.request` is an instance of XMLHttpRequest in the browser and an instance of</span>
+      <span class="pl-c">// http.ClientRequest in node.js</span>
+      <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">request</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+      <span class="pl-c">// Something happened in setting up the request that triggered an Error</span>
+      <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'Error'</span><span class="pl-kos">,</span> <span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">message</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-c1">config</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>Using the <code>validateStatus</code> config option, you can define HTTP code(s) that should throw an error.</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user/12345'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-en">validateStatus</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">status</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-k">return</span> <span class="pl-s1">status</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">500</span><span class="pl-kos">;</span> <span class="pl-c">// Resolve only if the status code is less than 500</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span></pre>
+  </div>
+  <p>Using <code>toJSON</code> you get an object with more information about the HTTP error.</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user/12345'</span><span class="pl-kos">)</span>
+  <span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">.</span><span class="pl-en">toJSON</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <h2>
+    <a id="user-content-cancellation" class="anchor" href="#cancellation" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Cancellation
+  </h2>
+  <h3>
+    <a id="user-content-abortcontroller" class="anchor" href="#abortcontroller" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>AbortController
+  </h3>
+  <p>Starting from <code>v0.22.0</code> Axios supports AbortController to cancel requests in fetch API way:</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-s1">controller</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-v">AbortController</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/foo/bar'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+   <span class="pl-c1">signal</span>: <span class="pl-s1">controller</span><span class="pl-kos">.</span><span class="pl-c1">signal</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+   <span class="pl-c">//...</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-c">// cancel the request</span>
+<span class="pl-s1">controller</span><span class="pl-kos">.</span><span class="pl-en">abort</span><span class="pl-kos">(</span><span class="pl-kos">)</span></pre>
+  </div>
+  <h3>
+    <a id="user-content-canceltoken-deprecated" class="anchor" href="#canceltoken-deprecated" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>CancelToken <code>👎deprecated</code>
+  </h3>
+  <p>You can also cancel a request using a <em>CancelToken</em>.</p>
+  <blockquote>
+    <p>The axios cancel token API is based on the withdrawn <a
+        href="https://github.com/tc39/proposal-cancelable-promises">cancelable promises proposal</a>.</p>
+  </blockquote>
+  <blockquote>
+    <p>This API is deprecated since v0.22.0 and shouldn't be used in new projects</p>
+  </blockquote>
+  <p>You can create a cancel token using the <code>CancelToken.source</code> factory as shown below:</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-v">CancelToken</span> <span class="pl-c1">=</span> <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-c1">CancelToken</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">source</span> <span class="pl-c1">=</span> <span class="pl-v">CancelToken</span><span class="pl-kos">.</span><span class="pl-en">source</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user/12345'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">cancelToken</span>: <span class="pl-s1">source</span><span class="pl-kos">.</span><span class="pl-c1">token</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">catch</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">thrown</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">isCancel</span><span class="pl-kos">(</span><span class="pl-s1">thrown</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'Request canceled'</span><span class="pl-kos">,</span> <span class="pl-s1">thrown</span><span class="pl-kos">.</span><span class="pl-c1">message</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// handle error</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'/user/12345'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">name</span>: <span class="pl-s">'new name'</span>
+<span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">cancelToken</span>: <span class="pl-s1">source</span><span class="pl-kos">.</span><span class="pl-c1">token</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span>
+
+<span class="pl-c">// cancel the request (the message parameter is optional)</span>
+<span class="pl-s1">source</span><span class="pl-kos">.</span><span class="pl-en">cancel</span><span class="pl-kos">(</span><span class="pl-s">'Operation canceled by the user.'</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>You can also create a cancel token by passing an executor function to the <code>CancelToken</code> constructor:</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-v">CancelToken</span> <span class="pl-c1">=</span> <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-c1">CancelToken</span><span class="pl-kos">;</span>
+<span class="pl-k">let</span> <span class="pl-s1">cancel</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user/12345'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">cancelToken</span>: <span class="pl-k">new</span> <span class="pl-v">CancelToken</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-en">executor</span><span class="pl-kos">(</span><span class="pl-s1">c</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// An executor function receives a cancel function as a parameter</span>
+    <span class="pl-s1">cancel</span> <span class="pl-c1">=</span> <span class="pl-s1">c</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span><span class="pl-kos">)</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// cancel the request</span>
+<span class="pl-s1">cancel</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <blockquote>
+    <p>Note: you can cancel several requests with the same cancel token/abort controller.
+      If a cancellation token is already cancelled at the moment of starting an Axios request, then the request is
+      cancelled immediately, without any attempts to make real request.</p>
+  </blockquote>
+  <blockquote>
+    <p>During the transition period, you can use both cancellation APIs, even for the same request:</p>
+  </blockquote>
+  <h2>
+    <a id="user-content-using-applicationx-www-form-urlencoded-format" class="anchor"
+      href="#using-applicationx-www-form-urlencoded-format" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Using application/x-www-form-urlencoded format
+  </h2>
+  <p>By default, axios serializes JavaScript objects to <code>JSON</code>. To send data in the
+    <code>application/x-www-form-urlencoded</code> format instead, you can use one of the following options.</p>
+  <h3>
+    <a id="user-content-browser" class="anchor" href="#browser" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Browser
+  </h3>
+  <p>In a browser, you can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams"
+      rel="nofollow"><code>URLSearchParams</code></a> API as follows:</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-s1">params</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-v">URLSearchParams</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">params</span><span class="pl-kos">.</span><span class="pl-en">append</span><span class="pl-kos">(</span><span class="pl-s">'param1'</span><span class="pl-kos">,</span> <span class="pl-s">'value1'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">params</span><span class="pl-kos">.</span><span class="pl-en">append</span><span class="pl-kos">(</span><span class="pl-s">'param2'</span><span class="pl-kos">,</span> <span class="pl-s">'value2'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'/foo'</span><span class="pl-kos">,</span> <span class="pl-s1">params</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <blockquote>
+    <p>Note that <code>URLSearchParams</code> is not supported by all browsers (see <a
+        href="http://www.caniuse.com/#feat=urlsearchparams" rel="nofollow">caniuse.com</a>), but there is a <a
+        href="https://github.com/WebReflection/url-search-params">polyfill</a> available (make sure to polyfill the
+      global environment).</p>
+  </blockquote>
+  <p>Alternatively, you can encode data using the <a href="https://github.com/ljharb/qs"><code>qs</code></a> library:
+  </p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-s1">qs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'qs'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'/foo'</span><span class="pl-kos">,</span> <span class="pl-s1">qs</span><span class="pl-kos">.</span><span class="pl-en">stringify</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-s">'bar'</span>: <span class="pl-c1">123</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>Or in another way (ES6),</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">import</span> <span class="pl-s1">qs</span> <span class="pl-k">from</span> <span class="pl-s">'qs'</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">data</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span> <span class="pl-s">'bar'</span>: <span class="pl-c1">123</span> <span class="pl-kos">}</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">options</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">method</span>: <span class="pl-s">'POST'</span><span class="pl-kos">,</span>
+  <span class="pl-c1">headers</span>: <span class="pl-kos">{</span> <span class="pl-s">'content-type'</span>: <span class="pl-s">'application/x-www-form-urlencoded'</span> <span class="pl-kos">}</span><span class="pl-kos">,</span>
+  <span class="pl-c1">data</span>: <span class="pl-s1">qs</span><span class="pl-kos">.</span><span class="pl-en">stringify</span><span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
+  url<span class="pl-kos">,</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
+<span class="pl-en">axios</span><span class="pl-kos">(</span><span class="pl-s1">options</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <h3>
+    <a id="user-content-nodejs" class="anchor" href="#nodejs" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Node.js
+  </h3>
+  <h4>
+    <a id="user-content-query-string" class="anchor" href="#query-string" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Query string
+  </h4>
+  <p>In node.js, you can use the <a href="https://nodejs.org/api/querystring.html"
+      rel="nofollow"><code>querystring</code></a> module as follows:</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-s1">querystring</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'querystring'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'http://something.com/'</span><span class="pl-kos">,</span> <span class="pl-s1">querystring</span><span class="pl-kos">.</span><span class="pl-en">stringify</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">foo</span>: <span class="pl-s">'bar'</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>or <a href="https://nodejs.org/api/url.html#url_class_urlsearchparams" rel="nofollow">'URLSearchParams'</a> from <a
+      href="https://nodejs.org/api/url.html" rel="nofollow">'url module'</a> as follows:</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-s1">url</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'url'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">params</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-s1">url</span><span class="pl-kos">.</span><span class="pl-c1">URLSearchParams</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">foo</span>: <span class="pl-s">'bar'</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'http://something.com/'</span><span class="pl-kos">,</span> <span class="pl-s1">params</span><span class="pl-kos">.</span><span class="pl-en">toString</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>You can also use the <a href="https://github.com/ljharb/qs"><code>qs</code></a> library.</p>
+  <blockquote>
+    <p>NOTE:
+      The <code>qs</code> library is preferable if you need to stringify nested objects, as the <code>querystring</code>
+      method has <a href="https://github.com/nodejs/node-v0.x-archive/issues/1665">known issues</a> with that use case.
+    </p>
+  </blockquote>
+  <h4>
+    <a id="user-content-form-data" class="anchor" href="#form-data" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Form data
+  </h4>
+  <h5>
+    <a id="user-content--automatic-serialization" class="anchor" href="#-automatic-serialization"
+      aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+    <g-emoji class="g-emoji" alias="new"
+      fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f195.png">🆕</g-emoji> Automatic
+    serialization
+  </h5>
+  <p>Starting from <code>v0.27.0</code>, Axios supports automatic object serialization to a FormData object if the
+    request <code>Content-Type</code>
+    header is set to <code>multipart/form-data</code>.</p>
+  <p>The following request will submit the data in a FormData format (Browser &amp; Node.js):</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">import</span> <span class="pl-s1">axios</span> <span class="pl-k">from</span> <span class="pl-s">'axios'</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'https://httpbin.org/post'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span><span class="pl-c1">x</span>: <span class="pl-c1">1</span><span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">headers</span>: <span class="pl-kos">{</span>
+    <span class="pl-s">'Content-Type'</span>: <span class="pl-s">'multipart/form-data'</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-kos">{</span>data<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>In the <code>node.js</code> build, the (<a
+      href="https://github.com/form-data/form-data"><code>form-data</code></a>) polyfill is used by default.</p>
+  <p>You can overload the FormData class by setting the <code>env.FormData</code> config variable,
+    but you probably won't need it in most cases:</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-s1">axios</span><span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'axios'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">var</span> <span class="pl-v">FormData</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'form-data'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'https://httpbin.org/post'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span><span class="pl-c1">x</span>: <span class="pl-c1">1</span><span class="pl-kos">,</span> <span class="pl-c1">buf</span>: <span class="pl-k">new</span> <span class="pl-v">Buffer</span><span class="pl-kos">(</span><span class="pl-c1">10</span><span class="pl-kos">)</span><span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">headers</span>: <span class="pl-kos">{</span>
+    <span class="pl-s">'Content-Type'</span>: <span class="pl-s">'multipart/form-data'</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-kos">{</span>data<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>Axios FormData serializer supports some special endings to perform the following operations:</p>
+  <ul>
+    <li>
+      <code>{}</code> - serialize the value with JSON.stringify
+    </li>
+    <li>
+      <code>[]</code> - unwrap the array like object as separate fields with the same key
+    </li>
+  </ul>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-s1">axios</span><span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'axios'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'https://httpbin.org/post'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-s">'myObj{}'</span>: <span class="pl-kos">{</span><span class="pl-c1">x</span>: <span class="pl-c1">1</span><span class="pl-kos">,</span> <span class="pl-c1">s</span>: <span class="pl-s">"foo"</span><span class="pl-kos">}</span><span class="pl-kos">,</span>
+  <span class="pl-s">'files[]'</span>: <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">querySelector</span><span class="pl-kos">(</span><span class="pl-s">'#fileInput'</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-c1">files</span> 
+<span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">headers</span>: <span class="pl-kos">{</span>
+    <span class="pl-s">'Content-Type'</span>: <span class="pl-s">'multipart/form-data'</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-kos">{</span>data<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-c1">=&gt;</span> <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+  </div>
+  <p>Axios supports the following shortcut methods: <code>postForm</code>, <code>putForm</code>, <code>patchForm</code>
+    which are just the corresponding http methods with a header preset: <code>Content-Type</code>:
+    <code>multipart/form-data</code>.</p>
+  <p>FileList object can be passed directly:</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">await</span> <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">postForm</span><span class="pl-kos">(</span><span class="pl-s">'https://httpbin.org/post'</span><span class="pl-kos">,</span> <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">querySelector</span><span class="pl-kos">(</span><span class="pl-s">'#fileInput'</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-c1">files</span><span class="pl-kos">)</span></pre>
+  </div>
+  <p>All files will be sent with the same field names: <code>files[]</code>;</p>
+  <h5>
+    <a id="user-content-manual-formdata-passing" class="anchor" href="#manual-formdata-passing" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Manual FormData passing
+  </h5>
+  <p>In node.js, you can use the <a href="https://github.com/form-data/form-data"><code>form-data</code></a> library as
+    follows:</p>
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-v">FormData</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'form-data'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+ 
+<span class="pl-k">const</span> <span class="pl-s1">form</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-v">FormData</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">form</span><span class="pl-kos">.</span><span class="pl-en">append</span><span class="pl-kos">(</span><span class="pl-s">'my_field'</span><span class="pl-kos">,</span> <span class="pl-s">'my value'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">form</span><span class="pl-kos">.</span><span class="pl-en">append</span><span class="pl-kos">(</span><span class="pl-s">'my_buffer'</span><span class="pl-kos">,</span> <span class="pl-k">new</span> <span class="pl-v">Buffer</span><span class="pl-kos">(</span><span class="pl-c1">10</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">form</span><span class="pl-kos">.</span><span class="pl-en">append</span><span class="pl-kos">(</span><span class="pl-s">'my_file'</span><span class="pl-kos">,</span> <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">createReadStream</span><span class="pl-kos">(</span><span class="pl-s">'/foo/bar.jpg'</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">post</span><span class="pl-kos">(</span><span class="pl-s">'https://example.com'</span><span class="pl-kos">,</span> <span class="pl-s1">form</span><span class="pl-kos">)</span></pre>
+  </div>
+  <h2>
+    <a id="user-content-semver" class="anchor" href="#semver" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Semver
+  </h2>
+  <p>Until axios reaches a <code>1.0</code> release, breaking changes will be released with a new minor version. For
+    example <code>0.5.1</code>, and <code>0.5.4</code> will have the same API, but <code>0.6.0</code> will have breaking
+    changes.</p>
+  <h2>
+    <a id="user-content-promises" class="anchor" href="#promises" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Promises
+  </h2>
+  <p>axios depends on a native ES6 Promise implementation to be <a href="http://caniuse.com/promises"
+      rel="nofollow">supported</a>.
+    If your environment doesn't support ES6 Promises, you can <a
+      href="https://github.com/jakearchibald/es6-promise">polyfill</a>.</p>
+  <h2>
+    <a id="user-content-typescript" class="anchor" href="#typescript" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>TypeScript
+  </h2>
+  <p>axios includes <a href="http://typescriptlang.org" rel="nofollow">TypeScript</a> definitions and a type guard for
+    axios errors.</p>
+  <div class="highlight highlight-source-ts">
+    <pre><span class="pl-k">let</span> <span class="pl-s1">user</span>: <span class="pl-smi">User</span> <span class="pl-c1">=</span> <span class="pl-c1">null</span><span class="pl-kos">;</span>
+<span class="pl-k">try</span> <span class="pl-kos">{</span>
+  <span class="pl-k">const</span> <span class="pl-kos">{</span> data <span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">get</span><span class="pl-kos">(</span><span class="pl-s">'/user?ID=12345'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-s1">user</span> <span class="pl-c1">=</span> <span class="pl-s1">data</span><span class="pl-kos">.</span><span class="pl-c1">userDetails</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span> <span class="pl-k">catch</span> <span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">axios</span><span class="pl-kos">.</span><span class="pl-en">isAxiosError</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-en">handleAxiosError</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+    <span class="pl-en">handleUnexpectedError</span><span class="pl-kos">(</span><span class="pl-s1">error</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span></pre>
+  </div>
+  <h2>
+    <a id="user-content-online-one-click-setup" class="anchor" href="#online-one-click-setup" aria-hidden="true"><span
+        aria-hidden="true" class="octicon octicon-link"></span></a>Online one-click setup
+  </h2>
+  <p>You can use Gitpod an online IDE(which is free for Open Source) for contributing or running the examples online.
+  </p>
+  <p><a href="https://gitpod.io/#https://github.com/axios/axios/blob/master/examples/server.js" rel="nofollow"></a></p>
+  <h2>
+    <a id="user-content-resources" class="anchor" href="#resources" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Resources
+  </h2>
+  <ul>
+    <li><a href="https://github.com/axios/axios/blob/master/CHANGELOG.md">Changelog</a></li>
+    <li><a href="https://github.com/axios/axios/blob/master/UPGRADE_GUIDE.md">Upgrade Guide</a></li>
+    <li><a href="https://github.com/axios/axios/blob/master/ECOSYSTEM.md">Ecosystem</a></li>
+    <li><a href="https://github.com/axios/axios/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+    <li><a href="https://github.com/axios/axios/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+  </ul>
+  <h2>
+    <a id="user-content-credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>Credits
+  </h2>
+  <p>axios is heavily inspired by the <a href="https://docs.angularjs.org/api/ng/service/%24http" rel="nofollow">$http
+      service</a> provided in <a href="https://angularjs.org/" rel="nofollow">AngularJS</a>. Ultimately axios is an
+    effort to provide a standalone <code>$http</code>-like service for use outside of AngularJS.</p>
+  <h2>
+    <a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true"
+        class="octicon octicon-link"></span></a>License
+  </h2>
+  <p><a href="https://github.com/axios/axios/blob/HEAD/LICENSE">MIT</a></p>
+</div>

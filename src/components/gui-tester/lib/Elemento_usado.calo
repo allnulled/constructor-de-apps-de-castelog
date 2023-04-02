@@ -1,0 +1,14 @@
+asigno window.Elemento_usado como una clase con {
+  método constructor donde {
+    debugo "Elemento_usado.constructor".
+    asigno this.uuid como un texto aleatorio de 10 caracteres.
+    asigno this.tag como "<div>".
+    asigno this.atributos como [].
+    asigno this.componentes como [].
+    asigno this.texto como "".
+    asigno this.esta_editando como false.
+    asigno this.esta_seleccionado_modo como "componentes".
+    asigno this.esta_seleccionada_pestania como "componentes".
+    asigno this.esta_seleccionada_busqueda_de_componente como false.
+  }.
+}.

@@ -1,0 +1,68 @@
+asigno window.EstiloShellverGuiConsoleSpecificationV1 como una inserción de estilos en cascada llamado "shellver-gui-console-specification-v1" con (un código en css con {
+    .GuiTester textarea {
+        text-shadow: 0 0 2px white;
+        resize: vertical;
+    }
+    .GuiTester input[type="range"] {
+      border: none;
+    }
+    .win7 table {
+        background-color: #ffffff;
+        color: black;
+        border-collapse: collapse;
+    }
+    .win7 table td {
+
+    }
+    .win7 table td.active {
+        border: 3px solid #111;
+    }
+    .win7 table td,
+    .win7 table {
+        border: 1px solid #d8d8e8;
+    }
+    .win7 div[role="progressbar"] > div {
+      transition: width .2s;
+    }
+    .text_align_center { text-align: center; }
+    .GuiTester .roadmap_list {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+      
+    }
+    .GuiTester .roadmap_list .roadmap_item {
+      margin-bottom:10px;
+      position: relative;
+    }
+    .GuiTester .roadmap_list .roadmap_item_bar_container {
+      display: block;
+      position: relative;
+      z-index: 1000;
+    }
+    .GuiTester .roadmap_list .roadmap_item_bar {
+      position: absolute;
+      top: 9px;
+      left: 6px;
+      right: 0px;
+      height: 100%;
+      width: 3px;
+      background-color: #EFEFEF;
+    }
+    .GuiTester .roadmap_list .field-row {
+      display: block;
+      position: relative;
+      z-index: 2000;
+    }
+    .GuiTester .roadmap_list .roadmap_item.active .roadmap_item_bar {
+      background-color: #196590;
+    }
+    .GuiTester .roadmap_list .roadmap_item.active.selected .field-row input[type="radio"]:checked + label::after {
+      background: #0F8 !important;
+      box-shadow: inset -1px -1px 0 .5px #0F8, inset -1px -1px 0 1px #0F8 !important;
+      opacity: 1;
+    }
+    .win7.GuiTester .roadmap_list input[type="radio"]:disabled + label {
+      opacity: 1;
+    }
+}).

@@ -1,0 +1,21 @@
+creo mx5 como una función con (arg1) donde retorno arg1 * 5.
+creo dx2 como una función con (arg1) donde retorno arg1 / 2.
+creo resultado1 como mx5 pasándole [20, 30, 40].
+creo resultado2 como [20,30,40] pasado por mx5.
+creo resultado3 como [mx5, dx2] pasándole [20, 30, 40].
+creo resultado4 como [20,30,40] pasado por [mx5, dx2].
+compruebo que resultado1 es igual que 100.
+compruebo que resultado2 es igual que 100.
+compruebo que resultado3 es igual que 50.
+compruebo que resultado4 es igual que 50.
+
+
+hago una función (a, b) donde retorno a + b; pasándole [5, 5].
+
+hago un testeo llamado "Componente xxx" que en menos de 1 segundos pase los tests [
+    "Componente xxx tiene titulo"
+].
+hago un test llamado "Componente xxx tiene titulo" donde {
+    compruebo que una selección del primer elemento del dom con (".titulo_de_componente_xxx").classList.has("titulo").
+    
+}.
