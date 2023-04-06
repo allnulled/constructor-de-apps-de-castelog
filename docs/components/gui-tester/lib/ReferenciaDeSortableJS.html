@@ -1,0 +1,757 @@
+<article>
+    <div class="_6d9832ac pr4-ns pl0-ns ph1-m pr3-m pr2  markdown" id="readme">
+        <h1><a id="user-content-sortable" class="anchor" aria-hidden="true" href="#sortable"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Sortable</h1>
+        <p>Sortable is a JavaScript library for reorderable drag-and-drop lists.</p>
+        <p>Demo: <a href="http://sortablejs.github.io/Sortable/"
+                rel="nofollow">http://sortablejs.github.io/Sortable/</a></p>
+        <p>Supported by <a href="https://www.browserstack.com/" rel="nofollow"></a></p>
+        <h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Features</h2>
+        <ul>
+            <li>Supports touch devices and <a href="http://caniuse.com/#search=drag" rel="nofollow">modern</a> browsers
+                (including IE9)</li>
+            <li>Can drag from one list to another or within the same list</li>
+            <li>CSS animation when moving items</li>
+            <li>Supports drag handles <em>and selectable text</em> (better than voidberg's html5sortable)</li>
+            <li>Smart auto-scrolling</li>
+            <li>Advanced swap detection</li>
+            <li>Built using native HTML5 drag and drop API</li>
+            <li>Supports
+                <ul>
+                    <li><a href="https://github.com/SortableJS/meteor-sortablejs">Meteor</a></li>
+                    <li>AngularJS
+                        <ul>
+                            <li><a href="https://github.com/SortableJS/angular-sortablejs">2.0+</a></li>
+                            <li><a href="https://github.com/SortableJS/angular-legacy-sortablejs">1.*</a></li>
+                        </ul>
+                    </li>
+                    <li>React
+                        <ul>
+                            <li><a href="https://github.com/SortableJS/react-sortablejs">ES2015+</a></li>
+                            <li><a href="https://github.com/SortableJS/react-mixin-sortablejs">Mixin</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://github.com/SortableJS/knockout-sortablejs">Knockout</a></li>
+                    <li><a href="https://github.com/SortableJS/polymer-sortablejs">Polymer</a></li>
+                    <li><a href="https://github.com/SortableJS/Vue.Draggable">Vue</a></li>
+                </ul>
+            </li>
+            <li>Supports any CSS library, e.g. <a href="#bs">Bootstrap</a>
+            </li>
+            <li>Simple API</li>
+            <li><a href="#cdn">CDN</a></li>
+            <li>No jQuery required (but there is <a href="https://github.com/SortableJS/jquery-sortablejs">support</a>)
+            </li>
+        </ul>
+        <br>
+        <h3><a id="user-content-articles" class="anchor" aria-hidden="true" href="#articles"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Articles</h3>
+        <ul>
+            <li>
+                <a href="https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction">Swap Thresholds and
+                    Direction</a> (December 2, 2018)
+            </li>
+            <li>
+                <a href="https://github.com/SortableJS/Sortable/wiki/Sortable-v1.0-%E2%80%94-New-capabilities/">Sortable
+                    v1.0 — New capabilities</a> (December 22, 2014)
+            </li>
+            <li>
+                <a href="https://github.com/SortableJS/Sortable/wiki/Sorting-with-the-help-of-HTML5-Drag'n'Drop-API/">Sorting
+                    with the help of HTML5 Drag'n'Drop API</a> (December 23, 2013)
+            </li>
+        </ul>
+        <br>
+        <h3><a id="user-content-install" class="anchor" aria-hidden="true" href="#install"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Install</h3>
+        <p>Via npm</p>
+        <div class="highlight highlight-source-shell">
+            <pre>$ npm install sortablejs --save</pre>
+        </div>
+        <p>Via bower:</p>
+        <div class="highlight highlight-source-shell">
+            <pre>$ bower install --save sortablejs</pre>
+        </div>
+        <br>
+        <h3><a id="user-content-usage" class="anchor" aria-hidden="true" href="#usage"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Usage</h3>
+        <div class="highlight highlight-text-html-basic">
+            <pre><span class="pl-kos">&lt;</span><span class="pl-ent">ul</span> <span class="pl-c1">id</span>="<span class="pl-s">items</span>"<span class="pl-kos">&gt;</span>
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>item 1<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>item 2<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>item 3<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">ul</span><span class="pl-kos">&gt;</span></pre>
+        </div>
+        <div class="highlight highlight-source-js">
+            <pre><span class="pl-k">var</span> <span class="pl-s1">el</span> <span class="pl-c1">=</span> <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">getElementById</span><span class="pl-kos">(</span><span class="pl-s">'items'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">var</span> <span class="pl-s1">sortable</span> <span class="pl-c1">=</span> <span class="pl-v">Sortable</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-s1">el</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+        </div>
+        <p>You can use any element for the list and its elements, not just <code>ul</code>/<code>li</code>. Here is an
+            <a href="https://jsbin.com/visimub/edit?html,js,output" rel="nofollow">example with <code>div</code>s</a>.
+        </p>
+        <hr>
+        <h3><a id="user-content-options" class="anchor" aria-hidden="true" href="#options"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Options</h3>
+        <div class="highlight highlight-source-js">
+            <pre><span class="pl-k">var</span> <span class="pl-s1">sortable</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-v">Sortable</span><span class="pl-kos">(</span><span class="pl-s1">el</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+	<span class="pl-c1">group</span>: <span class="pl-s">"name"</span><span class="pl-kos">,</span>  <span class="pl-c">// or { name: "...", pull: [true, false, 'clone', array], put: [true, false, array] }</span>
+	<span class="pl-c1">sort</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span>  <span class="pl-c">// sorting inside list</span>
+	<span class="pl-c1">delay</span>: <span class="pl-c1">0</span><span class="pl-kos">,</span> <span class="pl-c">// time in milliseconds to define when the sorting should start</span>
+	<span class="pl-c1">touchStartThreshold</span>: <span class="pl-c1">0</span><span class="pl-kos">,</span> <span class="pl-c">// px, how many pixels the point should move before cancelling a delayed drag event</span>
+	<span class="pl-c1">disabled</span>: <span class="pl-c1">false</span><span class="pl-kos">,</span> <span class="pl-c">// Disables the sortable if set to true.</span>
+	<span class="pl-c1">store</span>: <span class="pl-c1">null</span><span class="pl-kos">,</span>  <span class="pl-c">// <span class="pl-k">@see</span> Store</span>
+	<span class="pl-c1">animation</span>: <span class="pl-c1">150</span><span class="pl-kos">,</span>  <span class="pl-c">// ms, animation speed moving items when sorting, `0` — without animation</span>
+	<span class="pl-c1">easing</span>: <span class="pl-s">"cubic-bezier(1, 0, 0, 1)"</span><span class="pl-kos">,</span> <span class="pl-c">// Easing for animation. Defaults to null. See https://easings.net/ for examples.</span>
+	<span class="pl-c1">handle</span>: <span class="pl-s">".my-handle"</span><span class="pl-kos">,</span>  <span class="pl-c">// Drag handle selector within list items</span>
+	<span class="pl-c1">filter</span>: <span class="pl-s">".ignore-elements"</span><span class="pl-kos">,</span>  <span class="pl-c">// Selectors that do not lead to dragging (String or Function)</span>
+	<span class="pl-c1">preventOnFilter</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span> <span class="pl-c">// Call `event.preventDefault()` when triggered `filter`</span>
+	<span class="pl-c1">draggable</span>: <span class="pl-s">".item"</span><span class="pl-kos">,</span>  <span class="pl-c">// Specifies which items inside the element should be draggable</span>
+	<span class="pl-c1">ghostClass</span>: <span class="pl-s">"sortable-ghost"</span><span class="pl-kos">,</span>  <span class="pl-c">// Class name for the drop placeholder</span>
+	<span class="pl-c1">chosenClass</span>: <span class="pl-s">"sortable-chosen"</span><span class="pl-kos">,</span>  <span class="pl-c">// Class name for the chosen item</span>
+	<span class="pl-c1">dragClass</span>: <span class="pl-s">"sortable-drag"</span><span class="pl-kos">,</span>  <span class="pl-c">// Class name for the dragging item</span>
+	<span class="pl-c1">dataIdAttr</span>: <span class="pl-s">'data-id'</span><span class="pl-kos">,</span>
+
+	<span class="pl-c1">swapThreshold</span>: <span class="pl-c1">1</span><span class="pl-kos">,</span> <span class="pl-c">// Threshold of the swap zone</span>
+	<span class="pl-c1">invertSwap</span>: <span class="pl-c1">false</span><span class="pl-kos">,</span> <span class="pl-c">// Will always use inverted swap zone if set to true</span>
+	<span class="pl-c1">invertedSwapThreshold</span>: <span class="pl-c1">1</span><span class="pl-kos">,</span> <span class="pl-c">// Threshold of the inverted swap zone (will be set to swapThreshold value by default)</span>
+	<span class="pl-c1">direction</span>: <span class="pl-s">'horizontal'</span><span class="pl-kos">,</span> <span class="pl-c">// Direction of Sortable (will be detected automatically if not given)</span>
+
+	<span class="pl-c1">forceFallback</span>: <span class="pl-c1">false</span><span class="pl-kos">,</span>  <span class="pl-c">// ignore the HTML5 DnD behaviour and force the fallback to kick in</span>
+
+	<span class="pl-c1">fallbackClass</span>: <span class="pl-s">"sortable-fallback"</span><span class="pl-kos">,</span>  <span class="pl-c">// Class name for the cloned DOM Element when using forceFallback</span>
+	<span class="pl-c1">fallbackOnBody</span>: <span class="pl-c1">false</span><span class="pl-kos">,</span>  <span class="pl-c">// Appends the cloned DOM Element into the Document's Body</span>
+	<span class="pl-c1">fallbackTolerance</span>: <span class="pl-c1">0</span><span class="pl-kos">,</span> <span class="pl-c">// Specify in pixels how far the mouse should move before it's considered as a drag.</span>
+
+	<span class="pl-c1">scroll</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span> <span class="pl-c">// or HTMLElement</span>
+	<span class="pl-en">scrollFn</span>: <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-s1">offsetX</span><span class="pl-kos">,</span> <span class="pl-s1">offsetY</span><span class="pl-kos">,</span> <span class="pl-s1">originalEvent</span><span class="pl-kos">,</span> <span class="pl-s1">touchEvt</span><span class="pl-kos">,</span> <span class="pl-s1">hoverTargetEl</span><span class="pl-kos">)</span> <span class="pl-kos">{</span> ... <span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-c">// if you have custom scrollbar scrollFn may be used for autoscrolling</span>
+	<span class="pl-c1">scrollSensitivity</span>: <span class="pl-c1">30</span><span class="pl-kos">,</span> <span class="pl-c">// px, how near the mouse must be to an edge to start scrolling.</span>
+	<span class="pl-c1">scrollSpeed</span>: <span class="pl-c1">10</span><span class="pl-kos">,</span> <span class="pl-c">// px</span>
+	<span class="pl-c1">bubbleScroll</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span> <span class="pl-c">// apply autoscroll to all parent elements, allowing for easier movement</span>
+
+	<span class="pl-c1">dragoverBubble</span>: <span class="pl-c1">false</span><span class="pl-kos">,</span>
+	<span class="pl-c1">removeCloneOnHide</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span> <span class="pl-c">// Remove the clone element when it is not showing, rather than just hiding it</span>
+	<span class="pl-c1">emptyInsertThreshold</span>: <span class="pl-c1">5</span><span class="pl-kos">,</span> <span class="pl-c">// px, distance mouse must be from empty sortable to insert drag element into it</span>
+
+
+	<span class="pl-en">setData</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-c">/** DataTransfer */</span><span class="pl-s1">dataTransfer</span><span class="pl-kos">,</span> <span class="pl-c">/** HTMLElement*/</span><span class="pl-s1">dragEl</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-s1">dataTransfer</span><span class="pl-kos">.</span><span class="pl-en">setData</span><span class="pl-kos">(</span><span class="pl-s">'Text'</span><span class="pl-kos">,</span> <span class="pl-s1">dragEl</span><span class="pl-kos">.</span><span class="pl-c1">textContent</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// `dataTransfer` object of HTML5 DragEvent</span>
+	<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+	<span class="pl-c">// Element is chosen</span>
+	<span class="pl-en">onChoose</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-c">/**Event*/</span><span class="pl-s1">evt</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">oldIndex</span><span class="pl-kos">;</span>  <span class="pl-c">// element index within parent</span>
+	<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+	<span class="pl-c">// Element is unchosen</span>
+	<span class="pl-en">onUnchoose</span>: <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-c">/**Event*/</span><span class="pl-s1">evt</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-c">// same properties as onEnd</span>
+	<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+	<span class="pl-c">// Element dragging started</span>
+	<span class="pl-en">onStart</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-c">/**Event*/</span><span class="pl-s1">evt</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">oldIndex</span><span class="pl-kos">;</span>  <span class="pl-c">// element index within parent</span>
+	<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+	<span class="pl-c">// Element dragging ended</span>
+	<span class="pl-en">onEnd</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-c">/**Event*/</span><span class="pl-s1">evt</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-k">var</span> <span class="pl-s1">itemEl</span> <span class="pl-c1">=</span> <span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">item</span><span class="pl-kos">;</span>  <span class="pl-c">// dragged HTMLElement</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">to</span><span class="pl-kos">;</span>    <span class="pl-c">// target list</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">from</span><span class="pl-kos">;</span>  <span class="pl-c">// previous list</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">oldIndex</span><span class="pl-kos">;</span>  <span class="pl-c">// element's old index within old parent</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">newIndex</span><span class="pl-kos">;</span>  <span class="pl-c">// element's new index within new parent</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">clone</span> <span class="pl-c">// the clone element</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">pullMode</span><span class="pl-kos">;</span>  <span class="pl-c">// when item is in another sortable: `"clone"` if cloning, `true` if moving</span>
+	<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+	<span class="pl-c">// Element is dropped into the list from another list</span>
+	<span class="pl-en">onAdd</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-c">/**Event*/</span><span class="pl-s1">evt</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-c">// same properties as onEnd</span>
+	<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+	<span class="pl-c">// Changed sorting within list</span>
+	<span class="pl-en">onUpdate</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-c">/**Event*/</span><span class="pl-s1">evt</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-c">// same properties as onEnd</span>
+	<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+	<span class="pl-c">// Called by any change to the list (add / update / remove)</span>
+	<span class="pl-en">onSort</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-c">/**Event*/</span><span class="pl-s1">evt</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-c">// same properties as onEnd</span>
+	<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+	<span class="pl-c">// Element is removed from the list into another list</span>
+	<span class="pl-en">onRemove</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-c">/**Event*/</span><span class="pl-s1">evt</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-c">// same properties as onEnd</span>
+	<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+	<span class="pl-c">// Attempt to drag a filtered element</span>
+	<span class="pl-en">onFilter</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-c">/**Event*/</span><span class="pl-s1">evt</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-k">var</span> <span class="pl-s1">itemEl</span> <span class="pl-c1">=</span> <span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">item</span><span class="pl-kos">;</span>  <span class="pl-c">// HTMLElement receiving the `mousedown|tapstart` event.</span>
+	<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+	<span class="pl-c">// Event when you move an item in the list or between lists</span>
+	<span class="pl-en">onMove</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-c">/**Event*/</span><span class="pl-s1">evt</span><span class="pl-kos">,</span> <span class="pl-c">/**Event*/</span><span class="pl-s1">originalEvent</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-c">// Example: https://jsbin.com/nawahef/edit?js,output</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">dragged</span><span class="pl-kos">;</span> <span class="pl-c">// dragged HTMLElement</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">draggedRect</span><span class="pl-kos">;</span> <span class="pl-c">// DOMRect {left, top, right, bottom}</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">related</span><span class="pl-kos">;</span> <span class="pl-c">// HTMLElement on which have guided</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">relatedRect</span><span class="pl-kos">;</span> <span class="pl-c">// DOMRect</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">willInsertAfter</span><span class="pl-kos">;</span> <span class="pl-c">// Boolean that is true if Sortable will insert drag element after target by default</span>
+		<span class="pl-s1">originalEvent</span><span class="pl-kos">.</span><span class="pl-c1">clientY</span><span class="pl-kos">;</span> <span class="pl-c">// mouse position</span>
+		<span class="pl-c">// return false; — for cancel</span>
+		<span class="pl-c">// return -1; — insert before target</span>
+		<span class="pl-c">// return 1; — insert after target</span>
+	<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+	<span class="pl-c">// Called when creating a clone of element</span>
+	<span class="pl-en">onClone</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-c">/**Event*/</span><span class="pl-s1">evt</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-k">var</span> <span class="pl-s1">origEl</span> <span class="pl-c1">=</span> <span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">item</span><span class="pl-kos">;</span>
+		<span class="pl-k">var</span> <span class="pl-s1">cloneEl</span> <span class="pl-c1">=</span> <span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">clone</span><span class="pl-kos">;</span>
+	<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+	<span class="pl-c">// Called when dragging element changes position</span>
+	<span class="pl-en">onChange</span>: <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-c">/**Event*/</span><span class="pl-s1">evt</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">newIndex</span> <span class="pl-c">// most likely why this event is used is to get the dragging element's current index</span>
+		<span class="pl-c">// same properties as onEnd</span>
+	<span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+        </div>
+        <hr>
+        <h4><a id="user-content-group-option" class="anchor" aria-hidden="true" href="#group-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>group</code> option
+        </h4>
+        <p>To drag elements from one list into another, both lists must have the same <code>group</code> value.
+            You can also define whether lists can give away, give and keep a copy (<code>clone</code>), and receive
+            elements.</p>
+        <ul>
+            <li>name: <code>String</code> — group name</li>
+            <li>pull: <code>true|false|["foo", "bar"]|'clone'|function</code> — ability to move from the list.
+                <code>clone</code> — copy the item, rather than move. Or an array of group names which the elements may
+                be put in. Defaults to <code>true</code>.</li>
+            <li>put: <code>true|false|["baz", "qux"]|function</code> — whether elements can be added from other lists,
+                or an array of group names from which elements can be added.</li>
+            <li>revertClone: <code>boolean</code> — revert cloned element to initial position after moving to a another
+                list.</li>
+        </ul>
+        <p>Demo:</p>
+        <ul>
+            <li><a href="https://jsbin.com/hijetos/edit?js,output"
+                    rel="nofollow">https://jsbin.com/hijetos/edit?js,output</a></li>
+            <li>
+                <a href="https://jsbin.com/nacoyah/edit?js,output"
+                    rel="nofollow">https://jsbin.com/nacoyah/edit?js,output</a> — use of complex logic in the
+                <code>pull</code> and<code> put</code>
+            </li>
+            <li>
+                <a href="https://jsbin.com/bifuyab/edit?js,output"
+                    rel="nofollow">https://jsbin.com/bifuyab/edit?js,output</a> — use <code>revertClone: true</code>
+            </li>
+        </ul>
+        <hr>
+        <h4><a id="user-content-sort-option" class="anchor" aria-hidden="true" href="#sort-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>sort</code> option
+        </h4>
+        <p>Sorting inside list.</p>
+        <p>Demo: <a href="https://jsbin.com/jayedig/edit?js,output"
+                rel="nofollow">https://jsbin.com/jayedig/edit?js,output</a></p>
+        <hr>
+        <h4><a id="user-content-delay-option" class="anchor" aria-hidden="true" href="#delay-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>delay</code> option
+        </h4>
+        <p>Time in milliseconds to define when the sorting should start.
+            Unfortunately, due to browser restrictions, delaying is not possible on IE or Edge with native drag &amp;
+            drop.</p>
+        <p>Demo: <a href="https://jsbin.com/zosiwah/edit?js,output"
+                rel="nofollow">https://jsbin.com/zosiwah/edit?js,output</a></p>
+        <hr>
+        <h4><a id="user-content-swapthreshold-option" class="anchor" aria-hidden="true"
+                href="#swapthreshold-option"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>swapThreshold</code> option
+        </h4>
+        <p>Percentage of the target that the swap zone will take up, as a float between <code>0</code> and
+            <code>1</code>.</p>
+        <p>Read more: <a
+                href="https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#swap-threshold">https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#swap-threshold</a>
+        </p>
+        <p>Demo: <a href="http://sortablejs.github.io/Sortable#thresholds"
+                rel="nofollow">http://sortablejs.github.io/Sortable#thresholds</a></p>
+        <hr>
+        <h4><a id="user-content-invertswap-option" class="anchor" aria-hidden="true" href="#invertswap-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>invertSwap</code> option
+        </h4>
+        <p>Set to <code>true</code> to set the swap zone to the sides of the target, for the effect of sorting "in
+            between" items.</p>
+        <p>Read more: <a
+                href="https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#forcing-inverted-swap-zone">https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#forcing-inverted-swap-zone</a>
+        </p>
+        <p>Demo: <a href="http://sortablejs.github.io/Sortable#thresholds"
+                rel="nofollow">http://sortablejs.github.io/Sortable#thresholds</a></p>
+        <hr>
+        <h4><a id="user-content-invertedswapthreshold-option" class="anchor" aria-hidden="true"
+                href="#invertedswapthreshold-option"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>invertedSwapThreshold</code> option
+        </h4>
+        <p>Percentage of the target that the inverted swap zone will take up, as a float between <code>0</code> and
+            <code>1</code>. If not given, will default to <code>swapThreshold</code>.</p>
+        <p>Read more: <a
+                href="https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#dealing-with-swap-glitching">https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#dealing-with-swap-glitching</a>
+        </p>
+        <hr>
+        <h4><a id="user-content-direction-option" class="anchor" aria-hidden="true" href="#direction-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>direction</code> option
+        </h4>
+        <p>Direction that the Sortable should sort in. Can be set to <code>'vertical'</code>, <code>'horizontal'</code>,
+            or a function, which will be called whenever a target is dragged over. Must return <code>'vertical'</code>
+            or <code>'horizontal'</code>.</p>
+        <p>Read more: <a
+                href="https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#direction">https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#direction</a>
+        </p>
+        <p>Example of direction detection for vertical list that includes full column and half column elements:</p>
+        <div class="highlight highlight-source-js">
+            <pre><span class="pl-v">Sortable</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-s1">el</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+	<span class="pl-en">direction</span>: <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-s1">evt</span><span class="pl-kos">,</span> <span class="pl-s1">target</span><span class="pl-kos">,</span> <span class="pl-s1">dragEl</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">target</span> <span class="pl-c1">!==</span> <span class="pl-c1">null</span> <span class="pl-c1">&amp;&amp;</span> <span class="pl-s1">target</span><span class="pl-kos">.</span><span class="pl-c1">className</span><span class="pl-kos">.</span><span class="pl-en">includes</span><span class="pl-kos">(</span><span class="pl-s">'half-column'</span><span class="pl-kos">)</span> <span class="pl-c1">&amp;&amp;</span> <span class="pl-s1">dragEl</span><span class="pl-kos">.</span><span class="pl-c1">className</span><span class="pl-kos">.</span><span class="pl-en">includes</span><span class="pl-kos">(</span><span class="pl-s">'half-column'</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+			<span class="pl-k">return</span> <span class="pl-s">'horizontal'</span><span class="pl-kos">;</span>
+		<span class="pl-kos">}</span>
+		<span class="pl-k">return</span> <span class="pl-s">'vertical'</span><span class="pl-kos">;</span>
+	<span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+        </div>
+        <hr>
+        <h4><a id="user-content-touchstartthreshold-option" class="anchor" aria-hidden="true"
+                href="#touchstartthreshold-option"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>touchStartThreshold</code> option
+        </h4>
+        <p>This option is similar to <code>fallbackTolerance</code> option.</p>
+        <p>When the <code>delay</code> option is set, some phones with very sensitive touch displays like the Samsung
+            Galaxy S8 will fire
+            unwanted touchmove events even when your finger is not moving, resulting in the sort not triggering.</p>
+        <p>This option sets the minimum pointer movement that must occur before the delayed sorting is cancelled.</p>
+        <p>Values between 3 to 5 are good.</p>
+        <hr>
+        <h4><a id="user-content-disabled-options" class="anchor" aria-hidden="true" href="#disabled-options"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>disabled</code> options
+        </h4>
+        <p>Disables the sortable if set to <code>true</code>.</p>
+        <p>Demo: <a href="https://jsbin.com/sewokud/edit?js,output"
+                rel="nofollow">https://jsbin.com/sewokud/edit?js,output</a></p>
+        <div class="highlight highlight-source-js">
+            <pre><span class="pl-k">var</span> <span class="pl-s1">sortable</span> <span class="pl-c1">=</span> <span class="pl-v">Sortable</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-s1">list</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">getElementById</span><span class="pl-kos">(</span><span class="pl-s">"switcher"</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">onclick</span> <span class="pl-c1">=</span> <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+	<span class="pl-k">var</span> <span class="pl-s1">state</span> <span class="pl-c1">=</span> <span class="pl-s1">sortable</span><span class="pl-kos">.</span><span class="pl-en">option</span><span class="pl-kos">(</span><span class="pl-s">"disabled"</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// get</span>
+
+	<span class="pl-s1">sortable</span><span class="pl-kos">.</span><span class="pl-en">option</span><span class="pl-kos">(</span><span class="pl-s">"disabled"</span><span class="pl-kos">,</span> <span class="pl-c1">!</span><span class="pl-s1">state</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// set</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span></pre>
+        </div>
+        <hr>
+        <h4><a id="user-content-handle-option" class="anchor" aria-hidden="true" href="#handle-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>handle</code> option
+        </h4>
+        <p>To make list items draggable, Sortable disables text selection by the user.
+            That's not always desirable. To allow text selection, define a drag handler,
+            which is an area of every list element that allows it to be dragged around.</p>
+        <p>Demo: <a href="https://jsbin.com/numakuh/edit?html,js,output"
+                rel="nofollow">https://jsbin.com/numakuh/edit?html,js,output</a></p>
+        <div class="highlight highlight-source-js">
+            <pre><span class="pl-v">Sortable</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-s1">el</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+	<span class="pl-c1">handle</span>: <span class="pl-s">".my-handle"</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+        </div>
+        <div class="highlight highlight-text-html-basic">
+            <pre><span class="pl-kos">&lt;</span><span class="pl-ent">ul</span><span class="pl-kos">&gt;</span>
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span><span class="pl-kos">&lt;</span><span class="pl-ent">span</span> <span class="pl-c1">class</span>="<span class="pl-s">my-handle</span>"<span class="pl-kos">&gt;</span>::<span class="pl-kos">&lt;/</span><span class="pl-ent">span</span><span class="pl-kos">&gt;</span> list item text one
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span><span class="pl-kos">&lt;</span><span class="pl-ent">span</span> <span class="pl-c1">class</span>="<span class="pl-s">my-handle</span>"<span class="pl-kos">&gt;</span>::<span class="pl-kos">&lt;/</span><span class="pl-ent">span</span><span class="pl-kos">&gt;</span> list item text two
+<span class="pl-kos">&lt;/</span><span class="pl-ent">ul</span><span class="pl-kos">&gt;</span></pre>
+        </div>
+        <div class="highlight highlight-source-css">
+            <pre>.<span class="pl-c1">my-handle</span> {
+	<span class="pl-c1">cursor</span><span class="pl-kos">:</span> move;
+	<span class="pl-c1">cursor</span><span class="pl-kos">:</span> -webkit-grabbing;
+}</pre>
+        </div>
+        <hr>
+        <h4><a id="user-content-filter-option" class="anchor" aria-hidden="true" href="#filter-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>filter</code> option
+        </h4>
+        <div class="highlight highlight-source-js">
+            <pre><span class="pl-v">Sortable</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-s1">list</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+	<span class="pl-c1">filter</span>: <span class="pl-s">".js-remove, .js-edit"</span><span class="pl-kos">,</span>
+	<span class="pl-en">onFilter</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">evt</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+		<span class="pl-k">var</span> <span class="pl-s1">item</span> <span class="pl-c1">=</span> <span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">item</span><span class="pl-kos">,</span>
+			<span class="pl-s1">ctrl</span> <span class="pl-c1">=</span> <span class="pl-s1">evt</span><span class="pl-kos">.</span><span class="pl-c1">target</span><span class="pl-kos">;</span>
+
+		<span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-v">Sortable</span><span class="pl-kos">.</span><span class="pl-c1">utils</span><span class="pl-kos">.</span><span class="pl-en">is</span><span class="pl-kos">(</span><span class="pl-s1">ctrl</span><span class="pl-kos">,</span> <span class="pl-s">".js-remove"</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>  <span class="pl-c">// Click on remove button</span>
+			<span class="pl-s1">item</span><span class="pl-kos">.</span><span class="pl-c1">parentNode</span><span class="pl-kos">.</span><span class="pl-en">removeChild</span><span class="pl-kos">(</span><span class="pl-s1">item</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// remove sortable item</span>
+		<span class="pl-kos">}</span>
+		<span class="pl-k">else</span> <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-v">Sortable</span><span class="pl-kos">.</span><span class="pl-c1">utils</span><span class="pl-kos">.</span><span class="pl-en">is</span><span class="pl-kos">(</span><span class="pl-s1">ctrl</span><span class="pl-kos">,</span> <span class="pl-s">".js-edit"</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>  <span class="pl-c">// Click on edit link</span>
+			<span class="pl-c">// ...</span>
+		<span class="pl-kos">}</span>
+	<span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span></pre>
+        </div>
+        <hr>
+        <h4><a id="user-content-ghostclass-option" class="anchor" aria-hidden="true" href="#ghostclass-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>ghostClass</code> option
+        </h4>
+        <p>Class name for the drop placeholder (default <code>sortable-ghost</code>).</p>
+        <p>Demo: <a href="https://jsbin.com/henuyiw/edit?css,js,output"
+                rel="nofollow">https://jsbin.com/henuyiw/edit?css,js,output</a></p>
+        <div class="highlight highlight-source-css">
+            <pre>.<span class="pl-c1">ghost</span> {
+  <span class="pl-c1">opacity</span><span class="pl-kos">:</span> <span class="pl-c1">0.4</span>;
+}</pre>
+        </div>
+        <div class="highlight highlight-source-js">
+            <pre><span class="pl-v">Sortable</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-s1">list</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">ghostClass</span>: <span class="pl-s">"ghost"</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+        </div>
+        <hr>
+        <h4><a id="user-content-chosenclass-option" class="anchor" aria-hidden="true" href="#chosenclass-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>chosenClass</code> option
+        </h4>
+        <p>Class name for the chosen item (default <code>sortable-chosen</code>).</p>
+        <p>Demo: <a href="https://jsbin.com/hoqufox/edit?css,js,output"
+                rel="nofollow">https://jsbin.com/hoqufox/edit?css,js,output</a></p>
+        <div class="highlight highlight-source-css">
+            <pre>.<span class="pl-c1">chosen</span> {
+  <span class="pl-c1">color</span><span class="pl-kos">:</span> <span class="pl-pds"><span class="pl-kos">#</span>fff</span>;
+  <span class="pl-c1">background-color</span><span class="pl-kos">:</span> <span class="pl-pds"><span class="pl-kos">#</span>c00</span>;
+}</pre>
+        </div>
+        <div class="highlight highlight-source-js">
+            <pre><span class="pl-v">Sortable</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-s1">list</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+  <span class="pl-c1">delay</span>: <span class="pl-c1">500</span><span class="pl-kos">,</span>
+  <span class="pl-c1">chosenClass</span>: <span class="pl-s">"chosen"</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+        </div>
+        <hr>
+        <h4><a id="user-content-forcefallback-option" class="anchor" aria-hidden="true"
+                href="#forcefallback-option"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>forceFallback</code> option
+        </h4>
+        <p>If set to <code>true</code>, the Fallback for non HTML5 Browser will be used, even if we are using an HTML5
+            Browser.
+            This gives us the possibility to test the behaviour for older Browsers even in newer Browser, or make the
+            Drag 'n Drop feel more consistent between Desktop , Mobile and old Browsers.</p>
+        <p>On top of that, the Fallback always generates a copy of that DOM Element and appends the class
+            <code>fallbackClass</code> defined in the options. This behaviour controls the look of this 'dragged'
+            Element.</p>
+        <p>Demo: <a href="https://jsbin.com/sibiput/edit?html,css,js,output"
+                rel="nofollow">https://jsbin.com/sibiput/edit?html,css,js,output</a></p>
+        <hr>
+        <h4><a id="user-content-fallbacktolerance-option" class="anchor" aria-hidden="true"
+                href="#fallbacktolerance-option"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>fallbackTolerance</code> option
+        </h4>
+        <p>Emulates the native drag threshold. Specify in pixels how far the mouse should move before it's considered as
+            a drag.
+            Useful if the items are also clickable like in a list of links.</p>
+        <p>When the user clicks inside a sortable element, it's not uncommon for your hand to move a little between the
+            time you press and the time you release.
+            Dragging only starts if you move the pointer past a certain tolerance, so that you don't accidentally start
+            dragging every time you click.</p>
+        <p>3 to 5 are probably good values.</p>
+        <hr>
+        <h4><a id="user-content-scroll-option" class="anchor" aria-hidden="true" href="#scroll-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>scroll</code> option
+        </h4>
+        <p>If set to <code>true</code>, the page (or sortable-area) scrolls when coming to an edge.</p>
+        <p>Demo:</p>
+        <ul>
+            <li>
+                <code>window</code>: <a href="https://jsbin.com/dosilir/edit?js,output"
+                    rel="nofollow">https://jsbin.com/dosilir/edit?js,output</a>
+            </li>
+            <li>
+                <code>overflow: hidden</code>: <a href="https://jsbin.com/xecihez/edit?html,js,output"
+                    rel="nofollow">https://jsbin.com/xecihez/edit?html,js,output</a>
+            </li>
+        </ul>
+        <hr>
+        <h4><a id="user-content-scrollfn-option" class="anchor" aria-hidden="true" href="#scrollfn-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>scrollFn</code> option
+        </h4>
+        <p>Defines function that will be used for autoscrolling. el.scrollTop/el.scrollLeft is used by default.
+            Useful when you have custom scrollbar with dedicated scroll function.</p>
+        <hr>
+        <h4><a id="user-content-scrollsensitivity-option" class="anchor" aria-hidden="true"
+                href="#scrollsensitivity-option"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>scrollSensitivity</code> option
+        </h4>
+        <p>Defines how near the mouse must be to an edge to start scrolling.</p>
+        <hr>
+        <h4><a id="user-content-scrollspeed-option" class="anchor" aria-hidden="true" href="#scrollspeed-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>scrollSpeed</code> option
+        </h4>
+        <p>The speed at which the window should scroll once the mouse pointer gets within the
+            <code>scrollSensitivity</code> distance.</p>
+        <hr>
+        <h4><a id="user-content-bubblescroll-option" class="anchor" aria-hidden="true" href="#bubblescroll-option"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>bubbleScroll</code> option
+        </h4>
+        <p>If set to <code>true</code>, the normal <code>autoscroll</code> function will also be applied to all parent
+            elements of the element the user is dragging over.</p>
+        <p>Demo: <a href="https://jsbin.com/kesewor/edit?html,js,output"
+                rel="nofollow">https://jsbin.com/kesewor/edit?html,js,output</a></p>
+        <hr>
+        <h4><a id="user-content-dragoverbubble-option" class="anchor" aria-hidden="true"
+                href="#dragoverbubble-option"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>dragoverBubble</code> option
+        </h4>
+        <p>If set to <code>true</code>, the dragover event will bubble to parent sortables. Works on both fallback and
+            native dragover event.
+            By default, it is false, but Sortable will only stop bubbling the event once the element has been inserted
+            into a parent Sortable, or <em>can</em> be inserted into a parent Sortable, but isn't at that specific time
+            (due to animation, etc).</p>
+        <p>Since 1.8.0, you will probably want to leave this option as false. Before 1.8.0, it may need to be
+            <code>true</code> for nested sortables to work.</p>
+        <hr>
+        <h4><a id="user-content-removecloneonhide-option" class="anchor" aria-hidden="true"
+                href="#removecloneonhide-option"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>removeCloneOnHide</code> option
+        </h4>
+        <p>If set to <code>false</code>, the clone is hidden by having it's CSS <code>display</code> property set to
+            <code>none</code>.
+            By default, this option is <code>true</code>, meaning Sortable will remove the cloned element from the DOM
+            when it is supposed to be hidden.</p>
+        <hr>
+        <h4><a id="user-content-emptyinsertthreshold-option" class="anchor" aria-hidden="true"
+                href="#emptyinsertthreshold-option"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>emptyInsertThreshold</code> option
+        </h4>
+        <p>The distance (in pixels) the mouse must be from an empty sortable while dragging for the drag element to be
+            inserted into that sortable. Defaults to <code>5</code>. Set to <code>0</code> to disable this feature.</p>
+        <p>Demo: <a href="https://jsbin.com/becavoj/edit?js,output"
+                rel="nofollow">https://jsbin.com/becavoj/edit?js,output</a></p>
+        <hr>
+        <h3><a id="user-content-event-object-demo" class="anchor" aria-hidden="true" href="#event-object-demo"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>Event object (<a
+                href="https://jsbin.com/fogujiv/edit?js,output" rel="nofollow">demo</a>)</h3>
+        <ul>
+            <li>to:<code>HTMLElement</code> — list, in which moved element</li>
+            <li>from:<code>HTMLElement</code> — previous list</li>
+            <li>item:<code>HTMLElement</code> — dragged element</li>
+            <li>clone:<code>HTMLElement</code>
+            </li>
+            <li>oldIndex:<code>Number|undefined</code> — old index within parent</li>
+            <li>newIndex:<code>Number|undefined</code> — new index within parent</li>
+            <li>pullMode:<code>String|Boolean|undefined</code> — Pull mode if dragging into another sortable
+                (<code>"clone"</code>, <code>true</code>, or <code>false</code>), otherwise undefined</li>
+        </ul>
+        <h4><a id="user-content-move-event-object" class="anchor" aria-hidden="true" href="#move-event-object"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>
+            <code>move</code> event object
+        </h4>
+        <ul>
+            <li>to:<code>HTMLElement</code>
+            </li>
+            <li>from:<code>HTMLElement</code>
+            </li>
+            <li>dragged:<code>HTMLElement</code>
+            </li>
+            <li>draggedRect:<code>DOMRect</code>
+            </li>
+            <li>related:<code>HTMLElement</code> — element on which have guided</li>
+            <li>relatedRect:<code>DOMRect</code>
+            </li>
+            <li>willInsertAfter:<code>Boolean</code> — <code>true</code> if will element be inserted after target (or
+                <code>false</code> if before)</li>
+        </ul>
+        <hr>
+        <h3><a id="user-content-method" class="anchor" aria-hidden="true" href="#method"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Method</h3>
+        <h5><a id="user-content-optionnamestring-value" class="anchor" aria-hidden="true"
+                href="#optionnamestring-value"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>option(name:<code>String</code>[,
+            value:<code>*</code>]):<code>*</code>
+        </h5>
+        <p>Get or set the option.</p>
+        <h5><a id="user-content-closestelstring-selectorhtmlelementhtmlelementnull" class="anchor" aria-hidden="true"
+                href="#closestelstring-selectorhtmlelementhtmlelementnull"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>closest(el:<code>String</code>[,
+            selector:<code>HTMLElement</code>]):<code>HTMLElement|null</code>
+        </h5>
+        <p>For each element in the set, get the first element that matches the selector by testing the element itself
+            and traversing up through its ancestors in the DOM tree.</p>
+        <h5><a id="user-content-toarraystring" class="anchor" aria-hidden="true" href="#toarraystring"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>toArray():<code>String[]</code>
+        </h5>
+        <p>Serializes the sortable's item <code>data-id</code>'s (<code>dataIdAttr</code> option) into an array of
+            string.</p>
+        <h5><a id="user-content-sortorderstring" class="anchor" aria-hidden="true" href="#sortorderstring"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>sort(order:<code>String[]</code>)</h5>
+        <p>Sorts the elements according to the array.</p>
+        <div class="highlight highlight-source-js">
+            <pre><span class="pl-k">var</span> <span class="pl-s1">order</span> <span class="pl-c1">=</span> <span class="pl-s1">sortable</span><span class="pl-kos">.</span><span class="pl-en">toArray</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">sortable</span><span class="pl-kos">.</span><span class="pl-en">sort</span><span class="pl-kos">(</span><span class="pl-s1">order</span><span class="pl-kos">.</span><span class="pl-en">reverse</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// apply</span></pre>
+        </div>
+        <h5><a id="user-content-save" class="anchor" aria-hidden="true" href="#save"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>save()</h5>
+        <p>Save the current sorting (see <a href="#store">store</a>)</p>
+        <h5><a id="user-content-destroy" class="anchor" aria-hidden="true" href="#destroy"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>destroy()</h5>
+        <p>Removes the sortable functionality completely.</p>
+        <hr>
+        <p><a name="user-content-store"></a></p>
+        <h3><a id="user-content-store" class="anchor" aria-hidden="true" href="#store"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Store</h3>
+        <p>Saving and restoring of the sort.</p>
+        <div class="highlight highlight-text-html-basic">
+            <pre><span class="pl-kos">&lt;</span><span class="pl-ent">ul</span><span class="pl-kos">&gt;</span>
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span> <span class="pl-c1">data-id</span>="<span class="pl-s">1</span>"<span class="pl-kos">&gt;</span>order<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span> <span class="pl-c1">data-id</span>="<span class="pl-s">2</span>"<span class="pl-kos">&gt;</span>save<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span> <span class="pl-c1">data-id</span>="<span class="pl-s">3</span>"<span class="pl-kos">&gt;</span>restore<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">ul</span><span class="pl-kos">&gt;</span></pre>
+        </div>
+        <div class="highlight highlight-source-js">
+            <pre><span class="pl-v">Sortable</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-s1">el</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+	<span class="pl-c1">group</span>: <span class="pl-s">"localStorage-example"</span><span class="pl-kos">,</span>
+	<span class="pl-c1">store</span>: <span class="pl-kos">{</span>
+		<span class="pl-c">/**</span>
+<span class="pl-c">		 * Get the order of elements. Called once during initialization.</span>
+<span class="pl-c">		 * <span class="pl-k">@param</span>   {<span class="pl-smi">Sortable</span>}  sortable</span>
+<span class="pl-c">		 * <span class="pl-k">@returns</span> {<span class="pl-smi">Array</span>}</span>
+<span class="pl-c">		 */</span>
+		<span class="pl-en">get</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">sortable</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+			<span class="pl-k">var</span> <span class="pl-s1">order</span> <span class="pl-c1">=</span> <span class="pl-s1">localStorage</span><span class="pl-kos">.</span><span class="pl-en">getItem</span><span class="pl-kos">(</span><span class="pl-s1">sortable</span><span class="pl-kos">.</span><span class="pl-c1">options</span><span class="pl-kos">.</span><span class="pl-c1">group</span><span class="pl-kos">.</span><span class="pl-c1">name</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+			<span class="pl-k">return</span> <span class="pl-s1">order</span> ? <span class="pl-s1">order</span><span class="pl-kos">.</span><span class="pl-en">split</span><span class="pl-kos">(</span><span class="pl-s">'|'</span><span class="pl-kos">)</span> : <span class="pl-kos">[</span><span class="pl-kos">]</span><span class="pl-kos">;</span>
+		<span class="pl-kos">}</span><span class="pl-kos">,</span>
+
+		<span class="pl-c">/**</span>
+<span class="pl-c">		 * Save the order of elements. Called onEnd (when the item is dropped).</span>
+<span class="pl-c">		 * <span class="pl-k">@param</span> {<span class="pl-smi">Sortable</span>}  sortable</span>
+<span class="pl-c">		 */</span>
+		<span class="pl-en">set</span>: <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">sortable</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+			<span class="pl-k">var</span> <span class="pl-s1">order</span> <span class="pl-c1">=</span> <span class="pl-s1">sortable</span><span class="pl-kos">.</span><span class="pl-en">toArray</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+			<span class="pl-s1">localStorage</span><span class="pl-kos">.</span><span class="pl-en">setItem</span><span class="pl-kos">(</span><span class="pl-s1">sortable</span><span class="pl-kos">.</span><span class="pl-c1">options</span><span class="pl-kos">.</span><span class="pl-c1">group</span><span class="pl-kos">.</span><span class="pl-c1">name</span><span class="pl-kos">,</span> <span class="pl-s1">order</span><span class="pl-kos">.</span><span class="pl-en">join</span><span class="pl-kos">(</span><span class="pl-s">'|'</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+		<span class="pl-kos">}</span>
+	<span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span></pre>
+        </div>
+        <hr>
+        <p><a name="user-content-bs"></a></p>
+        <h3><a id="user-content-bootstrap" class="anchor" aria-hidden="true" href="#bootstrap"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Bootstrap</h3>
+        <p>Demo: <a href="https://jsbin.com/visimub/edit?html,js,output"
+                rel="nofollow">https://jsbin.com/visimub/edit?html,js,output</a></p>
+        <div class="highlight highlight-text-html-basic">
+            <pre><span class="pl-c">&lt;!-- Latest compiled and minified CSS --&gt;</span>
+<span class="pl-kos">&lt;</span><span class="pl-ent">link</span> <span class="pl-c1">rel</span>="<span class="pl-s">stylesheet</span>" <span class="pl-c1">href</span>="<span class="pl-s">https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css</span>"/&gt;
+
+
+<span class="pl-c">&lt;!-- Latest Sortable --&gt;</span>
+<span class="pl-kos">&lt;</span><span class="pl-ent">script</span> <span class="pl-c1">src</span>="<span class="pl-s">http://SortableJS.github.io/Sortable/Sortable.js</span>"<span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span>
+
+
+<span class="pl-c">&lt;!-- Simple List --&gt;</span>
+<span class="pl-kos">&lt;</span><span class="pl-ent">ul</span> <span class="pl-c1">id</span>="<span class="pl-s">simpleList</span>" <span class="pl-c1">class</span>="<span class="pl-s">list-group</span>"<span class="pl-kos">&gt;</span>
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span> <span class="pl-c1">class</span>="<span class="pl-s">list-group-item</span>"<span class="pl-kos">&gt;</span>This is <span class="pl-kos">&lt;</span><span class="pl-ent">a</span> <span class="pl-c1">href</span>="<span class="pl-s">http://SortableJS.github.io/Sortable/</span>"<span class="pl-kos">&gt;</span>Sortable<span class="pl-kos">&lt;/</span><span class="pl-ent">a</span><span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span> <span class="pl-c1">class</span>="<span class="pl-s">list-group-item</span>"<span class="pl-kos">&gt;</span>It works with Bootstrap...<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span> <span class="pl-c1">class</span>="<span class="pl-s">list-group-item</span>"<span class="pl-kos">&gt;</span>...out of the box.<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span> <span class="pl-c1">class</span>="<span class="pl-s">list-group-item</span>"<span class="pl-kos">&gt;</span>It has support for touch devices.<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>
+	<span class="pl-kos">&lt;</span><span class="pl-ent">li</span> <span class="pl-c1">class</span>="<span class="pl-s">list-group-item</span>"<span class="pl-kos">&gt;</span>Just drag some elements around.<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">ul</span><span class="pl-kos">&gt;</span>
+
+<span class="pl-kos">&lt;</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span>
+    <span class="pl-c">// Simple list</span>
+    <span class="pl-v">Sortable</span><span class="pl-kos">.</span><span class="pl-en">create</span><span class="pl-kos">(</span><span class="pl-s1">simpleList</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c">/* options */</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span></pre>
+        </div>
+        <hr>
+        <h3><a id="user-content-static-methods--properties" class="anchor" aria-hidden="true"
+                href="#static-methods--properties"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Static methods &amp; properties</h3>
+        <h5><a id="user-content-sortablecreateelhtmlelement-optionsobjectsortable" class="anchor" aria-hidden="true"
+                href="#sortablecreateelhtmlelement-optionsobjectsortable"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Sortable.create(el:<code>HTMLElement</code>[,
+            options:<code>Object</code>]):<code>Sortable</code>
+        </h5>
+        <p>Create new instance.</p>
+        <hr>
+        <h5><a id="user-content-sortableactivesortable" class="anchor" aria-hidden="true"
+                href="#sortableactivesortable"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Sortable.active:<code>Sortable</code>
+        </h5>
+        <p>Link to the active instance.</p>
+        <hr>
+        <h5><a id="user-content-sortableutils" class="anchor" aria-hidden="true" href="#sortableutils"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>Sortable.utils</h5>
+        <ul>
+            <li>on(el<code>:HTMLElement</code>, event<code>:String</code>, fn<code>:Function</code>) — attach an event
+                handler function</li>
+            <li>off(el<code>:HTMLElement</code>, event<code>:String</code>, fn<code>:Function</code>) — remove an event
+                handler</li>
+            <li>css(el<code>:HTMLElement</code>)<code>:Object</code> — get the values of all the CSS properties</li>
+            <li>css(el<code>:HTMLElement</code>, prop<code>:String</code>)<code>:Mixed</code> — get the value of style
+                properties</li>
+            <li>css(el<code>:HTMLElement</code>, prop<code>:String</code>, value<code>:String</code>) — set one CSS
+                properties</li>
+            <li>css(el<code>:HTMLElement</code>, props<code>:Object</code>) — set more CSS properties</li>
+            <li>find(ctx<code>:HTMLElement</code>, tagName<code>:String</code>[,
+                iterator<code>:Function</code>])<code>:Array</code> — get elements by tag name</li>
+            <li>bind(ctx<code>:Mixed</code>, fn<code>:Function</code>)<code>:Function</code> — Takes a function and
+                returns a new one that will always have a particular context</li>
+            <li>is(el<code>:HTMLElement</code>, selector<code>:String</code>)<code>:Boolean</code> — check the current
+                matched set of elements against a selector</li>
+            <li>closest(el<code>:HTMLElement</code>, selector<code>:String</code>[,
+                ctx<code>:HTMLElement</code>])<code>:HTMLElement|Null</code> — for each element in the set, get the
+                first element that matches the selector by testing the element itself and traversing up through its
+                ancestors in the DOM tree</li>
+            <li>clone(el<code>:HTMLElement</code>)<code>:HTMLElement</code> — create a deep copy of the set of matched
+                elements</li>
+            <li>toggleClass(el<code>:HTMLElement</code>, name<code>:String</code>, state<code>:Boolean</code>) — add or
+                remove one classes from each element</li>
+            <li>detectDirection(el<code>:HTMLElement</code>)<code>:String</code> — automatically detect the <a
+                    href="https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#direction">direction</a>
+                of the element as either <code>'vertical'</code> or <code>'horizontal'</code>
+            </li>
+        </ul>
+        <hr>
+        <p><a name="user-content-cdn"></a></p>
+        <h3><a id="user-content-cdn" class="anchor" aria-hidden="true" href="#cdn"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>CDN</h3>
+        <div class="highlight highlight-text-html-basic">
+            <pre><span class="pl-c">&lt;!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) --&gt;</span>
+<span class="pl-kos">&lt;</span><span class="pl-ent">script</span> <span class="pl-c1">src</span>="<span class="pl-s">https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js</span>"<span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span></pre>
+        </div>
+        <hr>
+        <h3><a id="user-content-contributing-issuepr" class="anchor" aria-hidden="true"
+                href="#contributing-issuepr"><span aria-hidden="true"
+                    class="octicon octicon-link"></span></a>Contributing (Issue/PR)</h3>
+        <p>Please, <a href="https://github.com/SortableJS/Sortable/blob/HEAD/CONTRIBUTING.md">read this</a>.</p>
+        <hr>
+        <h2><a id="user-content-mit-license" class="anchor" aria-hidden="true" href="#mit-license"><span
+                    aria-hidden="true" class="octicon octicon-link"></span></a>MIT LICENSE</h2>
+        <p>Permission is hereby granted, free of charge, to any person obtaining
+            a copy of this software and associated documentation files (the
+            "Software"), to deal in the Software without restriction, including
+            without limitation the rights to use, copy, modify, merge, publish,
+            distribute, sublicense, and/or sell copies of the Software, and to
+            permit persons to whom the Software is furnished to do so, subject to
+            the following conditions:</p>
+        <p>The above copyright notice and this permission notice shall be
+            included in all copies or substantial portions of the Software.</p>
+        <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+            EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+            MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+            NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+            LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+            OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+            WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+    </div>
+</article>

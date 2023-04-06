@@ -1,0 +1,73 @@
+<article class="markdown-body entry-content container-lg" itemprop="text">
+    <h1 tabindex="-1" dir="auto">RanasDB</h1>
+    <p dir="auto">Easy browser-side database management for IndexedDB.</p>
+    <h1 tabindex="-1" dir="auto">What is <code>RanasDB</code>?</h1>
+    <p dir="auto"><code>RanasDB</code>, in the end, is just an interface for the stack:</p>
+    <ul dir="auto">
+        <li><code>IndexedDB API</code>: the native HTML5 API.</li>
+        <li><code>dexie</code>: the popular wrapper for <code>IndexedDB</code>.</li>
+        <li><code>dexie-relationships</code>: a <code>dexie</code> addon to add relationships.</li>
+    </ul>
+    <h1 tabindex="-1" dir="auto">How to use <code>ranas-db</code>?</h1>
+    <p dir="auto">This piece of code demonstrates how you can use <code>ranas-db</code> in 7 easy steps:</p>
+    <div class="highlight highlight-source-js notranslate position-relative overflow-auto" dir="auto">
+        <pre><span class="pl-c">// 1. Import the package:</span>
+<span class="pl-k">const</span> <span class="pl-v">RanasDB</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">"ranas-db"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// 2. (Optionally) Delete previous data and schema:</span>
+<span class="pl-k">await</span> <span class="pl-v">RanasDB</span><span class="pl-kos">.</span><span class="pl-en">dropDatabaseIfExists</span><span class="pl-kos">(</span><span class="pl-s">"My_first_database"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// 3. Connect (= create + initialize) to your database, and define all versions:</span>
+<span class="pl-k">const</span> <span class="pl-s1">db</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-v">RanasDB</span><span class="pl-kos">.</span><span class="pl-en">connect</span><span class="pl-kos">(</span><span class="pl-s">"My_first_database"</span><span class="pl-kos">,</span> <span class="pl-kos">[</span>
+    <span class="pl-kos">[</span>
+        <span class="pl-kos">{</span>
+            <span class="pl-c1">users</span>: <span class="pl-s">"++id,&amp;name,password,&amp;email,created_at,updated_at,picture_profile,personal_data,description"</span><span class="pl-kos">,</span>
+            <span class="pl-c1">groups</span>: <span class="pl-s">"++id,&amp;name,administrator,description,details,tags,created_at,updated_at"</span><span class="pl-kos">,</span>
+            <span class="pl-c1">permissions</span>: <span class="pl-s">"++id,&amp;name,description,details,tags,created_at,updated_at"</span><span class="pl-kos">,</span>
+        <span class="pl-kos">}</span><span class="pl-kos">,</span>
+        <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span><span class="pl-kos">}</span>
+    <span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-kos">[</span>
+        <span class="pl-kos">{</span>
+            <span class="pl-c1">permissions_of_user</span>: <span class="pl-s">"++id,id_user -&gt; users.id,id_permission -&gt; permissions.id"</span><span class="pl-kos">,</span>
+            <span class="pl-c1">permissions_of_group</span>: <span class="pl-s">"++id,id_group -&gt; groups.id,id_permission -&gt; permissions.id"</span><span class="pl-kos">,</span>
+            <span class="pl-c1">groups_of_user</span>: <span class="pl-s">"++id,id_user -&gt; users.id,id_group -&gt; groups.id"</span><span class="pl-kos">,</span>
+        <span class="pl-kos">}</span><span class="pl-kos">,</span>
+        <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span><span class="pl-kos">}</span>
+    <span class="pl-kos">]</span>
+<span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+    <span class="pl-c1">debug</span>: <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-c1">log</span> <span class="pl-c">// this is for debugging CRUD methods by console</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// 4. Insert data:</span>
+<span class="pl-k">const</span> <span class="pl-s1">userXId</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-en">insert</span><span class="pl-kos">(</span><span class="pl-s">"users"</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c1">name</span>: <span class="pl-s">"userX"</span><span class="pl-kos">,</span> <span class="pl-c1">password</span>: <span class="pl-s">"x"</span><span class="pl-kos">,</span> <span class="pl-c1">email</span>: <span class="pl-s">"userx@domain.com"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">userYId</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-en">insert</span><span class="pl-kos">(</span><span class="pl-s">"users"</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c1">name</span>: <span class="pl-s">"userY"</span><span class="pl-kos">,</span> <span class="pl-c1">password</span>: <span class="pl-s">"y"</span><span class="pl-kos">,</span> <span class="pl-c1">email</span>: <span class="pl-s">"usery@domain.com"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">userZId</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-en">insert</span><span class="pl-kos">(</span><span class="pl-s">"users"</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c1">name</span>: <span class="pl-s">"userZ"</span><span class="pl-kos">,</span> <span class="pl-c1">password</span>: <span class="pl-s">"z"</span><span class="pl-kos">,</span> <span class="pl-c1">email</span>: <span class="pl-s">"userz@domain.com"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// 5. Update data:</span>
+<span class="pl-k">await</span> <span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-en">update</span><span class="pl-kos">(</span><span class="pl-s">"users"</span><span class="pl-kos">,</span> <span class="pl-s1">userXId</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c1">name</span>: <span class="pl-s">"user X modified!"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">await</span> <span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-en">update</span><span class="pl-kos">(</span><span class="pl-s">"users"</span><span class="pl-kos">,</span> <span class="pl-s1">userYId</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c1">name</span>: <span class="pl-s">"user Y modified!"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">await</span> <span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-en">update</span><span class="pl-kos">(</span><span class="pl-s">"users"</span><span class="pl-kos">,</span> <span class="pl-s1">userZId</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-c1">name</span>: <span class="pl-s">"user Z modified!"</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// 6. Delete data:</span>
+<span class="pl-k">await</span> <span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-en">delete</span><span class="pl-kos">(</span><span class="pl-s">"users"</span><span class="pl-kos">,</span> <span class="pl-s1">userYId</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// 7. Select data:</span>
+<span class="pl-k">const</span> <span class="pl-s1">allUsers</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">db</span><span class="pl-kos">.</span><span class="pl-en">select</span><span class="pl-kos">(</span><span class="pl-s">"users"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-k">if</span><span class="pl-kos">(</span><span class="pl-s1">allUsers</span><span class="pl-kos">.</span><span class="pl-c1">length</span> <span class="pl-c1">!==</span> <span class="pl-c1">2</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-v">Error</span><span class="pl-kos">(</span><span class="pl-s">"Users count should be 2, not "</span> <span class="pl-c1">+</span> <span class="pl-s1">allUsers</span><span class="pl-kos">.</span><span class="pl-c1">length</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span></pre>
+        <div class="zeroclipboard-container position-absolute right-0 top-0">
+            
+                
+        </div>
+    </div>
+    <h1 tabindex="-1" dir="auto">Why?</h1>
+    <p dir="auto">To make <code>IndexedDB</code> work, easier (so, <code>dexie</code>), with references (that is,
+        <code>dexie-relationships</code>), and a simple but flexible enough API.</p>
+    <h1 tabindex="-1" dir="auto"><a id="user-content-license" class="anchor" aria-hidden="true" href="#license">
+        </a>License</h1>
+    <p dir="auto">No. <strong>#NoLicense</strong>.</p>
+    <h1 tabindex="-1" dir="auto"><a id="user-content-changes" class="anchor" aria-hidden="true" href="#changes"></a>Changes</h1>
+    <p dir="auto">See changes on CHANGELOG.md file.</p>
+</article>

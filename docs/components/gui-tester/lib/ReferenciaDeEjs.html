@@ -1,0 +1,461 @@
+<div class="_6d9832ac pr4-ns pl0-ns ph1-m pr3-m pr2  markdown" id="readme">
+    <h1>
+        <a id="user-content-embedded-javascript-templates" class="anchor" href="#embedded-javascript-templates"
+            aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Embedded JavaScript
+        templates<br>
+        <a href="https://travis-ci.org/mde/ejs" rel="nofollow">Travis-ci</a>
+        <a href="https://david-dm.org/mde/ejs?type=dev" rel="nofollow">David-dm</a>
+        <a href="https://snyk.io/test/npm/ejs" rel="nofollow">Snyk.io</a>
+    </h1>
+    <h2>
+        <a id="user-content-installation" class="anchor" href="#installation" aria-hidden="true"><span
+                aria-hidden="true" class="octicon octicon-link"></span></a>Installation
+    </h2>
+    <div class="highlight highlight-source-shell">
+        <pre>$ npm install ejs</pre>
+    </div>
+    <h2>
+        <a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Features
+    </h2>
+    <ul>
+        <li>Control flow with <code>&lt;% %&gt;</code>
+        </li>
+        <li>Escaped output with <code>&lt;%= %&gt;</code> (escape function configurable)</li>
+        <li>Unescaped raw output with <code>&lt;%- %&gt;</code>
+        </li>
+        <li>Newline-trim mode ('newline slurping') with <code>-%&gt;</code> ending tag</li>
+        <li>Whitespace-trim mode (slurp all whitespace) for control flow with <code>&lt;%_ _%&gt;</code>
+        </li>
+        <li>Custom delimiters (e.g. <code>[? ?]</code> instead of <code>&lt;% %&gt;</code>)</li>
+        <li>Includes</li>
+        <li>Client-side support</li>
+        <li>Static caching of intermediate JavaScript</li>
+        <li>Static caching of templates</li>
+        <li>Complies with the <a href="http://expressjs.com" rel="nofollow">Express</a> view system</li>
+    </ul>
+    <h2>
+        <a id="user-content-example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Example
+    </h2>
+    <div class="highlight highlight-text-html-js">
+        <pre><span class="pl-s1"><span class="pl-pse">&lt;%</span> <span class="pl-k">if</span> (user) { <span class="pl-k">%</span><span class="pl-k">&gt;</span></span>
+<span class="pl-s1">  <span class="pl-k">&lt;</span>h2<span class="pl-k">&gt;&lt;</span><span class="pl-k">%=</span> <span class="pl-smi">user</span>.<span class="pl-c1">name</span> <span class="pl-k">%</span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>h2<span class="pl-k">&gt;</span></span>
+<span class="pl-s1"><span class="pl-k">&lt;</span><span class="pl-k">%</span> } <span class="pl-pse">%&gt;</span></span></pre>
+    </div>
+    <p>Try EJS online at: <a href="https://ionicabizau.github.io/ejs-playground/"
+            rel="nofollow">https://ionicabizau.github.io/ejs-playground/</a>.</p>
+    <h2>
+        <a id="user-content-basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Basic usage
+    </h2>
+    <div class="highlight highlight-source-js">
+        <pre><span class="pl-k">let</span> <span class="pl-s1">template</span> <span class="pl-c1">=</span> <span class="pl-s1">ejs</span><span class="pl-kos">.</span><span class="pl-en">compile</span><span class="pl-kos">(</span><span class="pl-s1">str</span><span class="pl-kos">,</span> <span class="pl-s1">options</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">template</span><span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-c">// =&gt; Rendered HTML string</span>
+
+<span class="pl-s1">ejs</span><span class="pl-kos">.</span><span class="pl-en">render</span><span class="pl-kos">(</span><span class="pl-s1">str</span><span class="pl-kos">,</span> <span class="pl-s1">data</span><span class="pl-kos">,</span> <span class="pl-s1">options</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-c">// =&gt; Rendered HTML string</span>
+
+<span class="pl-s1">ejs</span><span class="pl-kos">.</span><span class="pl-en">renderFile</span><span class="pl-kos">(</span><span class="pl-s1">filename</span><span class="pl-kos">,</span> <span class="pl-s1">data</span><span class="pl-kos">,</span> <span class="pl-s1">options</span><span class="pl-kos">,</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">,</span> <span class="pl-s1">str</span><span class="pl-kos">)</span><span class="pl-kos">{</span>
+    <span class="pl-c">// str =&gt; Rendered HTML string</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre>
+    </div>
+    <p>It is also possible to use <code>ejs.render(dataAndOptions);</code> where you pass
+        everything in a single object. In that case, you'll end up with local variables
+        for all the passed options. However, be aware that your code could break if we
+        add an option with the same name as one of your data object's properties.
+        Therefore, we do not recommend using this shortcut.</p>
+    <h3>
+        <a id="user-content-options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Options
+    </h3>
+    <ul>
+        <li>
+            <code>cache</code> Compiled functions are cached, requires <code>filename</code>
+        </li>
+        <li>
+            <code>filename</code> The name of the file being rendered. Not required if you
+            are using <code>renderFile()</code>. Used by <code>cache</code> to key caches, and for includes.
+        </li>
+        <li>
+            <code>root</code> Set project root for includes with an absolute path (e.g, /file.ejs).
+            Can be array to try to resolve include from multiple directories.
+        </li>
+        <li>
+            <code>views</code> An array of paths to use when resolving includes with relative paths.
+        </li>
+        <li>
+            <code>context</code> Function execution context
+        </li>
+        <li>
+            <code>compileDebug</code> When <code>false</code> no debug instrumentation is compiled
+        </li>
+        <li>
+            <code>client</code> When <code>true</code>, compiles a function that can be rendered
+            in the browser without needing to load the EJS Runtime
+            (<a href="https://github.com/mde/ejs/releases/latest">ejs.min.js</a>).
+        </li>
+        <li>
+            <code>delimiter</code> Character to use for inner delimiter, by default '%'
+        </li>
+        <li>
+            <code>openDelimiter</code> Character to use for opening delimiter, by default '&lt;'
+        </li>
+        <li>
+            <code>closeDelimiter</code> Character to use for closing delimiter, by default '&gt;'
+        </li>
+        <li>
+            <code>debug</code> Outputs generated function body
+        </li>
+        <li>
+            <code>strict</code> When set to <code>true</code>, generated function is in strict mode
+        </li>
+        <li>
+            <code>_with</code> Whether or not to use <code>with() {}</code> constructs. If <code>false</code>
+            then the locals will be stored in the <code>locals</code> object. Set to <code>false</code> in strict mode.
+        </li>
+        <li>
+            <code>destructuredLocals</code> An array of local variables that are always destructured from
+            the locals object, available even in strict mode.
+        </li>
+        <li>
+            <code>localsName</code> Name to use for the object storing local variables when not using
+            <code>with</code> Defaults to <code>locals</code>
+        </li>
+        <li>
+            <code>rmWhitespace</code> Remove all safe-to-remove whitespace, including leading
+            and trailing whitespace. It also enables a safer version of <code>-%&gt;</code> line
+            slurping for all scriptlet tags (it does not strip new lines of tags in
+            the middle of a line).
+        </li>
+        <li>
+            <code>escape</code> The escaping function used with <code>&lt;%=</code> construct. It is
+            used in rendering and is <code>.toString()</code>ed in the generation of client functions.
+            (By default escapes XML).
+        </li>
+        <li>
+            <code>outputFunctionName</code> Set to a string (e.g., 'echo' or 'print') for a function to print
+            output inside scriptlet tags.
+        </li>
+        <li>
+            <code>async</code> When <code>true</code>, EJS will use an async function for rendering. (Depends
+            on async/await support in the JS runtime.
+        </li>
+        <li>
+            <code>includer</code> Custom function to handle EJS includes, receives
+            <code>(originalPath, parsedPath)</code>
+            parameters, where <code>originalPath</code> is the path in include as-is and <code>parsedPath</code> is the
+            previously resolved path. Should return an object <code>{ filename, template }</code>,
+            you may return only one of the properties, where <code>filename</code> is the final parsed path and
+            <code>template</code>
+            is the included content.
+        </li>
+    </ul>
+    <p>This project uses <a href="http://usejsdoc.org/" rel="nofollow">JSDoc</a>. For the full public API
+        documentation, clone the repository and run <code>jake doc</code>. This will run JSDoc
+        with the proper options and output the documentation to <code>out/</code>. If you want
+        the both the public &amp; private API docs, run <code>jake devdoc</code> instead.</p>
+    <h3>
+        <a id="user-content-tags" class="anchor" href="#tags" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Tags
+    </h3>
+    <ul>
+        <li>
+            <code>&lt;%</code> 'Scriptlet' tag, for control-flow, no output
+        </li>
+        <li>
+            <code>&lt;%_</code> 'Whitespace Slurping' Scriptlet tag, strips all whitespace before it
+        </li>
+        <li>
+            <code>&lt;%=</code> Outputs the value into the template (escaped)
+        </li>
+        <li>
+            <code>&lt;%-</code> Outputs the unescaped value into the template
+        </li>
+        <li>
+            <code>&lt;%#</code> Comment tag, no execution, no output
+        </li>
+        <li>
+            <code>&lt;%%</code> Outputs a literal '&lt;%'
+        </li>
+        <li>
+            <code>%%&gt;</code> Outputs a literal '%&gt;'
+        </li>
+        <li>
+            <code>%&gt;</code> Plain ending tag
+        </li>
+        <li>
+            <code>-%&gt;</code> Trim-mode ('newline slurp') tag, trims following newline
+        </li>
+        <li>
+            <code>_%&gt;</code> 'Whitespace Slurping' ending tag, removes all whitespace after it
+        </li>
+    </ul>
+    <p>For the full syntax documentation, please see <a
+            href="https://github.com/mde/ejs/blob/master/docs/syntax.md">docs/syntax.md</a>.</p>
+    <h3>
+        <a id="user-content-includes" class="anchor" href="#includes" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Includes
+    </h3>
+    <p>Includes either have to be an absolute path, or, if not, are assumed as
+        relative to the template with the <code>include</code> call. For example if you are
+        including <code>./views/user/show.ejs</code> from <code>./views/users.ejs</code> you would
+        use <code>&lt;%- include('user/show') %&gt;</code>.</p>
+    <p>You must specify the <code>filename</code> option for the template with the <code>include</code>
+        call unless you are using <code>renderFile()</code>.</p>
+    <p>You'll likely want to use the raw output tag (<code>&lt;%-</code>) with your include to avoid
+        double-escaping the HTML output.</p>
+    <div class="highlight highlight-text-html-js">
+        <pre>&lt;<span class="pl-ent">ul</span>&gt;
+  <span class="pl-s1"><span class="pl-pse">&lt;%</span> <span class="pl-smi">users</span>.<span class="pl-c1">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">user</span>){ <span class="pl-k">%</span><span class="pl-k">&gt;</span></span>
+<span class="pl-s1">    <span class="pl-k">&lt;</span><span class="pl-k">%-</span> <span class="pl-en">include</span>(<span class="pl-s"><span class="pl-pds">'</span>user/show<span class="pl-pds">'</span></span>, {user<span class="pl-k">:</span> user}) <span class="pl-k">%</span><span class="pl-k">&gt;</span></span>
+<span class="pl-s1">  <span class="pl-k">&lt;</span><span class="pl-k">%</span> }); <span class="pl-pse">%&gt;</span></span>
+&lt;/<span class="pl-ent">ul</span>&gt;</pre>
+    </div>
+    <p>Includes are inserted at runtime, so you can use variables for the path in the
+        <code>include</code> call (for example <code>&lt;%- include(somePath) %&gt;</code>). Variables in your
+        top-level data object are available to all your includes, but local variables
+        need to be passed down.
+    </p>
+    <p>NOTE: Include preprocessor directives (<code>&lt;% include user/show %&gt;</code>) are
+        not supported in v3.0+.</p>
+    <h2>
+        <a id="user-content-custom-delimiters" class="anchor" href="#custom-delimiters" aria-hidden="true"><span
+                aria-hidden="true" class="octicon octicon-link"></span></a>Custom delimiters
+    </h2>
+    <p>Custom delimiters can be applied on a per-template basis, or globally:</p>
+    <div class="highlight highlight-source-js">
+        <pre><span class="pl-k">let</span> <span class="pl-s1">ejs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'ejs'</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
+    <span class="pl-s1">users</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span><span class="pl-s">'geddy'</span><span class="pl-kos">,</span> <span class="pl-s">'neil'</span><span class="pl-kos">,</span> <span class="pl-s">'alex'</span><span class="pl-kos">]</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Just one template</span>
+<span class="pl-s1">ejs</span><span class="pl-kos">.</span><span class="pl-en">render</span><span class="pl-kos">(</span><span class="pl-s">'&lt;p&gt;[?= users.join(" | "); ?]&lt;/p&gt;'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span><span class="pl-c1">users</span>: <span class="pl-s1">users</span><span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-kos">{</span><span class="pl-c1">delimiter</span>: <span class="pl-s">'?'</span><span class="pl-kos">,</span> <span class="pl-c1">openDelimiter</span>: <span class="pl-s">'['</span><span class="pl-kos">,</span> <span class="pl-c1">closeDelimiter</span>: <span class="pl-s">']'</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-c">// =&gt; '&lt;p&gt;geddy | neil | alex&lt;/p&gt;'</span>
+
+<span class="pl-c">// Or globally</span>
+<span class="pl-s1">ejs</span><span class="pl-kos">.</span><span class="pl-c1">delimiter</span> <span class="pl-c1">=</span> <span class="pl-s">'?'</span><span class="pl-kos">;</span>
+<span class="pl-s1">ejs</span><span class="pl-kos">.</span><span class="pl-c1">openDelimiter</span> <span class="pl-c1">=</span> <span class="pl-s">'['</span><span class="pl-kos">;</span>
+<span class="pl-s1">ejs</span><span class="pl-kos">.</span><span class="pl-c1">closeDelimiter</span> <span class="pl-c1">=</span> <span class="pl-s">']'</span><span class="pl-kos">;</span>
+<span class="pl-s1">ejs</span><span class="pl-kos">.</span><span class="pl-en">render</span><span class="pl-kos">(</span><span class="pl-s">'&lt;p&gt;[?= users.join(" | "); ?]&lt;/p&gt;'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span><span class="pl-c1">users</span>: <span class="pl-s1">users</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-c">// =&gt; '&lt;p&gt;geddy | neil | alex&lt;/p&gt;'</span></pre>
+    </div>
+    <h3>
+        <a id="user-content-caching" class="anchor" href="#caching" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Caching
+    </h3>
+    <p>EJS ships with a basic in-process cache for caching the intermediate JavaScript
+        functions used to render templates. It's easy to plug in LRU caching using
+        Node's <code>lru-cache</code> library:</p>
+    <div class="highlight highlight-source-js">
+        <pre><span class="pl-k">let</span> <span class="pl-s1">ejs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'ejs'</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
+    <span class="pl-c1">LRU</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'lru-cache'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">ejs</span><span class="pl-kos">.</span><span class="pl-c1">cache</span> <span class="pl-c1">=</span> <span class="pl-c1">LRU</span><span class="pl-kos">(</span><span class="pl-c1">100</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// LRU cache with 100-item limit</span></pre>
+    </div>
+    <p>If you want to clear the EJS cache, call <code>ejs.clearCache</code>. If you're using the
+        LRU cache and need a different limit, simple reset <code>ejs.cache</code> to a new instance
+        of the LRU.</p>
+    <h3>
+        <a id="user-content-custom-file-loader" class="anchor" href="#custom-file-loader" aria-hidden="true"><span
+                aria-hidden="true" class="octicon octicon-link"></span></a>Custom file loader
+    </h3>
+    <p>The default file loader is <code>fs.readFileSync</code>, if you want to customize it, you can set ejs.fileLoader.
+    </p>
+    <div class="highlight highlight-source-js">
+        <pre><span class="pl-k">let</span> <span class="pl-s1">ejs</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'ejs'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">let</span> <span class="pl-en">myFileLoad</span> <span class="pl-c1">=</span> <span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-s1">filePath</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">return</span> <span class="pl-s">'myFileLoad: '</span> <span class="pl-c1">+</span> <span class="pl-s1">fs</span><span class="pl-kos">.</span><span class="pl-en">readFileSync</span><span class="pl-kos">(</span><span class="pl-s1">filePath</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">ejs</span><span class="pl-kos">.</span><span class="pl-c1">fileLoader</span> <span class="pl-c1">=</span> <span class="pl-en">myFileLoad</span><span class="pl-kos">;</span></pre>
+    </div>
+    <p>With this feature, you can preprocess the template before reading it.</p>
+    <h3>
+        <a id="user-content-layouts" class="anchor" href="#layouts" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Layouts
+    </h3>
+    <p>EJS does not specifically support blocks, but layouts can be implemented by
+        including headers and footers, like so:</p>
+    <div class="highlight highlight-text-html-js">
+        <pre><span class="pl-s1"><span class="pl-pse">&lt;%</span><span class="pl-k">-</span> <span class="pl-en">include</span>(<span class="pl-s"><span class="pl-pds">'</span>header<span class="pl-pds">'</span></span>) <span class="pl-k">-</span><span class="pl-pse">%&gt;</span></span>
+&lt;<span class="pl-ent">h1</span>&gt;
+  Title
+&lt;/<span class="pl-ent">h1</span>&gt;
+&lt;<span class="pl-ent">p</span>&gt;
+  My page
+&lt;/<span class="pl-ent">p</span>&gt;
+<span class="pl-s1"><span class="pl-pse">&lt;%</span><span class="pl-k">-</span> <span class="pl-en">include</span>(<span class="pl-s"><span class="pl-pds">'</span>footer<span class="pl-pds">'</span></span>) <span class="pl-k">-</span><span class="pl-pse">%&gt;</span></span></pre>
+    </div>
+    <h2>
+        <a id="user-content-client-side-support" class="anchor" href="#client-side-support" aria-hidden="true"><span
+                aria-hidden="true" class="octicon octicon-link"></span></a>Client-side support
+    </h2>
+    <p>Go to the <a href="https://github.com/mde/ejs/releases/latest">Latest Release</a>, download
+        <code>./ejs.js</code> or <code>./ejs.min.js</code>. Alternately, you can compile it yourself by cloning
+        the repository and running <code>jake build</code> (or <code>$(npm bin)/jake build</code> if jake is
+        not installed globally).
+    </p>
+    <p>Include one of these files on your page, and <code>ejs</code> should be available globally.</p>
+    <h3>
+        <a id="user-content-example-1" class="anchor" href="#example-1" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Example
+    </h3>
+    <div class="highlight highlight-text-html-basic">
+        <pre><span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">id</span>="<span class="pl-s">output</span>"<span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;</span><span class="pl-ent">script</span> <span class="pl-c1">src</span>="<span class="pl-s">ejs.min.js</span>"<span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span>
+<span class="pl-kos">&lt;</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span>
+  <span class="pl-k">let</span> <span class="pl-s1">people</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span><span class="pl-s">'geddy'</span><span class="pl-kos">,</span> <span class="pl-s">'neil'</span><span class="pl-kos">,</span> <span class="pl-s">'alex'</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
+      <span class="pl-s1">html</span> <span class="pl-c1">=</span> <span class="pl-s1">ejs</span><span class="pl-kos">.</span><span class="pl-en">render</span><span class="pl-kos">(</span><span class="pl-s">'&lt;%= people.join(", "); %&gt;'</span><span class="pl-kos">,</span> <span class="pl-kos">{</span><span class="pl-c1">people</span>: <span class="pl-s1">people</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-c">// With jQuery:</span>
+  <span class="pl-en">$</span><span class="pl-kos">(</span><span class="pl-s">'#output'</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">html</span><span class="pl-kos">(</span><span class="pl-s1">html</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-c">// Vanilla JS:</span>
+  <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">getElementById</span><span class="pl-kos">(</span><span class="pl-s">'output'</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-c1">innerHTML</span> <span class="pl-c1">=</span> <span class="pl-s1">html</span><span class="pl-kos">;</span>
+<span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span></pre>
+    </div>
+    <h3>
+        <a id="user-content-caveats" class="anchor" href="#caveats" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Caveats
+    </h3>
+    <p>Most of EJS will work as expected; however, there are a few things to note:</p>
+    <ol>
+        <li>Obviously, since you do not have access to the filesystem, <code>ejs.renderFile()</code> won't work.</li>
+        <li>For the same reason, <code>include</code>s do not work unless you use an <code>include callback</code>. Here
+            is an example:</li>
+    </ol>
+    <div class="highlight highlight-source-js">
+        <pre><span class="pl-k">let</span> <span class="pl-s1">str</span> <span class="pl-c1">=</span> <span class="pl-s">"Hello &lt;%= include('file', {person: 'John'}); %&gt;"</span><span class="pl-kos">,</span>
+    <span class="pl-s1">fn</span> <span class="pl-c1">=</span> <span class="pl-s1">ejs</span><span class="pl-kos">.</span><span class="pl-en">compile</span><span class="pl-kos">(</span><span class="pl-s1">str</span><span class="pl-kos">,</span> <span class="pl-kos">{</span><span class="pl-c1">client</span>: <span class="pl-c1">true</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">fn</span><span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">,</span> <span class="pl-c1">null</span><span class="pl-kos">,</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-s1">path</span><span class="pl-kos">,</span> <span class="pl-s1">d</span><span class="pl-kos">)</span><span class="pl-kos">{</span> <span class="pl-c">// include callback</span>
+  <span class="pl-c">// path -&gt; 'file'</span>
+  <span class="pl-c">// d -&gt; {person: 'John'}</span>
+  <span class="pl-c">// Put your code here</span>
+  <span class="pl-c">// Return the contents of file as a string</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// returns rendered string</span></pre>
+    </div>
+    <p>See the <a href="https://github.com/mde/ejs/tree/master/examples">examples folder</a> for more details.</p>
+    <h2>
+        <a id="user-content-cli" class="anchor" href="#cli" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>CLI
+    </h2>
+    <p>EJS ships with a full-featured CLI. Options are similar to those used in JavaScript code:</p>
+    <ul>
+        <li>
+            <code>-o / --output-file FILE</code> Write the rendered output to FILE rather than stdout.
+        </li>
+        <li>
+            <code>-f / --data-file FILE</code> Must be JSON-formatted. Use parsed input from FILE as data for rendering.
+        </li>
+        <li>
+            <code>-i / --data-input STRING</code> Must be JSON-formatted and URI-encoded. Use parsed input from STRING
+            as data for rendering.
+        </li>
+        <li>
+            <code>-m / --delimiter CHARACTER</code> Use CHARACTER with angle brackets for open/close (defaults to %).
+        </li>
+        <li>
+            <code>-p / --open-delimiter CHARACTER</code> Use CHARACTER instead of left angle bracket to open.
+        </li>
+        <li>
+            <code>-c / --close-delimiter CHARACTER</code> Use CHARACTER instead of right angle bracket to close.
+        </li>
+        <li>
+            <code>-s / --strict</code> When set to <code>true</code>, generated function is in strict mode
+        </li>
+        <li>
+            <code>-n / --no-with</code> Use 'locals' object for vars rather than using <code>with</code> (implies
+            --strict).
+        </li>
+        <li>
+            <code>-l / --locals-name</code> Name to use for the object storing local variables when not using
+            <code>with</code>.
+        </li>
+        <li>
+            <code>-w / --rm-whitespace</code> Remove all safe-to-remove whitespace, including leading and trailing
+            whitespace.
+        </li>
+        <li>
+            <code>-d / --debug</code> Outputs generated function body
+        </li>
+        <li>
+            <code>-h / --help</code> Display this help message.
+        </li>
+        <li>
+            <code>-V/v / --version</code> Display the EJS version.
+        </li>
+    </ul>
+    <p>Here are some examples of usage:</p>
+    <div class="highlight highlight-source-shell">
+        <pre>$ ejs -p [ <span class="pl-k">-c</span> ] ./template_file.ejs -o ./output.html
+$ ejs ./test/fixtures/user.ejs name=Lerxst
+$ ejs -n -l _ ./some_template.ejs -f ./data_file.json</pre>
+    </div>
+    <h3>
+        <a id="user-content-data-input" class="anchor" href="#data-input" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Data input
+    </h3>
+    <p>There is a variety of ways to pass the CLI data for rendering.</p>
+    <p>Stdin:</p>
+    <div class="highlight highlight-source-shell">
+        <pre>$ ./test/fixtures/user_data.json <span class="pl-k">|</span> ejs ./test/fixtures/user.ejs
+$ ejs ./test/fixtures/user.ejs <span class="pl-k">&lt;</span> test/fixtures/user_data.json</pre>
+    </div>
+    <p>A data file:</p>
+    <div class="highlight highlight-source-shell">
+        <pre>$ ejs ./test/fixtures/user.ejs -f ./user_data.json</pre>
+    </div>
+    <p>A command-line option (must be URI-encoded):</p>
+    <div class="highlight highlight-source-shell">
+        <pre>./bin/cli.js -i %7B%22name%22%3A%20%22foo%22%7D ./test/fixtures/user.ejs</pre>
+    </div>
+    <p>Or, passing values directly at the end of the invocation:</p>
+    <div class="highlight highlight-source-shell">
+        <pre>./bin/cli.js -m $ ./test/fixtures/user.ejs name=foo</pre>
+    </div>
+    <h3>
+        <a id="user-content-output" class="anchor" href="#output" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>Output
+    </h3>
+    <p>The CLI by default send output to stdout, but you can use the <code>-o</code> or <code>--output-file</code>
+        flag to specify a target file to send the output to.</p>
+    <h2>
+        <a id="user-content-ide-integration-with-syntax-highlighting" class="anchor"
+            href="#ide-integration-with-syntax-highlighting" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>IDE Integration with Syntax Highlighting
+    </h2>
+    <p>VSCode:Javascript EJS by <em>DigitalBrainstem</em></p>
+    <h2>
+        <a id="user-content-related-projects" class="anchor" href="#related-projects" aria-hidden="true"><span
+                aria-hidden="true" class="octicon octicon-link"></span></a>Related projects
+    </h2>
+    <p>There are a number of implementations of EJS:</p>
+    <ul>
+        <li>TJ's implementation, the v1 of this library: <a
+                href="https://github.com/tj/ejs">https://github.com/tj/ejs</a>
+        </li>
+        <li>EJS Embedded JavaScript Framework on Google Code: <a href="https://code.google.com/p/embeddedjavascript/"
+                rel="nofollow">https://code.google.com/p/embeddedjavascript/</a>
+        </li>
+        <li>Sam Stephenson's Ruby implementation: <a href="https://rubygems.org/gems/ejs"
+                rel="nofollow">https://rubygems.org/gems/ejs</a>
+        </li>
+        <li>Erubis, an ERB implementation which also runs JavaScript: <a
+                href="http://www.kuwata-lab.com/erubis/users-guide.04.html#lang-javascript"
+                rel="nofollow">http://www.kuwata-lab.com/erubis/users-guide.04.html#lang-javascript</a>
+        </li>
+        <li>DigitalBrainstem EJS Language support: <a
+                href="https://github.com/Digitalbrainstem/ejs-grammar">https://github.com/Digitalbrainstem/ejs-grammar</a>
+        </li>
+    </ul>
+    <h2>
+        <a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true"
+                class="octicon octicon-link"></span></a>License
+    </h2>
+    <p>Licensed under the Apache License, Version 2.0
+        (<a href="http://www.apache.org/licenses/LICENSE-2.0"
+            rel="nofollow">http://www.apache.org/licenses/LICENSE-2.0</a>)</p>
+    <hr>
+    <p>EJS Embedded JavaScript templates copyright 2112
+        <a href="mailto:mde@fleegix.org">mde@fleegix.org</a>.
+    </p>
+</div>
