@@ -3,7 +3,7 @@
 (function(factory_original, filename, metadata) {
     try {
         const require_ = (typeof require === "function") ? require : function(id) { return ((typeof(require) === 'function') ? require : (...args) => {
-    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder");
+    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www");
 })(id);
 };
         const module_ = (typeof module !== "undefined") ? module : { exports:undefined };
@@ -31,7 +31,7 @@
         if((typeof(Castelog) !== "undefined")
         && (typeof(Castelog.metodos) !== "undefined")
         && (typeof(Castelog.metodos.un_modulo_exportado) === "function")) {
-            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder" );
+            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www" );
             envs.push("Castelog.modulos[" + JSON.stringify(name) + "].value"); 
         }
         // console.log("Exportado módulo calo " + JSON.stringify(name) + " en:\n  - " + envs.join("\n  - "));
@@ -59,7 +59,7 @@ this.esta_editando = false; }
 (function(factory_original, filename, metadata) {
     try {
         const require_ = (typeof require === "function") ? require : function(id) { return ((typeof(require) === 'function') ? require : (...args) => {
-    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder");
+    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www");
 })(id);
 };
         const module_ = (typeof module !== "undefined") ? module : { exports:undefined };
@@ -87,7 +87,7 @@ this.esta_editando = false; }
         if((typeof(Castelog) !== "undefined")
         && (typeof(Castelog.metodos) !== "undefined")
         && (typeof(Castelog.metodos.un_modulo_exportado) === "function")) {
-            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder" );
+            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www" );
             envs.push("Castelog.modulos[" + JSON.stringify(name) + "].value"); 
         }
         // console.log("Exportado módulo calo " + JSON.stringify(name) + " en:\n  - " + envs.join("\n  - "));
@@ -120,7 +120,7 @@ this.esta_seleccionada_busqueda_de_componente = false; }
 (function(factory_original, filename, metadata) {
     try {
         const require_ = (typeof require === "function") ? require : function(id) { return ((typeof(require) === 'function') ? require : (...args) => {
-    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder");
+    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www");
 })(id);
 };
         const module_ = (typeof module !== "undefined") ? module : { exports:undefined };
@@ -148,7 +148,7 @@ this.esta_seleccionada_busqueda_de_componente = false; }
         if((typeof(Castelog) !== "undefined")
         && (typeof(Castelog.metodos) !== "undefined")
         && (typeof(Castelog.metodos.un_modulo_exportado) === "function")) {
-            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder" );
+            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www" );
             envs.push("Castelog.modulos[" + JSON.stringify(name) + "].value"); 
         }
         // console.log("Exportado módulo calo " + JSON.stringify(name) + " en:\n  - " + envs.join("\n  - "));
@@ -348,7 +348,7 @@ window.elementos_soportados = ordenar_y_adaptar_elementos_soportados( { "<addres
 (function(factory_original, filename, metadata) {
     try {
         const require_ = (typeof require === "function") ? require : function(id) { return ((typeof(require) === 'function') ? require : (...args) => {
-    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder");
+    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www");
 })(id);
 };
         const module_ = (typeof module !== "undefined") ? module : { exports:undefined };
@@ -376,7 +376,7 @@ window.elementos_soportados = ordenar_y_adaptar_elementos_soportados( { "<addres
         if((typeof(Castelog) !== "undefined")
         && (typeof(Castelog.metodos) !== "undefined")
         && (typeof(Castelog.metodos.un_modulo_exportado) === "function")) {
-            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder" );
+            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www" );
             envs.push("Castelog.modulos[" + JSON.stringify(name) + "].value"); 
         }
         // console.log("Exportado módulo calo " + JSON.stringify(name) + " en:\n  - " + envs.join("\n  - "));
@@ -406,7 +406,7 @@ this.estilos = ""; }
 (function(factory_original, filename, metadata) {
     try {
         const require_ = (typeof require === "function") ? require : function(id) { return ((typeof(require) === 'function') ? require : (...args) => {
-    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder");
+    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www");
 })(id);
 };
         const module_ = (typeof module !== "undefined") ? module : { exports:undefined };
@@ -434,7 +434,7 @@ this.estilos = ""; }
         if((typeof(Castelog) !== "undefined")
         && (typeof(Castelog.metodos) !== "undefined")
         && (typeof(Castelog.metodos.un_modulo_exportado) === "function")) {
-            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder" );
+            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www" );
             envs.push("Castelog.modulos[" + JSON.stringify(name) + "].value"); 
         }
         // console.log("Exportado módulo calo " + JSON.stringify(name) + " en:\n  - " + envs.join("\n  - "));
@@ -1120,7 +1120,7 @@ throw error;
 (function(factory_original, filename, metadata) {
     try {
         const require_ = (typeof require === "function") ? require : function(id) { return ((typeof(require) === 'function') ? require : (...args) => {
-    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder");
+    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www");
 })(id);
 };
         const module_ = (typeof module !== "undefined") ? module : { exports:undefined };
@@ -1148,7 +1148,7 @@ throw error;
         if((typeof(Castelog) !== "undefined")
         && (typeof(Castelog.metodos) !== "undefined")
         && (typeof(Castelog.metodos.un_modulo_exportado) === "function")) {
-            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder" );
+            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www" );
             envs.push("Castelog.modulos[" + JSON.stringify(name) + "].value"); 
         }
         // console.log("Exportado módulo calo " + JSON.stringify(name) + " en:\n  - " + envs.join("\n  - "));
@@ -1494,7 +1494,7 @@ throw error;
 (function(factory_original, filename, metadata) {
     try {
         const require_ = (typeof require === "function") ? require : function(id) { return ((typeof(require) === 'function') ? require : (...args) => {
-    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder");
+    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www");
 })(id);
 };
         const module_ = (typeof module !== "undefined") ? module : { exports:undefined };
@@ -1522,7 +1522,7 @@ throw error;
         if((typeof(Castelog) !== "undefined")
         && (typeof(Castelog.metodos) !== "undefined")
         && (typeof(Castelog.metodos.un_modulo_exportado) === "function")) {
-            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder" );
+            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www" );
             envs.push("Castelog.modulos[" + JSON.stringify(name) + "].value"); 
         }
         // console.log("Exportado módulo calo " + JSON.stringify(name) + " en:\n  - " + envs.join("\n  - "));
@@ -1542,16 +1542,6 @@ window.VistaDeInstanciaDeComponente = Castelog.metodos.un_componente_vue2("Vista
   function(component) {return { props:{ uuid:{ type:String,
 default:function() {try {
 return Castelog.metodos.un_texto_aleatorio(20, undefined);
-} catch(error) {
-console.log(error);
-throw error;
-}
-
-}
-},
-plantilla:{ type:String,
-default:function() {try {
-return "";
 } catch(error) {
 console.log(error);
 throw error;
@@ -1715,7 +1705,7 @@ throw error;
 (function(factory_original, filename, metadata) {
     try {
         const require_ = (typeof require === "function") ? require : function(id) { return ((typeof(require) === 'function') ? require : (...args) => {
-    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder");
+    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www");
 })(id);
 };
         const module_ = (typeof module !== "undefined") ? module : { exports:undefined };
@@ -1743,7 +1733,7 @@ throw error;
         if((typeof(Castelog) !== "undefined")
         && (typeof(Castelog.metodos) !== "undefined")
         && (typeof(Castelog.metodos.un_modulo_exportado) === "function")) {
-            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder" );
+            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www" );
             envs.push("Castelog.modulos[" + JSON.stringify(name) + "].value"); 
         }
         // console.log("Exportado módulo calo " + JSON.stringify(name) + " en:\n  - " + envs.join("\n  - "));
@@ -1763,16 +1753,6 @@ window.VistaDeInstanciaDeComponente = Castelog.metodos.un_componente_vue2("Vista
   function(component) {return { props:{ uuid:{ type:String,
 default:function() {try {
 return Castelog.metodos.un_texto_aleatorio(20, undefined);
-} catch(error) {
-console.log(error);
-throw error;
-}
-
-}
-},
-plantilla:{ type:String,
-default:function() {try {
-return "";
 } catch(error) {
 console.log(error);
 throw error;
@@ -1936,7 +1916,7 @@ throw error;
 (function(factory_original, filename, metadata) {
     try {
         const require_ = (typeof require === "function") ? require : function(id) { return ((typeof(require) === 'function') ? require : (...args) => {
-    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder");
+    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www");
 })(id);
 };
         const module_ = (typeof module !== "undefined") ? module : { exports:undefined };
@@ -1964,7 +1944,7 @@ throw error;
         if((typeof(Castelog) !== "undefined")
         && (typeof(Castelog.metodos) !== "undefined")
         && (typeof(Castelog.metodos.un_modulo_exportado) === "function")) {
-            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder" );
+            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www" );
             envs.push("Castelog.modulos[" + JSON.stringify(name) + "].value"); 
         }
         // console.log("Exportado módulo calo " + JSON.stringify(name) + " en:\n  - " + envs.join("\n  - "));
@@ -1987,7 +1967,7 @@ window.EstiloShellverGuiConsoleSpecificationV1 = Castelog.metodos.una_insercion_
 (function(factory_original, filename, metadata) {
     try {
         const require_ = (typeof require === "function") ? require : function(id) { return ((typeof(require) === 'function') ? require : (...args) => {
-    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder");
+    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www");
 })(id);
 };
         const module_ = (typeof module !== "undefined") ? module : { exports:undefined };
@@ -2015,7 +1995,7 @@ window.EstiloShellverGuiConsoleSpecificationV1 = Castelog.metodos.una_insercion_
         if((typeof(Castelog) !== "undefined")
         && (typeof(Castelog.metodos) !== "undefined")
         && (typeof(Castelog.metodos.un_modulo_exportado) === "function")) {
-            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder" );
+            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www" );
             envs.push("Castelog.modulos[" + JSON.stringify(name) + "].value"); 
         }
         // console.log("Exportado módulo calo " + JSON.stringify(name) + " en:\n  - " + envs.join("\n  - "));
@@ -2026,7 +2006,7 @@ window.EstiloShellverGuiConsoleSpecificationV1 = Castelog.metodos.una_insercion_
 })(function(require, module, __filename, __dirname) {
     try {
         
-window.EstiloShellverGuiConsoleSpecificationV2 = Castelog.metodos.una_insercion_de_estilos_en_cascada("shellver-gui-tester-specification-v2", ( ".GuiTester .panel_de_elementos {\n      position: relative;\n    }\n    .GuiTester .lista_de_elementos_soportados {\n    }\n    .GuiTester .lista_de_elementos_usados {\n      \n    }\n    .GuiTester .horizontal_layout {\n      display: flex;\n      flex-direction: row;\n    }\n    .GuiTester ul,li {\n    }\n    .GuiTester .w_100 {\n      width: 100%;\n    }\n    .GuiTester .w_auto {\n      min-width: 8px;\n      width: auto;\n    }\n    .GuiTester table {\n      border-collapse: collapse;\n    }\n    .GuiTester td {\n      vertical-align: top;\n    }\n    .GuiTester th {\n      text-align: left;\n      background-color: #333;\n      color: white;\n      padding: 8px;\n      border-left: 3px solid #CCC;\n      min-width: 30px;\n    }\n    .GuiTester textarea {\n      background-color: default;\n      color: default;\n    }\n    .GuiTester .nopad {\n      padding: 1px;\n    }\n    .GuiTester .noshow {\n      display: none;\n    }\n    .GuiTester .nowrap {\n      white-space: nowrap;\n    }\n    .win7 select {\n      padding: 3px !important;\n    }\n    .win7 .draggable {\n      cursor: grab;\n    }\n    .win7.GuiTester td,\n    .win7.GuiTester table {\n      border: 0px none #333 !important;\n    }\n    .win7 [role=\"tabpanel\"] {\n      border: 1px solid #8e8f8f;\n      box-shadow: 0 0 3px black;\n      padding: 2px;\n    }\n    win7 [role=\"button\"].disabled, .win7 button.disabled {\n      background: #f4f4f4;\n      border-color: #aeb2b5;\n      border-color: #aeb2b5;\n    }\n    .win7 menu[role=\"tablist\"] button.disabled {\n      opacity: 0.6;\n    }\n    .EditorDeInstanciaDeComponente table {\n      width: 100%;\n\n    }\n    .EditorDeInstanciaDeComponente button,\n     select {\n      font-size: 10px !important;\n    }\n    .win7.GuiTester button,\n    .win7.GuiTester textarea,\n    .win7.GuiTester input,\n    .win7.GuiTester select {\n      min-width: 20px;\n      min-height: 20px;\n      height: auto;\n      font-size: 9px !important;\n      padding: 2px;\n    }\n    .win7 [role=\"tabpanel\"] {\n      margin-bottom: 0px;\n    }\n    .win7 span.texto_de_icono {\n      font-size: 9px;\n    }\n    .win7.GuiTester textarea.editor_de_codigo {\n      min-height: 160px !important;\n    }\n    .win7.GuiTester a {\n      color: blue !important;\n      text-decoration: underline !important;\n      cursor: pointer !important;\n    }\n    .win7 .dialog_window {\n      position: absolute;\n      top: 4px;\n      z-index: 9999;\n      left: 4px;\n      bottom: auto;\n      right: 4px;\n    }\n    .win7 .dialog_window > .window-body {\n      overflow: scroll;\n    }\n    .mensaje_de_error {\n      color: #900;\n      font-size: 9px !important;\n    }\n    .win7 .separacion_de_subelementos {\n      border-left: 0px solid #333;\n      margin-left: 0px;\n      padding-left: 0px;\n      margin-top: 0px;\n      padding-top:1px;\n    }\n    .win7 .texto_pequenio {\n      font-size: 10px !important;\n    }\n    .win7.GuiTester .boton_de_roadmap {\n      z-index:9999;\n    }\n    .win7 .disabled {\n      user-select : none;\n      -moz-user-select : none;\n      -webkit-user-select : none;\n      color: gray;\n      cursor: pointer;\n    }\n    .win7 .titulo_de_componente {\n      background-color: #333;\n      color: white;\n      padding: 3px;\n      font-size: 9px;\n      margin-bottom: 3px; \n       background: rgb(2,0,36);\n       background: linear-gradient(145deg, rgba(2,0,36,1) 0%, rgba(57,70,108,1) 5%, rgba(139,175,217,1) 67%); \n    }\n    .win7 .caja_de_componente {\n      \n    }\n    .win7 .caja_de_componente.selected {\n      \n    }\n    .win7 .window footer, .win7 .window-footer{\n      padding: 4px;\n    }\n    .win7 .title-bar .title-bar-text,\n    .win7 .window-body {\n      font-size: 9px;\n    }\n    .win7 {\n      font-size: 9px;\n    }\n    .win7 ul.tree-view {\n      font-size: 9px;\n    }\n    .win7 .panel_de_busqueda_de_componente {\n      background: #FFFC;\n      padding: 1px;\n      box-shadow: 0 0 4px black;\n      border: 1px solid #DDD;\n      border-radius: 2pt;\n      overflow: hidden;\n    }\n    .win7 .panel_de_busqueda_de_componente.posicion_absoluta {\n      position: absolute;\n      top: auto;\n      z-index: 9999;\n      right: 0;\n      left: 0;\n      background: #FFFC;\n      padding: 1px;\n      box-shadow: 0 0 4px black;\n      border: 1px solid #DDD;\n      border-radius: 2pt;\n      overflow: hidden;\n    }\n    .win7 details > summary {\n      margin-left:15px;\n    }\n    .win7 ul.tree-view {\n      padding: 0px;\n    }\n    .win7 ul.tree-view ul {\n      padding-left: 10px;\n    }\n    .win7 .window.error_window {\n      opacity: 1;\n    }\n    .win7 .window.error_window::before,\n    .win7 .window.error_window .title-bar {\n      background: linear-gradient(90deg, hsla(0, 0%, 100%, .4), rgba(0, 0, 0, .1), hsla(0, 0%, 100%, .2)), linear-gradient(55deg, transparent, rgba(0, 0, 0, .1) 20%, rgba(0, 0, 0, .1) 50%, transparent 53%), #660404;\n    }\n    .win7 .window.error_window .window-body {\n      background-color: #181c41;\n      color: yellow;\n      text-shadow: 0.2px 0.2px 1px black;\n      padding: 2px;\n    }\n    .win7 .window.error_window .window-body .codigo {\n      font-family: monospace;\n      font-size:7px;\n      color: #0F0;\n      padding-top:10px;\n      padding-bottom:10px;\n      padding:2px;\n      background-color:#111;\n      border: 1px solid silver;\n      white-space: pre-wrap;\n      white-space: -moz-pre-wrap;\n      white-space: -pre-wrap;\n      white-space: -o-pre-wrap;\n      word-wrap: break-word;\n    }\n    .win7 .item_de_error {\n      padding:5px;\n    }\n    .win7 .error_window_box {\n      position: relative;\n    }\n    .win7 .error_window_box .error_window {\n      position: fixed;\n      top: auto;\n      left: 4px;\n      right: 4px;\n      bottom: 4px;\n      z-index:9999;\n      opacity: 0.9;\n    }\n    .win7 .error_window_box .error_window:hover {\n      opacity: 1;\n    }\n    .win7 .guia_de_referencia h1,\n    .win7 .guia_de_referencia h2,\n    .win7 .guia_de_referencia h3,\n    .win7 .guia_de_referencia h4,\n    .win7 .guia_de_referencia h5,\n    .win7 .guia_de_referencia h6 {\n      font-size: 10px;\n    }\n    .win7 .guia_de_referencia pre {\n      background-color: #333;\n      color: white;\n    }\n\n\n\n\n\n\n\n" ));
+window.EstiloShellverGuiConsoleSpecificationV2 = Castelog.metodos.una_insercion_de_estilos_en_cascada("shellver-gui-tester-specification-v2", ( ".GuiTester .panel_de_elementos {\n      position: relative;\n    }\n    .GuiTester .lista_de_elementos_soportados {\n    }\n    .GuiTester .lista_de_elementos_usados {\n      \n    }\n    .GuiTester .horizontal_layout {\n      display: flex;\n      flex-direction: row;\n    }\n    .GuiTester ul,li {\n    }\n    .GuiTester .w_100 {\n      width: 100%;\n    }\n    .GuiTester .w_auto {\n      min-width: 8px;\n      width: auto;\n    }\n    .GuiTester table {\n      border-collapse: collapse;\n    }\n    .GuiTester td {\n      vertical-align: top;\n    }\n    .GuiTester th {\n      text-align: left;\n      background-color: #333;\n      color: white;\n      padding: 8px;\n      border-left: 3px solid #CCC;\n      min-width: 30px;\n    }\n    .GuiTester textarea {\n      background-color: default;\n      color: default;\n    }\n    .GuiTester .nopad {\n      padding: 1px;\n    }\n    .GuiTester .noshow {\n      display: none;\n    }\n    .GuiTester .nowrap {\n      white-space: nowrap;\n    }\n    .win7 select {\n      padding: 3px !important;\n    }\n    .win7 .draggable {\n      cursor: grab;\n    }\n    .win7.GuiTester td,\n    .win7.GuiTester table {\n      border: 0px none #333 !important;\n    }\n    .win7 [role=\"tabpanel\"] {\n      border: 1px solid #8e8f8f;\n      box-shadow: 0 0 3px black;\n      padding: 2px;\n    }\n    win7 [role=\"button\"].disabled, .win7 button.disabled {\n      background: #f4f4f4;\n      border-color: #aeb2b5;\n      border-color: #aeb2b5;\n    }\n    .win7 menu[role=\"tablist\"] button.disabled {\n      opacity: 0.6;\n    }\n    .EditorDeInstanciaDeComponente table {\n      width: 100%;\n\n    }\n    .EditorDeInstanciaDeComponente button,\n     select {\n      font-size: 10px !important;\n    }\n    .win7.GuiTester button,\n    .win7.GuiTester textarea,\n    .win7.GuiTester input,\n    .win7.GuiTester select {\n      min-width: 20px;\n      min-height: 20px;\n      height: auto;\n      font-size: 9px !important;\n      padding: 2px;\n    }\n    .win7 [role=\"tabpanel\"] {\n      margin-bottom: 0px;\n    }\n    .win7 span.texto_de_icono {\n      font-size: 9px;\n    }\n    .win7.GuiTester textarea.editor_de_codigo {\n      min-height: 160px !important;\n    }\n    .win7.GuiTester a {\n      color: blue !important;\n      text-decoration: underline !important;\n      cursor: pointer !important;\n    }\n    .win7 .dialog_window {\n      position: absolute;\n      top: 4px;\n      z-index: 9999;\n      left: 4px;\n      bottom: auto;\n      right: 4px;\n    }\n    .win7 .dialog_window > .window-body {\n      overflow: scroll;\n    }\n    .mensaje_de_error {\n      color: #900;\n      font-size: 9px !important;\n    }\n    .win7 .separacion_de_subelementos {\n      border-left: 0px solid #333;\n      margin-left: 0px;\n      padding-left: 0px;\n      margin-top: 0px;\n      padding-top:1px;\n    }\n    .win7 .texto_pequenio {\n      font-size: 10px !important;\n    }\n    .win7.GuiTester .boton_de_roadmap {\n      z-index:9999;\n    }\n    .win7 .disabled {\n      user-select : none;\n      -moz-user-select : none;\n      -webkit-user-select : none;\n      color: gray;\n      cursor: pointer;\n    }\n    .win7 .titulo_de_componente {\n      background-color: #333;\n      color: white;\n      padding: 8px;\n      font-size: 9px;\n      margin-bottom: 3px; \n       background: rgb(2,0,36);\n       background: linear-gradient(145deg, rgba(2,0,36,1) 0%, rgba(57,70,108,1) 5%, rgba(139,175,217,1) 67%); \n       box-shadow: inset 1px 0px 0px #333, inset 0px 1px 0px #333,inset -1px 0px 0px #333, inset 0px -1px 0px #333;\n    }\n    .win7 .caja_de_componente {\n      \n    }\n    .win7 .caja_de_componente.selected {\n      \n    }\n    .win7 .window footer, .win7 .window-footer{\n      padding: 4px;\n    }\n    .win7 .title-bar .title-bar-text,\n    .win7 .window-body {\n      font-size: 9px;\n    }\n    .win7 {\n      font-size: 9px;\n    }\n    .win7 ul.tree-view {\n      font-size: 9px;\n    }\n    .win7 .panel_de_busqueda_de_componente {\n      background: #FFFC;\n      padding: 1px;\n      box-shadow: 0 0 4px black;\n      border: 1px solid #DDD;\n      border-radius: 2pt;\n      overflow: hidden;\n    }\n    .win7 .panel_de_busqueda_de_componente.posicion_absoluta {\n      position: absolute;\n      top: auto;\n      z-index: 9999;\n      right: 0;\n      left: 0;\n      background: #FFFC;\n      padding: 1px;\n      box-shadow: 0 0 4px black;\n      border: 1px solid #DDD;\n      border-radius: 2pt;\n      overflow: hidden;\n    }\n    .win7 details > summary {\n      margin-left:15px;\n    }\n    .win7 ul.tree-view {\n      padding: 0px;\n    }\n    .win7 ul.tree-view ul {\n      padding-left: 10px;\n    }\n    .win7 .window.error_window {\n      opacity: 1;\n    }\n    .win7 .window.error_window::before,\n    .win7 .window.error_window .title-bar {\n      background: linear-gradient(90deg, hsla(0, 0%, 100%, .4), rgba(0, 0, 0, .1), hsla(0, 0%, 100%, .2)), linear-gradient(55deg, transparent, rgba(0, 0, 0, .1) 20%, rgba(0, 0, 0, .1) 50%, transparent 53%), #660404;\n    }\n    .win7 .window.error_window .window-body {\n      background-color: #181c41;\n      color: yellow;\n      text-shadow: 0.2px 0.2px 1px black;\n      padding: 2px;\n    }\n    .win7 .window.error_window .window-body .codigo {\n      font-family: monospace;\n      font-size:7px;\n      color: #0F0;\n      padding-top:10px;\n      padding-bottom:10px;\n      padding:2px;\n      background-color:#111;\n      border: 1px solid silver;\n      white-space: pre-wrap;\n      white-space: -moz-pre-wrap;\n      white-space: -pre-wrap;\n      white-space: -o-pre-wrap;\n      word-wrap: break-word;\n    }\n    .win7 .item_de_error {\n      padding:5px;\n    }\n    .win7 .error_window_box {\n      position: relative;\n    }\n    .win7 .error_window_box .error_window {\n      position: fixed;\n      top: auto;\n      left: 4px;\n      right: 4px;\n      bottom: 4px;\n      z-index:9999;\n      opacity: 0.9;\n    }\n    .win7 .error_window_box .error_window:hover {\n      opacity: 1;\n    }\n    .win7 .guia_de_referencia h1,\n    .win7 .guia_de_referencia h2,\n    .win7 .guia_de_referencia h3,\n    .win7 .guia_de_referencia h4,\n    .win7 .guia_de_referencia h5,\n    .win7 .guia_de_referencia h6 {\n      font-size: 10px;\n    }\n    .win7 .guia_de_referencia pre {\n      background-color: #333;\n      color: white;\n    }\n    .win7 ul.tree-view.has-container,\n    .win7 table,\n    .win7 .window-body,\n    .win7 [role=\"tabpanel\"] {\n      \n    }\n\n\n\n\n\n" ));
     } catch(error) {
         console.error('Hubo errores al cargar el fichero ' + "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib/EstiloShellverGuiConsoleSpecificationV2.js" + ':', error);
         throw error;
@@ -2038,7 +2018,7 @@ window.EstiloShellverGuiConsoleSpecificationV2 = Castelog.metodos.una_insercion_
 (function(factory_original, filename, metadata) {
     try {
         const require_ = (typeof require === "function") ? require : function(id) { return ((typeof(require) === 'function') ? require : (...args) => {
-    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder");
+    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www");
 })(id);
 };
         const module_ = (typeof module !== "undefined") ? module : { exports:undefined };
@@ -2066,7 +2046,7 @@ window.EstiloShellverGuiConsoleSpecificationV2 = Castelog.metodos.una_insercion_
         if((typeof(Castelog) !== "undefined")
         && (typeof(Castelog.metodos) !== "undefined")
         && (typeof(Castelog.metodos.un_modulo_exportado) === "function")) {
-            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/gui-builder" );
+            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester/lib", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www" );
             envs.push("Castelog.modulos[" + JSON.stringify(name) + "].value"); 
         }
         // console.log("Exportado módulo calo " + JSON.stringify(name) + " en:\n  - " + envs.join("\n  - "));
@@ -2166,7 +2146,7 @@ console.log(error);}
 (function(factory_original, filename, metadata) {
     try {
         const require_ = (typeof require === "function") ? require : function(id) { return ((typeof(require) === 'function') ? require : (...args) => {
-    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester", "/home/carlos/Escritorio/Nuevo2/gui-builder");
+    return Castelog.metodos.un_modulo_importado(id, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www");
 })(id);
 };
         const module_ = (typeof module !== "undefined") ? module : { exports:undefined };
@@ -2194,7 +2174,7 @@ console.log(error);}
         if((typeof(Castelog) !== "undefined")
         && (typeof(Castelog.metodos) !== "undefined")
         && (typeof(Castelog.metodos.un_modulo_exportado) === "function")) {
-            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester", "/home/carlos/Escritorio/Nuevo2/gui-builder" );
+            Castelog.metodos.un_modulo_exportado(name, output, factory, "/home/carlos/Escritorio/Nuevo2/gui-builder/src/components/gui-tester", "/home/carlos/Escritorio/Nuevo2/semillas/semillas-grow-barato.items/www" );
             envs.push("Castelog.modulos[" + JSON.stringify(name) + "].value"); 
         }
         // console.log("Exportado módulo calo " + JSON.stringify(name) + " en:\n  - " + envs.join("\n  - "));
@@ -2248,428 +2228,313 @@ const GuiTester = Castelog.metodos.un_componente_vue2("GuiTester",
  + "      </div>"
  + "      <div class=\"window-body\" style=\"padding: 4px;\">"
  + "        <div style=\"position:relative;\">"
- + "          <section class=\"tabs\">"
- + "            <menu role=\"tablist\">"
- + "              <button role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_navegacion_1 === 'inicio'\" v-on:click=\"() => { seleccionar_pestania_de_navegacion_1('inicio') }\">"
- + "                🪟"
- + "              </button>"
- + "              <button :class=\"{disabled: false}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_navegacion_1 === 'apps'\" v-on:click=\"() => { seleccionar_pestania_de_navegacion_1('apps'); }\">"
- + "                ⚡ <span class=\"texto_de_icono\"></span>"
- + "              </button>"
- + "              <button :class=\"{disabled: false}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_navegacion_1 === 'componentes'\" v-on:click=\"() => { seleccionar_pestania_de_navegacion_1('componentes'); }\">"
- + "                🧩 <span class=\"texto_de_icono\"></span>"
- + "              </button>"
- + "              <button :class=\"{disabled: false}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_navegacion_1 === 'datos'\" v-on:click=\"() => { seleccionar_pestania_de_navegacion_1('datos') }\">"
- + "                🔴 <span class=\"texto_de_icono\"></span>"
- + "              </button>"
- + "              <button :class=\"{disabled: false}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_navegacion_1 === 'traducciones'\" v-on:click=\"() => { seleccionar_pestania_de_navegacion_1('traducciones'); }\">"
- + "                ㊍ <span class=\"texto_de_icono\"></span>"
- + "              </button>"
- + "              <button :class=\"{disabled: false}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_navegacion_1 === 'rutas'\" v-on:click=\"() => { seleccionar_pestania_de_navegacion_1('rutas'); }\">"
- + "                🏁 <span class=\"texto_de_icono\"></span>"
- + "              </button>"
- + "              <button :class=\"{disabled: false}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_navegacion_1 === 'ficheros'\" v-on:click=\"() => { seleccionar_pestania_de_navegacion_1('ficheros'); }\">"
- + "                🗄 <span class=\"texto_de_icono\"></span>"
- + "              </button>"
- + "              <button :class=\"{disabled: false}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_navegacion_1 === 'descargas'\" v-on:click=\"() => { seleccionar_pestania_de_navegacion_1('descargas'); }\">"
- + "                🌟 <span class=\"texto_de_icono\"></span>"
- + "              </button>"
- + "            </menu>"
- + "          </section>"
- + "          <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania_de_navegacion_1 === 'inicio'\">"
- + "            <GuiaDeReferencias ref=\"guia_de_referencias\" />"
- + "          </article>"
- + "          <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania_de_navegacion_1 === 'datos'\">"
- + "            <div class=\"titulo_de_componente\">🔴 Datos</div>"
- + "            <div style=\"padding:2px;padding-top:4px;\">"
+ + "          <div style=\"padding:2px;padding-top:4px;\">"
+ + "            <section class=\"tabs\">"
+ + "              <menu role=\"tablist\">"
+ + "                <button :class=\"{disabled: typeof esta_seleccionada_pestania_de_componente === 'string'}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_componente === 0\" v-on:click=\"() => { seleccionar_pestania_de_componente(0); }\">"
+ + "                  ✱ <span class=\"texto_de_icono\"></span>"
+ + "                </button>"
+ + "                <button :class=\"{disabled: typeof esta_seleccionada_pestania_de_componente === 'string'}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_componente === 2\" v-on:click=\"() => { seleccionar_pestania_de_componente(2); }\">"
+ + "                  📂 <span class=\"texto_de_icono\"></span>"
+ + "                </button>"
+ + "                <button :class=\"{disabled: typeof esta_seleccionada_pestania_de_componente === 'string'}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_componente === 1\" v-on:click=\"() => { seleccionar_pestania_de_componente(1); }\">"
+ + "                  ❓ <span class=\"texto_de_icono\"></span>"
+ + "                </button>"
+ + "                <button role=\"tab\" :aria-selected=\"typeof esta_seleccionada_pestania_de_componente === 'string'\" v-if=\"typeof esta_editando_pestania === 'string'\" style=\"max-width:80px;overflow:hidden;\" :title=\"esta_editando_pestania\" v-on:click=\"() => { seleccionar_pestania_de_componente(esta_editando_pestania) }\">"
+ + "                  <span class=\"texto_de_icono\" style=\"display:inline-block;overflow:hidden;white-space:nowrap;text-overflow:'...';max-width:70px;text-align:center;width:100%;\">{{ esta_editando_pestania }}</span>"
+ + "                </button>"
+ + "              </menu>"
+ + "            </section>"
+ + "            <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania_de_componente === 1\">"
+ + "              <GuiaDeReferencias ref=\"guia_de_referencias\" />"
+ + "            </article>"
+ + "            <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania_de_componente === 0\">"
+ + "              <div class=\"titulo_de_componente\">Disponibles: <b>{{ componentes.length }}</b></div>"
+ + "              <div class=\"horizontal_layout\" style=\"justify-content: space-between;margin-bottom:1px;\">"
+ + "                <button class=\"nowrap\" style=\"flex-grow: 1;\" v-on:click=\"() => abrir_dialogo_de_crear_componente()\"><span style=\"font-size:7px;\"></span>📄 Nuevo</button>"
+ + "                <button class=\"nowrap\" style=\"flex-grow: 1; margin-left:2px;\" v-on:click=\"() => abrir_dialogo_de_crear_componente_por_prototipo()\"><span style=\"font-size:7px;\"></span>📄»📄 Prototipo</button>"
+ + "                <button class=\"nowrap\" style=\"flex-grow: 1; margin-left:2px;\" v-on:click=\"() => abrir_dialogo_de_crear_componente_por_url()\"><span style=\"font-size:7px;\"></span>🌐»📄 URL</button>"
+ + "                <button class=\"nowrap\" style=\"flex-grow: 1; margin-left:2px;\" v-on:click=\"() => abrir_dialogo_de_crear_componente_por_fichero()\"><span style=\"font-size:7px;\"></span>💻»📄 Fichero</button>"
+ + "              </div>"
+ + "              <input class=\"w_100\" type=\"text\" placeholder=\"Buscar componente disponible\" v-model=\"filtro_de_componentes\" style=\"margin-bottom:1px;\"/>"
+ + "              <div class=\"horizontal_layout\" v-for=\"componente, componente_index in componentes_filtrados\" v-bind:key=\"'componente_disponible_' + componente_index\">"
+ + "                <template v-if=\"componente.nombre\">"
+ + "                  <button class=\"w_100 nopad\" v-on:click=\"() => seleccionar_pestania_de_componente(componente.nombre)\">{{ componente.nombre }}</button>"
+ + "                  <button class=\"w_auto nopad nowrap\" style=\"margin-left:2px;\" v-on:click=\"() => abrir_dialogo_de_eliminar_componente(componente.nombre)\">"
+ + "                    ❌ <span>Eliminar</span>"
+ + "                  </button>"
+ + "                </template>"
+ + "              </div>"
+ + "            </article>"
+ + "            <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania_de_componente === 2\">"
+ + "              <div class=\"titulo_de_componente\">Abiertos: <b>{{ componentes_abiertos.length }}</b></div>"
+ + "              <input class=\"w_100\" type=\"text\" placeholder=\"Buscar componente abierto\" v-model=\"filtro_de_componentes_abiertos\" />"
+ + "              <table class=\"w_100\">"
+ + "                <tbody v-for=\"componente_nombre, componente_index in componentes_abiertos_filtrados\" v-bind:key=\"'componente_abierto_' + componente_index\">"
+ + "                  <tr v-if=\"componente_nombre\">"
+ + "                    <td class=\"w_100\">"
+ + "                      <button class=\"w_100 nopad\" v-on:click=\"() => seleccionar_pestania_de_componente(componente_nombre)\">"
+ + "                        {{ componente_nombre }}"
+ + "                      </button>"
+ + "                    </td>"
+ + "                    <td class=\"w_auto\">"
+ + "                      <button class=\"w_auto nopad nowrap\" v-on:click=\"() => cerrar_pestania_de_componente(componente_nombre)\">"
+ + "                        ❌ <span>Cerrar</span>"
+ + "                      </button>"
+ + "                    </td>"
+ + "                  </tr>"
+ + "                </tbody>"
+ + "              </table>"
+ + "            </article>"
+ + "            <article role=\"tabpanel\" class=\"nopad\" v-if=\"typeof esta_seleccionada_pestania_de_componente === 'string'\">"
+ + "              <div class=\"titulo_de_componente\">Editando: <b>{{ esta_editando_pestania }}</b></div>"
  + "              <section class=\"tabs\">"
  + "                <menu role=\"tablist\">"
- + "                  <button :class=\"{disabled: false}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_bd === 1\" v-on:click=\"() => { seleccionar_pestania_de_bd(1); }\">"
- + "                    🔗 <span class=\"texto_de_icono\"></span>"
- + "                  </button>"
- + "                  <button :class=\"{disabled: false}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_bd === 2\" v-on:click=\"() => { seleccionar_pestania_de_bd(2); }\">"
- + "                    ⭕ <span class=\"texto_de_icono\"></span>"
- + "                  </button>"
- + "                  <button :class=\"{disabled: false}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_bd === 3\" v-on:click=\"() => { seleccionar_pestania_de_bd(3); }\">"
- + "                    🔴 <span class=\"texto_de_icono\"></span>"
- + "                  </button>"
+ + "                  <button role=\"tab\" :aria-selected=\"esta_seleccionada_pestania === 'vista'\" v-on:click=\"() => { esta_seleccionada_pestania = 'vista'; $forceUpdate(true); }\">🖥 <span class=\"texto_de_icono\">Vista</span></button>"
+ + "                  <button role=\"tab\" :aria-selected=\"esta_seleccionada_pestania === 'plantilla'\" v-on:click=\"() => { esta_seleccionada_pestania = 'plantilla'; $forceUpdate(true); }\">⭐ <span class=\"texto_de_icono\">Plantilla</span></button>"
+ + "                  <button role=\"tab\" :aria-selected=\"esta_seleccionada_pestania === 'logica'\" v-on:click=\"() => { esta_seleccionada_pestania = 'logica'; $forceUpdate(true); }\">💡 <span class=\"texto_de_icono\">Lógica</span></button>"
+ + "                  <button role=\"tab\" :aria-selected=\"esta_seleccionada_pestania === 'estilos'\" v-on:click=\"() => { esta_seleccionada_pestania = 'estilos'; $forceUpdate(true); }\">🎨 <span class=\"texto_de_icono\">Estilos</span></button>"
  + "                </menu>"
- + "              </section>"
- + "              <article role=\"tabpanel\" v-if=\"esta_seleccionada_pestania_de_bd === 1\">"
- + "                <div class=\"titulo_de_componente\">🔗 Conexión a base de datos</div>"
- + "                <p>No hay ninguna base de datos ahora mismo.</p>"
- + "                <button class=\"w_100\" v-on:click=\"abrir_dialogo_de_crear_conexion_de_base_de_datos\"> ➕ Crear conexión</button>"
- + "              </article>"
- + "              <article role=\"tabpanel\" v-if=\"esta_seleccionada_pestania_de_bd === 2\">"
- + "                <div class=\"titulo_de_componente\">⭕ Estructura de los datos</div>"
- + "                <p>No hay ninguna tabla ahora mismo.</p>"
- + "                <button class=\"w_100\" v-on:click=\"abrir_dialogo_de_crear_tabla_de_base_de_datos\"> ➕ Crear tabla</button>"
- + "              </article>"
- + "              <article role=\"tabpanel\" v-if=\"esta_seleccionada_pestania_de_bd === 3\">"
- + "                <div class=\"titulo_de_componente\">🔴 Información</div>"
- + "                <p>No hay ninguna fila ahora mismo.</p>"
- + "                <button class=\"w_100\" v-on:click=\"abrir_dialogo_de_crear_fila_de_base_de_datos\"> ➕ Crear fila</button>"
- + "              </article>"
- + "            </div>"
- + "          </article>"
- + "          <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania_de_navegacion_1 === 'apps'\">"
- + "            <div class=\"titulo_de_componente\">⚡ Aplicación</div>"
- + "            <div class=\"\" v-if=\"apps && apps.length\">"
- + "              <ul>"
- + "                <li v-for=\"app, app_index in apps\" v-bind:key=\"'apps-list-item-' + app_index\">"
- + "                  <div class=\"horizontal_layout\">"
- + "                    <button>"
- + "                      {{ app }}"
- + "                    </button>"
- + "                    <button>"
- + "                      ❌ <span></span>"
- + "                    </button>"
- + "                    <button>"
- + "                      ❌ <span>Eliminar</span>"
- + "                    </button>"
- + "                  </div>"
- + "                </li>"
- + "              </ul>"
- + "            </div>"
- + "            <p v-else>No hay ninguna aplicación ahora mismo.</p>"
- + "            <button class=\"w_100\" v-on:click=\"abrir_dialogo_de_crear_app\"> ➕ Crear app</button>"
- + "          </article>"
- + "          <article role=\"tabpanel\" v-if=\"esta_seleccionada_pestania_de_navegacion_1 === 'traducciones'\">"
- + "            <div class=\"titulo_de_componente\">㊍ Traducciones</div>"
- + "            <p>No hay ningún fichero de traducciones ahora mismo.</p>"
- + "            <button class=\"w_100\" v-on:click=\"abrir_dialogo_de_subir_traducciones\"> 📁 Subir traducciones</button>"
- + "          </article>"
- + "          <article role=\"tabpanel\" v-if=\"esta_seleccionada_pestania_de_navegacion_1 === 'rutas'\">"
- + "            <div class=\"titulo_de_componente\">🏁 Rutas</div>"
- + "            <p>No hay ningún fichero de rutas ahora mismo.</p>"
- + "            <button class=\"w_100\" v-on:click=\"abrir_dialogo_de_anyadir_rutas\"> ➕ Añadir ruta</button>"
- + "          </article>"
- + "          <article role=\"tabpanel\" v-if=\"esta_seleccionada_pestania_de_navegacion_1 === 'ficheros'\">"
- + "            <div class=\"titulo_de_componente\">🗄 Ficheros</div>"
- + "            <p>No hay ningún fichero ahora mismo.</p>"
- + "            <button class=\"w_100\" v-on:click=\"abrir_dialogo_de_anyadir_fichero\"> 📁 Añadir fichero</button>"
- + "          </article>"
- + "          <article role=\"tabpanel\" v-if=\"esta_seleccionada_pestania_de_navegacion_1 === 'descargas'\">"
- + "            <div class=\"titulo_de_componente\">🌟 Descargas</div>"
- + "            <p>Comprueba que todo esté en orden:</p>"
- + "            <ul>"
- + "              <li>nombre de aplicación</li>"
- + "              <li>package de aplicación</li>"
- + "              <li>componente de aplicación</li>"
- + "              <li>fichero html base de aplicación</li>"
- + "              <li>base de datos de aplicación</li>"
- + "              <li>traducciones de aplicación</li>"
- + "              <li>rutas de aplicación</li>"
- + "              <li>ficheros de aplicación</li>"
- + "              <li>opciones de descarga de aplicación</li>"
- + "            </ul>"
- + "            <button class=\"w_100\" v-on:click=\"abrir_dialogo_de_descargar_app\"> ✔ Todo ok, descargar</button>"
- + "          </article>"
- + "          <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania_de_navegacion_1 === 'componentes'\">"
- + "            <div class=\"titulo_de_componente\">🧩 Componentes</div>"
- + "            <div style=\"padding:2px;padding-top:4px;\">"
- + "              <section class=\"tabs\">"
- + "                <menu role=\"tablist\">"
- + "                  <button :class=\"{disabled: typeof esta_seleccionada_pestania_de_componente === 'string'}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_componente === 0\" v-on:click=\"() => { seleccionar_pestania_de_componente(0); }\">"
- + "                    ✱ <span class=\"texto_de_icono\"></span>"
- + "                  </button>"
- + "                  <button :class=\"{disabled: typeof esta_seleccionada_pestania_de_componente === 'string'}\" role=\"tab\" :aria-selected=\"esta_seleccionada_pestania_de_componente === 2\" v-on:click=\"() => { seleccionar_pestania_de_componente(2); }\">"
- + "                    📂 <span class=\"texto_de_icono\"></span>"
- + "                  </button>"
- + "                  <button role=\"tab\" :aria-selected=\"typeof esta_seleccionada_pestania_de_componente === 'string'\" v-if=\"typeof esta_editando_pestania === 'string'\" style=\"max-width:80px;overflow:hidden;\" :title=\"esta_editando_pestania\" v-on:click=\"() => { seleccionar_pestania_de_componente(esta_editando_pestania) }\">"
- + "                    <span class=\"texto_de_icono\" style=\"display:inline-block;overflow:hidden;white-space:nowrap;text-overflow:'...';max-width:70px;text-align:center;width:100%;\">{{ esta_editando_pestania }}</span>"
- + "                  </button>"
- + "                </menu>"
- + "              </section>"
- + "              <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania_de_componente === 0\">"
- + "                <div class=\"titulo_de_componente\"><b>Componentes disponibles</b>: {{ componentes.length }}</div>"
- + "                <div class=\"horizontal_layout\" style=\"justify-content: space-between;margin-bottom:1px;\">"
- + "                  <button class=\"nowrap\" style=\"flex-grow: 1;\" v-on:click=\"() => abrir_dialogo_de_crear_componente()\"><span style=\"font-size:7px;\"></span>📄 Nuevo</button>"
- + "                  <button class=\"nowrap\" style=\"margin-left: 4px; flex-grow: 1; margin-top:2px;\" v-on:click=\"() => abrir_dialogo_de_crear_componente_por_prototipo()\"><span style=\"font-size:7px;\"></span>📄»📄 Prototipo</button>"
- + "                  <button class=\"nowrap\" style=\"margin-left: 4px; flex-grow: 1; margin-top:2px;\" v-on:click=\"() => abrir_dialogo_de_crear_componente_por_url()\"><span style=\"font-size:7px;\"></span>🌐»📄 URL</button>"
- + "                </div>"
- + "                <input class=\"w_100\" type=\"text\" placeholder=\"Buscar componente disponible\" v-model=\"filtro_de_componentes\" />"
- + "                <table class=\"w_100\">"
- + "                  <tbody v-for=\"componente, componente_index in componentes_filtrados\" v-bind:key=\"'componente_disponible_' + componente_index\">"
- + "                    <tr v-if=\"componente.nombre\">"
- + "                      <td class=\"w_100\">"
- + "                        <button class=\"w_100 nopad\" v-on:click=\"() => seleccionar_pestania_de_componente(componente.nombre)\">{{ componente.nombre }}</button>"
- + "                      </td>"
- + "                      <td class=\"w_auto\">"
- + "                        <button class=\"w_auto nopad nowrap\" v-on:click=\"() => abrir_dialogo_de_eliminar_componente(componente.nombre)\">"
- + "                          ❌ <span>Eliminar</span>"
- + "                        </button>"
- + "                      </td>"
- + "                    </tr>"
- + "                  </tbody>"
- + "                </table>"
- + "              </article>"
- + "              <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania_de_componente === 2\">"
- + "                <div class=\"titulo_de_componente\"><b>Componentes abiertos</b>: {{ componentes_abiertos.length }}</div>"
- + "                <input class=\"w_100\" type=\"text\" placeholder=\"Buscar componente abierto\" v-model=\"filtro_de_componentes_abiertos\" />"
- + "                <table class=\"w_100\">"
- + "                  <tbody v-for=\"componente_nombre, componente_index in componentes_abiertos_filtrados\" v-bind:key=\"'componente_abierto_' + componente_index\">"
- + "                    <tr v-if=\"componente_nombre\">"
- + "                      <td class=\"w_100\">"
- + "                        <button class=\"w_100 nopad\" v-on:click=\"() => seleccionar_pestania_de_componente(componente_nombre)\">"
- + "                          {{ componente_nombre }}"
- + "                        </button>"
- + "                      </td>"
- + "                      <td class=\"w_auto\">"
- + "                        <button class=\"w_auto nopad nowrap\" v-on:click=\"() => cerrar_pestania_de_componente(componente_nombre)\">"
- + "                          ❌ <span>Cerrar</span>"
- + "                        </button>"
- + "                      </td>"
- + "                    </tr>"
- + "                  </tbody>"
- + "                </table>"
- + "              </article>"
- + "              <article role=\"tabpanel\" class=\"nopad\" v-if=\"typeof esta_seleccionada_pestania_de_componente === 'string'\">"
- + "                <div class=\"titulo_de_componente\"><b>Componente</b>: {{ esta_editando_pestania }}</div>"
- + "                <section class=\"tabs\">"
- + "                  <menu role=\"tablist\">"
- + "                    <button role=\"tab\" :aria-selected=\"esta_seleccionada_pestania === 'vista'\" v-on:click=\"() => { esta_seleccionada_pestania = 'vista'; $forceUpdate(true); }\">🖥 <span class=\"texto_de_icono\">Vista</span></button>"
- + "                    <button role=\"tab\" :aria-selected=\"esta_seleccionada_pestania === 'plantilla'\" v-on:click=\"() => { esta_seleccionada_pestania = 'plantilla'; $forceUpdate(true); }\">⭐ <span class=\"texto_de_icono\">Plantilla</span></button>"
- + "                    <button role=\"tab\" :aria-selected=\"esta_seleccionada_pestania === 'logica'\" v-on:click=\"() => { esta_seleccionada_pestania = 'logica'; $forceUpdate(true); }\">💡 <span class=\"texto_de_icono\">Lógica</span></button>"
- + "                    <button role=\"tab\" :aria-selected=\"esta_seleccionada_pestania === 'estilos'\" v-on:click=\"() => { esta_seleccionada_pestania = 'estilos'; $forceUpdate(true); }\">🎨 <span class=\"texto_de_icono\">Estilos</span></button>"
- + "                  </menu>"
- + "                  <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania === 'plantilla'\">"
- + "                    <ul class=\"tree-view \">"
- + "                      <li>"
- + "                        <details open>"
- + "                          <summary>"
- + "                            <span>En vista:</span>"
- + "                          </summary>"
- + "                          <div>"
- + "                            <EditorDeInstanciaDeComponente :tester=\"this\" :elementos-iniciales=\"elementos\" :es-elemento-raiz=\"true\" />"
- + "                          </div>"
- + "                        </details>"
- + "                      </li>"
- + "                      <li>"
- + "                        <details>"
- + "                          <summary>"
- + "                            <span>En formulario:</span>"
- + "                          </summary>"
- + "                          <div>"
- + "                            <EditorDeInstanciaDeComponente :tester=\"this\" :elementos-iniciales=\"elementos_de_formulario\" :es-elemento-raiz=\"true\" />"
- + "                          </div>"
- + "                        </details>"
- + "                      </li>"
- + "                      <li>"
- + "                        <details>"
- + "                          <summary>"
- + "                            <span>En test:</span>"
- + "                          </summary>"
- + "                          <div>"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"test_de_componente\" :placeholder=\"placeholder_de_test_de_componente\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                      </li>"
- + "                      <li>"
- + "                        <details>"
- + "                          <summary>"
- + "                            <span>En documentación:</span>"
- + "                          </summary>"
- + "                          <div style=\"position:relative;\" v-if=\"esta_editando_documentacion\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"documentacion_de_componente\" placeholder=\"Texto de documentación\"></textarea>"
- + "                            <div style=\"position:absolute;bottom:auto;right:4px;left:auto;top:4px;\">"
- + "                              <button v-on:click=\"alternar_editando_documentacion\">Ver</button>"
- + "                            </div>"
- + "                          </div>"
- + "                          <div v-else style=\"position:relative;min-height:162px;border:3px double #333;\">"
- + "                            <div style=\"padding:4px;\" v-html=\"documentacion_de_componente\"></div>"
- + "                            <div style=\"position:absolute;bottom:auto;right:4px;left:auto;top:4px;\">"
- + "                              <button v-on:click=\"alternar_editando_documentacion\">Editar</button>"
- + "                            </div>"
- + "                          </div>"
- + "                        </details>"
- + "                      </li>"
- + "                    </ul>"
- + "                  </article>"
- + "                  <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania === 'vista'\">"
- + "                    <div style=\"text-align:right;\">"
- + "                      <div class=\"titulo_de_componente\">Panel de control:</div>"
- + "                      <button class=\"\" v-on:click=\"alternar_vista\" :class=\"{active:esta_mostrando_vista}\">Componente</button>"
- + "                      <button class=\"\" v-on:click=\"alternar_formulario\" :class=\"{active:esta_mostrando_formulario}\">Formulario</button>"
- + "                      <button class=\"\" v-on:click=\"iniciar_test\" :disabled=\"esta_ejecutando_test\">Test</button>"
- + "                      <hr/>"
- + "                    </div>"
- + "                    <div v-if=\"esta_cargando_vista\">"
- + "                      <div role=\"progressbar\" class=\"animate\" style=\"position:relative;\">"
- + "                        <div :style=\"'width:' + esta_cargada_vista_en_porcentaje + '%'\"></div>"
- + "                        <span style=\"font-size:10px;color: white;text-shadow:0 0 1px white;position:absolute;top:0;left:0;right:0;text-align:center;\">Cargando componente de «{{ esta_editando_pestania }}»</span>"
- + "                      </div>"
- + "                    </div>"
- + "                    <div v-else-if=\"esta_mostrando_vista\">"
- + "                      <div class=\"titulo_de_componente\">Vista de componente:</div>"
- + "                      <VistaDeInstanciaDeComponente :tester=\"this\" :elementos-iniciales=\"elementos\" />"
- + "                    </div>"
- + "                    <div v-if=\"esta_mostrando_formulario\">"
- + "                      <hr/>"
- + "                      <div class=\"titulo_de_componente\">Formulario de componente:</div>"
- + "                      <div v-if=\"esta_cargando_formulario\">"
- + "                        <div role=\"progressbar\" class=\"animate\" style=\"position:relative;\">"
- + "                          <div :style=\"'width:' + esta_cargando_formulario_en_porcentaje + '%'\"></div>"
- + "                          <span style=\"font-size:10px;color: white;text-shadow:0 0 1px white;position:absolute;top:0;left:0;right:0;text-align:center;\">Cargando formulario de «{{ esta_editando_pestania }}»</span>"
+ + "                <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania === 'plantilla'\">"
+ + "                  <ul class=\"tree-view \">"
+ + "                    <li>"
+ + "                      <details open>"
+ + "                        <summary>"
+ + "                          <span>En vista:</span>"
+ + "                        </summary>"
+ + "                        <div>"
+ + "                          <EditorDeInstanciaDeComponente :tester=\"this\" :elementos-iniciales=\"elementos\" :es-elemento-raiz=\"true\" />"
  + "                        </div>"
+ + "                      </details>"
+ + "                    </li>"
+ + "                    <li>"
+ + "                      <details>"
+ + "                        <summary>"
+ + "                          <span>En formulario:</span>"
+ + "                        </summary>"
+ + "                        <div>"
+ + "                          <EditorDeInstanciaDeComponente :tester=\"this\" :elementos-iniciales=\"elementos_de_formulario\" :es-elemento-raiz=\"true\" />"
+ + "                        </div>"
+ + "                      </details>"
+ + "                    </li>"
+ + "                    <li>"
+ + "                      <details>"
+ + "                        <summary>"
+ + "                          <span>En test:</span>"
+ + "                        </summary>"
+ + "                        <div>"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"test_de_componente\" :placeholder=\"placeholder_de_test_de_componente\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                    </li>"
+ + "                    <li>"
+ + "                      <details>"
+ + "                        <summary>"
+ + "                          <span>En documentación:</span>"
+ + "                        </summary>"
+ + "                        <div style=\"position:relative;\" v-if=\"esta_editando_documentacion\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"documentacion_de_componente\" placeholder=\"Texto de documentación\"></textarea>"
+ + "                          <div style=\"position:absolute;bottom:auto;right:4px;left:auto;top:4px;\">"
+ + "                            <button v-on:click=\"alternar_editando_documentacion\">Ver</button>"
+ + "                          </div>"
+ + "                        </div>"
+ + "                        <div v-else style=\"position:relative;min-height:162px;border:3px double #333;\">"
+ + "                          <div style=\"padding:4px;\">"
+ + "                            <VistaDeInstanciaDeComponentePorPlantilla :tester=\"this\" :plantilla-inicial=\"documentacion_de_componente\" />"
+ + "                          </div>"
+ + "                          <div style=\"position:absolute;bottom:auto;right:4px;left:auto;top:4px;\">"
+ + "                            <button v-on:click=\"alternar_editando_documentacion\">Editar</button>"
+ + "                          </div>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                    </li>"
+ + "                  </ul>"
+ + "                </article>"
+ + "                <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania === 'vista'\">"
+ + "                  <div>"
+ + "                    <div class=\"titulo_de_componente\">Panel de control:</div>"
+ + "                    <button class=\"\" v-on:click=\"alternar_vista\" :class=\"{active:esta_mostrando_vista}\">Componente</button>"
+ + "                    <button class=\"\" v-on:click=\"alternar_formulario\" :class=\"{active:esta_mostrando_formulario}\">Formulario</button>"
+ + "                    <button class=\"\" v-on:click=\"iniciar_test\" :disabled=\"esta_ejecutando_test\">Test</button>"
+ + "                    <button class=\"\" v-on:click=\"exportar_componente\">Exportar</button>"
+ + "                  </div>"
+ + "                  <div v-if=\"esta_cargando_vista\">"
+ + "                    <hr/>"
+ + "                    <div role=\"progressbar\" class=\"animate\" style=\"position:relative;\">"
+ + "                      <div :style=\"'width:' + esta_cargada_vista_en_porcentaje + '%'\"></div>"
+ + "                      <span style=\"font-size:10px;color: white;text-shadow:0 0 1px white;position:absolute;top:0;left:0;right:0;text-align:center;\">Cargando componente de «{{ esta_editando_pestania }}»</span>"
+ + "                    </div>"
+ + "                  </div>"
+ + "                  <div v-else-if=\"esta_mostrando_vista\">"
+ + "                    <hr/>"
+ + "                    <div class=\"titulo_de_componente\">Vista de componente:</div>"
+ + "                    <VistaDeInstanciaDeComponente :tester=\"this\" :elementos-iniciales=\"elementos\" />"
+ + "                  </div>"
+ + "                  <div v-if=\"esta_mostrando_formulario\">"
+ + "                    <hr/>"
+ + "                    <div class=\"titulo_de_componente\">Formulario de componente:</div>"
+ + "                    <div v-if=\"esta_cargando_formulario\">"
+ + "                      <div role=\"progressbar\" class=\"animate\" style=\"position:relative;\">"
+ + "                        <div :style=\"'width:' + esta_cargando_formulario_en_porcentaje + '%'\"></div>"
+ + "                        <span style=\"font-size:10px;color: white;text-shadow:0 0 1px white;position:absolute;top:0;left:0;right:0;text-align:center;\">Cargando formulario de «{{ esta_editando_pestania }}»</span>"
  + "                      </div>"
- + "                      <VistaDeInstanciaDeComponente :tester=\"this\" :elementos-iniciales=\"elementos_de_formulario\" v-else />"
  + "                    </div>"
- + "                    <div v-if=\"esta_ejecutando_test\">"
- + "                      <hr/>"
- + "                      <div class=\"titulo_de_componente\">Test de componente:</div>"
- + "                      <textarea class=\"w_100\" disabled v-model=\"salida_de_test_de_componente\"></textarea>"
- + "                    </div>"
- + "                  </article>"
- + "                  <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania === 'estilos'\">"
- + "                    <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_estilo\" placeholder=\".mi_clase { color: blue; }\"></textarea>"
- + "                  </article>"
- + "                  <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania === 'logica'\">"
- + "                    <ul class=\"tree-view has-container\">"
- + "                      <li>"
- + "                        <details :open=\"esta_seleccionado_en_pre_cargar\">"
- + "                          <summary>En pre-cargar:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_precargar\" placeholder=\"hago asíncronamente this.cargar_datos().\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_propiedades\">"
- + "                          <summary>En propiedades:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_props\" :placeholder=\"placeholder_de_script_de_props\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_metodos\">"
- + "                          <summary>En métodos:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_methods\" :placeholder=\"placeholder_de_script_de_methods\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_datos\">"
- + "                          <summary>En datos:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_data\" :placeholder=\"placeholder_de_script_de_data\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_datos_observados\">"
- + "                          <summary>En datos observados:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_watch\" :placeholder=\"placeholder_de_script_de_watch\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_datos_computados\">"
- + "                          <summary>En datos computados:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_computed\" :placeholder=\"placeholder_de_script_de_computed\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_pre_crear\">"
- + "                          <summary>En pre-crear:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_beforeCreate\" :placeholder=\"placeholder_de_script_de_beforeCreate\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_post_crear\">"
- + "                          <summary>En post-crear:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_created\" :placeholder=\"placeholder_de_script_de_created\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_pre_montar\">"
- + "                          <summary>En pre-montar:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_beforeMount\" :placeholder=\"placeholder_de_script_de_beforeMount\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_post_montar\">"
- + "                          <summary>En post-montar:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_mounted\" :placeholder=\"placeholder_de_script_de_mounted\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_pre_actualizar\">"
- + "                          <summary>En pre-actualizar:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_beforeUpdate\" :placeholder=\"placeholder_de_script_de_beforeUpdate\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_post_actualizar\">"
- + "                          <summary>En post-actualizar:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_updated\" :placeholder=\"placeholder_de_script_de_updated\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_pre_desmontar\">"
- + "                          <summary>En pre-desmontar:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_beforeUnmount\" :placeholder=\"placeholder_de_script_de_beforeUnmount\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                        <details :open=\"esta_seleccionado_en_post_desmontar\">"
- + "                          <summary>En post-desmontar:</summary>"
- + "                          <div style=\"position:relative;\">"
- + "                            <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_unmounted\" :placeholder=\"placeholder_de_script_de_unmounted\"></textarea>"
- + "                          </div>"
- + "                        </details>"
- + "                      </li>"
- + "                    </ul>"
- + "                  </article>"
- + "                  <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania === 'componentes'\">"
+ + "                    <VistaDeInstanciaDeComponente :tester=\"this\" :elementos-iniciales=\"elementos_de_formulario\" v-else />"
+ + "                  </div>"
+ + "                  <div v-if=\"esta_ejecutando_test\">"
+ + "                    <hr/>"
+ + "                    <div class=\"titulo_de_componente\">Test de componente:</div>"
+ + "                    <textarea class=\"w_100\" disabled v-model=\"salida_de_test_de_componente\"></textarea>"
+ + "                  </div>"
+ + "                </article>"
+ + "                <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania === 'estilos'\">"
+ + "                  <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_estilo\" placeholder=\".mi_clase { color: blue; }\"></textarea>"
+ + "                </article>"
+ + "                <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania === 'logica'\">"
+ + "                  <ul class=\"tree-view has-container\">"
+ + "                    <li>"
+ + "                      <details :open=\"esta_seleccionado_en_pre_cargar\">"
+ + "                        <summary>En pre-cargar:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_precargar\" placeholder=\"hago asíncronamente this.cargar_datos().\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_propiedades\">"
+ + "                        <summary>En propiedades:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_props\" :placeholder=\"placeholder_de_script_de_props\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_metodos\">"
+ + "                        <summary>En métodos:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_methods\" :placeholder=\"placeholder_de_script_de_methods\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_datos\">"
+ + "                        <summary>En datos:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_data\" :placeholder=\"placeholder_de_script_de_data\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_datos_observados\">"
+ + "                        <summary>En datos observados:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_watch\" :placeholder=\"placeholder_de_script_de_watch\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_datos_computados\">"
+ + "                        <summary>En datos computados:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_computed\" :placeholder=\"placeholder_de_script_de_computed\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_pre_crear\">"
+ + "                        <summary>En pre-crear:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_beforeCreate\" :placeholder=\"placeholder_de_script_de_beforeCreate\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_post_crear\">"
+ + "                        <summary>En post-crear:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_created\" :placeholder=\"placeholder_de_script_de_created\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_pre_montar\">"
+ + "                        <summary>En pre-montar:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_beforeMount\" :placeholder=\"placeholder_de_script_de_beforeMount\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_post_montar\">"
+ + "                        <summary>En post-montar:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_mounted\" :placeholder=\"placeholder_de_script_de_mounted\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_pre_actualizar\">"
+ + "                        <summary>En pre-actualizar:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_beforeUpdate\" :placeholder=\"placeholder_de_script_de_beforeUpdate\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_post_actualizar\">"
+ + "                        <summary>En post-actualizar:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_updated\" :placeholder=\"placeholder_de_script_de_updated\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_pre_desmontar\">"
+ + "                        <summary>En pre-desmontar:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_beforeUnmount\" :placeholder=\"placeholder_de_script_de_beforeUnmount\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                      <details :open=\"esta_seleccionado_en_post_desmontar\">"
+ + "                        <summary>En post-desmontar:</summary>"
+ + "                        <div style=\"position:relative;\">"
+ + "                          <textarea class=\"w_100 editor_de_codigo\" v-model=\"script_de_unmounted\" :placeholder=\"placeholder_de_script_de_unmounted\"></textarea>"
+ + "                        </div>"
+ + "                      </details>"
+ + "                    </li>"
+ + "                  </ul>"
+ + "                </article>"
+ + "                <article role=\"tabpanel\" class=\"nopad\" v-if=\"esta_seleccionada_pestania === 'componentes'\">"
+ + "                  <table class=\"w_100\">"
+ + "                    <tbody>"
+ + "                      <tr>"
+ + "                        <td class=\"w_100\">"
+ + "                          <input class=\"w_100\" type=\"text\" placeholder=\"Buscar componente...\"/>"
+ + "                        </td>"
+ + "                        <td class=\"w_auto\">"
+ + "                          <button class=\"boton_de_icono\">🔎</button>"
+ + "                        </td>"
+ + "                      </tr>"
+ + "                    </tbody>"
+ + "                  </table>"
+ + "                  <div v-if=\"componentes && componentes.length\">"
  + "                    <table class=\"w_100\">"
+ + "                      <thead>"
+ + "                        <tr>"
+ + "                          <th>Orden</th>"
+ + "                          <th>Nombre</th>"
+ + "                        </tr>"
+ + "                      </thead>"
  + "                      <tbody>"
  + "                        <tr>"
- + "                          <td class=\"w_100\">"
- + "                            <input class=\"w_100\" type=\"text\" placeholder=\"Buscar componente...\"/>"
+ + "                          <td class=\"w_auto nowrap text_align_center\">1</td>"
+ + "                          <td class=\"w_100 nowrap\">Raíz</td>"
+ + "                        </tr>"
+ + "                      </tbody>"
+ + "                      <tbody>"
+ + "                        <tr>"
+ + "                          <td class=\"w_auto nowrap text_align_center\">2</td>"
+ + "                          <td class=\"w_100 nowrap\">Subir</td>"
+ + "                        </tr>"
+ + "                      </tbody>"
+ + "                      <tbody v-for=\"(componente, componente_index) in componentes\" v-bind:key=\"'componente-de-componente-' + componente_index\">"
+ + "                        <tr>"
+ + "                          <td class=\"w_auto nowrap text_align_center\">"
+ + "                            {{ componente_index + 1 + 2 }}"
  + "                          </td>"
- + "                          <td class=\"w_auto\">"
- + "                            <button class=\"boton_de_icono\">🔎</button>"
+ + "                          <td class=\"w_100 nowrap\">"
+ + "                            {{ componente.nombre }}"
  + "                          </td>"
  + "                        </tr>"
  + "                      </tbody>"
  + "                    </table>"
- + "                    <div v-if=\"componentes && componentes.length\">"
- + "                      <table class=\"w_100\">"
- + "                        <thead>"
- + "                          <tr>"
- + "                            <th>Orden</th>"
- + "                            <th>Nombre</th>"
- + "                          </tr>"
- + "                        </thead>"
- + "                        <tbody>"
- + "                          <tr>"
- + "                            <td class=\"w_auto nowrap text_align_center\">1</td>"
- + "                            <td class=\"w_100 nowrap\">Raíz</td>"
- + "                          </tr>"
- + "                        </tbody>"
- + "                        <tbody>"
- + "                          <tr>"
- + "                            <td class=\"w_auto nowrap text_align_center\">2</td>"
- + "                            <td class=\"w_100 nowrap\">Subir</td>"
- + "                          </tr>"
- + "                        </tbody>"
- + "                        <tbody v-for=\"(componente, componente_index) in componentes\" v-bind:key=\"'componente-de-componente-' + componente_index\">"
- + "                          <tr>"
- + "                            <td class=\"w_auto nowrap text_align_center\">"
- + "                              {{ componente_index + 1 + 2 }}"
- + "                            </td>"
- + "                            <td class=\"w_100 nowrap\">"
- + "                              {{ componente.nombre }}"
- + "                            </td>"
- + "                          </tr>"
- + "                        </tbody>"
- + "                      </table>"
- + "                    </div>"
- + "                    <div v-else>"
- + "                      <p style=\"text-align: center;\">No se encontraton componentes actualmente.</p>"
- + "                    </div>"
- + "                    <footer>"
- + "                      "
- + "                    </footer>"
- + "                  </article>"
- + "                </section>"
- + "              </article>"
- + "            </div>"
- + "          </article>"
+ + "                  </div>"
+ + "                  <div v-else>"
+ + "                    <p style=\"text-align: center;\">No se encontraton componentes actualmente.</p>"
+ + "                  </div>"
+ + "                  <footer>"
+ + "                    "
+ + "                  </footer>"
+ + "                </article>"
+ + "              </section>"
+ + "            </article>"
+ + "          </div>"
  + "          <div class=\"window active is-bright dialog_window\" v-if=\"esta_abierto_dialogo_de_eliminar_componente\">"
  + "            <div class=\"title-bar\">"
  + "              <div class=\"title-bar-text\">Eliminar componente</div>"
@@ -3809,6 +3674,14 @@ const resultado = (await eval( codigo_js ));
 this.$forceUpdate( true );
 } catch(error) {
 this.mostrar_error( error );}
+},
+exportar_componente:function() {try {
+this.$window.alert( "No disponible todavia" );
+} catch(error) {
+console.log(error);
+throw error;
+}
+
 },
 filtrar_componentes:function( valor ) {try {
 console.log('[DEBUG]', "GuiTester.methods.filtrar_componentes");

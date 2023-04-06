@@ -1,0 +1,129 @@
+asigno window.VistaDeInstanciaDeComponentePorPlantilla como un componente vue2 con nombre "VistaDeInstanciaDeComponentePorPlantilla" con plantilla {
+  <div class="VistaDeInstanciaDeComponentePorPlantilla">
+    <div v-if="esta_mostrando_componente">
+      <component v-bind:is="'GuiTesterTesterItem' + uuid"></component>
+    </div>
+  </div>
+} con lógica {
+  retorno {
+    propiedad props como {
+      uuid: {
+        propiedad type como String.
+        propiedad default como una función donde retorno un texto aleatorio de 20 caracteres.
+      },
+      tester: {
+        propiedad type como Object.
+        propiedad required como true.
+      },
+      plantillaInicial: {
+        propiedad type como String.
+        propiedad required como true.
+      },
+      logicaInicial: {
+        propiedad type como Function.
+        propiedad default como una función donde {
+          retorno {
+            método data donde {
+              retorno {}.
+            }.
+          }.
+        }.
+      },
+      estilosIniciales: {
+        propiedad type como String.
+        propiedad default como "".
+      },
+      esElementoUnico: {
+        propiedad type como Boolean.
+        propiedad default como una función donde retorno false.
+      }
+    }.
+    método data donde {
+      debugo "VistaDeInstanciaDeComponentePorPlantilla.data".
+      retorno {
+        esta_mostrando_componente: true,
+        esta_ejecutando_test: false,
+        plantilla_de_componente: this.plantillaInicial,
+        logica_de_componente: this.logicaInicial,
+        estilos_de_componente: this.estilosIniciales,
+        plantilla_calo_interna: "",
+        plantilla_js_interna: "",
+        plantilla_resultado_interno: "",
+        renderizar_dilator_id: undefined,
+        renderizar_dilator_milisegundos: 3 * 1000,
+        cerrar_error_dilator_id: undefined
+      }.
+    }.
+    propiedad methods como {
+      renderizar_con_dilacion: una función con () donde {
+        debugo "VistaDeInstanciaDeComponentePorPlantilla.methods.renderizar_con_dilacion".
+        hago clearTimeout(this.renderizar_dilator_id).
+        asigno this.renderizar_dilator_id como setTimeout(una lambda donde {
+          hago this.compilar_componente_de_test().
+          hago this.$forceUpdate(true).
+        }, this.renderizar_dilator_milisegundos).
+      },
+      mostrar_error: una función asíncrona con (error) donde {
+        debugo "VistaDeInstanciaDeComponentePorPlantilla.methods.mostrar_error".
+        @POR-MEJORAR: este algoritmo no responde al uso común de mostrar_error. Hay que adaptar la función.
+        hago clearTimeout(this.cerrar_error_dilator_id).
+        asigno this.error como error.
+        asigno this.cerrar_error_dilator_id como setTimeout(una lambda donde {
+          asigno this.error como undefined.
+        }, this.renderizar_dilator_milisegundos).
+      },
+      compilar_componente_de_test: una función asíncrona con () donde {
+        debugo "VistaDeInstanciaDeComponentePorPlantilla.methods.compilar_componente_de_test".
+        creo variable nombre_de_componente como this.nombreDeComponente.
+        asigno this.esta_mostrando_componente como false.
+        creo elementos_dom_html como this.plantilla_de_componente.
+        creo logica_de_componente como this.logica_de_componente.
+        creo estilos_de_componente como this.estilos_de_componente.
+        asigno this.plantilla_resultado_interno como cuando this.esElementoUnico entonces elementos_dom_html si no "<div>\n\n" + elementos_dom_html + "\n\n</div>".
+        ignoro que {
+          creo codigo_calo como this.plantilla_resultado_interno.
+          asigno this.plantilla_js_interna como Castelog_parser.parse("retorno un código en html con {" + codigo_calo + "}.").
+          creo codigo_js como "(function(){" + this.plantilla_js_interna + "})()".
+          asigno this.plantilla_resultado_interno como this.$window.eval(codigo_js).
+        }.
+        si nombre_de_componente imprimo "[+] Componente: " + nombre_de_componente;
+        y si no imprimo "[+] Componente no especificado...".
+        imprimo "[+] Componente: " + 'GuiTesterTesterItem' + this.uuid.
+        imprimo "   [+] Plantilla final:".
+        imprimo this.plantilla_resultado_interno.
+        imprimo "   [+] Lógica final:".
+        imprimo logica_de_componente.
+        imprimo "   [+] Estilo final:".
+        imprimo estilos_de_componente.
+        creo componente_configuracion como logica_de_componente() extendido por {
+          template: this.plantilla_resultado_interno,
+          style: estilos_de_componente,
+          style_scoped: true
+        }.
+        si nombre_de_componente {
+          hago vue.component(nombre_de_componente, componente_configuracion).
+        }.
+        hago vue.component('GuiTesterTesterItem' + this.uuid, componente_configuracion).
+        asigno this.esta_mostrando_componente como true.
+        hago this.$forceUpdate(true).
+      } en errores {
+        imprimo error.
+        asigno this.esta_mostrando_componente como true.
+        hago this.mostrar_error(error).
+      },
+      descompilar_componente_de_test: una función con () donde {
+        debugo "VistaDeInstanciaDeComponentePorPlantilla.methods.descompilar_componente_de_test".
+        elimino propiedad vue.options.components['GuiTesterTesterItem' + this.uuid].
+      }
+    }.
+    propiedad watch como {}.
+    método mounted donde {
+        debugo "VistaDeInstanciaDeComponentePorPlantilla.mounted".
+      hago this.compilar_componente_de_test().
+    }.
+    método unmounted donde {
+        debugo "VistaDeInstanciaDeComponentePorPlantilla.unmounted".
+      hago this.descompilar_componente_de_test().
+    }.
+  }.
+}.

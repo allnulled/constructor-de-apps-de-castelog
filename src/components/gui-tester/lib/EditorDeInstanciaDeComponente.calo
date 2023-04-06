@@ -3,9 +3,6 @@ asigno window.EditorDeInstanciaDeComponente como un componente vue2 con nombre "
     <div>
       <div class="panel_de_elementos horizontal_layout">
         <div class="lista_de_elementos_usados w_100">
-          <div v-if="!esta_en_elemento_raiz">
-            <button class="w_100" v-on:click="() => agregar_elemento_usado()">➕ Añadir elemento</button>
-          </div>
           <div>
             <draggable :list="elementos_usados" handle=".dragger" tag="table">
               <tbody class="w_100" v-for="elemento_usado, elemento_usado_index in elementos_usados" v-bind:key="'elemento-usado-barra-vistazo-' + elemento_usado.uuid">
@@ -14,17 +11,12 @@ asigno window.EditorDeInstanciaDeComponente como un componente vue2 con nombre "
                     <table class="w_100">
                       <tbody>
                         <tr>
-                          <td v-if="!esta_en_elemento_raiz">
+                          <td v-if="false">
                             <button class="boton_de_icono active dragger">☰</button>
                           </td>
                           <td class="w_100">
                             <button class="w_100 caja_de_componente" :class="{active:elemento_usado.esta_editando}" v-on:click="() => alternar_edicion_de_elemento_usado(elemento_usado_index)">
                               {{ elemento_usado.nombre || elemento_usado.tag }}
-                            </button>
-                          </td>
-                          <td>
-                            <button class="boton_de_icono" :class="{active:elemento_usado.esta_seleccionada_busqueda_de_componente}" v-on:click="(evento) => alternar_busqueda_de_componente(elemento_usado, evento)">
-                            🔍
                             </button>
                           </td>
                           <td>
@@ -42,41 +34,58 @@ asigno window.EditorDeInstanciaDeComponente como un componente vue2 con nombre "
                     </table>
                   </td>
                 </tr>
-                <tr v-if="elemento_usado.esta_seleccionada_busqueda_de_componente">
-                  <td colspan="1000">
-                    <SelectorDeComponenteDeGuiBuilder
-                      :acceso-de-texto-de-busqueda="{}"
-                      accesor-de-texto-de-busqueda="busqueda"
-                      :acceso-de-componentes-seleccionados="elemento_usado"
-                      accesor-de-componentes-seleccionados="tag"
-                      :al-seleccionar="() => esconder_busqueda_de_componente(elemento_usado)"
-                      :opciones="[].concat(elementos_soportados, tester.componentes)"
-                      posicion="relative"
-                      :desplegado="true">
-                    </SelectorDeComponenteDeGuiBuilder>
-                  </td>
-                </tr>
                 <tr v-if="elemento_usado && elemento_usado.esta_editando" v-bind:key="'elemento-usado-barra-esta_editando-' + (elemento_usado ? elemento_usado.uuid : elemento_usado_index)">
                   <td colspan="1000">
                     <div class="separacion_de_subelementos">
                       <section class="tabs">
                         <menu role="tablist">
-                          <button role="tab" v-on:click="() => { elemento_usado.esta_seleccionada_pestania = 'atributos'; actualizar_interfaz_de_usuario(); }" :aria-selected="elemento_usado.esta_seleccionada_pestania === 'atributos'"><span class="texto_de_icono">
-                          📎 </span></button>
-                          <button role="tab" v-on:click="() => { elemento_usado.esta_seleccionada_pestania = 'componentes'; elemento_usado.esta_seleccionado_modo = 'componentes'; actualizar_interfaz_de_usuario(); }"  :aria-selected="elemento_usado.esta_seleccionada_pestania === 'componentes'" :class="{disabled:elemento_usado.esta_seleccionado_modo !== 'componentes'}">
-                          🌲 <span class="texto_de_icono"></span></button>
+                          <div style="padding-bottom: 5px;white-space: nowrap;hidden;width:100%;padding-right: 2px;padding-left: 0;margin: 0;margin-left: 0px;padding-left: 2px;">
+                            <button style="border-radius:3pt;" class="w_100" v-on:click="() => agregar_componente_en_elemento_usado(elemento_usado_index)">
+                            ➕ <span class="texto_de_icono">Elemento</span>
+                            </button>
+                          </div>
+                          <button role="tab" v-on:click="() => { elemento_usado.esta_seleccionada_pestania = 'busqueda'; actualizar_interfaz_de_usuario(); }" :aria-selected="elemento_usado.esta_seleccionada_pestania === 'busqueda'">
+                            🔍 <span class="texto_de_icono"></span>
+                          </button>
+                          <button role="tab" v-on:click="() => { elemento_usado.esta_seleccionada_pestania = 'atributos'; actualizar_interfaz_de_usuario(); }" :aria-selected="elemento_usado.esta_seleccionada_pestania === 'atributos'">
+                            📎 <span class="texto_de_icono"></span>
+                          </button>
+                          <button role="tab" v-on:click="() => { elemento_usado.esta_seleccionada_pestania = 'componentes'; actualizar_interfaz_de_usuario(); }"  :aria-selected="elemento_usado.esta_seleccionada_pestania === 'componentes'">
+                            🌲 <span class="texto_de_icono"></span>
+                          </button>
                           <button role="tab" v-on:click="() => { elemento_usado.esta_seleccionada_pestania = 'texto'; elemento_usado.esta_seleccionado_modo = 'texto'; actualizar_interfaz_de_usuario(); }" :aria-selected="elemento_usado.esta_seleccionada_pestania === 'texto'" :class="{disabled:elemento_usado.esta_seleccionado_modo !== 'texto'}">
-                          📝 <span class="texto_de_icono"></span></button>
-                          <button role="tab" style="visibility:hidden;width:100%;"></button>
-                          <button role="tab" v-on:click="() => { elemento_usado.esta_seleccionada_pestania = 'atajos'; actualizar_interfaz_de_usuario(); }" :aria-selected="elemento_usado.esta_seleccionada_pestania === 'atajos'"><span class="texto_de_icono">
-                          🌀 </span></button>
+                            📝 <span class="texto_de_icono"></span>
+                          </button>
+                          <button role="tab" v-on:click="() => { elemento_usado.esta_seleccionada_pestania = 'atajos'; actualizar_interfaz_de_usuario(); }" :aria-selected="elemento_usado.esta_seleccionada_pestania === 'atajos'">
+                            🌀 <span class="texto_de_icono"></span>
+                          </button>
                           <button role="tab" v-if="elementoPadre && tester.elemento_en_copia" v-on:click="() => { pegar_elemento(elemento_usado) }"><span class="texto_de_icono">
-                          📋 </span></button>
+                            📋 </span>
+                          </button>
                           <button role="tab" v-if="elementoPadre" v-on:click="() => { cortar_elemento(elemento_usado) }">
-                          ✂️ <span class="texto_de_icono"></span></button>
+                            ✂️ <span class="texto_de_icono"></span>
+                          </button>
                           <button role="tab" v-if="elementoPadre" v-on:click="() => { copiar_elemento(elemento_usado) }">
-                          📃 <span class="texto_de_icono"></span></button>
+                            📃 <span class="texto_de_icono"></span>
+                          </button>
                         </menu>
+                        <article class="nopad" role="tabpanel" v-if="elemento_usado.esta_seleccionada_pestania === 'componentes'">
+                          <EditorDeInstanciaDeComponente :tester="tester" :elementos-iniciales="elemento_usado.componentes" :elemento-padre="elemento_usado" />
+                        </article>
+                        <article class="nopad" role="tabpanel" v-if="elemento_usado.esta_seleccionada_pestania === 'busqueda'">
+                          <div>
+                            <SelectorDeComponenteDeGuiBuilder
+                              :acceso-de-texto-de-busqueda="{}"
+                              accesor-de-texto-de-busqueda="busqueda"
+                              :acceso-de-componentes-seleccionados="elemento_usado"
+                              accesor-de-componentes-seleccionados="tag"
+                              :al-seleccionar="() => esconder_busqueda_de_componente(elemento_usado)"
+                              :opciones="[].concat(elementos_soportados, tester.componentes)"
+                              posicion="relative"
+                              :desplegado="true">
+                            </SelectorDeComponenteDeGuiBuilder>
+                          </div>
+                        </article>
                         <article class="nopad" role="tabpanel" v-if="elemento_usado.esta_seleccionada_pestania === 'atajos'">
                           <div>
                             <input class="w_100" type="text" placeholder="Buscar atajo..." v-model="texto_de_atajo_seleccionado" ref="caja_buscar_atajo" />
@@ -191,9 +200,6 @@ asigno window.EditorDeInstanciaDeComponente como un componente vue2 con nombre "
                               </tbody>
                             </draggable>
                           </div>
-                        </article>
-                        <article class="nopad" role="tabpanel"  v-if="elemento_usado.esta_seleccionada_pestania === 'componentes'">
-                          <EditorDeInstanciaDeComponente :tester="tester" :elementos-iniciales="elemento_usado.componentes" :elemento-padre="elemento_usado" />
                         </article>
                       </section>
                     </div>
@@ -404,9 +410,9 @@ asigno window.EditorDeInstanciaDeComponente como un componente vue2 con nombre "
       agregar_componente_en_elemento_usado: una función con (indice_elemento, indice_componente) donde {
         debugo "EditorDeInstanciaDeComponente.methods.agregar_componente_en_elemento_usado".
         si indice_componente es tipo indefinido {
-          apendizo un nuevo Elemento_usado() en this.elementos_usados.
+          apendizo un nuevo Elemento_usado() en this.elementos_usados[indice_elemento].componentes.
         } y si no {
-          hago this.elementos_usados.splice(indice_elemento, 0, un nuevo Elemento_usado()).
+          hago this.elementos_usados[indice_elemento].componentes.splice(indice_componente, 0, un nuevo Elemento_usado()).
         }.
         hago this.actualizar_interfaz_de_usuario().
       },

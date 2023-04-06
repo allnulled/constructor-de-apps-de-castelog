@@ -3,7 +3,7 @@ Ejecutable como documento HTML5
     con nombre index
     con versión 1
 <head>
-    <title>Gui Builder</title>
+    <title>Constructor de apps de calo</title>
     <meta charset="utf8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./js/calo.js"></script>
@@ -16,7 +16,7 @@ Ejecutable como documento HTML5
     <script src="./components/gui-tester/lib/EditorDeInstanciaDeComponente.js"></script>
     <script src="./components/gui-tester/lib/SelectorDeComponenteDeGuiBuilder.js"></script>
     <script src="./components/gui-tester/lib/VistaDeInstanciaDeComponente.js"></script>
-    <script src="./components/gui-tester/lib/VistaDeInstanciaDeComponente.js"></script>
+    <script src="./components/gui-tester/lib/VistaDeInstanciaDeComponentePorPlantilla.js"></script>
     <script src="./components/gui-tester/lib/EstiloShellverGuiConsoleSpecificationV1.js"></script>
     <script src="./components/gui-tester/lib/EstiloShellverGuiConsoleSpecificationV2.js"></script>
     <script src="./components/gui-tester/lib/GuiaDeReferencias.js"></script>

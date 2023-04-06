@@ -140,11 +140,12 @@ asigno window.EstiloShellverGuiConsoleSpecificationV2 como una inserción de est
     .win7 .titulo_de_componente {
       background-color: #333;
       color: white;
-      padding: 3px;
+      padding: 8px;
       font-size: 9px;
       margin-bottom: 3px; 
        background: rgb(2,0,36);
        background: linear-gradient(145deg, rgba(2,0,36,1) 0%, rgba(57,70,108,1) 5%, rgba(139,175,217,1) 67%); 
+       box-shadow: inset 1px 0px 0px #333, inset 0px 1px 0px #333,inset -1px 0px 0px #333, inset 0px -1px 0px #333;
     }
     .win7 .caja_de_componente {
       
@@ -253,8 +254,12 @@ asigno window.EstiloShellverGuiConsoleSpecificationV2 como una inserción de est
       background-color: #333;
       color: white;
     }
-
-
+    .win7 ul.tree-view.has-container,
+    .win7 table,
+    .win7 .window-body,
+    .win7 [role="tabpanel"] {
+      
+    }
 
 
 

@@ -15,16 +15,6 @@ throw error;
 
 }
 },
-plantilla:{ type:String,
-default:function() {try {
-return "";
-} catch(error) {
-console.log(error);
-throw error;
-}
-
-}
-},
 tester:{ type:Object,
 required:true
 },

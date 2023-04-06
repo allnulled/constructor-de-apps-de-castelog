@@ -11,10 +11,6 @@ asigno window.VistaDeInstanciaDeComponente como un componente vue2 con nombre "V
         propiedad type como String.
         propiedad default como una función donde retorno un texto aleatorio de 20 caracteres.
       },
-      plantilla: {
-        propiedad type como String.
-        propiedad default como una función donde retorno "".
-      },
       tester: {
         propiedad type como Object.
         propiedad required como true.
