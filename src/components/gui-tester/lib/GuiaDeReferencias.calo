@@ -65,7 +65,7 @@ asigno GuiaDeReferencias como un componente vue2 con nombre "GuiaDeReferencias" 
                     con método "GET"
                     con cuerpo {}
                     con cabeceras {}.
-                creo referencia_id como url.replace("/components/gui-tester/lib/Referencia", "").
+                creo referencia_id como url.replace("./components/gui-tester/lib/Referencia", "").
                 imprimo referencia_id.
                 asigno this.referencias[referencia_id] como respuesta.data.
             }.

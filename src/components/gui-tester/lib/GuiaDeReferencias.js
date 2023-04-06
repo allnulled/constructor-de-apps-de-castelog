@@ -67,7 +67,7 @@ for(let index = 0; index < this.urls.length; index++) {const url = this.urls[ in
 const respuesta = (await Castelog.metodos.una_peticion_http(url, "GET", { 
 }, { 
 }, null, null));
-const referencia_id = url.replace( "/components/gui-tester/lib/Referencia",
+const referencia_id = url.replace( "./components/gui-tester/lib/Referencia",
 "" );
 console.log(referencia_id);
 this.referencias[ referencia_id ] = respuesta.data;}
