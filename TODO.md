@@ -22,6 +22,10 @@
     [ ] En: Editando: Componente > Plantilla > En componentes
     [ ] Que permita la búsqueda y selección fácil de una lista de componentes
     [ ] Usando el componente SelectorDeComponenteDeGuiBuilder
+[ ] Botón de Corregir para cuando está Calo activado
+    [ ] Que al clicar muestre si está bien formado o tiene errores sintácticos
+    [ ] Usable para calogen
+    [ ] Usable para calo
 [ ] Botón de exportar:
     [ ] En: Editando: Componente > Vista > Panel de control: > ++
     [ ] Para poder exportar el componente a un JSON: ${componente}.calo-componentes.json
