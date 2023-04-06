@@ -2,6 +2,12 @@
 
 Construcción de apps tipo web con Castelog.
 
+## Versión online
+
+Puedes acceder a la versión online en:
+
+*[https://allnulled.github.io/constructor-de-apps-de-castelog](https://allnulled.github.io/constructor-de-apps-de-castelog)*
+
 ## Instalación
 
 **Paso 1**. Abre un directorio limpio, clona este proyecto e instala las dependencias.
