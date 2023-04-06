@@ -58,7 +58,7 @@ El programa en funcionamiento se ve tal que así:
 
 ![Imagen de Constructor de apps de calo número 4](./docs/images/consappcalo4.png)
 
-**La sección de plantilla**. Aquí se puede editar la plantilla del componente mediante interfaz o mediante código directo. Se trata de componer un árbol del DOM propio del HTML, pero con las capacidades extra de la plantillas de Vue2.js. Además, los atributos permiten inyectar calo directamente, por lo cual no lidiaremos con JavaScript en ningún momento.
+**La sección de plantilla**. Aquí se puede editar la plantilla del componente mediante interfaz o mediante código directo. Se trata de componer un árbol del DOM propio del HTML, pero con las capacidades extra de la plantillas de Vue2.js. Además, los atributos permiten inyectar calo directamente, por lo cual no lidiaremos con JavaScript en ningún momento, excepto cuando inyectemos en las plantillas código Vue2.js directamente, donde los `{{ ? }}` y los atributos serán considerados directamente en JavaScript.
 
 ![Imagen de Constructor de apps de calo número 5](./docs/images/consappcalo5.png)
 
