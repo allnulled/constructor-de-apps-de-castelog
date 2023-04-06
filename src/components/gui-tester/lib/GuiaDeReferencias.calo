@@ -2,7 +2,16 @@ asigno window.ir_a_referencia como una función.
 asigno GuiaDeReferencias como un componente vue2 con nombre "GuiaDeReferencias" con plantilla {
     <div>
         <div class="titulo_de_componente"> 🪟 Documentación</div>
+        <div style="padding-top:6px;padding-bottom:6px;text-align:right;">
+            <span> 🔗 </span>
+            <span>
+                <a href="https://github.com/allnulled/constructor-de-apps-de-castelog" target="_blank">
+                    Abrir documentación del proyecto
+                </a>
+            </span>
+        </div>
         <template v-if="referencia_abierta && Object.keys(referencias).length">
+            <hr />
             <div v-for="(referencia, referencia_index) in referencias" v-bind:key="'referencia-numero-' + referencia_index">
                 <div v-if="referencia_abierta === referencia_index">
                     <div class="horizontal_layout" v-if="referencia_index !== 'Basica.html'" style="padding-bottom: 4px; border-bottom:1px solid #333;">

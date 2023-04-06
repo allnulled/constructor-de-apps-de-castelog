@@ -21,7 +21,6 @@ Ejecutable como documento HTML5
     <script src="./components/gui-tester/lib/EstiloShellverGuiConsoleSpecificationV2.js"></script>
     <script src="./components/gui-tester/lib/GuiaDeReferencias.js"></script>
     <script src="./components/gui-tester/GuiTester.js"></script>
-
     
     <style>
 @keyframes move-it {

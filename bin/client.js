@@ -1,4 +1,4 @@
-require("child_process").spawn("npm", ["run", "serve"]);
+require("child_process").fork("npm", ["run", "serve"]);
 setTimeout(() => {
-    require("child_process").spawn("npm", ["run", "open"]);
+    require("child_process").fork("npm", ["run", "open"]);
 }, 1000 * 2);

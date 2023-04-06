@@ -60,17 +60,17 @@ creo GuiTester como un componente vue2 con nombre "GuiTester" con plantilla {
             <article role="tabpanel" class="nopad" v-if="esta_seleccionada_pestania_de_componente === 0">
               <div class="titulo_de_componente">Disponibles: <b>{{ componentes.length }}</b></div>
               <div class="horizontal_layout" style="justify-content: space-between;margin-bottom:1px;">
-                <button class="nowrap" style="flex-grow: 1;" v-on:click="() => abrir_dialogo_de_crear_componente()"><span style="font-size:7px;"></span>📄 Nuevo</button>
-                <button class="nowrap" style="flex-grow: 1; margin-left:2px;" v-on:click="() => abrir_dialogo_de_crear_componente_por_prototipo()"><span style="font-size:7px;"></span>📄»📄 Prototipo</button>
-                <button class="nowrap" style="flex-grow: 1; margin-left:2px;" v-on:click="() => abrir_dialogo_de_crear_componente_por_url()"><span style="font-size:7px;"></span>🌐»📄 URL</button>
-                <button class="nowrap" style="flex-grow: 1; margin-left:2px;" v-on:click="() => abrir_dialogo_de_crear_componente_por_fichero()"><span style="font-size:7px;"></span>💻»📄 Fichero</button>
+                <button class="nowrap" style="flex-grow: 1;" v-on:click="() => abrir_dialogo_de_crear_componente()"><span style="font-size:7px;"></span>Blanco</button>
+                <button class="nowrap" style="flex-grow: 1; margin-left:2px;" v-on:click="() => abrir_dialogo_de_crear_componente_por_prototipo()"><span style="font-size:7px;"></span>Prototipo</button>
+                <button class="nowrap" style="flex-grow: 1; margin-left:2px;" v-on:click="() => abrir_dialogo_de_crear_componente_por_url()"><span style="font-size:7px;"></span>URL</button>
+                <button class="nowrap" style="flex-grow: 1; margin-left:2px;" v-on:click="() => abrir_dialogo_de_crear_componente_por_fichero()"><span style="font-size:7px;"></span>JSON</button>
               </div>
               <input class="w_100" type="text" placeholder="Buscar componente disponible" v-model="filtro_de_componentes" style="margin-bottom:1px;"/>
               <div class="horizontal_layout" v-for="componente, componente_index in componentes_filtrados" v-bind:key="'componente_disponible_' + componente_index">
                 <template v-if="componente.nombre">
                   <button class="w_100 nopad" v-on:click="() => seleccionar_pestania_de_componente(componente.nombre)">{{ componente.nombre }}</button>
                   <button class="w_auto nopad nowrap" style="margin-left:2px;" v-on:click="() => abrir_dialogo_de_eliminar_componente(componente.nombre)">
-                    ❌ <span>Eliminar</span>
+                    ❌ 
                   </button>
                 </template>
               </div>
